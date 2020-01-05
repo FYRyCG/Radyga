@@ -1,3 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/World.gd" type="Script" id=1]
+[ext_resource path="res://Maps/SimpleMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/Camera/Camera.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="SimpleMap" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="SimpleMap" instance=ExtResource( 3 )]
+position = Vector2( -232.749, -94.4357 )
+
+[node name="Camera" parent="SimpleMap" instance=ExtResource( 4 )]
