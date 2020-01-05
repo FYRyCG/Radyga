@@ -1,4 +1,4 @@
 extends Area2D
 
 func _ready():
-	pass
+	position = Vector2(20, 20)
