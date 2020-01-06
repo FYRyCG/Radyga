@@ -6,7 +6,7 @@ var velocity = Vector2()
 func start(position_, rotation_):
 	rotation = rotation_
 	position = position_
-	velocity = Vector2(speed, 0).rotated(rotation)
+	velocity = Vector2(speed, 0).rotated(global_rotation)
 	
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
