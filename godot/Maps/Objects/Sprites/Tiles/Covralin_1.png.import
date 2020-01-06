@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Kafel_1.png-7f8839a212c99a2e2fa2760930dc706c.stex"
+path="res://.import/Covralin_1.png-76ee50f3c04fb2c0c836b948ae6995f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Objects/Sprites/Tiles/Kafel_1.png"
-dest_files=[ "res://.import/Kafel_1.png-7f8839a212c99a2e2fa2760930dc706c.stex" ]
+source_file="res://Maps/Objects/Sprites/Tiles/Covralin_1.png"
+dest_files=[ "res://.import/Covralin_1.png-76ee50f3c04fb2c0c836b948ae6995f0.stex" ]
 
 [params]
 
