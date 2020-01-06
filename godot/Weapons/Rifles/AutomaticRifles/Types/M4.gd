@@ -9,3 +9,6 @@ func start(arg):
 func shoot():
 	$BaseAutoRifles.shoot($Muzzle.global_position, global_rotation)
 	
+func get_collision():
+	return $CollisionShape2D
+	

@@ -12,8 +12,14 @@ func take_weapon(weapon_):
 	cur_weapon = weakref(weapon_)
 	weapon_.start(self)
 	
-	print("spawn weapon = ", get_path())
 	add_child(weapon_)  #spawn on player or map
+	
+	# set weapon collision shape
+	var weapon_collision = weapon_.get_collision()
+	print(weapon_collision.shape)
+	print(weapon_collision.global_position)
+	$WeaponCollision.shape = weapon_collision.shape
+	$WeaponCollision.position = weapon_.position
 	
 	# todo Надо будет установить позицию Muzzle в соответсвтвии с длиной оружия
 	
