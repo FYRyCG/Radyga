@@ -29,4 +29,7 @@ shape = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Muzzle" type="Node2D" parent="."]
-position = Vector2( 34.9757, 3.94814 )
+position = Vector2( 32.8155, 3.86498 )
+
+[node name="GunPos" type="Node2D" parent="."]
+position = Vector2( 11.6818, 4.08682 )
