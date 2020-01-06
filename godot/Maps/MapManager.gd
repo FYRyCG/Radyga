@@ -1,7 +1,7 @@
 extends Node2D
 
-var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
-#var current_map = preload("res://Maps/Maps/Admin_building.tscn").instance()  #Мапа Санька
+#var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
+var current_map = preload("res://Maps/Maps/Admin_building.tscn").instance()  #Мапа Санька
 
 var spawn_positions = []
 var next_spawn_position = 0
