@@ -2,7 +2,8 @@ extends Node2D
 
 var player = preload("res://Actors/Player/Player.tscn")
 
-var map = preload("res://Maps/SimpleMap.tscn").instance()
+#var map = preload("res://Maps/SimpleMap.tscn").instance()
+var map = preload("res://Maps/Admin_buildong.tscn").instance()
 
 var players = {
 	1 : "name"
