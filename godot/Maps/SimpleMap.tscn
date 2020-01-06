@@ -52,3 +52,8 @@ position = Vector2( -140.841, 86.4591 )
 
 [node name="Сontainer3" parent="Road" instance=ExtResource( 4 )]
 position = Vector2( -140.938, 141.505 )
+
+[node name="SpawnPositions" type="Node" parent="."]
+
+[node name="Spawn0" type="Node2D" parent="SpawnPositions"]
+position = Vector2( -230.932, -95.5582 )
