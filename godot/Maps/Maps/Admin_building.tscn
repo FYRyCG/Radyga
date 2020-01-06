@@ -58,7 +58,7 @@
 4/shapes = [  ]
 4/z_index = 0
 
-[node name="Admin_buildong" type="Node2D"]
+[node name="Admin_building" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
