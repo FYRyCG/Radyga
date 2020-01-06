@@ -14,3 +14,7 @@ script = ExtResource( 1 )
 position = Vector2( -232.749, -94.4357 )
 
 [node name="Camera" parent="SimpleMap" instance=ExtResource( 4 )]
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
