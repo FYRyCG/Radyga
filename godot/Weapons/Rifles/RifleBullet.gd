@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 1000
+var speed = 1500
 var velocity = Vector2()
 
 func start(position_, rotation_):
@@ -17,3 +17,4 @@ func _physics_process(delta):
 
 func _on_Lifetime_timeout():
 	queue_free()
+	
