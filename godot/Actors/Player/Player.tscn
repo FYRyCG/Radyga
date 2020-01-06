@@ -8,7 +8,7 @@
 extents = Vector2( 18.9223, 15.7296 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.47129, 1.19158 )
+extents = Vector2( 4.34512, 0.815757 )
 
 [node name="Player" type="KinematicBody2D"]
 z_as_relative = false
@@ -27,3 +27,6 @@ shape = SubResource( 2 )
 
 [node name="PlayerControl" type="Node2D" parent="."]
 script = ExtResource( 3 )
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2( 34.2945, 4.07022 )
