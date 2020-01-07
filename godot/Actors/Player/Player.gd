@@ -9,8 +9,8 @@ func _ready():
 	
 	
 func take_weapon(weapon_):
-	print("take_weapon = ", weapon_)
-	print("take_weapon = ", weapon_.get_path())
+	if cur_weapon and cur_weapon.get_ref():
+		drop_weapon()
 	cur_weapon = weakref(weapon_)
 	weapon_.take(self)
 	
