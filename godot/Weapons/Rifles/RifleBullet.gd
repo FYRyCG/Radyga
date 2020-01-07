@@ -8,7 +8,7 @@ func start(position_, rotation_):
 	position = position_
 	velocity = Vector2(speed, 0).rotated(global_rotation)
 	
-func _physics_process(delta):
+func _process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if collision.collider.has_method("hit"):
