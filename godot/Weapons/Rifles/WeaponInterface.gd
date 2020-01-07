@@ -1,14 +1,20 @@
 extends Node2D
 
 func _ready():
-	position = $BaseAutoRifles.position
+	pass
 
-func start(arg):
-	$BaseAutoRifles.start(arg)
-	
+func take(arg):
+	$BaseAutoRifles.take(arg)
+
+func drop():
+	$BaseAutoRifles.drop()
+
 func shoot():
 	$BaseAutoRifles.shoot($Muzzle.global_position, global_rotation)
 	
 func get_collision():
 	return $CollisionShape2D
-	
+
+func use(player):
+	print("take AK47")
+	$BaseAutoRifles.use(player, self)

@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Weapons/Rifles/WeaponInterface.gd" type="Script" id=1]
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/BaseAutoRifles.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Weapons/Rifles/Sprites/M4.png" type="Texture" id=3]
+[ext_resource path="res://Weapons/Rifles/Sprites/AK47.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.8475, 2.15875 )
+extents = Vector2( 19.9577, 2.15875 )
 
-[node name="M4" type="StaticBody2D"]
+[node name="AK47" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource( 1 )
 
@@ -17,7 +17,8 @@ script = ExtResource( 1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.110184, 0 )
 shape = SubResource( 1 )
 
 [node name="Muzzle" type="Node2D" parent="."]
-position = Vector2( 21.3735, 0 )
+position = Vector2( 21.5958, -0.110184 )

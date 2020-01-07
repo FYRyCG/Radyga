@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/asphalt.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/corner_asphalt.png" type="Texture" id=2]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/road_asphalt.png" type="Texture" id=3]
 [ext_resource path="res://Maps/Objects/Сontainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/AK47.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/M4.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "asphalt.png 0"
@@ -52,6 +54,18 @@ position = Vector2( -140.841, 86.4591 )
 
 [node name="Сontainer3" parent="Road" instance=ExtResource( 4 )]
 position = Vector2( -140.938, 141.505 )
+
+[node name="AK47" parent="Road" instance=ExtResource( 5 )]
+position = Vector2( 94.8691, -43.7857 )
+
+[node name="AK48" parent="Road" instance=ExtResource( 5 )]
+position = Vector2( 159.884, 159.884 )
+
+[node name="M4" parent="Road" instance=ExtResource( 6 )]
+position = Vector2( -43.1223, -29.1905 )
+
+[node name="M5" parent="Road" instance=ExtResource( 6 )]
+position = Vector2( -57.7176, 111.455 )
 
 [node name="SpawnPositions" type="Node" parent="."]
 
