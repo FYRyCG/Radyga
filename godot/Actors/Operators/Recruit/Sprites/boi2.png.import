@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boi2.png-d2e5c4880b329b82c04ab43cfa03efdf.stex"
+path="res://.import/boi2.png-509dab0ed0d0422b2e0570a162b7dd51.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Player/Sprites/boi2.png"
-dest_files=[ "res://.import/boi2.png-d2e5c4880b329b82c04ab43cfa03efdf.stex" ]
+source_file="res://Actors/Operators/Recruit/Sprites/boi2.png"
+dest_files=[ "res://.import/boi2.png-509dab0ed0d0422b2e0570a162b7dd51.stex" ]
 
 [params]
 
