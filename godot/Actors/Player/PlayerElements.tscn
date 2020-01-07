@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="PlayerElements" type="Node2D"]
+
+[node name="WeaponPosition" type="Node2D" parent="."]
+
+[node name="WeaponCollision" type="CollisionShape2D" parent="."]
