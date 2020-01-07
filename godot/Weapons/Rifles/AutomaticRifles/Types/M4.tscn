@@ -20,6 +20,6 @@ shape = SubResource( 1 )
 [node name="WeaponElements" parent="." instance=ExtResource( 3 )]
 
 [node name="Muzzle" parent="WeaponElements" index="0"]
-position = Vector2( 21.6601, -0.110184 )
+position = Vector2( 21.4339, 0.00293894 )
 
 [editable path="WeaponElements"]
