@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Weapons/Rifles/WeaponInterface.gd" type="Script" id=1]
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/AK47.gd" type="Script" id=1]
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/BaseAutoRifles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Weapons/Rifles/Sprites/AK47.png" type="Texture" id=3]
 
@@ -22,3 +22,7 @@ shape = SubResource( 1 )
 
 [node name="Muzzle" type="Node2D" parent="."]
 position = Vector2( 21.5958, -0.110184 )
+
+[node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

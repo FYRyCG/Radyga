@@ -26,9 +26,11 @@ func _process(delta):
 		get_parent().rotation = player.get_ref().get_node("GunPos").global_rotation
 
 func shoot(pos, dir):
+	print("can = ", can_shoot)
 	if can_shoot:
 		can_shoot = false
-		$ShootDelay.start()
+		print(get_parent().get_node("ShootDelay"))
+		get_parent().get_node("ShootDelay").start()
 		
 		var bullet = Bullet.instance()
 		bullet.start(pos, dir)
