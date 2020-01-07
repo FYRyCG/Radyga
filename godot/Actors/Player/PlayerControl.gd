@@ -40,7 +40,5 @@ func _physics_process(delta):
 		
 	velocity = velocity.normalized() * player_speed
 
-	velocity = $"../..".move_and_slide(velocity)
-	# "." - PlayerControl
-	# ".." - Recruit
-	# "../.." - Player or Enemy
+	velocity = player.get_ref().move_and_slide(velocity)
+	
