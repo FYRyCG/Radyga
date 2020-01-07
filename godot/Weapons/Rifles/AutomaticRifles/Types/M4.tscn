@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/M4.gd" type="Script" id=1]
+[ext_resource path="res://Weapons/Rifles/WeaponInterface.gd" type="Script" id=1]
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/BaseAutoRifles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Weapons/Rifles/Sprites/M4.png" type="Texture" id=3]
 
