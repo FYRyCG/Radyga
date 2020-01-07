@@ -11,13 +11,12 @@ export var tiles = []
 
 var smart_tile = preload("res://Maps/Objects/SmartWall/Tiles/SmartTile.tscn")
 
-var __prev_size_x = 1
-var __prev_size_y = 1
+var __prev_size_x = 0
+var __prev_size_y = 0
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	print(tiles)
 	if Engine.editor_hint:
 		rng.randomize()
 		size_x = __prev_size_x
@@ -30,7 +29,8 @@ func _ready():
 
 func _draw_tiles():
 	for t in tiles:
-		t.queue_free()
+		if t.has_method("queue_free"):
+			t.queue_free()
 	tiles = []
 		
 	var sp = $Spawn.position
