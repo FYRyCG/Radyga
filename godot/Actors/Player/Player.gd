@@ -18,7 +18,7 @@ func take_weapon(weapon_):
 	# set weapon collision
 	$WeaponCollision.shape = weapon_.get_collision().shape
 	$WeaponCollision.global_position = $PlayerElements/WeaponPosition.global_position
-	$WeaponCollision.rotation = weapon_.get_collision().global_rotation
+	$WeaponCollision.rotation = weapon_.get_collision().rotation
 	
 
 func drop_weapon():
