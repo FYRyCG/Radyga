@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_tile8.png-be824bf5fffa2c0be17f6b8a864aeafb.stex"
+path="res://.import/wall_tile8.png-740206385b853a661324611ba6c9c649.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Objects/SmartWalls/Tiles/wall_tile8.png"
-dest_files=[ "res://.import/wall_tile8.png-be824bf5fffa2c0be17f6b8a864aeafb.stex" ]
+source_file="res://Maps/Objects/SmartWall/Tiles/wall_tile8.png"
+dest_files=[ "res://.import/wall_tile8.png-740206385b853a661324611ba6c9c649.stex" ]
 
 [params]
 
