@@ -23,3 +23,6 @@ func shoot(pos, dir):
 
 func _on_ShootDelay_timeout():
 	can_shoot = true
+	
+func use(player):
+	player.take_weapon(self)
