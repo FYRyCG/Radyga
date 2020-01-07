@@ -54,9 +54,11 @@ shape = SubResource( 5 )
 [node name="PlayerElements" parent="." instance=ExtResource( 4 )]
 
 [node name="WeaponPosition" parent="PlayerElements" index="0"]
-position = Vector2( 11.2936, 3.81991 )
+position = Vector2( 11.81, 4.15207 )
 
 [node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
-position = Vector2( 10.9615, -1.66083 )
+position = Vector2( 11.6258, -0.498249 )
+
+[node name="WeaponCollision" type="CollisionShape2D" parent="."]
 
 [editable path="PlayerElements"]
