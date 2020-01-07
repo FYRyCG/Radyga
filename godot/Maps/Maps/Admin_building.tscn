@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/Beton_1.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/kafel_2.png" type="Texture" id=2]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/Kafel_1.png" type="Texture" id=3]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/Kafel_3.png" type="Texture" id=4]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/Covralin_1.png" type="Texture" id=5]
-[ext_resource path="res://Maps/Objects/Sprites/Tiles/Walls_tiles.png" type="Texture" id=6]
-[ext_resource path="res://Maps/Maps/Wall_map.gd" type="Script" id=7]
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/AK47.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/M4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Maps/Objects/Sprites/Tiles/Walls_tiles.png" type="Texture" id=8]
+[ext_resource path="res://Maps/Maps/Wall_map.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Beton_1.png 0"
@@ -75,12 +77,12 @@ points = PoolVector2Array( 15.633, 0.00717163, 48.4251, 0, 48.1926, 16.0544, 64,
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 16.5701, 0, 47.9668, 0, 48.1993, 47.9162, 0, 47.451, 0, 16.2869, 16.8026, 16.2869 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64, 16.0476, 64 )
 
-[sub_resource type="TileSet" id=7]
+[sub_resource type="TileSet" id=8]
 0/name = "Walls_tiles.png 0"
-0/texture = ExtResource( 6 )
+0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 96, 64, 64 )
@@ -96,7 +98,7 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 } ]
 0/z_index = 0
 2/name = "Walls_tiles.png 2"
-2/texture = ExtResource( 6 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 96, 0, 64, 64 )
@@ -112,7 +114,7 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 } ]
 2/z_index = 0
 3/name = "Walls_tiles.png 3"
-3/texture = ExtResource( 6 )
+3/texture = ExtResource( 8 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 256, 0, 64, 64 )
@@ -128,7 +130,7 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 } ]
 3/z_index = 0
 4/name = "Walls_tiles.png 4"
-4/texture = ExtResource( 6 )
+4/texture = ExtResource( 8 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 96, 160, 64, 64 )
@@ -144,7 +146,7 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 } ]
 4/z_index = 0
 5/name = "Walls_tiles.png 5"
-5/texture = ExtResource( 6 )
+5/texture = ExtResource( 8 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 256, 160, 64, 64 )
@@ -160,7 +162,7 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 } ]
 5/z_index = 0
 6/name = "Walls_tiles.png 6"
-6/texture = ExtResource( 6 )
+6/texture = ExtResource( 8 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 64 )
@@ -171,25 +173,25 @@ points = PoolVector2Array( 16.0476, 0.232986, 47.4443, 0.000411987, 47.9094, 64,
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 309.686, 16.5676 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 16.7962, 147.789 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 17.1099, 143.078 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 302.379, 18.2079 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
 region = Rect2( 1.64347, 133.343, 65.0476, 55.5653 )
 
 [node name="Admin_building" type="Node2D"]
@@ -199,35 +201,44 @@ tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( -65539, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 1, 0, 65542, 4, 0, 65543, 4, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 262141, 3, 0, 262142, 3, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0 )
 
+[node name="AK47" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( -102.952, 73.3747 )
+
+[node name="M4" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 116.603, -23.3206 )
+
+[node name="AK48" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 110.915, 84.7506 )
+
 [node name="Wall_map" type="TileMap" parent="."]
-tile_set = SubResource( 7 )
+tile_set = SubResource( 8 )
 format = 1
 tile_data = PoolIntArray( -65540, 2, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 3, 0, -4, 6, 0, -65530, 6, 0, 65532, 6, 0, 6, 6, 0, 131068, 6, 0, 65542, 6, 0, 196604, 6, 0, 131078, 6, 0, 262140, 4, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 5, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="Wall_map"]
 position = Vector2( 94.6002, 67.4163 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_map/Area2D"]
 position = Vector2( -2.78293, -163.289 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall_map/Area2D"]
 position = Vector2( -318.529, -6.80173 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall_map/Area2D"]
 position = Vector2( 322.131, -5.78876 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall_map/Area2D"]
 position = Vector2( 0.648468, 156.411 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="SpawnPositions" type="Node" parent="."]
 
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
-position = Vector2( -55.122, -245.257 )
+position = Vector2( -33.1768, -32.1446 )
 scale = Vector2( 11643, 713.391 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -236,6 +247,6 @@ visible = false
 position = Vector2( 33.1295, -95.0001 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-texture = SubResource( 12 )
+texture = SubResource( 13 )
 [connection signal="body_entered" from="Wall_map/Area2D" to="Wall_map" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Wall_map/Area2D" to="Wall_map" method="_on_Area2D_body_exited"]
