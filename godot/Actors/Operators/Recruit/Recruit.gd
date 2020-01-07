@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 var cur_weapon = null
 
