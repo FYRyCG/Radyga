@@ -16,13 +16,10 @@ func take_weapon(weapon_):
 	
 	# set weapon collision shape
 	var weapon_collision = weapon_.get_collision()
-	print(weapon_collision.shape)
-	print(weapon_collision.global_position)
 	$WeaponCollision.shape = weapon_collision.shape
 	$WeaponCollision.position = weapon_.position
 	
-	# todo Надо будет установить позицию Muzzle в соответсвтвии с длиной оружия
-	
+
 func shoot():
 	if cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
