@@ -6,7 +6,7 @@ var current_interactive_body = null
 
 func _ready():
 	$PlayerControl._start(self)
-	$InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
+	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	
 	
 func take_weapon(weapon_):
