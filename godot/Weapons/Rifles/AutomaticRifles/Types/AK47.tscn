@@ -17,9 +17,10 @@ texture = ExtResource( 2 )
 position = Vector2( 0.0287015, -0.208327 )
 shape = SubResource( 1 )
 
-[node name="Muzzle" type="Node2D" parent="."]
-position = Vector2( 21.5958, -0.110184 )
+[node name="WeaponElements" type="Node2D" parent="."]
 
-[node name="ShootDelay" type="Timer" parent="."]
-wait_time = 0.2
+[node name="Muzzle" type="Node2D" parent="WeaponElements"]
+position = Vector2( 21.5966, -0.0694427 )
+
+[node name="ShootDelay" type="Timer" parent="WeaponElements"]
 one_shot = true
