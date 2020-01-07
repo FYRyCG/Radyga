@@ -16,5 +16,4 @@ func get_collision():
 	return $CollisionShape2D
 
 func use(player):
-	print("take AK47")
 	$BaseAutoRifles.use(player, self)
