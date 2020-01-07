@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="WeaponElements" type="Node2D"]
+
+[node name="Muzzle" type="Node2D" parent="."]
+
+[node name="ShootDelay" type="Timer" parent="."]
+one_shot = true
