@@ -1,8 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Actors/Operators/Recruit/Recruit.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=2]
-[ext_resource path="res://Actors/Player/PlayerControl.gd" type="Script" id=3]
+[ext_resource path="res://Actors/Player/PlayerControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 11.2453
@@ -19,11 +20,7 @@ extents = Vector2( 2.9106, 6.70445 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2.32578, 3.35488 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 22.0044, 9.11196 )
-
 [node name="Recruit" type="KinematicBody2D"]
-z_as_relative = false
 collision_layer = 2
 script = ExtResource( 1 )
 
@@ -52,23 +49,14 @@ shape = SubResource( 4 )
 position = Vector2( 19.8881, 3.45424 )
 shape = SubResource( 5 )
 
-[node name="PlayerControl" type="Node2D" parent="."]
-script = ExtResource( 3 )
+[node name="PlayerControl" parent="." instance=ExtResource( 3 )]
 
-[node name="GunPos" type="Node2D" parent="."]
-position = Vector2( 11.6818, 4.08682 )
+[node name="PlayerElements" parent="." instance=ExtResource( 4 )]
 
-[node name="Interactive" type="Area2D" parent="."]
-position = Vector2( 21.718, -1.05768 )
-collision_layer = 2
-collision_mask = 7
-__meta__ = {
-"_edit_group_": true
-}
+[node name="WeaponPosition" parent="PlayerElements" index="0"]
+position = Vector2( 11.2936, 3.81991 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactive"]
-position = Vector2( 0.114624, 0.0099411 )
-shape = SubResource( 6 )
+[node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
+position = Vector2( 10.9615, -1.66083 )
 
-[node name="WeaponCollision" type="CollisionShape2D" parent="."]
-[connection signal="body_entered" from="Interactive" to="." method="_on_Interactive_body_entered"]
+[editable path="PlayerElements"]
