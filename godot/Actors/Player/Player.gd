@@ -2,24 +2,39 @@ extends KinematicBody2D
 
 var cur_weapon = null
 
+var current_interactive_body = null
+
 func _ready():
 	$PlayerControl._start(self)
 	
-	var w = load("res://Weapons/Rifles/AutomaticRifles/Types/M4.tscn").instance()
-	take_weapon(w)
 	
 func take_weapon(weapon_):
+	print("take_weapon = ", weapon_)
+	print("take_weapon = ", weapon_.get_path())
 	cur_weapon = weakref(weapon_)
-	weapon_.start(self)
+	weapon_.take(self)
 	
-	add_child(weapon_)  #spawn on player or map
+	$WeaponCollision.shape = weapon_.get_collision().shape
+	$WeaponCollision.global_position = weapon_.get_collision().global_position
+	$WeaponCollision.global_rotation = weapon_.get_collision().global_rotation
 	
-	# set weapon collision shape
-	var weapon_collision = weapon_.get_collision()
-	$WeaponCollision.shape = weapon_collision.shape
-	$WeaponCollision.position = weapon_.position
-	
+
+func drop_weapon():
+	if cur_weapon and cur_weapon.get_ref():
+		cur_weapon.get_ref().drop()
+		cur_weapon = null
 
 func shoot():
 	if cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
+
+func use():
+	if current_interactive_body and current_interactive_body.get_ref() and current_interactive_body.get_ref() != self:
+		if current_interactive_body.get_ref().has_method("use"):
+			print("use = ", current_interactive_body.get_ref().get_path())
+			current_interactive_body.get_ref().use(self)
+
+func _on_Interactive_body_entered(body):
+	current_interactive_body = weakref(body)
+	print("interactive = ", body)
+	print("interactive = ", body.get_path())

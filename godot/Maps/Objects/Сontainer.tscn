@@ -6,6 +6,7 @@
 extents = Vector2( 34.9656, 15.8324 )
 
 [node name="Сontainer" type="StaticBody2D"]
+collision_mask = 31775
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -2.76039 )
