@@ -25,6 +25,10 @@ func _on_Area2D_body_entered(body):
 	var pos = man.position
 	var x = int(pos.x/64)
 	var y = int(pos.y/64)
+	if x in range(-1, 1):
+		x = -1
+	if y in range(-1, 1):
+		y = -1
 	print(x, " ", y)
 	cell = get_cell(x, y)
 	var ar = get_used_cells()
