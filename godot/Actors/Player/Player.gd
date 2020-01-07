@@ -15,7 +15,7 @@ func take_weapon(weapon_):
 	weapon_.take(self)
 	
 	$WeaponCollision.shape = weapon_.get_collision().shape
-	$WeaponCollision.global_position = weapon_.get_collision().global_position
+	$WeaponCollision.global_position = $GunPos.global_position
 	$WeaponCollision.global_rotation = weapon_.get_collision().global_rotation
 	
 
