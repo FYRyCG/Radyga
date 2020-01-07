@@ -29,9 +29,15 @@ func _physics_process(delta):
 	if Input.is_action_just_released("pl_run"):
 		player_speed = walk_speed
 		
-	if Input.is_action_pressed("pl_shoot") and player.get_ref():
+	if Input.is_action_pressed("pl_shoot") and player.get_ref() and player.get_ref().cur_weapon:
 		player.get_ref().shoot()
 	
+	if Input.is_action_just_pressed("pl_drop") and player.get_ref() and player.get_ref().cur_weapon:
+		player.get_ref().drop_weapon()
+	
+	if Input.is_action_just_pressed("pl_use") and player.get_ref():
+		player.get_ref().use()
+		
 	velocity = velocity.normalized() * player_speed
 		
 	velocity = player.get_ref().move_and_slide(velocity)
