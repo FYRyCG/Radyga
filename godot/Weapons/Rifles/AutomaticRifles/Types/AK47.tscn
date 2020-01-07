@@ -5,7 +5,7 @@
 [ext_resource path="res://Weapons/Rifles/Sprites/AK47.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.9577, 2.15875 )
+extents = Vector2( 20.4978, 2.69469 )
 
 [node name="AK47" type="StaticBody2D"]
 collision_layer = 4
@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.110184, 0 )
+position = Vector2( 0.0287015, -0.208327 )
 shape = SubResource( 1 )
 
 [node name="Muzzle" type="Node2D" parent="."]

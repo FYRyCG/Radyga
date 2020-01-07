@@ -7,8 +7,6 @@ extents = Vector2( 25.183, 16.1046 )
 
 [node name="WeaponPosition" type="Node2D" parent="."]
 
-[node name="WeaponCollision" type="CollisionShape2D" parent="."]
-
 [node name="InteractiveZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveZone"]
