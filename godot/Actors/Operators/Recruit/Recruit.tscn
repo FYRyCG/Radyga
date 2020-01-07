@@ -22,8 +22,9 @@ extents = Vector2( 2.32578, 3.35488 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 22.0044, 9.11196 )
 
-[node name="Recruit" type="Node2D"]
+[node name="Recruit" type="KinematicBody2D"]
 z_as_relative = false
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Texture" type="Sprite" parent="."]
@@ -44,6 +45,7 @@ shape = SubResource( 3 )
 [node name="ArmCollision1" type="CollisionShape2D" parent="."]
 position = Vector2( 16.3291, -6.07109 )
 rotation = -0.676429
+scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
 [node name="ArmCollision2" type="CollisionShape2D" parent="."]
