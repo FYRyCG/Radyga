@@ -38,6 +38,8 @@ func shoot():
 		var bullet = Bullet.instance()
 		bullet.start(pos, dir)
 		
+		$WeaponElements.shoot()
+		
 		# spawn on Map for remove rotation with player
 		get_parent().get_parent().get_parent().add_child(bullet)  
 
