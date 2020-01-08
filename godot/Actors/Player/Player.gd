@@ -1,11 +1,17 @@
 extends KinematicBody2D
 
 var cur_weapon = null
-
+export var is_playable = false
 var current_interactive_body = null
 
 func _ready():
-	$PlayerControl._start(self)
+	var ControlNode
+	if(is_playable):
+		ControlNode = preload("res://Actors/Player/PlayerControl.tscn").instance()
+	else:
+		ControlNode = preload("res://Actors/AI/AIBehaviour.tscn").instance()
+	add_child(ControlNode)
+	ControlNode._start(self)
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	
 	
