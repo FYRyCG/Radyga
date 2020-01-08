@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi1.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/accessory.png" type="Texture" id=3]
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Actors/Player/PlayerControl.gd" type="Script" id=5]
-[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=6]
+[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 11.2453
@@ -100,28 +99,28 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
-[sub_resource type="AnimationNodeStateMachine" id=9]
+[sub_resource type="AnimationNodeStateMachine" id=12]
 states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 219, 94 )
-states/Walk/node = SubResource( 11 )
+states/Walk/node = SubResource( 9 )
 states/Walk/position = Vector2( 418, 65 )
-transitions = [ "Idle", "Walk", SubResource( 12 ), "Walk", "Idle", SubResource( 13 ) ]
+transitions = [ "Idle", "Walk", SubResource( 10 ), "Walk", "Idle", SubResource( 11 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="Recruit" type="KinematicBody2D"]
 collision_layer = 2
@@ -173,9 +172,6 @@ position = Vector2( 11.81, 4.15207 )
 [node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
 position = Vector2( 11.6258, -0.498249 )
 
-[node name="ControleNode" parent="PlayerElements" index="2"]
-script = ExtResource( 5 )
-
 [node name="WeaponCollision" type="CollisionShape2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -183,9 +179,9 @@ anims/Idle = SubResource( 6 )
 anims/Walk = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 12 )
 anim_player = NodePath("..")
 active = true
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 13 )
 
 [editable path="PlayerElements"]

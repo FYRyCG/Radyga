@@ -37,9 +37,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("pl_use") and player.get_ref():
 		player.get_ref().use()
-	if(velocity.x != 0 || velocity.y != 0):
+		
+	if (velocity.x != 0 || velocity.y != 0) and player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
 		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
-	else:
+	elif player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
 		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
+	
 	velocity = velocity.normalized() * player_speed
 	velocity = player.get_ref().move_and_slide(velocity)
