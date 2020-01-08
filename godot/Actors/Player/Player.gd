@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (GDScript) var control_script = preload("res://Actors/Player/PlayerControl.gd") setget set_control_script
 
 var cur_weapon = null
+
 var current_interactive_body = null
 
 func _ready():
