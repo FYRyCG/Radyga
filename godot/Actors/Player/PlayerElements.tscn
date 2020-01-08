@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Actors/Player/PlayerElements.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.6252, 11.0876 )
 
 [node name="PlayerElements" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="WeaponPosition" type="Node2D" parent="."]
 
@@ -11,3 +14,6 @@ extents = Vector2( 11.6252, 11.0876 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveZone"]
 shape = SubResource( 1 )
+
+[node name="ControleNode" type="Node2D" parent="."]
+[connection signal="script_changed" from="ControleNode" to="." method="_on_ControleNode_script_changed"]
