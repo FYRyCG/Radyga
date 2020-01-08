@@ -10,13 +10,12 @@ var velocity = Vector2()
 var player
 
 func _ready():
-	player = get_parent().get_parent()  # if it nullptr then you loh
+	player = weakref(get_parent().get_parent())  # if it nullptr then you loh
 
 func _physics_process(delta):
 	player.get_ref().look_at(get_global_mouse_position())
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_left"):
-		print("left")
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -38,9 +37,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("pl_use") and player.get_ref():
 		player.get_ref().use()
-	if(velocity.x != 0 || velocity.y != 0):
-		$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Walk")
-	else:
-		$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Idle")
+	#if(velocity.x != 0 || velocity.y != 0):
+	#	$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Walk")
+	#else:
+	#	$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Idle")
 	velocity = velocity.normalized() * player_speed
 	velocity = player.get_ref().move_and_slide(velocity)
