@@ -13,26 +13,7 @@ func _ready():
 	player = get_parent().get_parent()  # if it nullptr then you loh
 
 func _physics_process(delta):
-	"""
-	# Плавный поворот player'a + отключение лишнего движения при поворотах
-	var angle_dif_by_mouse = player.get_ref().get_angle_to(get_global_mouse_position())
-	var rt = 5.0 # rotation_threshold
-	if(angle_dif_by_mouse != 0):
-		var new_rotation = player.get_ref().rotation_degrees + angle_dif_by_mouse*10.0
-		var collision = player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(rt * 1.0,0.0)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(rt * 1.0,rt * 1.0)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(-1.0 * rt,0.0)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(-1.0 * rt,1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(0.0,1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(0.0,-1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(-1.0 * rt,-1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
-		 Vector2(1.0 * rt,-1.0 * rt))
-		if(!collision):
-			player.get_ref().rotation_degrees = new_rotation
-	# Старый вариант:
-	#player.get_ref().look_at(get_global_mouse_position())
-	"""
+	player.get_ref().look_at(get_global_mouse_position())
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_left"):
 		print("left")
@@ -57,6 +38,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("pl_use") and player.get_ref():
 		player.get_ref().use()
-		
+	if(velocity.x != 0 || velocity.y != 0):
+		$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Walk")
+	else:
+		$"../AnimationPlayer/AnimationTree".get("parameters/playback").travel("Idle")
 	velocity = velocity.normalized() * player_speed
 	velocity = player.get_ref().move_and_slide(velocity)
