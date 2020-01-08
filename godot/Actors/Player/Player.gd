@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var cur_weapon = null
-export var is_playable = false
+export var is_playable = false 
 var current_interactive_body = null
 
 func _ready():
