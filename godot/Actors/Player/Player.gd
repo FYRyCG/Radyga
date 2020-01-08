@@ -1,22 +1,16 @@
 extends KinematicBody2D
 
+export (GDScript) var control_script = preload("res://Actors/Player/PlayerControl.gd") setget set_control_script
+
 var cur_weapon = null
-export var is_playable = false
 var current_interactive_body = null
 
 func _ready():
-	var ControlNode
-	if(is_playable):
-		ControlNode = preload("res://Actors/Player/PlayerControl.tscn").instance()
-	else:
-		ControlNode = preload("res://Actors/AI/AIBehaviour.tscn").instance()
-	add_child(ControlNode)
-	ControlNode._start(self)
+	$PlayerElements/ControleNode.set_script(control_script)
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
-	
-	
+
+
 func take_weapon(weapon_):
-	print("take = ", weapon_)
 	if cur_weapon and cur_weapon.get_ref():
 		drop_weapon()
 	cur_weapon = weakref(weapon_)
@@ -48,3 +42,8 @@ func _on_Interactive_body_entered(body):
 
 func get_weapon_position():
 	return $PlayerElements/WeaponPosition
+	
+func set_control_script(script : GDScript):
+	control_script = script
+	get_node("ControlNode").set_script(control_script)
+	
