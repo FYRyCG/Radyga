@@ -4,15 +4,16 @@ export (int) var walk_speed = 200
 
 export (int) var run_speed = 300
 
-var player = null
-
 var player_speed = walk_speed
 var velocity = Vector2()
 
-func _start(player_):
-	player = weakref(player_)
+var player
+
+func _ready():
+	player = get_parent().get_parent()  # if it nullptr then you loh
 
 func _physics_process(delta):
+	"""
 	# Плавный поворот player'a + отключение лишнего движения при поворотах
 	var angle_dif_by_mouse = player.get_ref().get_angle_to(get_global_mouse_position())
 	var rt = 5.0 # rotation_threshold
@@ -31,8 +32,10 @@ func _physics_process(delta):
 			player.get_ref().rotation_degrees = new_rotation
 	# Старый вариант:
 	#player.get_ref().look_at(get_global_mouse_position())
+	"""
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_left"):
+		print("left")
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
