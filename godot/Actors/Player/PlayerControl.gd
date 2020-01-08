@@ -27,7 +27,6 @@ func _physics_process(delta):
 		 Vector2(0.0,-1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
 		 Vector2(-1.0 * rt,-1.0 * rt)) || player.get_ref().test_move( Transform2D (new_rotation, player.get_ref().position),
 		 Vector2(1.0 * rt,-1.0 * rt))
-		print(collision)
 		if(!collision):
 			player.get_ref().rotation_degrees = new_rotation
 	# Старый вариант:
