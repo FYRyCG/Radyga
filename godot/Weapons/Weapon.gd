@@ -7,7 +7,7 @@ var player = null
 var can_shoot = true
 
 func _ready():
-	$ShootDelay.connect("timeout", self, "_on_ShootDelay_timeout")
+	$WeaponElements/ShootDelay.connect("timeout", self, "_on_ShootDelay_timeout")
 	
 	set_physics_process(false)
 	set_process(false)
@@ -28,17 +28,14 @@ func _process(delta):
 		rotation = player.get_ref().get_weapon_position().global_rotation
 
 func shoot():
-	var pos = $Muzzle.global_position
-	var dir = global_rotation
-	
 	if can_shoot:
 		can_shoot = false
-		get_node("ShootDelay").start()
-		
-		var bullet = Bullet.instance()
-		bullet.start(pos, dir)
+		get_node("WeaponElements/ShootDelay").start()
+		$WeaponElements.shoot()
 		
 		# spawn on Map for remove rotation with player
+		var bullet = Bullet.instance()
+		bullet.start($WeaponElements/Muzzle.global_position, global_rotation)
 		get_parent().get_parent().get_parent().add_child(bullet)  
 
 func _on_ShootDelay_timeout():
