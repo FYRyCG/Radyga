@@ -12,6 +12,7 @@ func _ready():
 		var p = player.instance()
 		var sp = $MapManager.get_next_spawn_position()
 		p.position = sp.global_position
+		p.is_playable = true
 		$Players.add_child(p)
 		
 		if pl == 1:
