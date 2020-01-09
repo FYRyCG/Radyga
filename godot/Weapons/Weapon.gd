@@ -6,18 +6,11 @@ var player = null
 
 var can_shoot = true
 
-const TICK_RATE = 64
-puppet var puppet_position = Vector2()
-puppet var puppet_rotation = 0
-
 func _ready():
-	$WeaponElements/ShootDelay.connect("timeout", self, "_on_ShootDelay_timeout")
-	
+	$WeaponElements/ShootDelay.connect("timeout", self, "_on_ShootDelay_timeout")	
 	set_physics_process(false)
 	set_process(false)
 
-
-var update_tumer = Timer.new()
 func take(player_):
 	player = weakref(player_)
 	#set_physics_process(true)
@@ -25,7 +18,6 @@ func take(player_):
 
 remotesync func set_pl(pl_path):
 	player = weakref(get_tree().get_root().get_node(pl_path))
-	print("owner ", player.get_ref())
 
 func drop():
 	player = null
@@ -54,7 +46,6 @@ func _on_ShootDelay_timeout():
 	
 func use(player):
 	rpc("sync_use", player.get_path())
-	#player.take_weapon(self)  # send weapon
 
 remotesync func sync_use(player_path):
 	get_tree().get_root().get_node(player_path).take_weapon(self)
