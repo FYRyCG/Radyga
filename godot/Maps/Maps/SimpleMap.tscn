@@ -862,6 +862,12 @@ rotation = 4.71239
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
 position = Vector2( -230.932, -95.5582 )
 
+[node name="Spawn1" type="Node2D" parent="SpawnPositions"]
+position = Vector2( -223.573, 233.524 )
+
+[node name="Spawn2" type="Node2D" parent="SpawnPositions"]
+position = Vector2( 227.553, 238.168 )
+
 [node name="Recruit" parent="." instance=ExtResource( 10 )]
 position = Vector2( -152.718, -13.1715 )
 control_script = ExtResource( 11 )
