@@ -27,16 +27,16 @@ func take_weapon(weapon_):
 	#$WeaponCollision.rotation = weapon_.get_collision().rotation
 	
 
-remotesync func drop_weapon():
+func drop_weapon():
 	if cur_weapon and cur_weapon.get_ref():
 		cur_weapon.get_ref().drop()
 		cur_weapon = null
 
-remotesync func shoot():
+func shoot():
 	if cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
 
-remotesync func use():
+func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
        and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):

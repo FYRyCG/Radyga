@@ -6,6 +6,7 @@ var player = null
 
 var can_shoot = true
 
+const TICK_RATE = 64
 puppet var puppet_position = Vector2()
 puppet var puppet_rotation = 0
 
@@ -15,25 +16,26 @@ func _ready():
 	set_physics_process(false)
 	set_process(false)
 
+
+var update_tumer = Timer.new()
 func take(player_):
 	player = weakref(player_)
-	set_physics_process(true)
+	#set_physics_process(true)
 	set_process(true)
+
+remotesync func set_pl(pl_path):
+	player = weakref(get_tree().get_root().get_node(pl_path))
+	print("owner ", player.get_ref())
 
 func drop():
 	player = null
-	set_physics_process(false)
+	#set_physics_process(false)
 	set_process(false)
 
-func _physics_process(delta):
+func _process(delta):
 	if player and player.get_ref():
 		position = player.get_ref().get_weapon_position().global_position
 		rotation = player.get_ref().get_weapon_position().global_rotation
-		rset("puppet_position", position)
-		rset("puppet_rotation", rotation)
-	else:
-		position = puppet_position
-		rotation = puppet_rotation
 
 func shoot():
 	if can_shoot:
@@ -51,7 +53,11 @@ func _on_ShootDelay_timeout():
 	can_shoot = true
 	
 func use(player):
-	player.take_weapon(self)  # send weapon
+	rpc("sync_use", player.get_path())
+	#player.take_weapon(self)  # send weapon
+
+remotesync func sync_use(player_path):
+	get_tree().get_root().get_node(player_path).take_weapon(self)
 	
 func get_collision():
 	return $CollisionShape2D
