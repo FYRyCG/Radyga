@@ -6,14 +6,17 @@ var player = null
 
 var can_shoot = true
 
+puppet var puppet_position = Vector2()
+puppet var puppet_rotation = 0
+
 func _ready():
 	$WeaponElements/ShootDelay.connect("timeout", self, "_on_ShootDelay_timeout")
 	
 	set_physics_process(false)
 	set_process(false)
 
-func take(pl):
-	player = weakref(pl)
+func take(player_):
+	player = weakref(player_)
 	set_physics_process(true)
 	set_process(true)
 
@@ -22,10 +25,15 @@ func drop():
 	set_physics_process(false)
 	set_process(false)
 
-func _process(delta):
+func _physics_process(delta):
 	if player and player.get_ref():
 		position = player.get_ref().get_weapon_position().global_position
 		rotation = player.get_ref().get_weapon_position().global_rotation
+		rset("puppet_position", position)
+		rset("puppet_rotation", rotation)
+	else:
+		position = puppet_position
+		rotation = puppet_rotation
 
 func shoot():
 	if can_shoot:
