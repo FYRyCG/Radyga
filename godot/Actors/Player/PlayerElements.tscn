@@ -23,6 +23,6 @@ position = Vector2( -0.162811, -3.23088 )
 rotation = 4.71238
 scale = Vector2( 0.57847, 0.57847 )
 texture = ExtResource( 2 )
-energy = 0.5
+mode = 3
 shadow_enabled = true
 [connection signal="script_changed" from="ControleNode" to="." method="_on_ControleNode_script_changed"]
