@@ -8,7 +8,6 @@ func _ready():
 	for elem in Room_list:
 		var R = get_node("Wall_map/"+elem+"/Cover_vis")
 		#print(R)
-		R.visible = true
 
 
 func _on_Wall_map_room_changed(current_room):
