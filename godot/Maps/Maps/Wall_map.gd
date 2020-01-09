@@ -34,13 +34,14 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if(body.name == "Recruit"): # Временное решение
-		print("Entered")
+		#print("Entered")
 		man = body
 	
 func _on_Area2D_body_exited(body):
-		print("Exited")
+	pass
+	#print("Exited")
 	
 func _on_Room_1_area_entered(area):
-	print("Ent")
+	#print("Ent")
 	current_room = area
 	emit_signal("room_changed")
