@@ -1,29 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Maps/Objects/SmartWall/SmartWall.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Objects/SmartWall/Tiles/SmartTile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Maps/Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png" type="Texture" id=3]
-[ext_resource path="res://Maps/Objects/SmartWall/Tiles/SmartTile.gd" type="Script" id=4]
 
 [node name="SmartWall" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 0 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 4 ),"intact_texture":ExtResource( 3 ))
- ]
+size_x = 0
+size_y = 0
 
 [node name="Spawn" type="Position2D" parent="."]
 
 [node name="i0y0" parent="." instance=ExtResource( 2 )]
 rotation = 3.14159
-intact_texture = ExtResource( 3 )
 
 [node name="i0y1" parent="." instance=ExtResource( 2 )]
-intact_texture = ExtResource( 3 )
 
-[node name="i0y2" type="StaticBody2D" parent="." instance=ExtResource( 2 )]
+[node name="i0y2" parent="." instance=ExtResource( 2 )]
 rotation = 1.5708
-input_pickable = true
-script = ExtResource( 4 )
-intact_texture = ExtResource( 3 )
