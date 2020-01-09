@@ -10,24 +10,12 @@ var player
 
 const TICK_RATE = 64
 
-var actions = {
-	"moves" : [],
-	"player_speed" : 0,
-	"shoots" : [],
-	"drops" : [],
-	"uses" : []
-}  # package for network
-
-puppet var puppet_actions = {}
+puppet var puppet_pos = Vector2()
+puppet var puppet_velocity = Vector2()
+puppet var puppet_rotation = 0
 
 func _ready():
-	puppet_actions = actions
-	if is_network_master():
-		__bg_sender()
-	else:
-		__bg_receiver()
-	#sender_thread.start(self, "__bg_sender")
-	#receiver_thread.start(self, "__bg_receiver")
+	print(global_rotation)
 	player = weakref(get_parent().get_parent())  # if it nullptr then you loh
 
 func _physics_process(delta):
@@ -47,104 +35,35 @@ func _physics_process(delta):
 			player_speed = run_speed
 		if Input.is_action_just_released("pl_run"):
 			player_speed = walk_speed
-		actions["player_speed"] = player_speed
 		
 		if Input.is_action_pressed("pl_shoot") and player.get_ref() and player.get_ref().cur_weapon:
-			actions["shoots"].append(OS.get_system_time_msecs())
 			player.get_ref().shoot()
 		
 		if Input.is_action_just_pressed("pl_drop") and player.get_ref() and player.get_ref().cur_weapon:
-			actions["drops"].append(OS.get_system_time_msecs())
 			player.get_ref().drop_weapon()
 	
 		if Input.is_action_just_pressed("pl_use") and player.get_ref():
-			actions["uses"].append(OS.get_system_time_msecs())
 			player.get_ref().use()
 		
-		# TODO
-		#actions["swaped_weapon"] = 
-		
-		move()
-		actions["moves"].append([global_position, get_global_mouse_position(), player_speed])
+		rset("puppet_velocity", velocity)
+		rset("puppet_rotation", global_rotation)
+		rset("puppet_pos", global_position)
 	else:
-		puppet_move()
+		player.get_ref().global_position = puppet_pos
+		player.get_ref().global_rotation = puppet_rotation
+		velocity = puppet_velocity
+		
+	move()
+	if is_network_master():
+		pass
 
 func move():
+	"""
 	if (velocity.x != 0 || velocity.y != 0) and player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
 		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
 	elif player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
 		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
-	
+	"""
 	velocity = velocity.normalized() * player_speed
 	velocity = player.get_ref().move_and_slide(velocity)
-
-var target = Vector2(0,0)
-var mouse = get_global_mouse_position()
-func puppet_move():
-	player.get_ref().look_at(mouse)
-	velocity =  (target - player.get_ref().global_position).normalized() * player_speed
-	if (target - player.get_ref().global_position).length() > 5:
-		player.get_ref().move_and_slide(velocity)
-
-var timer = Timer.new()
-func __bg_sender():
-	add_child(timer)
-	timer.one_shot = false
-	timer.connect("timeout", self, "__send")
-	timer.start(1000.0 / (TICK_RATE * 1000.0))
-
-
-func __send():
-	rset_unreliable("puppet_actions", actions)
-	#print("send = ", actions["uses"])
-	actions["moves"] = []
-	var uses_done = 0
-	for t in actions["uses"]:
-		if t + 1000 <= OS.get_system_time_msecs():
-			uses_done += 1
-	for i in range(uses_done):
-		actions["uses"].pop_front()
-	#if done_actions.has("uses"):
-		#for i in range(done_actions["uses"]):
-			#actions["uses"].pop_front()
-
-var moves_thread = Thread.new()
-var shoots_thread = Thread.new()
-var uses_thread = Thread.new()
-func __bg_receiver():
-	moves_thread.start(self, "__moves", "args")
-	uses_thread.start(self, "__uses", "args")
-	#shoots_thread.start(self, "__shoots")
-	
-
-func __moves(args):
-	while player != null and player.get_ref():
-		if not puppet_actions.has("moves"):
-			puppet_actions["moves"] = []
-		for move in puppet_actions["moves"]:
-			target = move[0]
-			mouse = move[1]
-			player_speed = move[2]
-
-		OS.delay_msec(10)
-		#move()
-
-var prev_use_time = 0
-func __uses(args):
-	while player != null and player.get_ref():
-		var passed = 0
-		for use in puppet_actions["uses"]:
-			if use > prev_use_time:
-				prev_use_time = use
-				player.get_ref().call_deferred("use")
-			else:
-				passed += 1
-		#done_actions["uses"] = passed
-		#rset_unreliable("done_actions", done_actions)
-		OS.delay_msec(10)
-
-func __shoots():
-	pass
-
-
 
