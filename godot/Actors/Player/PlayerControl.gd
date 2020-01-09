@@ -56,17 +56,13 @@ func _physics_process(delta):
 		player.get_ref().global_rotation = puppet_rotation
 		velocity = puppet_velocity
 		
-	move()
+	velocity = velocity.normalized() * player_speed
+	velocity = player.get_ref().move_and_slide(velocity)
+	
+	player.get_ref().start_animation(velocity)
+	
+	#  fix jitter! TODO
 	if is_network_master():
 		pass
 
-func move():
-	"""
-	if (velocity.x != 0 || velocity.y != 0) and player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
-		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
-	elif player.get_ref() and player.get_ref().has_node("AnimationPlayer"):
-		player.get_ref().get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
-	"""
-	velocity = velocity.normalized() * player_speed
-	velocity = player.get_ref().move_and_slide(velocity)
 
