@@ -367,13 +367,13 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 15/shapes = [  ]
 15/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 320.078, 161.659 )
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 311.845, 161.659 )
 
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 177.547, 149.116 )
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 183.644, 161.639 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=18]
 region = Rect2( 1.64347, 133.343, 65.0476, 55.5653 )
 
 [node name="Admin_building" type="Node2D"]
@@ -396,16 +396,19 @@ position = Vector2( 110.915, 84.7506 )
 
 [node name="Wall_map" type="TileMap" parent="."]
 tile_set = SubResource( 15 )
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -65540, 2, 0, -65539, 0, 0, -65538, 0, 0, -65537, 13, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 13, 0, -131068, 0, 0, -131067, 0, 0, -131066, 10, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 3, 0, -4, 6, 0, -65530, 6, 0, -65524, 6, 0, 65532, 6, 0, 6, 14, 0, 12, 6, 0, 131068, 6, 0, 65542, 6, 0, 65548, 6, 0, 196604, 6, 0, 131078, 6, 0, 131084, 6, 0, 262140, 4, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 11, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 5, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0 )
 script = ExtResource( 13 )
 
 [node name="Room_1" type="Area2D" parent="Wall_map"]
 position = Vector2( 94.6002, 67.4163 )
+input_pickable = false
+collision_mask = 2
 
 [node name="Room_zone" type="CollisionShape2D" parent="Wall_map/Room_1"]
-position = Vector2( 0.0788879, -3.05243 )
-shape = SubResource( 22 )
+position = Vector2( -2.08255, -4.13316 )
+shape = SubResource( 16 )
 
 [node name="Light2D" type="Light2D" parent="Wall_map/Room_1"]
 position = Vector2( 123.285, -25.8952 )
@@ -421,10 +424,11 @@ texture = ExtResource( 15 )
 
 [node name="Room_2" type="Area2D" parent="Wall_map"]
 position = Vector2( 601.27, 33.5202 )
+collision_mask = 2
 
 [node name="Room_zone" type="CollisionShape2D" parent="Wall_map/Room_2"]
-position = Vector2( 5.58673, 30.7269 )
-shape = SubResource( 23 )
+position = Vector2( 12.8843, 29.5231 )
+shape = SubResource( 17 )
 
 [node name="Cover_vis" type="Sprite" parent="Wall_map/Room_2"]
 visible = false
@@ -433,7 +437,6 @@ scale = Vector2( 5.55041, 4.57278 )
 texture = ExtResource( 15 )
 
 [node name="SpawnPositions" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
 position = Vector2( 31.8989, 35.5894 )
@@ -445,8 +448,10 @@ visible = false
 position = Vector2( 33.1295, -95.0001 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-texture = SubResource( 20 )
+texture = SubResource( 18 )
 [connection signal="room_changed" from="Wall_map" to="." method="_on_Wall_map_room_changed"]
-[connection signal="area_entered" from="Wall_map/Room_1" to="Wall_map" method="_on_Room_1_area_entered"]
+[connection signal="room_exited" from="Wall_map" to="." method="_on_Wall_map_room_exited"]
 [connection signal="body_entered" from="Wall_map/Room_1" to="Wall_map" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Wall_map/Room_1" to="Wall_map" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Wall_map/Room_2" to="Wall_map" method="_on_Room_2_body_entered"]
+[connection signal="body_exited" from="Wall_map/Room_2" to="Wall_map" method="_on_Room_2_body_exited"]
