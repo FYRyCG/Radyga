@@ -38,12 +38,15 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("pl_shoot") and player.get_ref() and player.get_ref().cur_weapon:
 			player.get_ref().shoot()
+			#player.get_ref().rpc("shoot")
 		
 		if Input.is_action_just_pressed("pl_drop") and player.get_ref() and player.get_ref().cur_weapon:
-			player.get_ref().drop_weapon()
+			#player.get_ref().drop_weapon()
+			player.get_ref().rpc("drop_weapon")
 	
 		if Input.is_action_just_pressed("pl_use") and player.get_ref():
-			player.get_ref().use()
+			#player.get_ref().use()
+			player.get_ref().rpc("use")
 		
 		rset("puppet_velocity", velocity)
 		rset("puppet_rotation", global_rotation)
