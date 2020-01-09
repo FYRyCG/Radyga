@@ -8,6 +8,8 @@ var players = {
 }
 
 func _ready():
+	pass
+	"""
 	for pl in players:
 		var p = player.instance()
 		var sp = $MapManager.get_next_spawn_position()
@@ -16,3 +18,4 @@ func _ready():
 		
 		if pl == 1:
 			$Camera.set_player(p)
+	"""
