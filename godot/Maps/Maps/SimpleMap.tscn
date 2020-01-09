@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/asphalt.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/corner_asphalt.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Maps/Objects/SmartWall/SmartWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/Objects/SmartWall/Tiles/SmartTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Maps/Objects/SmartWall/Tiles/TileSprites/wall_frame_brovn8.png" type="Texture" id=9]
+[ext_resource path="res://Actors/Operators/Recruit/Recruit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Actors/AI/AIBehaviour.gd" type="Script" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "asphalt.png 0"
@@ -862,3 +864,7 @@ rotation = 4.71239
 
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
 position = Vector2( -230.932, -95.5582 )
+
+[node name="Recruit" parent="." instance=ExtResource( 10 )]
+position = Vector2( -152.718, -13.1715 )
+control_script = ExtResource( 11 )
