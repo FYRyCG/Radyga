@@ -15,4 +15,4 @@ func _ready():
 		$Players.add_child(p)
 		
 		if pl == 1:
-			$Camera.set_player(p)
+			$MapManager/Camera.set_player(p)
