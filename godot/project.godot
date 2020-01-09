@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Radyga"
-run/main_scene="res://World/World.tscn"
+run/main_scene="res://World/Lobby.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+gamestate="*res://World/gamestate.gd"
 
 [input]
 
