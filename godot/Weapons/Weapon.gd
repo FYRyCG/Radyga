@@ -31,12 +31,13 @@ func shoot():
 	if can_shoot:
 		can_shoot = false
 		get_node("WeaponElements/ShootDelay").start()
-		$WeaponElements.shoot()
-		
-		# spawn on Map for remove rotation with player
-		var bullet = Bullet.instance()
-		bullet.start($WeaponElements/Muzzle.global_position, global_rotation)
-		get_parent().get_parent().get_parent().add_child(bullet)  
+		rpc("sync_shoot", $WeaponElements/Muzzle.global_position, global_rotation)
+
+remotesync func sync_shoot(shoot_position, shoot_rotation):
+	$WeaponElements.shoot()  # draw sprite
+	var bullet = Bullet.instance()
+	bullet.start(shoot_position, shoot_rotation)
+	get_parent().get_parent().get_parent().add_child(bullet)
 
 func _on_ShootDelay_timeout():
 	can_shoot = true
