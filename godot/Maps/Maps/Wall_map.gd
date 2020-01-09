@@ -33,11 +33,12 @@ func _process(delta):
 	#print("Cell_id ", cell)
 
 func _on_Area2D_body_entered(body):
-	print("Entered")
-	man = body
+	if(body.name == "Recruit"): # Временное решение
+		print("Entered")
+		man = body
 	
 func _on_Area2D_body_exited(body):
-	print("Exited")
+		print("Exited")
 	
 func _on_Room_1_area_entered(area):
 	print("Ent")

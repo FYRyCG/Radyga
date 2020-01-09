@@ -53,6 +53,7 @@ tile_data = PoolIntArray( -65540, -1073741822, 0, -65539, -1073741822, 0, -65538
 
 [node name="Сontainer" parent="Road" instance=ExtResource( 4 )]
 position = Vector2( -140.874, 32.2331 )
+collision_mask = 1
 
 [node name="Сontainer2" parent="Road" instance=ExtResource( 4 )]
 position = Vector2( -140.841, 86.4591 )
@@ -75,8 +76,6 @@ position = Vector2( -57.7176, 111.455 )
 [node name="SmartWall" parent="Road" instance=ExtResource( 7 )]
 editor/display_folded = true
 position = Vector2( 238.595, -25.0177 )
-size_x = 0
-size_y = 0
 random_rotate = true
 tiles = [  ]
 
@@ -465,8 +464,6 @@ rotation = 4.71239
 [node name="SmartWall2" parent="Road" instance=ExtResource( 7 )]
 editor/display_folded = true
 position = Vector2( 95.7334, 142.58 )
-size_x = 0
-size_y = 0
 random_rotate = true
 tiles = [  ]
 
