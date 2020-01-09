@@ -56,3 +56,8 @@ func set_control_script(script : GDScript):
 	control_script = script
 	$PlayerElements/ControleNode.set_script(control_script)
 
+func start_animation(velocity):
+	if (velocity.x != 0 || velocity.y != 0) and has_node("AnimationPlayer"):
+		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
+	elif has_node("AnimationPlayer"):
+		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
