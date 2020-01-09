@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+class_name Player
+func get_class(): return "Player"
+
 export (GDScript) var control_script = preload("res://Actors/Player/PlayerControl.gd") setget set_control_script
 
 var cur_weapon = null
@@ -34,7 +37,8 @@ func shoot():
 		cur_weapon.get_ref().shoot()
 
 func use():
-	if current_interactive_body and current_interactive_body.get_ref() and current_interactive_body.get_ref() != self:
+	if current_interactive_body and current_interactive_body.get_ref() \
+       and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
 			current_interactive_body.get_ref().use(self)
 
