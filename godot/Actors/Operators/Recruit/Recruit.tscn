@@ -6,6 +6,7 @@
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=5]
 
+
 [sub_resource type="CapsuleShape2D" id=15]
 height = 11.2453
 
@@ -231,7 +232,11 @@ collision_mask = 8
 
 [node name="BodyCollision" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( -5.73287, -0.502436 )
+<<<<<<< HEAD
 shape = SubResource( 15 )
+=======
+shape = SubResource( 1 )
+>>>>>>> feature/network2
 
 [node name="BackpackCollision" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( -9.24259, -17.0619 )
