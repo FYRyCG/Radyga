@@ -15,8 +15,8 @@ puppet var puppet_velocity = Vector2()
 puppet var puppet_rotation = 0
 
 func _ready():
-	print(global_rotation)
 	player = weakref(get_parent().get_parent())  # if it nullptr then you loh
+	player.get_ref().get_node("PlayerElements/Light2D").enabled = true
 
 func _physics_process(delta):
 	if is_network_master():
