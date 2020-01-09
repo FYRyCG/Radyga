@@ -33,6 +33,7 @@ func _process(delta):
 	print("Cell_id ", cell)
 
 func _on_Area2D_body_entered(body):
+
 	man = body
 	current_room = $Room_1
 	print(man.name, "Entered ", current_room.name)
@@ -53,3 +54,4 @@ func _on_Room_2_body_entered(body):
 func _on_Room_2_body_exited(body):
 	print(man.name, "Exited ", $Room_2.name)
 	emit_signal("room_exited", $Room_2)
+
