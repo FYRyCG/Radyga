@@ -95,20 +95,32 @@ func __bg_sender():
 
 
 func __send():
-	#print("send = ", actions)
 	rset_unreliable("puppet_actions", actions)
+	#print("send = ", actions["uses"])
 	actions["moves"] = []
+	var uses_done = 0
+	for t in actions["uses"]:
+		if t + 1000 <= OS.get_system_time_msecs():
+			uses_done += 1
+	for i in range(uses_done):
+		actions["uses"].pop_front()
+	#if done_actions.has("uses"):
+		#for i in range(done_actions["uses"]):
+			#actions["uses"].pop_front()
 
 var moves_thread = Thread.new()
 var shoots_thread = Thread.new()
 var uses_thread = Thread.new()
 func __bg_receiver():
 	moves_thread.start(self, "__moves", "args")
+	uses_thread.start(self, "__uses", "args")
 	#shoots_thread.start(self, "__shoots")
-	#uses_thread.start(self, "__uses")
+	
 
-func __moves(kek):
+func __moves(args):
 	while player != null and player.get_ref():
+		if not puppet_actions.has("moves"):
+			puppet_actions["moves"] = []
 		for move in puppet_actions["moves"]:
 			target = move[0]
 			mouse = move[1]
@@ -117,9 +129,22 @@ func __moves(kek):
 		OS.delay_msec(10)
 		#move()
 
+var prev_use_time = 0
+func __uses(args):
+	while player != null and player.get_ref():
+		var passed = 0
+		for use in puppet_actions["uses"]:
+			if use > prev_use_time:
+				prev_use_time = use
+				player.get_ref().call_deferred("use")
+			else:
+				passed += 1
+		#done_actions["uses"] = passed
+		#rset_unreliable("done_actions", done_actions)
+		OS.delay_msec(10)
+
 func __shoots():
 	pass
 
-func __uses():
-	pass
+
 
