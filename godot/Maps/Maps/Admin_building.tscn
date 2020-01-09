@@ -97,7 +97,6 @@
 7/z_index = 0
 
 [sub_resource type="OccluderPolygon2D" id=2]
-closed = false
 polygon = PoolVector2Array( 0, 16.3598, 64, 16.1273, 64, 48.2216, 0, 47.9891 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
@@ -143,7 +142,6 @@ polygon = PoolVector2Array( 0, 16.0544, 16.3375, 15.8218, 16.3375, 0, 47.9668, 0
 points = PoolVector2Array( 16.5701, 0, 47.9668, 0, 48.1993, 47.9162, 0, 47.451, 0, 16.2869, 16.8026, 16.2869 )
 
 [sub_resource type="OccluderPolygon2D" id=17]
-closed = false
 cull_mode = 2
 polygon = PoolVector2Array( 15.7763, 63.8403, 47.9482, 63.6465, 47.7544, 0, 16.1639, 0.271751 )
 
