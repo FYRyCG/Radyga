@@ -82,7 +82,7 @@ remote func pre_start_game(spawn_points):
 			pass
 			# If node for this peer id, set name
 			#player.set_player_name(player_name)
-			world.get_node("Camera").set_player(player)
+			world.get_node("MapManager/Camera").set_player(player)
 		else:
 			pass
 			# Otherwise set name from peer
