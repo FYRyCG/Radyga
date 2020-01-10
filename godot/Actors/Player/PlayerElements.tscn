@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Maps/Objects/Sprites/Lights/Light_test.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.6252, 11.0876 )
+
+[node name="PlayerElements" type="Node2D"]
+
+[node name="WeaponPosition" type="Node2D" parent="."]
+
+[node name="InteractiveZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveZone"]
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -0.162811, -3.23088 )
+rotation = 4.71238
+scale = Vector2( 0.57847, 0.57847 )
+z_as_relative = false
+enabled = false
+texture = ExtResource( 1 )
+mode = 2
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.745098 )
+shadow_filter = 5

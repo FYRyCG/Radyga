@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Weapons/Rifles/AutomaticRifles/Types/M4.gd" type="Script" id=1]
+[ext_resource path="res://Weapons/Rifles/Sprites/M4.png" type="Texture" id=2]
+[ext_resource path="res://Weapons/WeaponElements.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.8475, 2.15875 )
+
+[node name="M4" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="WeaponElements" parent="." instance=ExtResource( 3 )]
+
+[node name="Muzzle" parent="WeaponElements" index="0"]
+position = Vector2( 21.4339, 0.00293894 )
+
+[editable path="WeaponElements"]
