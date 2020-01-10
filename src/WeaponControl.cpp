@@ -70,13 +70,13 @@ namespace godot {
 
 	void godot::WeaponControl::_process(float delta)
 	{
-		Variant weapon_position = player->call("get_weapon_position");
-		if (player.get() != nullptr &&
-			weapon_position.has_method("get_global_position")) {
-			auto pos = (Vector2)weapon_position.call("get_global_position", NULL, 0);
-			auto dir = (float)weapon_position.call("get_global_rotation", NULL, 0);
-			weapon->set_position(pos);
-			weapon->set_rotation(dir);
+		auto weapon_position = player->call("get_weapon_position");
+		if (player.get() != nullptr //&&
+			/*weapon_position.has_method("get_global_position")*/) {  // don't work in debug mode
+			auto pos = (Vector2)weapon_position.call("get_global_position", nullptr, 0);
+			auto dir = (float)weapon_position.call("get_global_rotation", nullptr, 0);
+			weapon->set_global_position(pos);
+			weapon->set_global_rotation(dir);
 		}
 	}
 
