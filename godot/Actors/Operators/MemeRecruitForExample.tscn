@@ -10,6 +10,7 @@ extents = Vector2( 31.0569, 30.5193 )
 [node name="MemeRecruitForExample" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+playable = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

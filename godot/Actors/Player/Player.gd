@@ -4,6 +4,7 @@ class_name Player
 func get_class(): return "Player"
 
 export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
+export (bool) var playable = false
 
 var cur_weapon = null
 
@@ -13,6 +14,9 @@ func _ready():
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
+	
+	if playable and is_network_master():
+		$PlayerElements/Light2D.enabled = true
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
