@@ -545,9 +545,3 @@ position = Vector2( 33.1295, -95.0001 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 texture = SubResource( 31 )
-[connection signal="room_changed" from="Wall_map" to="." method="_on_Wall_map_room_changed"]
-[connection signal="room_exited" from="Wall_map" to="." method="_on_Wall_map_room_exited"]
-[connection signal="body_entered" from="Wall_map/Room_1" to="Wall_map" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Wall_map/Room_1" to="Wall_map" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="Wall_map/Room_2" to="Wall_map" method="_on_Room_2_body_entered"]
-[connection signal="body_exited" from="Wall_map/Room_2" to="Wall_map" method="_on_Room_2_body_exited"]

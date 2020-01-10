@@ -44,9 +44,9 @@ if platform == "linux":
 if platform == "windows":
     env.Append(CCFLAGS = ['-DWIN32', '-D_WIN32', '-D_WINDOWS', '-W3', '-GR', '-D_CRT_SECURE_NO_WARNINGS'])
     if target == "debug":
-        env.Append(CCFLAGS = ['-EHsc', '-D_DEBUG', '-MDd'])
+        env.Append(CCFLAGS = ['-EHsc', '-D_DEBUG', '-MTd'])
     else:
-        env.Append(CCFLAGS = ['-O2', '-EHsc', '-DNDEBUG', '-MD'])
+        env.Append(CCFLAGS = ['-O2', '-EHsc', '-DNDEBUG', '-MT'])
     target_path += 'win64/'
     cpp_library += '.windows.64'
 

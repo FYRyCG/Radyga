@@ -1,5 +1,5 @@
 extends Node2D
-
+"""
 var current_map = false
 onready var room = $Wall_map/Room_2
 var Room_list = ["Room_1", "Room_2"]
@@ -20,3 +20,4 @@ func _on_Wall_map_room_changed(current_room):
 func _on_Wall_map_room_exited(current_room):
 	var node = current_room.find_node("Cover_vis")
 	node.visible = true
+"""
