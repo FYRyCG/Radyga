@@ -3,17 +3,19 @@ extends KinematicBody2D
 class_name Player
 func get_class(): return "Player"
 
-export (GDScript) var control_script = preload("res://Actors/Player/PlayerControl.gd") setget set_control_script
+export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
 
 var cur_weapon = null
 
 var current_interactive_body = null
 
 func _ready():
-	$PlayerElements/ControleNode.set_script(control_script)
+	add_child(control_script.instance())
+	$PlayerControl.set_process(false)
+	$PlayerControl.start()
+	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
-
 
 func take_weapon(weapon_):
 	if cur_weapon and cur_weapon.get_ref():
@@ -33,7 +35,7 @@ func drop_weapon():
 		cur_weapon = null
 
 func shoot():
-	if cur_weapon.get_ref():
+	if cur_weapon and cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
 
 func use():
