@@ -10,17 +10,12 @@ var cur_weapon = null
 var current_interactive_body = null
 
 func _ready():
-	print("ID = ", get_tree().get_network_unique_id())
-	print("master is ", get_network_master())
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
-
-	print("master i5 ", get_network_master())
-	print("ID = ", get_tree().get_network_unique_id())
 
 func take_weapon(weapon_):
 	if cur_weapon and cur_weapon.get_ref():
@@ -40,7 +35,7 @@ func drop_weapon():
 		cur_weapon = null
 
 func shoot():
-	if cur_weapon.get_ref():
+	if cur_weapon and cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
 
 func use():

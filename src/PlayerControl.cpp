@@ -60,6 +60,18 @@ namespace godot {
 				player_speed = walk_speed;
 			}
 
+			if (input->is_action_pressed("pl_shoot")) {
+				player->call("shoot");
+			}
+
+			if (input->is_action_pressed("pl_drop")) {
+				player->call("drop_weapon");
+			}
+
+			if (input->is_action_pressed("pl_use")) {
+				player->call("use");
+			}
+
 			rset("puppet_motion", motion);
 			rset("puppet_rotation", player->get_global_rotation());
 			rset("puppet_position", player->get_global_position());
