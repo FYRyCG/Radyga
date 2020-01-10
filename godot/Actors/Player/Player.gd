@@ -51,7 +51,7 @@ func _on_Interactive_body_exited(body):
 	if current_interactive_body and body == current_interactive_body.get_ref():
 		current_interactive_body = null
 
-func get_weapon_position():
+func get_weapon_position() -> Node:
 	return $PlayerElements/WeaponPosition
 	
 func set_control_script(script : GDScript):
