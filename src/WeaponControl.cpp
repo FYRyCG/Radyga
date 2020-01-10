@@ -27,8 +27,8 @@ namespace godot {
 
 		register_method("get_collision", &WeaponControl::get_collision, GODOT_METHOD_RPC_MODE_DISABLED);
 
-		register_method("_sync_shoot", &WeaponControl::_sync_shoot, GODOT_METHOD_RPC_MODE_REMOTESYNC);
-		register_method("_sync_use", &WeaponControl::_sync_use, GODOT_METHOD_RPC_MODE_REMOTESYNC);
+		register_method("_sync_shoot", &WeaponControl::_sync_shoot, GODOT_METHOD_RPC_MODE_REMOTE);
+		register_method("_sync_use", &WeaponControl::_sync_use, GODOT_METHOD_RPC_MODE_REMOTE);
 	}
 
 	void godot::WeaponControl::_init()
@@ -59,13 +59,16 @@ namespace godot {
 		if (static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->is_stopped()) {
 			auto muzzle = weapon->get_node("WeaponElements/Muzzle");
 			rpc("_sync_shoot", muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
+			_sync_shoot(muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
 			static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->start();
 		}
 	}
 
 	void godot::WeaponControl::use(KinematicBody2D* player_)
 	{
+		std::cout << "take c++ " << std::endl;
 		rpc("_sync_use", player_->get_path());
+		_sync_use(player_->get_path());
 	}
 
 	void godot::WeaponControl::_process(float delta)
