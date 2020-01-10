@@ -66,7 +66,6 @@ namespace godot {
 
 	void godot::WeaponControl::use(KinematicBody2D* player_)
 	{
-		std::cout << "take c++ " << std::endl;
 		rpc("_sync_use", player_->get_path());
 		_sync_use(player_->get_path());
 	}

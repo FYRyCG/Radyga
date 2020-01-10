@@ -81,9 +81,13 @@ namespace godot {
 			motion = puppet_motion;
 		}
 
-		motion = motion.normalized() * player_speed;
-		player->call("move_and_slide", motion);
-		player->call("start_animation", motion);
+		Vector2 normal_motion = motion.normalized();
+		if (normal_motion != motion) {
+			normal_motion *= 1.2;
+		}
+
+		player->call("move_and_slide", normal_motion * player_speed);
+		player->call("start_animation", normal_motion);
 
 		if (!is_network_master()) {
 			puppet_position = player->get_global_position();

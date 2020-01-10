@@ -22,7 +22,6 @@ func _ready():
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
 
 func take_weapon(weapon_):
-	print("take weap ", weapon_.get_path())
 	if cur_weapon and cur_weapon.get_ref():
 		drop_weapon()
 	cur_weapon = weakref(weapon_)
