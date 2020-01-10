@@ -64,11 +64,11 @@ namespace godot {
 				player->call("shoot");
 			}
 
-			if (input->is_action_pressed("pl_drop")) {
+			if (input->is_action_just_pressed("pl_drop")) {
 				player->call("drop_weapon");
 			}
 
-			if (input->is_action_pressed("pl_use")) {
+			if (input->is_action_just_pressed("pl_use")) {
 				player->call("use");
 			}
 
