@@ -1,6 +1,6 @@
 extends Node2D
 
-var player = preload("res://Actors/Operators/Recruit/Recruit.tscn")
+var player = load("res://Actors/Operators/Recruit/Recruit.tscn")
 #var player = preload("res://Actors/Operators/MemeRecruitForExample.tscn")
 
 var players = {
