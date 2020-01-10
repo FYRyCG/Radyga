@@ -3,11 +3,13 @@
 
 #include <Godot.hpp>
 #include <Node2D.hpp>
+#include <Object.hpp>
 #include <Input.hpp>
 #include <Timer.hpp>
 #include <KinematicBody2D.hpp>
 #include <CollisionShape2D.hpp>
 #include <ResourceLoader.hpp>
+#include <StaticBody2D.hpp>
 #include <PackedScene.hpp>
 #include <Position2D.hpp>
 #include <SceneTree.hpp>
@@ -26,11 +28,14 @@ namespace godot {
 	private:
 		Ref<PackedScene> RifleBullet = ResourceLoader::get_singleton()->load("res://Weapons/Rifles/RifleBullet.tscn");
 		std::shared_ptr<KinematicBody2D> player;
+		std::shared_ptr<StaticBody2D> weapon;
 
 	public:
 		static void _register_methods();
 
 		void _init();
+
+		void start();
 
 		void take(KinematicBody2D* player_);
 
@@ -38,7 +43,7 @@ namespace godot {
 
 		void shoot();
 
-		void use();
+		void use(KinematicBody2D* player_);
 
 		void _process(float delta);
 

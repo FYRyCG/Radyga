@@ -7,7 +7,7 @@ extents = Vector2( 11.6252, 11.0876 )
 
 [node name="PlayerElements" type="Node2D"]
 
-[node name="WeaponPosition" type="Position2D" parent="."]
+[node name="WeaponPosition" type="Node2D" parent="."]
 
 [node name="InteractiveZone" type="Area2D" parent="."]
 
