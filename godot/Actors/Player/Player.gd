@@ -41,8 +41,8 @@ func shoot():
 func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
        and current_interactive_body.get_ref().get_class() != "Player":
-		if current_interactive_body.get_ref().has_method("use"):
-			current_interactive_body.get_ref().use(self)
+		if current_interactive_body.get_ref().has_node("WeaponControl"):
+			current_interactive_body.get_ref().get_node("WeaponControl").use(self)
 
 func _on_Interactive_body_entered(body):
 	current_interactive_body = weakref(body)
@@ -52,6 +52,7 @@ func _on_Interactive_body_exited(body):
 		current_interactive_body = null
 
 func get_weapon_position():
+	#print("get weapon pos ", $PlayerElements/WeaponPosition.get_path())
 	return $PlayerElements/WeaponPosition
 	
 func set_control_script(script : GDScript):
