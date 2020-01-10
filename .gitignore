@@ -8,4 +8,9 @@ export_presets.cfg
 .mono/
 data_*/
 
+# VisualStudio
+.vs/
+
+# Export
 export/
+
