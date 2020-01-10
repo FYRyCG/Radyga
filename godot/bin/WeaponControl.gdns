@@ -3,6 +3,5 @@
 [ext_resource path="res://bin/WeaponControl.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-
-class_name = "PlayerControl"
+class_name = "WeaponControl"
 library = ExtResource( 1 )
