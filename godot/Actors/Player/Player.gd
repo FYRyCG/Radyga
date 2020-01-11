@@ -31,7 +31,17 @@ func take_weapon(weapon_):
 	#$WeaponCollision.shape = weapon_.get_collision().shape
 	#$WeaponCollision.global_position = $PlayerElements/WeaponPosition.global_position
 	#$WeaponCollision.rotation = weapon_.get_collision().rotation
-	
+
+var grenade
+func _physics_process(delta):
+	if is_network_master():
+		if Input.is_action_just_pressed("pl_grenade"):
+			grenade = weakref(preload("res://Equipments/FragGrenade/FragGrenade.tscn").instance())
+			grenade.get_ref().start()
+			add_child(grenade.get_ref())
+		if Input.is_action_just_released("pl_grenade"):
+			if grenade and grenade.get_ref():
+				grenade.get_ref().throw()
 
 func drop_weapon():
 	if cur_weapon and cur_weapon.get_ref():
