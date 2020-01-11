@@ -48,6 +48,5 @@ scale = Vector2( 0.1, 0.1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
 shape = SubResource( 3 )
-[connection signal="animation_finished" from="ExplosionSprites" to="." method="_on_ExplosionSprites_animation_finished"]
 [connection signal="timeout" from="ExplosionTimer" to="." method="_on_ExplosionTimer_timeout"]
 [connection signal="body_entered" from="ExplosionArea" to="." method="_on_ExplosionArea_body_entered"]

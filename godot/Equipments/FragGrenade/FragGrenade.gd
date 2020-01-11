@@ -34,12 +34,6 @@ func throw():
 func cancel():
 	queue_free()
 
-func explosion():
-	for inc in range(11):
-		call_deferred("set_damage", damage / 10.0 * inc)
-		$ExplosionArea.set_deferred("scale", Vector2(0.1, 0.1) * inc)
-		OS.delay_msec(10)
-
 func _physics_process(delta):
 	#print("process ")
 	var collision = move_and_collide(velocity * delta * remain_speed_factor)
@@ -62,9 +56,17 @@ func _on_ExplosionTimer_timeout():
 	$ExplosionSprites.show()
 	$ExplosionSprites.play("explosion")
 	
-	explosion_thread.start(self, "explosion")
+	explosion_thread.start(self, "explosion", null)
 
-func _on_ExplosionSprites_animation_finished():
+func explosion(args):
+	for inc in range(11):
+		call_deferred("set_damage", damage / 10.0 * inc)
+		$ExplosionArea.set_deferred("scale", Vector2(0.1, 0.1) * inc)
+		OS.delay_msec(15)
+	call_deferred("exploded")
+
+func exploded():
+	explosion_thread.wait_to_finish()
 	queue_free()
 
 func _on_ExplosionArea_body_entered(body):
