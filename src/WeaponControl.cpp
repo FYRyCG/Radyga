@@ -84,7 +84,7 @@ namespace godot {
 
 	CollisionShape2D* godot::WeaponControl::get_collision()
 	{
-		return static_cast<CollisionShape2D*>(get_node("CollisionShape2D"));
+		return static_cast<CollisionShape2D*>(get_parent()->get_node("CollisionShape2D"));
 	}
 
 	void godot::WeaponControl::_sync_shoot(Vector2 shoot_position, float shoot_rotation)

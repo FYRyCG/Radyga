@@ -7,6 +7,7 @@ export (PackedScene) var control_script = preload("res://Actors/Player/PlayerCon
 export (bool) var playable = false
 
 var cur_weapon = null
+var can_shoot = true
 
 var current_interactive_body = null
 
@@ -28,10 +29,23 @@ func take_weapon(weapon_):
 	weapon_.take(self)
 	
 	# set weapon collision
+	$PlayerElements/WeaponArea/CollisionShape2D.shape = weapon_.get_collision().shape
+	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
+	$PlayerElements/WeaponArea/CollisionShape2D.rotation = weapon_.get_collision().rotation
 	#$WeaponCollision.shape = weapon_.get_collision().shape
 	#$WeaponCollision.global_position = $PlayerElements/WeaponPosition.global_position
 	#$WeaponCollision.rotation = weapon_.get_collision().rotation
-	
+
+var grenade
+func _physics_process(delta):
+	if is_network_master():
+		if Input.is_action_just_pressed("pl_grenade"):
+			grenade = weakref(preload("res://Equipments/FragGrenade/FragGrenade.tscn").instance())
+			grenade.get_ref().start()
+			add_child(grenade.get_ref())
+		if Input.is_action_just_released("pl_grenade"):
+			if grenade and grenade.get_ref():
+				grenade.get_ref().throw()
 
 func drop_weapon():
 	if cur_weapon and cur_weapon.get_ref():
@@ -39,7 +53,7 @@ func drop_weapon():
 		cur_weapon = null
 
 func shoot():
-	if cur_weapon and cur_weapon.get_ref():
+	if can_shoot and cur_weapon and cur_weapon.get_ref():
 		cur_weapon.get_ref().shoot()
 
 func use():
@@ -56,7 +70,6 @@ func _on_Interactive_body_exited(body):
 		current_interactive_body = null
 
 func get_weapon_position():
-	#print("get weapon pos ", $PlayerElements/WeaponPosition.get_path())
 	return $PlayerElements/WeaponPosition
 	
 func set_control_script(script : GDScript):
@@ -68,3 +81,13 @@ func start_animation(velocity):
 		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
 	elif has_node("AnimationPlayer"):
 		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
+
+var count_entered_body = 0
+func _on_WeaponArea_body_entered(body):
+	count_entered_body += 1
+	can_shoot = false
+
+func _on_WeaponArea_body_exited(body):
+	count_entered_body -= 1
+	if count_entered_body == 0:
+		can_shoot = true
