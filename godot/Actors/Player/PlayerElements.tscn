@@ -25,3 +25,8 @@ mode = 2
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 0.745098 )
 shadow_filter = 5
+
+[node name="WeaponArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]

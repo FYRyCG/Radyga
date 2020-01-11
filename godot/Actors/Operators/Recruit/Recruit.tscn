@@ -288,6 +288,9 @@ collision_mask = 0
 [node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
 position = Vector2( 11.6258, -0.498249 )
 
+[node name="CollisionShape2D" parent="PlayerElements/WeaponArea" index="0"]
+position = Vector2( 23.5838, 11.1276 )
+
 [node name="WeaponCollision" type="CollisionShape2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -299,5 +302,7 @@ tree_root = SubResource( 13 )
 anim_player = NodePath("..")
 active = true
 parameters/playback = SubResource( 14 )
+[connection signal="body_entered" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_entered"]
+[connection signal="body_exited" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_exited"]
 
 [editable path="PlayerElements"]
