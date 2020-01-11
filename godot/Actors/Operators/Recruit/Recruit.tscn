@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi1.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/accessory.png" type="Texture" id=3]
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi1.png" type="Texture" id=5]
+[ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 11.2453
@@ -59,7 +59,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Hitboxes/ArmCollision1:disabled")
@@ -147,7 +147,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Hitboxes/ArmCollision0:disabled")
@@ -237,19 +237,23 @@ shape = SubResource( 1 )
 [node name="BackpackCollision" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( -9.24259, -17.0619 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="ArmCollision0" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 6.56319, -10.7814 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="ArmCollision1" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 16.7165, -6.07109 )
 rotation = -0.676429
 shape = SubResource( 4 )
+disabled = true
 
 [node name="ArmCollision2" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 20.2755, 3.45424 )
 shape = SubResource( 5 )
+disabled = true
 
 [node name="CircleCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.52588e-005 )
@@ -261,14 +265,14 @@ texture = ExtResource( 2 )
 
 [node name="Leg1" type="Sprite" parent="Texture"]
 show_behind_parent = true
-position = Vector2( 0.704059, -3.08993 )
+position = Vector2( -3.88214, -5.5759 )
 texture = ExtResource( 3 )
 vframes = 5
 hframes = 4
 
 [node name="Leg2" type="Sprite" parent="Texture"]
 show_behind_parent = true
-position = Vector2( -4.16365, 7.21785 )
+position = Vector2( -4.20441, 5.76326 )
 texture = ExtResource( 3 )
 vframes = 5
 hframes = 4
