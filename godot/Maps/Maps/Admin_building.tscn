@@ -573,11 +573,10 @@ shape = SubResource( 32 )
 [node name="SpawnPositions" type="Node" parent="."]
 
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
-position = Vector2( 31.8989, 35.5894 )
+position = Vector2( 26.5915, 130.459 )
 scale = Vector2( 11643, 713.391 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 33.1295, -95.0001 )
 

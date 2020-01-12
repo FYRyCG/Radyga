@@ -22,6 +22,7 @@ func _ready():
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
 
+
 func take_weapon(weapon_):
 	if cur_weapon and cur_weapon.get_ref():
 		drop_weapon()
@@ -32,15 +33,13 @@ func take_weapon(weapon_):
 	$PlayerElements/WeaponArea/CollisionShape2D.shape = weapon_.get_collision().shape
 	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
 	$PlayerElements/WeaponArea/CollisionShape2D.rotation = weapon_.get_collision().rotation
-	#$WeaponCollision.shape = weapon_.get_collision().shape
-	#$WeaponCollision.global_position = $PlayerElements/WeaponPosition.global_position
-	#$WeaponCollision.rotation = weapon_.get_collision().rotation
 
 var grenade
 func _physics_process(delta):
 	if is_network_master():
 		if Input.is_action_just_pressed("pl_grenade"):
-			grenade = weakref(preload("res://Equipments/FragGrenade/FragGrenade.tscn").instance())
+			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
+			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
 			grenade.get_ref().start()
 			add_child(grenade.get_ref())
 		if Input.is_action_just_released("pl_grenade"):
