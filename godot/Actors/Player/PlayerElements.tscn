@@ -25,9 +25,7 @@ mode = 2
 range_height = 2048.0
 range_item_cull_mask = 3
 shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 0.392157 )
 shadow_buffer_size = 4096
-shadow_item_cull_mask = 3
 
 [node name="WeaponArea" type="Area2D" parent="."]
 collision_layer = 0
