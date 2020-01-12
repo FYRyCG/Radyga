@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Equipments/FragGrenade/FragGrenade.gd" type="Script" id=1]
-[ext_resource path="res://Equipments/FragGrenade/Sprites/frag_grenade.png" type="Texture" id=2]
-[ext_resource path="res://Equipments/FragGrenade/Sprites/explosion_1.png" type="Texture" id=3]
-[ext_resource path="res://Equipments/FragGrenade/Sprites/explosion_2.png" type="Texture" id=4]
+[ext_resource path="res://Equipments/Grenades/FragGrenade/FragGrenade.gd" type="Script" id=1]
+[ext_resource path="res://Equipments/Grenades/FragGrenade/Sprites/frag_grenade.png" type="Texture" id=2]
+[ext_resource path="res://Equipments/Grenades/FragGrenade/Sprites/explosion_1.png" type="Texture" id=3]
+[ext_resource path="res://Equipments/Grenades/FragGrenade/Sprites/explosion_2.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.80473, 2.58368 )
