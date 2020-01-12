@@ -4,9 +4,9 @@ class_name Player
 func get_class(): return "Player"
 
 export var equipments = {
-	"primary_weapon" : PackedScene,
-	"secondary_weapon" : PackedScene,
-	"melee_weapon" : PackedScene,
+	"primary_weapon" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
+	"secondary_weapon" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
+	"melee_weapon" : null,
 	"grenades" : {
 		"frag" : 1,
 		"smoke" : 1
@@ -18,11 +18,11 @@ export var ammunitions = {
 	"5,56" : 30
 }
 
-
 export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
 export (bool) var playable = false
 
-var cur_weapon = null
+# Текущий предмет в руках
+var hands = null
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
 
@@ -31,10 +31,15 @@ var can_shoot = true
 var current_interactive_body = null
 
 func _ready():
+	if equipments.primary_weapon == null:
+		print("null")
 	# Устанавливает скрипт - правило управление player'ом
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
+
+	# Создает экземпляры всего снаряжения
+	_init_equipment()
 	
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
@@ -43,17 +48,41 @@ func _ready():
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
 
-# Callback от оружия, говорит, что его надо поднять
-func take_weapon(weapon_):
-	if cur_weapon and cur_weapon.get_ref():
-		drop_weapon()
-	cur_weapon = weakref(weapon_)
-	weapon_.take(self)
-	
-	# set weapon collision
-	$PlayerElements/WeaponArea/CollisionShape2D.shape = weapon_.get_collision().shape
-	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
-	$PlayerElements/WeaponArea/CollisionShape2D.rotation = weapon_.get_collision().rotation
+# Создает экземпляры всего снаряжения
+func _init_equipment():
+	_instance_equipment("primary_weapon")
+	_instance_equipment("secondary_weapon")
+	_instance_equipment("melee_weapon")
+	set_to_hand(equipments.primary_weapon)
+
+func _instance_equipment(type):
+	# parent == "map/Player"
+	if equipments[type]:
+		var instance = equipments[type].instance()
+		get_parent().add_child(instance)
+		equipments[type] = weakref(instance)
+
+# Кладет obj в руки
+func set_to_hand(obj):
+	hands = weakref(equipments.primary_weapon)
+
+func take_object(obj):
+	if obj and obj.get_object_type() == "weapon":
+		var weapon = obj.get_parent()
+		var weapon_type = obj.get_weapon_type()
+		equipments[weapon_type] = weakref(weapon)
+		obj.take(self)
+		
+		# set weapon collision
+		$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
+		$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
+		$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
+
+# Вызывается, когда игрок нажимает "pl_drop"
+func drop_object(obj):
+	if obj and obj.has_method("drop"):
+		obj.call("drop")
+		obj = null
 
 var grenade
 func _physics_process(delta):
@@ -67,16 +96,11 @@ func _physics_process(delta):
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
 
-# Вызывается, когда игрок нажимает "pl_drop"
-func drop_weapon():
-	if cur_weapon and cur_weapon.get_ref():
-		cur_weapon.get_ref().drop()
-		cur_weapon = null
-
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot():
-	if can_shoot and cur_weapon and cur_weapon.get_ref():
-		cur_weapon.get_ref().shoot()
+	if can_shoot and hands.get_ref():
+		if hands.get_ref().has_method("shoot"):
+			hands.get_ref().shoot()
 
 # Вызывается, когда игрок нажимает "pl_use"
 func use():
