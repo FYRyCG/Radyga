@@ -6,4 +6,5 @@
 script = ExtResource( 1 )
 
 [node name="ExplosionTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="timeout" from="ExplosionTimer" to="." method="_on_ExplosionTimer_timeout"]

@@ -14,10 +14,11 @@ func _ready():
 
 func start(explosion_time : int):
 	$ExplosionTimer.wait_time = explosion_time
+	$ExplosionTimer.start()
 	
 	get_parent().set_physics_process(false)
 	get_parent().set_process(false)
-	$ExplosionTimer.start()
+
 
 func throw(speed):
 	var pl = get_parent().get_parent()

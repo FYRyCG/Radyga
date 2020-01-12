@@ -38,7 +38,8 @@ var grenade
 func _physics_process(delta):
 	if is_network_master():
 		if Input.is_action_just_pressed("pl_grenade"):
-			grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
+			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
+			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
 			grenade.get_ref().start()
 			add_child(grenade.get_ref())
 		if Input.is_action_just_released("pl_grenade"):
