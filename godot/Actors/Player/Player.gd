@@ -37,6 +37,7 @@ func _ready():
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
+	add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
 
 	# Создает экземпляры всего снаряжения
 	_init_equipment()
