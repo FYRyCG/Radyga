@@ -47,7 +47,7 @@ namespace godot {
 
 		void shoot();
 
-		void reload();
+		void reload(int add_ammo);
 
 		void use(KinematicBody2D* player_);
 
@@ -57,6 +57,8 @@ namespace godot {
 
 		String get_object_type();
 
+		int get_ammo();
+
 	private:
 		void _sync_shoot(Vector2 shoot_position, float shoot_rotation);
 
@@ -64,7 +66,7 @@ namespace godot {
 
 		void _sync_drop();
 
-		void _sync_reload();
+		void _sync_reload(int add_ammo);
 	};
 
 }

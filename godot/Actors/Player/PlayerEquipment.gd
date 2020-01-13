@@ -86,3 +86,15 @@ func switch_weapon(type):
 func _get_next_grenade(cur):
 	if not cur in equipments["grenades"]:
 		pass
+
+
+func reload():
+	if hands and hands.get_ref():
+		if hands.get_ref().has_method("reload"):
+			var weapon_ammo_rest = hands.get_ref().my_call("get_ammo")
+			var player_ammo_rest = ammunitions[hands.get_ref().Cartridge]
+			var magazine_capacity = hands.get_ref().Capacity
+			var add_ammo = min(player_ammo_rest, magazine_capacity - weapon_ammo_rest)
+			ammunitions[hands.get_ref().Cartridge] -= add_ammo
+			hands.get_ref().call("reload", add_ammo)
+

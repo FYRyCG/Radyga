@@ -11,6 +11,10 @@ public:
 	bool can_shoot();
 
 	void shoot();
+	
+	int get_ammo();
+
+	void add_ammo(int add);
 };
 
 

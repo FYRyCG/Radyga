@@ -15,4 +15,14 @@ void ShootControl::shoot()
 	ammo -= 1;
 }
 
+int ShootControl::get_ammo()
+{
+	return ammo;
+}
+
+void ShootControl::add_ammo(int add)
+{
+	ammo += add;
+}
+
 

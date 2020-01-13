@@ -69,6 +69,9 @@ func _physics_process(delta):
 			$PlayerEquipment.switch_weapon("primary")
 		if Input.is_action_just_pressed("pl_secondary_weapon"):
 			$PlayerEquipment.switch_weapon("secondary")
+		if Input.is_action_just_pressed("pl_reload"):
+			$PlayerEquipment.reload()
+			pass
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot():

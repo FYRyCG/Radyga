@@ -23,9 +23,11 @@ namespace godot {
 		register_method("take", &WeaponControl::take, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("drop", &WeaponControl::drop, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("shoot", &WeaponControl::shoot, GODOT_METHOD_RPC_MODE_DISABLED);
+		register_method("reload", &WeaponControl::reload, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("use", &WeaponControl::use, GODOT_METHOD_RPC_MODE_DISABLED);
 
 		register_method("get_collision", &WeaponControl::get_collision, GODOT_METHOD_RPC_MODE_DISABLED);
+		register_method("get_ammo", &WeaponControl::get_ammo, GODOT_METHOD_RPC_MODE_DISABLED);
 
 		register_method("_sync_shoot", &WeaponControl::_sync_shoot, GODOT_METHOD_RPC_MODE_REMOTE);
 		register_method("_sync_use", &WeaponControl::_sync_use, GODOT_METHOD_RPC_MODE_REMOTE);
@@ -71,10 +73,10 @@ namespace godot {
 		}
 	}
 
-	void WeaponControl::reload()
+	void WeaponControl::reload(int add_ammo)
 	{
-		rpc("_sync_reload");
-		_sync_reload();
+		rpc("_sync_reload", add_ammo);
+		_sync_reload(add_ammo);
 	}
 
 	void godot::WeaponControl::use(KinematicBody2D* player_)
@@ -105,6 +107,11 @@ namespace godot {
 		return "weapon";
 	}
 
+	int WeaponControl::get_ammo()
+	{
+		return shoot_control->get_ammo();
+	}
+
 	void godot::WeaponControl::_sync_shoot(Vector2 shoot_position, float shoot_rotation)
 	{
 		auto bullet = RifleBullet->instance();
@@ -125,9 +132,9 @@ namespace godot {
 		set_process(false);
 	}
 
-	void WeaponControl::_sync_reload()
+	void WeaponControl::_sync_reload(int add_ammo)
 	{
-		//player->call("reload");
+		shoot_control->add_ammo(add_ammo);
 	}
 
 }
