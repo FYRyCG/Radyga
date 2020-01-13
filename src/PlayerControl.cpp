@@ -65,7 +65,7 @@ namespace godot {
 			}
 
 			if (input->is_action_just_pressed("pl_drop")) {
-				player->call("drop_weapon");
+				player->call("drop_object");
 			}
 
 			if (input->is_action_just_pressed("pl_use")) {

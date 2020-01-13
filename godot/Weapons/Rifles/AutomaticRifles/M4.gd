@@ -2,7 +2,7 @@ extends StaticBody2D
 
 const MS = 1000.0
 
-export (int) var rate_of_fire = 11 * MS
+export (int) var rate_of_fire = 14 * MS
 export (int) var damage = 29
 
 const Cartridge = "5,56"
@@ -12,10 +12,24 @@ const Object_type = "weapon"
 var ammo_left = 30
 
 func _ready():
-	add_child(preload("res://Weapons/WeaponControl.tscn").instance())
-	$WeaponControl.start()
+	$WeaponElements/WeaponControl.start()
 	$WeaponElements/ShootDelay.wait_time = MS / rate_of_fire
  
+func shoot():
+	$WeaponElements/WeaponControl.shoot()
+
+func use(player):
+	$WeaponElements/WeaponControl.use(player)
+
+func take(player):
+	$WeaponElements/WeaponControl.take(player)
+
+func drop():
+	$WeaponElements/WeaponControl.drop()
+	
+func get_collision():
+	return $CollisionShape2D
+
 func get_weapon_type():
 	return Weapon_type
 

@@ -39,7 +39,7 @@ namespace godot {
 	{
 		set_physics_process(false);
 		set_process(false);
-		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()));
+		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()->get_parent()));
 	}
 
 	void godot::WeaponControl::take(KinematicBody2D* player_)
@@ -102,7 +102,7 @@ namespace godot {
 
 	void godot::WeaponControl::_sync_use(NodePath player_path)
 	{
-		get_tree()->get_root()->get_node(player_path)->call("take_object", get_parent());
+		get_tree()->get_root()->get_node(player_path)->call("take_object", get_parent()->get_parent());
 	}
 
 }
