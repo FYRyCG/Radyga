@@ -22,3 +22,8 @@ func set_speed(new_speed):
 func get_speed():
 	return speed
 
+func vision_entered():
+	$Smoke.visible = true
+	
+func vision_exited():
+	$Smoke.visible = false
