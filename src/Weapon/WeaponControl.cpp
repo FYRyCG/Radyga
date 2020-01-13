@@ -29,17 +29,21 @@ namespace godot {
 
 		register_method("_sync_shoot", &WeaponControl::_sync_shoot, GODOT_METHOD_RPC_MODE_REMOTE);
 		register_method("_sync_use", &WeaponControl::_sync_use, GODOT_METHOD_RPC_MODE_REMOTE);
+		register_method("_sync_drop", &WeaponControl::_sync_drop, GODOT_METHOD_RPC_MODE_REMOTE);
+		register_method("_sync_reload", &WeaponControl::_sync_reload, GODOT_METHOD_RPC_MODE_REMOTE);
 	}
 
 	void godot::WeaponControl::_init()
 	{
 	}
 
-	void WeaponControl::start()
+	void WeaponControl::start(int damage, int start_ammo, String bullet_path)
 	{
 		set_physics_process(false);
 		set_process(false);
 		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()->get_parent()));
+		RifleBullet = ResourceLoader::get_singleton()->load(bullet_path);
+		shoot_control = new ShootControl(start_ammo);
 	}
 
 	void godot::WeaponControl::take(KinematicBody2D* player_)
@@ -50,18 +54,27 @@ namespace godot {
 
 	void godot::WeaponControl::drop()
 	{
-		player.reset();
-		set_process(false);
+		rpc("_sync_drop");
+		_sync_drop();
 	}
+
+
 
 	void godot::WeaponControl::shoot()
 	{
-		if (static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->is_stopped()) {
+		if (static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->is_stopped()
+			&& shoot_control->can_shoot()) {
 			auto muzzle = weapon->get_node("WeaponElements/Muzzle");
 			rpc("_sync_shoot", muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
 			_sync_shoot(muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
 			static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->start();
 		}
+	}
+
+	void WeaponControl::reload()
+	{
+		rpc("_sync_reload");
+		_sync_reload();
 	}
 
 	void godot::WeaponControl::use(KinematicBody2D* player_)
@@ -98,11 +111,23 @@ namespace godot {
 		bullet->call("start", shoot_position, shoot_rotation);
 		weapon->get_node("WeaponElements")->call("shoot"); // draw Sprite
 		weapon->get_parent()->get_parent()->get_parent()->add_child(bullet);
+		shoot_control->shoot();
 	}
 
 	void godot::WeaponControl::_sync_use(NodePath player_path)
 	{
 		get_tree()->get_root()->get_node(player_path)->call("take_object", get_parent()->get_parent());
+	}
+
+	void WeaponControl::_sync_drop()
+	{
+		player.reset();
+		set_process(false);
+	}
+
+	void WeaponControl::_sync_reload()
+	{
+		//player->call("reload");
 	}
 
 }

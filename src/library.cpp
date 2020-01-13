@@ -1,6 +1,6 @@
 #include <Godot.hpp>
-#include "PlayerControl.hpp"
-#include "WeaponControl.hpp"
+#include "Player/PlayerControl.hpp"
+#include "Weapon/WeaponControl.hpp"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
 godot::Godot::gdnative_init(o);
