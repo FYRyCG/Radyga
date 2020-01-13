@@ -6,7 +6,7 @@ export (int) var rate_of_fire = 7 * MS
 export (int) var damage = 33
 
 const Cartridge = "7,62"
-const Weapon_type = "primary"
+const Type = "primary"
 const Object_type = "weapon"
 const start_ammo = 30
 
@@ -29,8 +29,8 @@ func drop():
 func get_collision():
 	return $CollisionShape2D
 
-func get_weapon_type():
-	return Weapon_type
+func get_type():
+	return Type
 
 func get_object_type():
 	return Object_type
