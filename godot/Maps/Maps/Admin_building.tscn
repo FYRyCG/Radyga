@@ -196,7 +196,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 
 [sub_resource type="TileSet" id=30]
 0/name = "Walls_tiles.png 0"
-0/texture = ExtResource( 10 )
+0/texture = ExtResource( 17 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 96, 64, 64 )
@@ -213,7 +213,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 0/z_index = 0
 2/name = "Walls_tiles.png 2"
-2/texture = ExtResource( 10 )
+2/texture = ExtResource( 17 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 96, 0, 64, 64 )
@@ -230,7 +230,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 2/z_index = 0
 3/name = "Walls_tiles.png 3"
-3/texture = ExtResource( 10 )
+3/texture = ExtResource( 17 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 256, 0, 64, 64 )
@@ -247,7 +247,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 3/z_index = 0
 4/name = "Walls_tiles.png 4"
-4/texture = ExtResource( 10 )
+4/texture = ExtResource( 17 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 96, 160, 64, 64 )
@@ -264,7 +264,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 4/z_index = 0
 5/name = "Walls_tiles.png 5"
-5/texture = ExtResource( 10 )
+5/texture = ExtResource( 17 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 256, 160, 64, 64 )
@@ -281,7 +281,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 5/z_index = 0
 6/name = "Walls_tiles.png 6"
-6/texture = ExtResource( 10 )
+6/texture = ExtResource( 17 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 64 )
@@ -298,7 +298,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 6/z_index = 0
 7/name = "Walls_tiles.png 7"
-7/texture = ExtResource( 10 )
+7/texture = ExtResource( 17 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 32, 320, 64, 64 )
@@ -314,7 +314,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 7/z_index = 0
 8/name = "Walls_tiles.png 8"
-8/texture = ExtResource( 10 )
+8/texture = ExtResource( 17 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 160, 320, 64, 64 )
@@ -330,7 +330,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 8/z_index = 0
 9/name = "Walls_tiles.png 9"
-9/texture = ExtResource( 10 )
+9/texture = ExtResource( 17 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 224, 320, 64, 64 )
@@ -346,7 +346,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 9/z_index = 0
 10/name = "Walls_tiles.png 10"
-10/texture = ExtResource( 10 )
+10/texture = ExtResource( 17 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 352, 288, 64, 64 )
@@ -363,7 +363,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 10/z_index = 0
 11/name = "Walls_tiles.png 11"
-11/texture = ExtResource( 10 )
+11/texture = ExtResource( 17 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 352, 416, 64, 64 )
@@ -379,7 +379,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 11/z_index = 0
 12/name = "Walls_tiles.png 12"
-12/texture = ExtResource( 10 )
+12/texture = ExtResource( 17 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 352, 0, 64, 64 )
@@ -395,7 +395,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 12/z_index = 0
 13/name = "Walls_tiles.png 13"
-13/texture = ExtResource( 10 )
+13/texture = ExtResource( 17 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 416, 0, 64, 64 )
@@ -411,7 +411,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 13/z_index = 0
 14/name = "Walls_tiles.png 14"
-14/texture = ExtResource( 10 )
+14/texture = ExtResource( 17 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 352, 96, 64, 64 )
@@ -421,7 +421,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 14/shapes = [  ]
 14/z_index = 0
 15/name = "Walls_tiles.png 15"
-15/texture = ExtResource( 10 )
+15/texture = ExtResource( 17 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 416, 96, 64, 64 )
@@ -431,7 +431,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 15/shapes = [  ]
 15/z_index = 0
 16/name = "Walls_tiles.png 16"
-16/texture = ExtResource( 10 )
+16/texture = ExtResource( 17 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 320, 192, 64, 64 )
@@ -448,7 +448,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 16/z_index = 0
 17/name = "Walls_tiles.png 17"
-17/texture = ExtResource( 10 )
+17/texture = ExtResource( 17 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 416, 192, 64, 64 )
@@ -465,7 +465,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 17/z_index = 0
 18/name = "Walls_tiles.png 18"
-18/texture = ExtResource( 10 )
+18/texture = ExtResource( 17 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 160, 64, 64 )
@@ -481,7 +481,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 18/z_index = 0
 19/name = "Walls_tiles.png 19"
-19/texture = ExtResource( 10 )
+19/texture = ExtResource( 17 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 0, 224, 64, 64 )
@@ -497,7 +497,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 19/z_index = 0
 20/name = "Walls_tiles.png 20"
-20/texture = ExtResource( 10 )
+20/texture = ExtResource( 17 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 0, 448, 64, 64 )
@@ -513,7 +513,7 @@ points = PoolVector2Array( 16.0106, 0, 47.8724, 0.0139465, 48.1049, 16.0612, 64,
 } ]
 20/z_index = 0
 21/name = "Walls_tiles.png 21"
-21/texture = ExtResource( 10 )
+21/texture = ExtResource( 17 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 96, 448, 64, 64 )
