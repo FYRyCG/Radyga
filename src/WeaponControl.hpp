@@ -49,6 +49,8 @@ namespace godot {
 
 		CollisionShape2D* get_collision();
 
+		String get_object_type();
+
 	private:
 		void _sync_shoot(Vector2 shoot_position, float shoot_rotation);
 

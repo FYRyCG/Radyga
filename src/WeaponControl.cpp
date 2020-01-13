@@ -39,7 +39,7 @@ namespace godot {
 	{
 		set_physics_process(false);
 		set_process(false);
-		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()));
+		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()->get_parent()));
 	}
 
 	void godot::WeaponControl::take(KinematicBody2D* player_)
@@ -87,6 +87,11 @@ namespace godot {
 		return static_cast<CollisionShape2D*>(get_parent()->get_node("CollisionShape2D"));
 	}
 
+	String WeaponControl::get_object_type()
+	{
+		return "weapon";
+	}
+
 	void godot::WeaponControl::_sync_shoot(Vector2 shoot_position, float shoot_rotation)
 	{
 		auto bullet = RifleBullet->instance();
@@ -97,7 +102,7 @@ namespace godot {
 
 	void godot::WeaponControl::_sync_use(NodePath player_path)
 	{
-		get_tree()->get_root()->get_node(player_path)->call("take_weapon", this);
+		get_tree()->get_root()->get_node(player_path)->call("take_object", get_parent()->get_parent());
 	}
 
 }

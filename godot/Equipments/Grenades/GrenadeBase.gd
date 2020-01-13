@@ -48,7 +48,7 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.normal)
 		stop_force += 0.4
 		
-	if remain_speed_factor != 0:	
+	if remain_speed_factor != 0:
 		remain_speed_factor -= stop_force * delta
 		if remain_speed_factor < 0:
 			remain_speed_factor = 0

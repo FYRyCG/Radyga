@@ -578,4 +578,4 @@ texture = SubResource( 33 )
 position = Vector2( -35.9341, 107.802 )
 
 [node name="AK48" parent="." instance=ExtResource( 12 )]
-position = Vector2( -0.513336, -3.08006 )
+position = Vector2( 137.576, 0.00752544 )
