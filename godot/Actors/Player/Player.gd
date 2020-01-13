@@ -6,11 +6,7 @@ func get_class(): return "Player"
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
-	"melee" : null,
-	"grenades" : {
-		"frag" : 1,
-		"smoke" : 1
-	}
+	"melee" : null
 }
 
 export var ammunitions = {
@@ -21,10 +17,6 @@ export var ammunitions = {
 export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
 export (bool) var playable = false
 
-# Автоматическая смена на поднятое оружие
-var autoswap = true
-# Текущий предмет в руках
-var hands = null
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
 
@@ -37,10 +29,10 @@ func _ready():
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
+	# Нода отвечающая за весь инвентарь плеера
+	add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
+	$PlayerEquipment.start(equipments, ammunitions)
 
-	# Создает экземпляры всего снаряжения
-	_init_equipment()
-	
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
 		$PlayerElements/Light2D.enabled = true
@@ -48,63 +40,18 @@ func _ready():
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
 
-# Создает экземпляры всего снаряжения
-func _init_equipment():
-	_instance_equipment("primary")
-	_instance_equipment("secondary")
-	_instance_equipment("melee")
-	set_hand(equipments.primary)
-
-func _instance_equipment(type):
-	# parent == "map/Player"
-	if equipments[type]:
-		var instance = equipments[type].instance()
-		get_parent().add_child(instance)
-		instance.take(self)  # Подбираем оружие
-		instance.hide()  # Прячем в инвентарь
-		equipments[type] = instance
-
-# Кладет obj в руки
-func set_hand(obj):
-	if hands and hands.get_ref():
-		hands.get_ref().hide()  # Убираем в инвентарь
-	hands = weakref(obj)   # Меняем объект в руке
-	obj.show()  # Достаем из инвентаря
-	# Ставим колизию объекта
-	$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
-	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
-	$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
-
-# Выкидывает объект в руке из инвентаря
-func drop_hand():
-	if hands and hands.get_ref():
-		drop_object(hands.get_ref())
-		hands = null
-
-func object_in_hand(obj):
-	if hands and hands.get_ref() and hands.get_ref() == obj:
-		return true
-	else:
-		return false
-
 # Берет объект в инвентарь
 func take_object(obj):
-	if obj and obj.get_object_type() == "weapon":
-		var weapon_type = obj.get_weapon_type()
-		if equipments[weapon_type]:
-			if object_in_hand(equipments[weapon_type]):
-				hands = null
-			drop_object(equipments[weapon_type])
-			
-		obj.take(self)
-		equipments[weapon_type] = obj
-		set_hand(obj)
+	$PlayerEquipment.take_object(obj)
 
 # Выбрасывает объект из инвентаря
 func drop_object(obj):
-	obj.show()  # Если он был в инвентаре
-	if obj and obj.has_method("drop"):
-		obj.drop()
+	$PlayerEquipment.drop_object(obj)
+
+func set_object_shape(obj):
+	$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
+	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
+	$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
 
 var grenade
 func _physics_process(delta):
@@ -119,17 +66,16 @@ func _physics_process(delta):
 				grenade.get_ref().throw()
 				
 		if Input.is_action_just_pressed("pl_primary_weapon"):
-			if equipments["primary"]:
-				set_hand(equipments["primary"])
+			$PlayerEquipment.switch_weapon("primary")
 		if Input.is_action_just_pressed("pl_secondary_weapon"):
-			if equipments["secondary"]:
-				set_hand(equipments["secondary"])
+			$PlayerEquipment.switch_weapon("secondary")
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot():
-	if can_shoot and hands.get_ref():
-		if hands.get_ref().has_method("shoot"):
-			hands.get_ref().shoot()
+	var hand = $PlayerEquipment.get_hand()
+	if can_shoot and hand:
+		if hand.has_method("shoot"):
+			hand.shoot()
 
 # Вызывается, когда игрок нажимает "pl_use"
 func use():

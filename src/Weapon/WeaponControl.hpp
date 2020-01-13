@@ -1,6 +1,8 @@
 #ifndef WEAPONCONTROL_HPP
 #define WEAPONCONTROL_HPP
 
+#include "ShootControl.hpp"
+
 #include <Godot.hpp>
 #include <Node2D.hpp>
 #include <Object.hpp>
@@ -26,22 +28,26 @@ namespace godot {
 		GODOT_CLASS(WeaponControl, Node2D)
 
 	private:
-		Ref<PackedScene> RifleBullet = ResourceLoader::get_singleton()->load("res://Weapons/Rifles/RifleBullet.tscn");
+		Ref<PackedScene> RifleBullet;// = ResourceLoader::get_singleton()->load("res://Weapons/Rifles/RifleBullet.tscn");
 		std::shared_ptr<KinematicBody2D> player;
 		std::shared_ptr<StaticBody2D> weapon;
+
+		ShootControl* shoot_control;
 
 	public:
 		static void _register_methods();
 
 		void _init();
 
-		void start();
+		void start(int damage, int start_ammo, String bullet_path);
 
 		void take(KinematicBody2D* player_);
 
 		void drop();
 
 		void shoot();
+
+		void reload();
 
 		void use(KinematicBody2D* player_);
 
@@ -55,6 +61,10 @@ namespace godot {
 		void _sync_shoot(Vector2 shoot_position, float shoot_rotation);
 
 		void _sync_use(NodePath player_path);
+
+		void _sync_drop();
+
+		void _sync_reload();
 	};
 
 }

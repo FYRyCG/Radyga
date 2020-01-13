@@ -57,6 +57,8 @@ env.Append(LIBS=[cpp_library])
 
 sources = []
 add_sources(sources, "src")
+add_sources(sources, "src/Weapon")
+add_sources(sources, "src/Player")
 
 library = env.SharedLibrary(target=target_path + target_name, source=sources)
 Default(library)

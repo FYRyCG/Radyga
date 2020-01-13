@@ -6,13 +6,12 @@ export (int) var rate_of_fire = 7 * MS
 export (int) var damage = 33
 
 const Cartridge = "7,62"
-const Weapon_type = "primary"
+const Type = "primary"
 const Object_type = "weapon"
-
-var ammo_left = 30
+const start_ammo = 30
 
 func _ready():
-	$WeaponElements/WeaponControl.start()
+	$WeaponElements/WeaponControl.start(damage, start_ammo, "res://Weapons/Rifles/RifleBullet.tscn")
 	$WeaponElements/ShootDelay.wait_time = MS / rate_of_fire
 
 func shoot():
@@ -30,8 +29,8 @@ func drop():
 func get_collision():
 	return $CollisionShape2D
 
-func get_weapon_type():
-	return Weapon_type
+func get_type():
+	return Type
 
 func get_object_type():
 	return Object_type
