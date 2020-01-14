@@ -58,10 +58,10 @@ func _process(delta):
 
 
 func size_changes():
-	var dx = size_x - __prev_size_x
-	var dy = size_y - __prev_size_y
-	$Spawn.position.x += -dx * 4
-	$Spawn.position.y += -dy * 4
+	$Spawn.position.x = -((size_x * TILE_SIZE) / 2.0)
+	$Spawn.position.y = -((size_y * TILE_SIZE) / 2.0)
+	position.x = -(TILE_SIZE / 2)
+	position.y = -(TILE_SIZE / 2)
 	__prev_size_x = size_x
 	__prev_size_y = size_y
 	_draw_tiles()
