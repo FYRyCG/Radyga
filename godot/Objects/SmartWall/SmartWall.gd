@@ -1,11 +1,11 @@
 tool
 extends Node2D
 
-const TILE_SIZE = 8
+export (int) var TILE_SIZE = 8
 
 export (int) var size_x = 1
 export (int) var size_y = 1
-export (bool) var random_rotate = true
+export (bool) var random_rotate = false
 
 export var tiles = []
 
@@ -43,10 +43,11 @@ func _draw_tiles():
 				sf.rotation_degrees = 90 * rotate_angle
 			tiles.append(sf)
 			sf.set_name("i" + str(i) + "y" + str(j))
+			sf.set_size(TILE_SIZE)
 			add_child(sf)
 			sf.set_owner(get_tree().get_edited_scene_root())
-			sp.y += 8
-		sp.x += 8
+			sp.y += TILE_SIZE
+		sp.x += TILE_SIZE
 		sp.y = $Spawn.position.y
 
 
