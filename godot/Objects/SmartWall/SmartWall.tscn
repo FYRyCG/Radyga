@@ -3,6 +3,7 @@
 [ext_resource path="res://Objects/SmartWall/SmartWall.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.96061, 3.95924 )
 
 [node name="SmartWall" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,5 +19,4 @@ random_rotate = true
 [node name="WallArea" type="Area2D" parent="."]
 
 [node name="WallShape" type="CollisionShape2D" parent="WallArea"]
-scale = Vector2( 1e-005, 1e-005 )
 shape = SubResource( 1 )

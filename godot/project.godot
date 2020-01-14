@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Actors/Player/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "SmartTile",
+"language": "GDScript",
+"path": "res://Objects/SmartWall/Tiles/SmartTile.gd"
+}, {
+"base": "Node2D",
+"class": "SmartWall",
+"language": "GDScript",
+"path": "res://Objects/SmartWall/SmartWall.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"SmartTile": "",
+"SmartWall": ""
 }
 
 [application]

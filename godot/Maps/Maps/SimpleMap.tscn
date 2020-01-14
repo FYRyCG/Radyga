@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/asphalt.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/corner_asphalt.png" type="Texture" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/M4.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/SmartWall/SmartWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SmartWall/Tiles/SmartTile.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/SmartWall/Tiles/SmartTile.gd" type="Script" id=9]
-[ext_resource path="res://Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "asphalt.png 0"
@@ -84,201 +82,1509 @@ position = Vector2( -223.573, 233.524 )
 position = Vector2( 227.553, 238.168 )
 
 [node name="SmartWall" parent="." instance=ExtResource( 7 )]
-size_x = 5
-size_y = 5
-tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
- ]
+position = Vector2( -4, -4 )
 
-[node name="i0y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, -20 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i0y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, -12 )
+[node name="i0y0" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -76 )
 rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i0y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i0y2" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -68 )
+rotation = 1.5708
+
+[node name="i0y3" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -60 )
+
+[node name="i0y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -52 )
+rotation = 1.5708
+
+[node name="i0y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -44 )
+rotation = 4.71239
+
+[node name="i0y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -36 )
+rotation = 1.5708
+
+[node name="i0y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -28 )
+rotation = 1.5708
+
+[node name="i0y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -20 )
+
+[node name="i0y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -12 )
+
+[node name="i0y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, -4 )
+rotation = 1.5708
+
+[node name="i0y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 4 )
+rotation = 3.14159
+
+[node name="i0y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 12 )
+rotation = 3.14159
+
+[node name="i0y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 20 )
+rotation = 4.71239
+
+[node name="i0y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 28 )
+
+[node name="i0y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 36 )
+rotation = 4.71239
+
+[node name="i0y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 44 )
+rotation = 3.14159
+
+[node name="i0y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 52 )
+rotation = 1.5708
+
+[node name="i0y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 60 )
+rotation = 1.5708
+
+[node name="i0y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 68 )
+rotation = 4.71239
+
+[node name="i0y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -76, 76 )
+rotation = 3.14159
+
+[node name="i1y1" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -76 )
+
+[node name="i1y2" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -68 )
+rotation = 4.71239
+
+[node name="i1y3" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -60 )
+rotation = 1.5708
+
+[node name="i1y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -52 )
+
+[node name="i1y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -44 )
+rotation = 3.14159
+
+[node name="i1y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -36 )
+rotation = 1.5708
+
+[node name="i1y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -28 )
+rotation = 1.5708
+
+[node name="i1y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -20 )
+rotation = 1.5708
+
+[node name="i1y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -12 )
+rotation = 3.14159
+
+[node name="i1y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, -4 )
+
+[node name="i1y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 4 )
+rotation = 4.71239
+
+[node name="i1y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 12 )
+rotation = 1.5708
+
+[node name="i1y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 20 )
+
+[node name="i1y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 28 )
+rotation = 1.5708
+
+[node name="i1y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 36 )
+rotation = 4.71239
+
+[node name="i1y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 44 )
+rotation = 3.14159
+
+[node name="i1y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 52 )
+rotation = 3.14159
+
+[node name="i1y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 60 )
+rotation = 3.14159
+
+[node name="i1y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 68 )
+rotation = 1.5708
+
+[node name="i1y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -68, 76 )
+rotation = 1.5708
+
+[node name="i2y1" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -76 )
+rotation = 3.14159
+
+[node name="i2y2" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -68 )
+rotation = 3.14159
+
+[node name="i2y3" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -60 )
+rotation = 3.14159
+
+[node name="i2y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -52 )
+rotation = 4.71239
+
+[node name="i2y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -44 )
+
+[node name="i2y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -36 )
+rotation = 4.71239
+
+[node name="i2y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -28 )
+rotation = 4.71239
+
+[node name="i2y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -20 )
+
+[node name="i2y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -12 )
+rotation = 3.14159
+
+[node name="i2y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, -4 )
+rotation = 4.71239
+
+[node name="i2y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 4 )
+rotation = 1.5708
+
+[node name="i2y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 12 )
+rotation = 3.14159
+
+[node name="i2y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 20 )
+rotation = 3.14159
+
+[node name="i2y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 28 )
+rotation = 3.14159
+
+[node name="i2y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 36 )
+
+[node name="i2y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 44 )
+rotation = 3.14159
+
+[node name="i2y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 52 )
+rotation = 4.71239
+
+[node name="i2y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 60 )
+rotation = 4.71239
+
+[node name="i2y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 68 )
+rotation = 3.14159
+
+[node name="i2y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -60, 76 )
+
+[node name="i3y1" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -76 )
+
+[node name="i3y2" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -68 )
+
+[node name="i3y3" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -60 )
+rotation = 4.71239
+
+[node name="i3y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -52 )
+
+[node name="i3y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -44 )
+
+[node name="i3y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -36 )
+rotation = 1.5708
+
+[node name="i3y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -28 )
+rotation = 3.14159
+
+[node name="i3y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -20 )
+rotation = 1.5708
+
+[node name="i3y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -12 )
+rotation = 1.5708
+
+[node name="i3y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, -4 )
+rotation = 1.5708
+
+[node name="i3y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 4 )
+
+[node name="i3y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 12 )
+rotation = 1.5708
+
+[node name="i3y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 20 )
+rotation = 4.71239
+
+[node name="i3y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 28 )
+rotation = 3.14159
+
+[node name="i3y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 36 )
+rotation = 3.14159
+
+[node name="i3y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 44 )
+rotation = 1.5708
+
+[node name="i3y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 52 )
+rotation = 1.5708
+
+[node name="i3y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 60 )
+
+[node name="i3y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 68 )
+rotation = 3.14159
+
+[node name="i3y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -52, 76 )
+
+[node name="i4y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -76 )
+
+[node name="i4y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -68 )
+rotation = 1.5708
+
+[node name="i4y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -60 )
+rotation = 1.5708
+
+[node name="i4y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -52 )
+
+[node name="i4y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -44 )
+rotation = 3.14159
+
+[node name="i4y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -36 )
+
+[node name="i4y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -28 )
+rotation = 1.5708
+
+[node name="i4y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -20 )
+rotation = 3.14159
+
+[node name="i4y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -12 )
+rotation = 1.5708
+
+[node name="i4y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, -4 )
+rotation = 1.5708
+
+[node name="i4y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 4 )
+rotation = 3.14159
+
+[node name="i4y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 12 )
+rotation = 1.5708
+
+[node name="i4y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 20 )
+rotation = 1.5708
+
+[node name="i4y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 28 )
+rotation = 1.5708
+
+[node name="i4y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 36 )
+rotation = 1.5708
+
+[node name="i4y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 44 )
+rotation = 1.5708
+
+[node name="i4y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 52 )
+rotation = 3.14159
+
+[node name="i4y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 60 )
+rotation = 1.5708
+
+[node name="i4y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 68 )
+
+[node name="i4y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -44, 76 )
+rotation = 4.71239
+
+[node name="i5y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -76 )
+rotation = 4.71239
+
+[node name="i5y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -68 )
+rotation = 3.14159
+
+[node name="i5y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -60 )
+rotation = 1.5708
+
+[node name="i5y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -52 )
+
+[node name="i5y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -44 )
+
+[node name="i5y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -36 )
+rotation = 4.71239
+
+[node name="i5y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -28 )
+rotation = 4.71239
+
+[node name="i5y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -20 )
+rotation = 4.71239
+
+[node name="i5y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -12 )
+
+[node name="i5y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -4 )
+rotation = 4.71239
+
+[node name="i5y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 4 )
+rotation = 3.14159
+
+[node name="i5y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 12 )
+rotation = 3.14159
+
+[node name="i5y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 20 )
+rotation = 3.14159
+
+[node name="i5y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 28 )
+rotation = 3.14159
+
+[node name="i5y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 36 )
+rotation = 3.14159
+
+[node name="i5y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 44 )
+rotation = 1.5708
+
+[node name="i5y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 52 )
+
+[node name="i5y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 60 )
+rotation = 3.14159
+
+[node name="i5y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 68 )
+rotation = 3.14159
+
+[node name="i5y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 76 )
+rotation = 4.71239
+
+[node name="i6y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -76 )
+
+[node name="i6y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -68 )
+rotation = 3.14159
+
+[node name="i6y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -60 )
+rotation = 4.71239
+
+[node name="i6y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -52 )
+rotation = 1.5708
+
+[node name="i6y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -44 )
+rotation = 4.71239
+
+[node name="i6y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -36 )
+rotation = 1.5708
+
+[node name="i6y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -28 )
+
+[node name="i6y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -20 )
+rotation = 1.5708
+
+[node name="i6y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -12 )
+rotation = 4.71239
+
+[node name="i6y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -4 )
+rotation = 4.71239
+
+[node name="i6y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 4 )
+rotation = 1.5708
+
+[node name="i6y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 12 )
+rotation = 3.14159
+
+[node name="i6y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 20 )
+rotation = 4.71239
+
+[node name="i6y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 28 )
+rotation = 4.71239
+
+[node name="i6y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 36 )
+rotation = 3.14159
+
+[node name="i6y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 44 )
+rotation = 4.71239
+
+[node name="i6y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 52 )
+rotation = 3.14159
+
+[node name="i6y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 60 )
+
+[node name="i6y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 68 )
+rotation = 1.5708
+
+[node name="i6y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 76 )
+rotation = 1.5708
+
+[node name="i7y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -76 )
+rotation = 1.5708
+
+[node name="i7y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -68 )
+
+[node name="i7y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -60 )
+
+[node name="i7y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -52 )
+rotation = 3.14159
+
+[node name="i7y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -44 )
+rotation = 3.14159
+
+[node name="i7y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -36 )
+rotation = 4.71239
+
+[node name="i7y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -28 )
+rotation = 3.14159
+
+[node name="i7y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -20 )
+rotation = 1.5708
+
+[node name="i7y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -12 )
+rotation = 3.14159
+
+[node name="i7y13" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -20, -4 )
 rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i0y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i7y14" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -20, 4 )
-rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 3.14159
 
-[node name="i0y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i7y15" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -20, 12 )
-rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i1y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -12, -20 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i1y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -12, -12 )
 rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i1y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i7y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 20 )
+rotation = 3.14159
+
+[node name="i7y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 28 )
+
+[node name="i7y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 36 )
+
+[node name="i7y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 44 )
+rotation = 1.5708
+
+[node name="i7y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 52 )
+
+[node name="i7y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 60 )
+rotation = 3.14159
+
+[node name="i7y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 68 )
+rotation = 3.14159
+
+[node name="i7y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 76 )
+
+[node name="i8y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -76 )
+rotation = 1.5708
+
+[node name="i8y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -68 )
+
+[node name="i8y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -60 )
+
+[node name="i8y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -52 )
+
+[node name="i8y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -44 )
+rotation = 4.71239
+
+[node name="i8y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -36 )
+rotation = 1.5708
+
+[node name="i8y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -28 )
+
+[node name="i8y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -20 )
+rotation = 4.71239
+
+[node name="i8y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -12 )
+rotation = 3.14159
+
+[node name="i8y13" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -12, -4 )
 rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i1y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i8y14" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -12, 4 )
-rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i1y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i8y15" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -12, 12 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i2y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i8y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 20 )
+rotation = 3.14159
+
+[node name="i8y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 28 )
+rotation = 1.5708
+
+[node name="i8y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 36 )
+rotation = 1.5708
+
+[node name="i8y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 44 )
+rotation = 3.14159
+
+[node name="i8y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 52 )
+rotation = 3.14159
+
+[node name="i8y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 60 )
+rotation = 4.71239
+
+[node name="i8y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 68 )
+
+[node name="i8y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 76 )
+rotation = 3.14159
+
+[node name="i9y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -76 )
+rotation = 1.5708
+
+[node name="i9y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -68 )
+rotation = 3.14159
+
+[node name="i9y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -60 )
+
+[node name="i9y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -52 )
+rotation = 1.5708
+
+[node name="i9y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -44 )
+rotation = 1.5708
+
+[node name="i9y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -36 )
+rotation = 3.14159
+
+[node name="i9y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -28 )
+rotation = 1.5708
+
+[node name="i9y11" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -20 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 1.5708
 
-[node name="i2y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i9y12" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -12 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 4.71239
 
-[node name="i2y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i9y13" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -4 )
 rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i2y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i9y14" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, 4 )
-rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i2y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i9y15" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, 12 )
-rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 3.14159
 
-[node name="i3y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( 4, -20 )
-rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+[node name="i9y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 20 )
 
-[node name="i3y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( 4, -12 )
-rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+[node name="i9y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 28 )
+rotation = 3.14159
 
-[node name="i3y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( 4, -4 )
+[node name="i9y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 36 )
 rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i3y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( 4, 4 )
+[node name="i9y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 44 )
+rotation = 3.14159
+
+[node name="i9y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 52 )
+
+[node name="i9y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 60 )
 rotation = 4.71239
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i3y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i9y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 68 )
+rotation = 4.71239
+
+[node name="i9y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 76 )
+rotation = 1.5708
+
+[node name="i10y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -76 )
+rotation = 3.14159
+
+[node name="i10y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -68 )
+rotation = 1.5708
+
+[node name="i10y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -60 )
+
+[node name="i10y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -52 )
+rotation = 1.5708
+
+[node name="i10y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -44 )
+rotation = 3.14159
+
+[node name="i10y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -36 )
+rotation = 1.5708
+
+[node name="i10y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -28 )
+rotation = 1.5708
+
+[node name="i10y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -20 )
+rotation = 3.14159
+
+[node name="i10y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -12 )
+
+[node name="i10y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -4 )
+rotation = 3.14159
+
+[node name="i10y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 4 )
+
+[node name="i10y15" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 4, 12 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 4.71239
 
-[node name="i4y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i10y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 20 )
+rotation = 1.5708
+
+[node name="i10y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 28 )
+
+[node name="i10y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 36 )
+rotation = 3.14159
+
+[node name="i10y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 44 )
+rotation = 3.14159
+
+[node name="i10y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 52 )
+rotation = 1.5708
+
+[node name="i10y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 60 )
+rotation = 3.14159
+
+[node name="i10y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 68 )
+rotation = 4.71239
+
+[node name="i10y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 76 )
+
+[node name="i11y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -76 )
+rotation = 3.14159
+
+[node name="i11y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -68 )
+rotation = 3.14159
+
+[node name="i11y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -60 )
+rotation = 3.14159
+
+[node name="i11y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -52 )
+rotation = 3.14159
+
+[node name="i11y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -44 )
+
+[node name="i11y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -36 )
+rotation = 3.14159
+
+[node name="i11y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -28 )
+
+[node name="i11y11" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -20 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i4y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i11y12" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -12 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 1.5708
 
-[node name="i4y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i11y13" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -4 )
-rotation = 3.14159
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 1.5708
 
-[node name="i4y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i11y14" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, 4 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
 
-[node name="i4y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i11y15" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, 12 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
+rotation = 4.71239
+
+[node name="i11y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 20 )
+
+[node name="i11y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 28 )
+
+[node name="i11y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 36 )
+rotation = 3.14159
+
+[node name="i11y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 44 )
+
+[node name="i11y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 52 )
+rotation = 3.14159
+
+[node name="i11y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 60 )
+rotation = 3.14159
+
+[node name="i11y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 68 )
+rotation = 1.5708
+
+[node name="i11y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 76 )
+
+[node name="i12y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -76 )
+rotation = 1.5708
+
+[node name="i12y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -68 )
+rotation = 3.14159
+
+[node name="i12y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -60 )
+
+[node name="i12y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -52 )
+rotation = 1.5708
+
+[node name="i12y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -44 )
+rotation = 3.14159
+
+[node name="i12y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -36 )
+rotation = 3.14159
+
+[node name="i12y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -28 )
+
+[node name="i12y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -20 )
+rotation = 1.5708
+
+[node name="i12y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -12 )
+rotation = 3.14159
+
+[node name="i12y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -4 )
+rotation = 4.71239
+
+[node name="i12y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 4 )
+rotation = 4.71239
+
+[node name="i12y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 12 )
+rotation = 1.5708
+
+[node name="i12y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 20 )
+rotation = 4.71239
+
+[node name="i12y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 28 )
+
+[node name="i12y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 36 )
+rotation = 1.5708
+
+[node name="i12y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 44 )
+rotation = 1.5708
+
+[node name="i12y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 52 )
+rotation = 4.71239
+
+[node name="i12y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 60 )
+rotation = 4.71239
+
+[node name="i12y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 68 )
+
+[node name="i12y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 76 )
+rotation = 3.14159
+
+[node name="i13y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -76 )
+rotation = 4.71239
+
+[node name="i13y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -68 )
+rotation = 4.71239
+
+[node name="i13y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -60 )
+rotation = 3.14159
+
+[node name="i13y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -52 )
+rotation = 3.14159
+
+[node name="i13y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -44 )
+rotation = 3.14159
+
+[node name="i13y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -36 )
+rotation = 1.5708
+
+[node name="i13y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -28 )
+rotation = 3.14159
+
+[node name="i13y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -20 )
+rotation = 4.71239
+
+[node name="i13y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -12 )
+rotation = 1.5708
+
+[node name="i13y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -4 )
+
+[node name="i13y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 4 )
+rotation = 4.71239
+
+[node name="i13y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 12 )
+rotation = 4.71239
+
+[node name="i13y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 20 )
+rotation = 3.14159
+
+[node name="i13y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 28 )
+rotation = 4.71239
+
+[node name="i13y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 36 )
+rotation = 1.5708
+
+[node name="i13y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 44 )
+rotation = 4.71239
+
+[node name="i13y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 52 )
+rotation = 3.14159
+
+[node name="i13y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 60 )
+rotation = 1.5708
+
+[node name="i13y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 68 )
+rotation = 4.71239
+
+[node name="i13y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 76 )
+
+[node name="i14y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -76 )
+
+[node name="i14y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -68 )
+rotation = 3.14159
+
+[node name="i14y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -60 )
+rotation = 3.14159
+
+[node name="i14y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -52 )
+
+[node name="i14y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -44 )
+rotation = 4.71239
+
+[node name="i14y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -36 )
+
+[node name="i14y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -28 )
+rotation = 3.14159
+
+[node name="i14y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -20 )
+rotation = 3.14159
+
+[node name="i14y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -12 )
+
+[node name="i14y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -4 )
+rotation = 3.14159
+
+[node name="i14y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 4 )
+
+[node name="i14y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 12 )
+rotation = 1.5708
+
+[node name="i14y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 20 )
+rotation = 1.5708
+
+[node name="i14y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 28 )
+
+[node name="i14y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 36 )
+rotation = 4.71239
+
+[node name="i14y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 44 )
+
+[node name="i14y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 52 )
+rotation = 4.71239
+
+[node name="i14y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 60 )
+rotation = 4.71239
+
+[node name="i14y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 68 )
+rotation = 4.71239
+
+[node name="i14y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 76 )
+rotation = 3.14159
+
+[node name="i15y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -76 )
+rotation = 1.5708
+
+[node name="i15y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -68 )
+
+[node name="i15y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -60 )
+
+[node name="i15y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -52 )
+rotation = 1.5708
+
+[node name="i15y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -44 )
+
+[node name="i15y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -36 )
+rotation = 3.14159
+
+[node name="i15y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -28 )
+
+[node name="i15y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -20 )
+
+[node name="i15y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -12 )
+
+[node name="i15y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, -4 )
+rotation = 3.14159
+
+[node name="i15y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 4 )
+rotation = 4.71239
+
+[node name="i15y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 12 )
+rotation = 1.5708
+
+[node name="i15y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 20 )
+rotation = 4.71239
+
+[node name="i15y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 28 )
+rotation = 4.71239
+
+[node name="i15y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 36 )
+rotation = 3.14159
+
+[node name="i15y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 44 )
+
+[node name="i15y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 52 )
+
+[node name="i15y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 60 )
+rotation = 4.71239
+
+[node name="i15y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 68 )
+
+[node name="i15y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 44, 76 )
+rotation = 3.14159
+
+[node name="i16y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -76 )
+rotation = 4.71239
+
+[node name="i16y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -68 )
+rotation = 3.14159
+
+[node name="i16y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -60 )
+rotation = 4.71239
+
+[node name="i16y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -52 )
+rotation = 4.71239
+
+[node name="i16y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -44 )
+rotation = 1.5708
+
+[node name="i16y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -36 )
+rotation = 4.71239
+
+[node name="i16y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -28 )
+rotation = 1.5708
+
+[node name="i16y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -20 )
+rotation = 3.14159
+
+[node name="i16y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -12 )
+rotation = 4.71239
+
+[node name="i16y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, -4 )
+rotation = 1.5708
+
+[node name="i16y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 4 )
+rotation = 4.71239
+
+[node name="i16y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 12 )
+rotation = 1.5708
+
+[node name="i16y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 20 )
+rotation = 3.14159
+
+[node name="i16y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 28 )
+
+[node name="i16y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 36 )
+rotation = 1.5708
+
+[node name="i16y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 44 )
+
+[node name="i16y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 52 )
+rotation = 1.5708
+
+[node name="i16y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 60 )
+rotation = 3.14159
+
+[node name="i16y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 68 )
+rotation = 4.71239
+
+[node name="i16y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 52, 76 )
+rotation = 3.14159
+
+[node name="i17y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -76 )
+rotation = 1.5708
+
+[node name="i17y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -68 )
+rotation = 3.14159
+
+[node name="i17y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -60 )
+rotation = 3.14159
+
+[node name="i17y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -52 )
+rotation = 4.71239
+
+[node name="i17y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -44 )
+rotation = 3.14159
+
+[node name="i17y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -36 )
+rotation = 3.14159
+
+[node name="i17y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -28 )
+rotation = 3.14159
+
+[node name="i17y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -20 )
+rotation = 4.71239
+
+[node name="i17y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -12 )
+rotation = 4.71239
+
+[node name="i17y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, -4 )
+rotation = 3.14159
+
+[node name="i17y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 4 )
+
+[node name="i17y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 12 )
+rotation = 4.71239
+
+[node name="i17y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 20 )
+rotation = 1.5708
+
+[node name="i17y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 28 )
+
+[node name="i17y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 36 )
+rotation = 4.71239
+
+[node name="i17y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 44 )
+rotation = 4.71239
+
+[node name="i17y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 52 )
+rotation = 4.71239
+
+[node name="i17y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 60 )
+rotation = 4.71239
+
+[node name="i17y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 68 )
+rotation = 4.71239
+
+[node name="i17y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 60, 76 )
+rotation = 3.14159
+
+[node name="i18y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -76 )
+rotation = 1.5708
+
+[node name="i18y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -68 )
+rotation = 4.71239
+
+[node name="i18y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -60 )
+rotation = 1.5708
+
+[node name="i18y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -52 )
+rotation = 3.14159
+
+[node name="i18y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -44 )
+rotation = 4.71239
+
+[node name="i18y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -36 )
+rotation = 3.14159
+
+[node name="i18y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -28 )
+rotation = 4.71239
+
+[node name="i18y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -20 )
+
+[node name="i18y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -12 )
+rotation = 1.5708
+
+[node name="i18y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, -4 )
+
+[node name="i18y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 4 )
+
+[node name="i18y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 12 )
+
+[node name="i18y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 20 )
+
+[node name="i18y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 28 )
+rotation = 1.5708
+
+[node name="i18y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 36 )
+rotation = 3.14159
+
+[node name="i18y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 44 )
+rotation = 4.71239
+
+[node name="i18y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 52 )
+rotation = 4.71239
+
+[node name="i18y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 60 )
+rotation = 4.71239
+
+[node name="i18y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 68 )
+rotation = 3.14159
+
+[node name="i18y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 68, 76 )
+rotation = 1.5708
+
+[node name="i19y4" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -76 )
+rotation = 4.71239
+
+[node name="i19y5" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -68 )
+
+[node name="i19y6" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -60 )
+
+[node name="i19y7" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -52 )
+rotation = 3.14159
+
+[node name="i19y8" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -44 )
+rotation = 3.14159
+
+[node name="i19y9" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -36 )
+rotation = 1.5708
+
+[node name="i19y10" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -28 )
+rotation = 4.71239
+
+[node name="i19y11" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -20 )
+rotation = 3.14159
+
+[node name="i19y12" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -12 )
+rotation = 3.14159
+
+[node name="i19y13" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, -4 )
+rotation = 4.71239
+
+[node name="i19y14" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 4 )
+rotation = 1.5708
+
+[node name="i19y15" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 12 )
+rotation = 1.5708
+
+[node name="i19y16" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 20 )
+
+[node name="i19y17" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 28 )
+rotation = 4.71239
+
+[node name="i19y18" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 36 )
+rotation = 1.5708
+
+[node name="i19y19" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 44 )
+rotation = 4.71239
+
+[node name="i19y20" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 52 )
+rotation = 1.5708
+
+[node name="i19y21" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 60 )
+rotation = 1.5708
+
+[node name="i19y22" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 68 )
+
+[node name="i19y23" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 76, 76 )
+rotation = 4.71239

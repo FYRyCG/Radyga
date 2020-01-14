@@ -118,3 +118,17 @@ func _on_WeaponArea_body_exited(body):
 	count_entered_body -= 1
 	if count_entered_body == 0:
 		can_shoot = true
+
+# Проверка стена, с которыми можно будет взаимодействовать
+var walls = {}
+func _on_SetArea_body_entered(body):
+	if body is SmartTile:
+		walls[body] = "0"
+
+func _on_SetArea_body_exited(body):
+	if body is SmartTile:
+		walls.erase(body)
+
+func get_walls():
+	return walls
+
