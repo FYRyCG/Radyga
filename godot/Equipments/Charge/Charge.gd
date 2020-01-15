@@ -16,7 +16,11 @@ var __can_set = false
 var __setted = false
 var __player = null
 
+var __detonator = preload("res://Equipments/Charge/ChargeDetonator.tscn").instance()
+
 func _ready():
+	__detonator.connect("explosion", self, "exploded")
+	__detonator.visible = false
 	$EquipmentControl.start()
 
 var __alone_time = 0
@@ -27,7 +31,7 @@ func _physics_process(delta):
 		else:
 			$Sprite.texture = red_texture
 	else:
-		if walls.size() == 0:
+		if walls.size() < 2:
 			__alone_time += delta
 		else:
 			__alone_time = 0
@@ -58,13 +62,17 @@ func setting(delta):
 	timeSettingDestination += delta
 	if timeSettingDestination >= CHARGE_SETTING_TIME:
 		_set_done()
-
+		
 func _set_done():
 	timeSettingDestination = 0.0
 	$AbortingTimer.stop()
 	__setted = true
+	__detonator.visible = true
 	__player.get_ref().get_node("PlayerControl").call("set_busy", false)  # Игрок точно должен быть
-	__player.get_ref().call("drop_object", self)
+	get_parent().get_parent().add_child(__detonator)
+	__player.get_ref().call("take_object", __detonator)
+	# automatic dropped
+	# __player.get_ref().call("drop_object", self)
 	$Sprite.texture = bluer_texture
 
 func _on_AbortingTimer_timeout():
@@ -100,4 +108,5 @@ func _nearest_wall(walls):
 			res = wall
 	return res
 
-
+func exploded():
+	print("boooom")
