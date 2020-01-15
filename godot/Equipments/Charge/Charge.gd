@@ -13,16 +13,26 @@ const Type = "gadget"
 const Object_type = "weapon"
 
 var __can_set = false
+var __setted = false
 var __player = null
 
 func _ready():
 	$EquipmentControl.start()
 
+var __alone_time = 0
 func _physics_process(delta):
-	if walls.size() > 1:
-		$Sprite.texture =green_texture
+	if not __setted:
+		if walls.size() > 1:
+			$Sprite.texture =green_texture
+		else:
+			$Sprite.texture = red_texture
 	else:
-		$Sprite.texture = red_texture
+		if walls.size() == 0:
+			__alone_time += delta
+		else:
+			__alone_time = 0
+		if __alone_time > 0.1:
+			queue_free()
 
 func take(player):
 	__player = weakref(player)
@@ -52,8 +62,7 @@ func setting(delta):
 func _set_done():
 	timeSettingDestination = 0.0
 	$AbortingTimer.stop()
-	$SetArea.queue_free()
-	set_physics_process(false)
+	__setted = true
 	__player.get_ref().get_node("PlayerControl").call("set_busy", false)  # Игрок точно должен быть
 	__player.get_ref().call("drop_object", self)
 	$Sprite.texture = bluer_texture
