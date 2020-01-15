@@ -25,6 +25,9 @@ namespace godot {
 		register_method("_init", &PlayerControl::_init, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("_physics_process", &PlayerControl::_physics_process, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("start", &PlayerControl::start, GODOT_METHOD_RPC_MODE_DISABLED);
+
+		register_method("set_busy", &PlayerControl::set_busy, GODOT_METHOD_RPC_MODE_DISABLED);
+		register_method("is_busy", &PlayerControl::is_busy, GODOT_METHOD_RPC_MODE_DISABLED);
 	}
 
 	void PlayerControl::_init() {
@@ -37,38 +40,40 @@ namespace godot {
 
 	void PlayerControl::_physics_process(float delta) {
 		if (is_network_master()) {
-			player->look_at(get_global_mouse_position());
+			if (!busy) {
+				player->look_at(get_global_mouse_position());
+			}
 			motion = Vector2();
 			Input* input = Input::get_singleton();
-			if (input->is_action_pressed("ui_left")) {
+			if (input->is_action_pressed("ui_left") && !busy) {
 				motion.x -= 1;
 			}
-			if (input->is_action_pressed("ui_right")) {
+			if (input->is_action_pressed("ui_right") && !busy) {
 				motion.x += 1;
 			}
-			if (input->is_action_pressed("ui_down")) {
+			if (input->is_action_pressed("ui_down") && !busy) {
 				motion.y += 1;
 			}
-			if (input->is_action_pressed("ui_up")) {
+			if (input->is_action_pressed("ui_up") && !busy) {
 				motion.y -= 1;
 			}
 
-			if (input->is_action_just_pressed("pl_run")) {
+			if (input->is_action_just_pressed("pl_run") && !busy) {
 				player_speed = run_speed;
 			}
-			if (input->is_action_just_released("pl_run")) {
+			if (input->is_action_just_released("pl_run") && !busy) {
 				player_speed = walk_speed;
 			}
 
 			if (input->is_action_pressed("pl_shoot")) {
-				player->call("shoot");
+				player->call("shoot", delta);
 			}
 
-			if (input->is_action_just_pressed("pl_drop")) {
+			if (input->is_action_just_pressed("pl_drop") && !busy) {
 				player->call("drop_object");
 			}
 
-			if (input->is_action_just_pressed("pl_use")) {
+			if (input->is_action_just_pressed("pl_use") && !busy) {
 				player->call("use");
 			}
 
@@ -92,6 +97,16 @@ namespace godot {
 		if (!is_network_master()) {
 			puppet_position = player->get_global_position();
 		}
+	}
+
+	void PlayerControl::set_busy(bool flag)
+	{
+		busy = flag;
+	}
+
+	bool PlayerControl::is_busy()
+	{
+		return busy;
 	}
 
 }

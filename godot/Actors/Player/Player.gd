@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 class_name Player
 func get_class(): return "Player"
-
+	
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
-	"melee" : null
+	"melee" : null,
+	"gadget" : preload("res://Equipments/Charge/Charge.tscn")
 }
 
 export var ammunitions = {
@@ -25,7 +26,7 @@ var can_shoot = true
 var current_interactive_body = null
 
 func _ready():
-	# Устанавливает скрипт - правило управление player'ом
+	# Устанавливает скрипт - правило уп	равление player'ом
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
@@ -49,9 +50,13 @@ func drop_object(obj):
 	$PlayerEquipment.drop_object(obj)
 
 func set_object_shape(obj):
-	$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
-	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
-	$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
+	if obj.has_method("get_collision"):
+		$PlayerElements/WeaponArea/CollisionShape2D.disabled = false
+		$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
+		$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
+		$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
+	else:
+		$PlayerElements/WeaponArea/CollisionShape2D.disabled = true
 
 var grenade
 func _physics_process(delta):
@@ -61,24 +66,27 @@ func _physics_process(delta):
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
 			grenade.get_ref().start()
 			add_child(grenade.get_ref())
-		if Input.is_action_just_released("pl_throw_grenade"):
+		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
 				
-		if Input.is_action_just_pressed("pl_primary_weapon"):
+		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("primary")
-		if Input.is_action_just_pressed("pl_secondary_weapon"):
+		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("secondary")
-		if Input.is_action_just_pressed("pl_reload"):
+		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
+			$PlayerEquipment.switch_weapon("gadget")
+		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$PlayerEquipment.reload()
-			pass
 
 # Вызывается, когда игрок нажимет "pl_shoot"
-func shoot():
+func shoot(delta):
 	var hand = $PlayerEquipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"):
 			hand.shoot()
+		elif hand.has_method("setting"):
+			hand.setting(delta)
 
 # Вызывается, когда игрок нажимает "pl_use"
 func use():
@@ -97,6 +105,9 @@ func _on_Interactive_body_exited(body):
 # Возвращает позицию, где должно находится оружие
 func get_weapon_position():
 	return $PlayerElements/WeaponPosition
+
+func get_equipment_position():
+	return $PlayerElements/EquipmentPosition
 	
 func set_control_script(script : GDScript):
 	control_script = script
@@ -119,7 +130,7 @@ func _on_WeaponArea_body_exited(body):
 	if count_entered_body == 0:
 		can_shoot = true
 
-# Проверка стена, с которыми можно будет взаимодействовать
+# Проверка SmartWalls, с которыми можно будет взаимодействовать
 var walls = {}
 func _on_SetArea_body_entered(body):
 	if body is SmartTile:

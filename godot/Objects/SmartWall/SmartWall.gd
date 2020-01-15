@@ -70,3 +70,13 @@ func size_changes():
 	__prev_size_x = size_x
 	__prev_size_y = size_y
 	_draw_tiles()
+
+"""
+func _on_WallArea_body_entered(body):
+	if body is Charge:
+		body.near_wall(true, self)
+
+func _on_WallArea_body_exited(body):
+	if body is Charge:
+		body.near_wall(false)
+"""
