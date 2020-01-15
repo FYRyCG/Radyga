@@ -20,6 +20,7 @@ func _init_equipment():
 	_instance_equipment("primary")
 	_instance_equipment("secondary")
 	_instance_equipment("melee")
+	_instance_equipment("gadget")
 	set_hand(equipments.primary)
 
 func _instance_equipment(type):
@@ -27,9 +28,9 @@ func _instance_equipment(type):
 	# parent.parent == "map/Players"
 	if equipments[type]:
 		var instance = equipments[type].instance()
-		print("parent add ", get_parent().get_parent().get_path())
 		get_parent().get_parent().add_child(instance)
-		instance.take(get_parent())  # Подбираем оружие
+		if instance.has_method("take"):
+			instance.take(get_parent())  # Подбираем оружие
 		instance.hide()  # Прячем в инвентарь
 		equipments[type] = instance
 		
@@ -73,6 +74,8 @@ func take_object(obj):
 
 func drop_object(obj):
 	obj.show()  # Если он был в инвентаре
+	if object_in_hand(obj):
+		hands = null
 	if obj and obj.has_method("drop"):
 		obj.drop()
 

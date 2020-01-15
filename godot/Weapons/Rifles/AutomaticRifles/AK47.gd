@@ -41,3 +41,4 @@ func get_type():
 
 func get_object_type():
 	return Object_type
+

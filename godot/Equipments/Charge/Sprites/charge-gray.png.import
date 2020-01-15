@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_tile_gray8.png-bc59d7e9ecddb68ced5de0af7f33cb52.stex"
+path="res://.import/charge-gray.png-1ee4ab56dbe925a54a0dab34188b06fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png"
-dest_files=[ "res://.import/wall_tile_gray8.png-bc59d7e9ecddb68ced5de0af7f33cb52.stex" ]
+source_file="res://Equipments/Charge/Sprites/charge-gray.png"
+dest_files=[ "res://.import/charge-gray.png-1ee4ab56dbe925a54a0dab34188b06fc.stex" ]
 
 [params]
 

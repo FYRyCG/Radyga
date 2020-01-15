@@ -17,6 +17,7 @@ namespace godot {
 	private:
 		std::shared_ptr<KinematicBody2D> player;
 		//WeakRef player;
+		bool busy = false;
 
 		int walk_speed = 200;
 		int run_speed = 300;
@@ -36,6 +37,10 @@ namespace godot {
 		void start();
 
 		void _physics_process(float delta);
+
+		void set_busy(bool flag);
+
+		bool is_busy();
 	};
 
 }

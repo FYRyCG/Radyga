@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-frame-0.png-edeb0114dc397b0556aeba5b6cec8810.stex"
+path="res://.import/pixil-frame-0.png-a4366cd4d6f78fc57338b80a38bc12b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/Objects/Sprites/pixil-frame-0.png"
-dest_files=[ "res://.import/pixil-frame-0.png-edeb0114dc397b0556aeba5b6cec8810.stex" ]
+source_file="res://Objects/Sprites/pixil-frame-0.png"
+dest_files=[ "res://.import/pixil-frame-0.png-a4366cd4d6f78fc57338b80a38bc12b9.stex" ]
 
 [params]
 
