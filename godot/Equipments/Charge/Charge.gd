@@ -69,7 +69,7 @@ func _set_done():
 	__setted = true
 	__detonator.visible = true
 	__player.get_ref().get_node("PlayerControl").call("set_busy", false)  # Игрок точно должен быть
-	get_parent().get_parent().add_child(__detonator)
+	get_parent().get_parent().add_child(__detonator)  # It's to World
 	__player.get_ref().call("take_object", __detonator)
 	# automatic dropped
 	# __player.get_ref().call("drop_object", self)
