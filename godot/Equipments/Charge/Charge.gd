@@ -2,6 +2,11 @@ extends StaticBody2D
 
 class_name Charge
 
+const red_texture = preload("res://Equipments/Charge/Sprites/charge-red.png")
+const green_texture = preload("res://Equipments/Charge/Sprites/charge-green.png")
+const bluer_texture = preload("res://Equipments/Charge/Sprites/charge-blue.png")
+const gray_texture = preload("res://Equipments/Charge/Sprites/charge-gray.png")
+
 const CHARGE_SETTING_TIME = 1
 
 const Type = "gadget"
@@ -12,6 +17,12 @@ var __player = null
 
 func _ready():
 	$EquipmentControl.start()
+
+func _physics_process(delta):
+	if walls.size() > 1:
+		$Sprite.texture =green_texture
+	else:
+		$Sprite.texture = red_texture
 
 func take(player):
 	__player = weakref(player)
@@ -42,8 +53,10 @@ func _set_done():
 	timeSettingDestination = 0.0
 	$AbortingTimer.stop()
 	$SetArea.queue_free()
+	set_physics_process(false)
 	__player.get_ref().get_node("PlayerControl").call("set_busy", false)  # Игрок точно должен быть
 	__player.get_ref().call("drop_object", self)
+	$Sprite.texture = bluer_texture
 
 func _on_AbortingTimer_timeout():
 	__can_set = false
