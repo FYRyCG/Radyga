@@ -84,201 +84,1594 @@ position = Vector2( -223.573, 233.524 )
 position = Vector2( 227.553, 238.168 )
 
 [node name="SmartWall" parent="." instance=ExtResource( 7 )]
-size_x = 5
-size_y = 5
-tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+editor/display_folded = true
+position = Vector2( 212.684, -83.4329 )
+size_x = 10
+size_y = 10
+tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, -36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, -28 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, -20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, 20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36, 36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, -36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, -28 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, -20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, 12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, 28 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -28, 36 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 28 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -20, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -12, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -4, 36 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
-, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 4, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
 , Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 12, 36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, -36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, -28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, -12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, 28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 20, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, -36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, -28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, -20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, -12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 28, 36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, -36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, -28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, -4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, 20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, 28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 36, 36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
  ]
 
 [node name="i0y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, -20 )
-rotation = 3.14159
+position = Vector2( -36, -36 )
+rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
 [node name="i0y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, -12 )
-rotation = 4.71239
+position = Vector2( -36, -28 )
+rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
 [node name="i0y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, -4 )
-rotation = 3.14159
+position = Vector2( -36, -20 )
+rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
 [node name="i0y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, 4 )
-rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i0y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -20, 12 )
-rotation = 1.5708
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i1y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -12, -20 )
-input_pickable = true
-script = ExtResource( 9 )
-intact_texture = ExtResource( 10 )
-
-[node name="i1y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -12, -12 )
+position = Vector2( -36, -12 )
 rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
+[node name="i0y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, -4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -36, 36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -28 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
 [node name="i1y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( -12, -4 )
+position = Vector2( -28, -20 )
 rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
 [node name="i1y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, -4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 28 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -28, 36 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, -4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 4 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 20 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 28 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -20, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, -4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -12, 4 )
 rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i1y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i3y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -12, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -12, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, -28 )
 rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i2y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -20 )
-rotation = 3.14159
+rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i2y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -12 )
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i2y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, -4 )
 rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i2y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, 4 )
 rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i2y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( -4, 12 )
 rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i3y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i4y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 20 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( -4, 36 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i5y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i5y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, -28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i5y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 4, -20 )
-rotation = 4.71239
+rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i3y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i5y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 4, -12 )
-rotation = 4.71239
+rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i3y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i5y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 4, -4 )
 rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i3y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i5y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 4, 4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i5y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 12 )
 rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i3y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
-position = Vector2( 4, 12 )
+[node name="i5y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i5y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 28 )
 rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i4y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i5y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 4, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, -28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -20 )
-rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i4y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i6y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -12 )
+rotation = 1.5708
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i4y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i6y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, -4 )
-rotation = 3.14159
+rotation = 4.71239
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i4y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i6y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, 4 )
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
 
-[node name="i4y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+[node name="i6y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
 position = Vector2( 12, 12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i6y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 12, 36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, -4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i7y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 20, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -20 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, -4 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i8y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 28, 36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y0" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y1" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y2" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -20 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y3" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -12 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y4" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, -4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y5" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y6" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y7" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y8" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i9y9" type="StaticBody2D" parent="SmartWall" instance=ExtResource( 8 )]
+position = Vector2( 36, 36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="SmartWall2" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 176.48, 71.6504 )
+rotation = 0.947714
+size_x = 5
+size_y = 20
+tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -76 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -68 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -60 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -52 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -44 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 20 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 36 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 44 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 52 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 60 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 68 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -16, 76 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -76 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -68 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -60 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -52 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -44 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -36 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, -4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 4 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 44 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 52 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 60 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 68 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -8, 76 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -76 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -68 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -60 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -52 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -44 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 12 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 36 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 44 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 52 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 60 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 68 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 76 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -76 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -68 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -60 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -52 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -44 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -28 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -20 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, -4 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 12 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 28 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 44 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 52 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 60 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 68 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 8, 76 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -76 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -68 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -60 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -52 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -44 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -36 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -20 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -12 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 20 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 44 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 52 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 60 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 68 ),"rotation":1.5708,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 16, 76 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+ ]
+
+[node name="i0y0" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -76 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y1" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -68 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y4" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -60 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y5" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -52 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y6" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -44 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y7" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y8" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y9" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -20 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y10" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -12 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y11" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, -4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y12" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y13" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y14" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 20 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y15" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y16" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 36 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y17" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 44 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y18" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 52 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y19" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 60 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y20" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 68 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y21" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -16, 76 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y0" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -76 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y1" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -68 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y4" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -60 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y5" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -52 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y6" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -44 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y7" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -36 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y8" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y9" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y10" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y11" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, -4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y12" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 4 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y13" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y14" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y15" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y16" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y17" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 44 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y18" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 52 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y19" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 60 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y20" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 68 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i1y21" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( -8, 76 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y0" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -76 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y1" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -68 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y4" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -60 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y5" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -52 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y6" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -44 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y7" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y8" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y9" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y10" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y11" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, -4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y12" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y13" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 12 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y14" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y15" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y16" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 36 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y17" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 44 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y18" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 52 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y19" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 60 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y20" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 68 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i2y21" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 0, 76 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y0" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -76 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y1" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -68 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y4" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -60 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y5" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -52 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y6" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -44 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y7" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y8" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -28 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y9" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -20 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y10" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -12 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y11" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, -4 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y12" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y13" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 12 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y14" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y15" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 28 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y16" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y17" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 44 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y18" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 52 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y19" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 60 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y20" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 68 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i3y21" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 8, 76 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y0" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -76 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y1" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -68 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y4" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -60 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y5" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -52 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y6" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -44 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y7" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -36 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y8" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y9" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -20 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y10" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -12 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y11" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, -4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y12" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y13" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y14" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 20 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y15" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 28 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y16" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 36 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y17" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 44 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y18" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 52 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y19" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 60 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y20" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 68 )
+rotation = 1.5708
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i4y21" type="StaticBody2D" parent="SmartWall2" instance=ExtResource( 8 )]
+position = Vector2( 16, 76 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="SmartWall3" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 34.9059, 118.662 )
+size_x = 1
+size_y = 4
+tiles = [ Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, -4 ),"rotation":4.71239,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 4 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+, Object(StaticBody2D,"_import_path":NodePath(""),"pause_mode":0,"editor/display_folded":false,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 0, 12 ),"rotation":3.14159,"scale":Vector2( 1, 1 ),"z_index":0,"z_as_relative":true,"input_pickable":true,"collision_layer":1,"collision_mask":1,"constant_linear_velocity":Vector2( 0, 0 ),"constant_angular_velocity":0.0,"physics_material_override":null,"script":ExtResource( 9 ),"intact_texture":ExtResource( 10 ))
+ ]
+
+[node name="i0y0" type="StaticBody2D" parent="SmartWall3" instance=ExtResource( 8 )]
+position = Vector2( 0, -12 )
+rotation = 3.14159
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y1" type="StaticBody2D" parent="SmartWall3" instance=ExtResource( 8 )]
+position = Vector2( 0, -4 )
+rotation = 4.71239
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y2" type="StaticBody2D" parent="SmartWall3" instance=ExtResource( 8 )]
+position = Vector2( 0, 4 )
+input_pickable = true
+script = ExtResource( 9 )
+intact_texture = ExtResource( 10 )
+
+[node name="i0y3" type="StaticBody2D" parent="SmartWall3" instance=ExtResource( 8 )]
+position = Vector2( 0, 12 )
+rotation = 3.14159
 input_pickable = true
 script = ExtResource( 9 )
 intact_texture = ExtResource( 10 )
