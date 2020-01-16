@@ -20,7 +20,14 @@ export (bool) var playable = false
 
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
-
+# Строка, содержащая указание для изменения анимации
+# "Shoot" - сыграть выбор оружия, если персонаж стоит
+# "Use" - пока что просто сделать вид, что персонаж что-то делает
+# "Stop" - прекратить действие
+# "Idle" - остановить движение
+var demanded_animation = null
+# Предыдущая анимация для обработки или игнорирования повторяющихся запросов
+var previous_animation = ""
 # Текущий предмет в зоне досягаемости,
 # при нажатие "pl_use" будет вызван метод "use" у current_interactive_body
 var current_interactive_body = null
@@ -69,23 +76,30 @@ func _physics_process(delta):
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
+				demanded_animation = "Use"
 				
 		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("primary")
+			demanded_animation = "Use"
 		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("secondary")
+			demanded_animation = "Use"
 		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("gadget")
+			demanded_animation = "Use"
 		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$PlayerEquipment.reload()
+			demanded_animation = "Use"
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
 	var hand = $PlayerEquipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"):
+			demanded_animation = "Shoot"
 			hand.shoot()
 		elif hand.has_method("setting"):
+			demanded_animation = "Stop"
 			hand.setting(delta)
 
 # Вызывается, когда игрок нажимает "pl_use"
@@ -114,10 +128,32 @@ func set_control_script(script : GDScript):
 	$PlayerElements/ControleNode.set_script(control_script)
 
 func start_animation(velocity):
-	if (velocity.x != 0 || velocity.y != 0) and has_node("AnimationPlayer"):
-		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
-	elif has_node("AnimationPlayer"):
-		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
+	if(has_node("AnimationPlayer")):
+		var new_animation = null
+		var moving = velocity.x != 0 || velocity.y != 0
+		var animation_tree = get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback")
+		match(demanded_animation):
+			"Use":
+				print("YO")
+				new_animation = "Use"
+			"Shoot":
+				if(!moving):
+					new_animation = "Idle_steady"
+			"Idle":
+				if(moving):
+					new_animation = "Idle"
+		# Проверка на движение
+		if(new_animation == null):
+			if (moving):
+				if(previous_animation != "Walk"):
+					new_animation = "Walk"
+			else:
+				if(previous_animation != "Idle"):
+					new_animation = "Idle"
+		if(new_animation != null):
+			demanded_animation = null
+			animation_tree.travel(new_animation)
+			previous_animation = new_animation
 
 # Проверка, мешает ли что-то стрелять
 var count_entered_body = 0
