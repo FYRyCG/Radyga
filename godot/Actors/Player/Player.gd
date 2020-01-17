@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 class_name Player
 func get_class(): return "Player"
-
+	
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
-	"melee" : null
+	"melee" : null,
+	"gadget" : preload("res://Equipments/Charge/Charge.tscn")
 }
 
 export var ammunitions = {
@@ -19,13 +20,20 @@ export (bool) var playable = false
 
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
-
+# Строка, содержащая указание для изменения анимации
+# "Shoot" - сыграть выбор оружия, если персонаж стоит
+# "Use" - пока что просто сделать вид, что персонаж что-то делает
+# "Stop" - прекратить действие
+# "Idle" - остановить движение
+var demanded_animation = null
+# Предыдущая анимация для обработки или игнорирования повторяющихся запросов
+var previous_animation = ""
 # Текущий предмет в зоне досягаемости,
 # при нажатие "pl_use" будет вызван метод "use" у current_interactive_body
 var current_interactive_body = null
 
 func _ready():
-	# Устанавливает скрипт - правило управление player'ом
+	# Устанавливает скрипт - правило уп	равление player'ом
 	add_child(control_script.instance())
 	$PlayerControl.set_process(false)
 	$PlayerControl.start()
@@ -49,9 +57,13 @@ func drop_object(obj):
 	$PlayerEquipment.drop_object(obj)
 
 func set_object_shape(obj):
-	$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
-	$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
-	$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
+	if obj.has_method("get_collision"):
+		$PlayerElements/WeaponArea/CollisionShape2D.disabled = false
+		$PlayerElements/WeaponArea/CollisionShape2D.shape = obj.get_collision().shape
+		$PlayerElements/WeaponArea/CollisionShape2D.global_position = $PlayerElements/WeaponPosition.global_position
+		$PlayerElements/WeaponArea/CollisionShape2D.rotation = obj.get_collision().rotation
+	else:
+		$PlayerElements/WeaponArea/CollisionShape2D.disabled = true
 
 var grenade
 func _physics_process(delta):
@@ -61,24 +73,34 @@ func _physics_process(delta):
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
 			grenade.get_ref().start()
 			add_child(grenade.get_ref())
-		if Input.is_action_just_released("pl_throw_grenade"):
+		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
+				demanded_animation = "Use"
 				
-		if Input.is_action_just_pressed("pl_primary_weapon"):
+		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("primary")
-		if Input.is_action_just_pressed("pl_secondary_weapon"):
+			demanded_animation = "Use"
+		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("secondary")
-		if Input.is_action_just_pressed("pl_reload"):
+			demanded_animation = "Use"
+		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
+			$PlayerEquipment.switch_weapon("gadget")
+			demanded_animation = "Use"
+		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$PlayerEquipment.reload()
-			pass
+			demanded_animation = "Use"
 
 # Вызывается, когда игрок нажимет "pl_shoot"
-func shoot():
+func shoot(delta):
 	var hand = $PlayerEquipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"):
+			demanded_animation = "Shoot"
 			hand.shoot()
+		elif hand.has_method("setting"):
+			demanded_animation = "Stop"
+			hand.setting(delta)
 
 # Вызывается, когда игрок нажимает "pl_use"
 func use():
@@ -97,16 +119,41 @@ func _on_Interactive_body_exited(body):
 # Возвращает позицию, где должно находится оружие
 func get_weapon_position():
 	return $PlayerElements/WeaponPosition
+
+func get_equipment_position():
+	return $PlayerElements/EquipmentPosition
 	
 func set_control_script(script : GDScript):
 	control_script = script
 	$PlayerElements/ControleNode.set_script(control_script)
 
 func start_animation(velocity):
-	if (velocity.x != 0 || velocity.y != 0) and has_node("AnimationPlayer"):
-		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Walk")
-	elif has_node("AnimationPlayer"):
-		get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback").travel("Idle")
+	if(has_node("AnimationPlayer")):
+		var new_animation = null
+		var moving = velocity.x != 0 || velocity.y != 0
+		var animation_tree = get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback")
+		match(demanded_animation):
+			"Use":
+				print("YO")
+				new_animation = "Use"
+			"Shoot":
+				if(!moving):
+					new_animation = "Idle_steady"
+			"Idle":
+				if(moving):
+					new_animation = "Idle"
+		# Проверка на движение
+		if(new_animation == null):
+			if (moving):
+				if(previous_animation != "Walk"):
+					new_animation = "Walk"
+			else:
+				if(previous_animation != "Idle"):
+					new_animation = "Idle"
+		if(new_animation != null):
+			demanded_animation = null
+			animation_tree.travel(new_animation)
+			previous_animation = new_animation
 
 # Проверка, мешает ли что-то стрелять
 var count_entered_body = 0
@@ -118,3 +165,17 @@ func _on_WeaponArea_body_exited(body):
 	count_entered_body -= 1
 	if count_entered_body == 0:
 		can_shoot = true
+
+# Проверка SmartWalls, с которыми можно будет взаимодействовать
+var walls = {}
+func _on_SetArea_body_entered(body):
+	if body is SmartTile:
+		walls[body] = "0"
+
+func _on_SetArea_body_exited(body):
+	if body is SmartTile:
+		walls.erase(body)
+
+func get_walls():
+	return walls
+

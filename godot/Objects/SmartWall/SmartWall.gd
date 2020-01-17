@@ -1,13 +1,15 @@
 tool
 extends Node2D
 
-export (int) var TILE_SIZE = 8
+class_name SmartWall
 
+export (int) var TILE_SIZE = 8
 export (int) var size_x = 1
 export (int) var size_y = 1
 export (bool) var random_rotate = false
-
 export var tiles = []
+
+const DEFAULT_TILE_SIZE = 8
 
 var smart_tile = preload("res://Objects/SmartWall/Tiles/SmartTile.tscn")
 
@@ -58,10 +60,23 @@ func _process(delta):
 
 
 func size_changes():
-	var dx = size_x - __prev_size_x
-	var dy = size_y - __prev_size_y
-	$Spawn.position.x += -dx * 4
-	$Spawn.position.y += -dy * 4
+	$Spawn.global_position.x = -((size_x * TILE_SIZE) / 2.0)
+	$Spawn.global_position.y = -((size_y * TILE_SIZE) / 2.0)
+	global_position.x = (TILE_SIZE / 2) * -1
+	global_position.y = (TILE_SIZE / 2) * -1
+	var sc = TILE_SIZE / DEFAULT_TILE_SIZE
+	$WallArea/WallShape.scale = Vector2(size_x * sc + 0.5, size_y * sc + 0.5)
+	$WallArea/WallShape.global_position = global_position
 	__prev_size_x = size_x
 	__prev_size_y = size_y
 	_draw_tiles()
+
+"""
+func _on_WallArea_body_entered(body):
+	if body is Charge:
+		body.near_wall(true, self)
+
+func _on_WallArea_body_exited(body):
+	if body is Charge:
+		body.near_wall(false)
+"""

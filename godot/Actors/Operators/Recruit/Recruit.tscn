@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi1.png" type="Texture" id=2]
@@ -23,7 +23,10 @@ extents = Vector2( 2.32578, 3.35488 )
 
 [sub_resource type="CircleShape2D" id=6]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="RayShape2D" id=7]
+length = 5.00283
+
+[sub_resource type="Animation" id=8]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture/Leg1:position")
@@ -110,7 +113,7 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -198,25 +201,25 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
-[sub_resource type="AnimationNodeStateMachine" id=13]
-states/Idle/node = SubResource( 9 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=14]
+states/Idle/node = SubResource( 10 )
 states/Idle/position = Vector2( 219, 94 )
-states/Walk/node = SubResource( 10 )
+states/Walk/node = SubResource( 11 )
 states/Walk/position = Vector2( 418, 66 )
-transitions = [ "Idle", "Walk", SubResource( 11 ), "Walk", "Idle", SubResource( 12 ) ]
+transitions = [ "Idle", "Walk", SubResource( 12 ), "Walk", "Idle", SubResource( 13 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
 [node name="Recruit" type="KinematicBody2D"]
 light_mask = 0
@@ -261,21 +264,20 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 6 )
 
 [node name="Texture" type="Sprite" parent="."]
-light_mask = 0
 texture = ExtResource( 2 )
 
 [node name="Leg1" type="Sprite" parent="Texture"]
 show_behind_parent = true
 position = Vector2( -3.88214, -5.5759 )
 texture = ExtResource( 3 )
-vframes = 5
+vframes = 12
 hframes = 4
 
 [node name="Leg2" type="Sprite" parent="Texture"]
 show_behind_parent = true
 position = Vector2( -4.20441, 5.76326 )
 texture = ExtResource( 3 )
-vframes = 5
+vframes = 12
 hframes = 4
 
 [node name="PlayerElements" parent="." instance=ExtResource( 4 )]
@@ -283,7 +285,10 @@ hframes = 4
 [node name="WeaponPosition" parent="PlayerElements" index="0"]
 position = Vector2( 11.81, 4.15207 )
 
-[node name="InteractiveZone" parent="PlayerElements" index="1"]
+[node name="EquipmentPosition" parent="PlayerElements" index="1"]
+position = Vector2( 19.9075, 3.43642 )
+
+[node name="InteractiveZone" parent="PlayerElements" index="2"]
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
@@ -292,18 +297,26 @@ position = Vector2( 11.6258, -0.498249 )
 [node name="CollisionShape2D" parent="PlayerElements/WeaponArea" index="0"]
 position = Vector2( 23.5838, 11.1276 )
 
+[node name="CollisionShape2D" parent="PlayerElements/SetArea" index="0"]
+position = Vector2( 19.8665, 3.41694 )
+rotation = -1.5708
+scale = Vector2( 0.3, 0.6 )
+shape = SubResource( 7 )
+
 [node name="WeaponCollision" type="CollisionShape2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 7 )
-anims/Walk = SubResource( 8 )
+anims/Idle = SubResource( 8 )
+anims/Walk = SubResource( 9 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-tree_root = SubResource( 13 )
+tree_root = SubResource( 14 )
 anim_player = NodePath("..")
 active = true
-parameters/playback = SubResource( 14 )
+parameters/playback = SubResource( 15 )
 [connection signal="body_entered" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_entered"]
 [connection signal="body_exited" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_exited"]
+[connection signal="body_entered" from="PlayerElements/SetArea" to="." method="_on_SetArea_body_entered"]
+[connection signal="body_exited" from="PlayerElements/SetArea" to="." method="_on_SetArea_body_exited"]
 
 [editable path="PlayerElements"]

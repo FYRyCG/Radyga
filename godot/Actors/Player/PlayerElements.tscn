@@ -15,7 +15,9 @@ extents = Vector2( 42.6604, 49.0935 )
 [node name="PlayerElements" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="WeaponPosition" type="Node2D" parent="."]
+[node name="WeaponPosition" type="Position2D" parent="."]
+
+[node name="EquipmentPosition" type="Position2D" parent="."]
 
 [node name="InteractiveZone" type="Area2D" parent="."]
 
@@ -48,5 +50,9 @@ shape = SubResource( 2 )
 [node name="VisionAreaBack" type="CollisionShape2D" parent="VisionArea"]
 position = Vector2( -69.3274, 0 )
 shape = SubResource( 3 )
+
+[node name="SetArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetArea"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]
