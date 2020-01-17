@@ -92,7 +92,8 @@ func shoot(delta):
 func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
        and current_interactive_body.get_ref().get_class() != "Player":
-		current_interactive_body.get_ref().use(self)
+		if current_interactive_body.get_ref().has_method("use"):
+			current_interactive_body.get_ref().use(self)
 
 # Проверка, какой предмет находится в зоне досягаемости до player
 func _on_Interactive_body_entered(body):
