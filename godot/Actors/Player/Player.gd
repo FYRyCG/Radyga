@@ -26,6 +26,17 @@ var can_shoot = true
 # "Stop" - прекратить действие
 # "Idle" - остановить движение
 var demanded_animation = null
+# Выбранный игроком объект, который будет влиять на анимацию:
+# 1 - пробивной заряд/без оружия
+# 2 - дробовик
+# 3 - пистолет
+# 5 - автомат
+var equipped_animation = 5
+var new_equipped = 5
+# Положение на матрице для плавной смены положения:
+# (0.0, 0.0) = Без оружия/пробивной заряд
+# (-0.5, 0.5) = Автомат
+var blend = Vector2(-0.5, 0.5)
 # Предыдущая анимация для обработки или игнорирования повторяющихся запросов
 var previous_animation = ""
 # Текущий предмет в зоне досягаемости,
@@ -76,17 +87,17 @@ func _physics_process(delta):
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
-				demanded_animation = "Use"
+				#demanded_animation = "Throw_HE"
 				
 		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("primary")
-			demanded_animation = "Use"
+			new_equipped = 5
 		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("secondary")
-			demanded_animation = "Use"
+			new_equipped = 5
 		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
 			$PlayerEquipment.switch_weapon("gadget")
-			demanded_animation = "Use"
+			new_equipped = 1
 		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$PlayerEquipment.reload()
 			demanded_animation = "Use"
@@ -99,7 +110,7 @@ func shoot(delta):
 			demanded_animation = "Shoot"
 			hand.shoot()
 		elif hand.has_method("setting"):
-			demanded_animation = "Stop"
+			demanded_animation = "Shoot"
 			hand.setting(delta)
 
 # Вызывается, когда игрок нажимает "pl_use"
@@ -132,16 +143,33 @@ func start_animation(velocity):
 		var new_animation = null
 		var moving = velocity.x != 0 || velocity.y != 0
 		var animation_tree = get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback")
-		match(demanded_animation):
-			"Use":
-				print("YO")
-				new_animation = "Use"
-			"Shoot":
-				if(!moving):
-					new_animation = "Idle_steady"
-			"Idle":
-				if(moving):
-					new_animation = "Idle"
+		if(new_equipped != equipped_animation):
+			var demanded_blend
+			if(new_equipped == 5):
+				demanded_blend = Vector2(-0.5,0.5)
+			else:
+				demanded_blend = Vector2.ZERO
+			if(abs(demanded_blend.x-blend.x) + abs(demanded_blend.y-blend.y) > 0.05):
+				blend.x += 0.01 * sign(demanded_blend.x - blend.x)
+				blend.y += 0.01 * sign(demanded_blend.y - blend.y)
+			else:
+				blend = demanded_blend
+				equipped_animation = new_equipped
+			print(blend)
+			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Idle/blend_position"] = blend
+			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Walk/blend_position"] = blend
+			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Use/blend_position"] = blend
+			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Idle_shooting/blend_position"] = blend
+		else:
+			match(demanded_animation):
+				"Use":
+					new_animation = "Use"
+				"Shoot":
+					if(!moving):
+						new_animation = "Idle_shooting"
+				"Idle":
+					if(moving):
+						new_animation = "Idle"
 		# Проверка на движение
 		if(new_animation == null):
 			if (moving):
@@ -154,6 +182,7 @@ func start_animation(velocity):
 			demanded_animation = null
 			animation_tree.travel(new_animation)
 			previous_animation = new_animation
+	
 
 # Проверка, мешает ли что-то стрелять
 var count_entered_body = 0
@@ -170,6 +199,7 @@ func _on_WeaponArea_body_exited(body):
 var walls = {}
 func _on_SetArea_body_entered(body):
 	if body is SmartTile:
+		
 		walls[body] = "0"
 
 func _on_SetArea_body_exited(body):

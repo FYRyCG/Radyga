@@ -6,27 +6,27 @@
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 height = 11.2453
 
-[sub_resource type="SegmentShape2D" id=2]
+[sub_resource type="SegmentShape2D" id=4]
 b = Vector2( -8.87433, 8.7873 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 5.67534, 4.92499 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 2.9106, 6.70445 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 2.32578, 3.35488 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 
-[sub_resource type="RayShape2D" id=7]
+[sub_resource type="RayShape2D" id=2]
 length = 5.00283
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture/Leg1:position")
@@ -113,7 +113,7 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -201,25 +201,25 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
-[sub_resource type="AnimationNodeStateMachine" id=14]
-states/Idle/node = SubResource( 10 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Idle/node = SubResource( 11 )
 states/Idle/position = Vector2( 219, 94 )
-states/Walk/node = SubResource( 11 )
+states/Walk/node = SubResource( 12 )
 states/Walk/position = Vector2( 418, 66 )
-transitions = [ "Idle", "Walk", SubResource( 12 ), "Walk", "Idle", SubResource( 13 ) ]
+transitions = [ "Idle", "Walk", SubResource( 13 ), "Walk", "Idle", SubResource( 14 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="Recruit" type="KinematicBody2D"]
 light_mask = 0
@@ -229,39 +229,40 @@ script = ExtResource( 1 )
 playable = true
 
 [node name="Hitboxes" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -0.387421, 0 )
 collision_layer = 0
 collision_mask = 8
 
 [node name="BodyCollision" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( -5.73287, -0.502436 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="BackpackCollision" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( -9.24259, -17.0619 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="ArmCollision0" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 6.56319, -10.7814 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="ArmCollision1" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 16.7165, -6.07109 )
 rotation = -0.676429
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 disabled = true
 
 [node name="ArmCollision2" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2( 20.2755, 3.45424 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 disabled = true
 
 [node name="CircleCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1.52588e-005 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="Texture" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -301,19 +302,19 @@ position = Vector2( 23.5838, 11.1276 )
 position = Vector2( 19.8665, 3.41694 )
 rotation = -1.5708
 scale = Vector2( 0.3, 0.6 )
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 
 [node name="WeaponCollision" type="CollisionShape2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 8 )
-anims/Walk = SubResource( 9 )
+anims/Idle = SubResource( 9 )
+anims/Walk = SubResource( 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("..")
 active = true
-parameters/playback = SubResource( 15 )
+parameters/playback = SubResource( 16 )
 [connection signal="body_entered" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_entered"]
 [connection signal="body_exited" from="PlayerElements/WeaponArea" to="." method="_on_WeaponArea_body_exited"]
 [connection signal="body_entered" from="PlayerElements/SetArea" to="." method="_on_SetArea_body_entered"]
