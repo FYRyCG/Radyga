@@ -31,8 +31,8 @@ var demanded_animation = null
 # 2 - дробовик
 # 3 - пистолет
 # 5 - автомат
-var equipped_animation = 5
-var new_equipped = 5
+var equipped_animation = 1
+var new_equipped = 1
 # Положение на матрице для плавной смены положения:
 # (0.0, 0.0) = Без оружия/пробивной заряд
 # (-0.5, 0.5) = Автомат
