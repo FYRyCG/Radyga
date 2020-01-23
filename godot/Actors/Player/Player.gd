@@ -145,6 +145,7 @@ func start_animation(velocity):
 		var moving = velocity.x != 0 || velocity.y != 0
 		var animation_tree = get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback")
 		if(new_equipped != equipped_animation):
+			equipped_animation = -1 # Пока анимация не зафиксирована, будет значение -1
 			var demanded_blend
 			if(new_equipped == 5):
 				demanded_blend = Vector2(-0.5,0.5)
