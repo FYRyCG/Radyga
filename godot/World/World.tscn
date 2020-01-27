@@ -20,4 +20,4 @@ drag_margin_bottom = 0.0
 [node name="Players" type="Node" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.180392, 0.180392, 0.180392, 1 )
+color = Color( 0.509804, 0.509804, 0.509804, 1 )
