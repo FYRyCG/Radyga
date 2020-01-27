@@ -3122,10 +3122,8 @@ vframes = 12
 hframes = 4
 frame = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.94465, 1.94548 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
 [node name="PlayerElements" parent="." instance=ExtResource( 3 )]
