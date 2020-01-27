@@ -15,6 +15,9 @@ export var ammunitions = {
 	"5,56" : 30
 }
 
+export var stat_MAXHP = 100
+export var stat_HP = 100
+
 export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
 export (bool) var playable = false
 

@@ -28,15 +28,12 @@ func reload(add):
 	start_animation("Reload")
 
 func use(player):
-	print("USE")
 	$WeaponElements/WeaponControl.use(player)
 
 func take(player):
-	print("TAKE")
 	$WeaponElements/WeaponControl.take(player)
 
 func drop():
-	print("DROP")
 	$WeaponElements/WeaponControl.drop()
 	
 func get_collision():
