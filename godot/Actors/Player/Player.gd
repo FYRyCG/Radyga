@@ -15,6 +15,9 @@ export var ammunitions = {
 	"5,56" : 30
 }
 
+export var stat_MAXHP = 100
+export var stat_HP = 100
+
 export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
 export (bool) var playable = false
 
@@ -157,7 +160,6 @@ func start_animation(velocity):
 			else:
 				blend = demanded_blend
 				equipped_animation = new_equipped
-			print(blend)
 			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Idle/blend_position"] = blend
 			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Walk/blend_position"] = blend
 			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Use/blend_position"] = blend

@@ -20,9 +20,12 @@ func my_call(method):
 
 func shoot():
 	$WeaponElements/WeaponControl.shoot()
+	if($WeaponElements/WeaponControl.get_ammo() > 0):
+		start_animation("Shoot")
 
 func reload(add):
 	$WeaponElements/WeaponControl.reload(add)
+	start_animation("Reload")
 
 func use(player):
 	$WeaponElements/WeaponControl.use(player)
@@ -41,3 +44,6 @@ func get_type():
 
 func get_object_type():
 	return Object_type
+
+func start_animation(animation):
+	get_node("AnimationPlayer").play(animation)
