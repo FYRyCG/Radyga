@@ -3027,6 +3027,7 @@ start_node = "Idle"
 
 [node name="MemeRecruitForExample" type="KinematicBody2D"]
 collision_layer = 2
+collision_mask = 11
 script = ExtResource( 1 )
 playable = true
 
@@ -3136,6 +3137,9 @@ position = Vector2( 20.1636, 0.643913 )
 
 [node name="CollisionShape2D" parent="PlayerElements/InteractiveZone" index="0"]
 position = Vector2( 24.8028, 0 )
+
+[node name="VisionShape" parent="PlayerElements/VisionArea" index="0"]
+position = Vector2( 241.17, -0.397217 )
 
 [node name="CollisionShape2D" parent="PlayerElements/SetArea" index="0"]
 position = Vector2( 34.6368, 4.91901 )
