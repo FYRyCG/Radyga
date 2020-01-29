@@ -18,7 +18,7 @@ export var ammunitions = {
 export var stat_MAXHP = 100
 export var stat_HP = 100
 
-export (PackedScene) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
+export (Script) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
 export (bool) var playable = false
 
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
@@ -232,4 +232,3 @@ func _on_SetArea_body_exited(body):
 
 func get_walls():
 	return walls
-

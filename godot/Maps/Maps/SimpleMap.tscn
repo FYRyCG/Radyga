@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/asphalt.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Tiles/corner_asphalt.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/M4.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/SmartWall/SmartWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SmartWall/Tiles/SmartTile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Actors/AI/AIBehaviour.gd" type="Script" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "asphalt.png 0"
@@ -851,3 +853,7 @@ rotation = 3.14159
 
 [node name="WallMap" type="TileMap" parent="."]
 format = 1
+
+[node name="MemeRecruitForExample" parent="." instance=ExtResource( 9 )]
+control_script = ExtResource( 10 )
+playable = false
