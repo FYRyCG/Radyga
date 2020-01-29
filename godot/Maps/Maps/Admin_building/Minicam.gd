@@ -3,6 +3,7 @@ extends Camera2D
 onready var Players= $"/root/World/Players"
 var Player
 var Player_pos
+onready var HUD = $"/root/World/CanvasLayer/Hud/Minimap/MarginContainer/TextureRect"
 
 func _ready():
 	yield(get_tree(), "idle_frame")
@@ -20,7 +21,8 @@ func _process(delta):
 	var viewp = get_viewport()
 	var img = get_viewport().get_texture().get_data()
 	img.flip_y()
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
-	var tex = ImageTexture.new()
-	img.save_png("res://Actors/Interface/Sprites/screenshot.png")
+	HUD.texture = img
+	
+	#yield(get_tree(), "idle_frame")
+	#yield(get_tree(), "idle_frame")
+	#img.save_png("res://Actors/Interface/Sprites/screenshot.png")
