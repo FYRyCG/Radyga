@@ -47,16 +47,17 @@ var previous_animation = ""
 var current_interactive_body = null
 
 func _ready():
-	# Устанавливает скрипт - правило уп	равление player'ом
+	# Устанавливает скрипт - правило управление player'ом
+	
 	add_child(control_script.instance())
-	$PlayerControl.set_process(false)
-	$PlayerControl.start()
-	# Нода отвечающая за весь инвентарь плеера
-	add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
-	$PlayerEquipment.start(equipments, ammunitions)
-
+	if($PlayerControl):
+		$PlayerControl.set_process(false)
+		$PlayerControl.start()
+		# Нода отвечающая за весь инвентарь плеера
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
+		add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
+		$PlayerEquipment.start(equipments, ammunitions)
 		$PlayerElements/Light2D.enabled = true
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
@@ -81,7 +82,7 @@ func set_object_shape(obj):
 
 var grenade
 func _physics_process(delta):
-	if is_network_master():
+	if playable and is_network_master():
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
@@ -138,9 +139,9 @@ func get_weapon_position():
 func get_equipment_position():
 	return $PlayerElements/EquipmentPosition
 	
-func set_control_script(script : GDScript):
-	control_script = script
-	$PlayerElements/ControleNode.set_script(control_script)
+func set_control_script(script):
+	if(script):
+		control_script = script
 
 func start_animation(velocity):
 	if(has_node("AnimationPlayer")):
