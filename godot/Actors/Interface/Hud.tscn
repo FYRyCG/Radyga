@@ -212,6 +212,10 @@ texture = ExtResource( 8 )
 margin_right = 128.0
 margin_bottom = 128.0
 
-[node name="TextureRect" type="TextureRect" parent="Minimap/MarginContainer"]
+[node name="ViewportContainer" type="ViewportContainer" parent="Minimap/MarginContainer"]
 margin_right = 128.0
 margin_bottom = 128.0
+
+[node name="Viewport" type="Viewport" parent="Minimap/MarginContainer/ViewportContainer"]
+
+[node name="MiniCam" type="Camera2D" parent="Minimap/MarginContainer/ViewportContainer/Viewport"]

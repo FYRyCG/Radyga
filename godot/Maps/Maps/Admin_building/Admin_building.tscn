@@ -1872,6 +1872,8 @@ script = ExtResource( 23 )
 visible = false
 current = true
 zoom = Vector2( 7, 7 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 script = ExtResource( 29 )
 [connection signal="body_entered" from="Eneterence" to="Eneterence" method="_on_Eneterence_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]

@@ -21,7 +21,7 @@ func _process(delta):
 	var viewp = get_viewport()
 	var img = get_viewport().get_texture().get_data()
 	img.flip_y()
-	HUD.texture = img
+	#HUD.texture = img
 	
 	#yield(get_tree(), "idle_frame")
 	#yield(get_tree(), "idle_frame")
