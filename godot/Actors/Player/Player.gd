@@ -56,6 +56,7 @@ func _ready():
 		# Нода отвечающая за весь инвентарь плеера
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
+		#TODO FIX DIS BUG
 		add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
 		$PlayerEquipment.start(equipments, ammunitions)
 		$PlayerElements/Light2D.enabled = true
@@ -124,6 +125,14 @@ func use():
 		if current_interactive_body.get_ref().has_method("use"):
 			current_interactive_body.get_ref().use(self)
 
+func hit():
+	stat_HP -= 20
+	if(stat_HP < 1):
+		death()
+
+func death():
+	demanded_animation = "Death"
+
 # Проверка, какой предмет находится в зоне досягаемости до player
 func _on_Interactive_body_entered(body):
 	current_interactive_body = weakref(body)
@@ -148,7 +157,7 @@ func start_animation(velocity):
 		var new_animation = null
 		var moving = velocity.x != 0 || velocity.y != 0
 		var animation_tree = get_node("AnimationPlayer").get_node("AnimationTree").get("parameters/playback")
-		if(new_equipped != equipped_animation):
+		if(new_equipped != equipped_animation && demanded_animation != "Death"):
 			equipped_animation = -1 # Пока анимация не зафиксирована, будет значение -1
 			var demanded_blend
 			if(new_equipped == 5):
@@ -167,6 +176,8 @@ func start_animation(velocity):
 			get_node("AnimationPlayer").get_node("AnimationTree")["parameters/Idle_shooting/blend_position"] = blend
 		else:
 			match(demanded_animation):
+				"Death":
+					new_animation = "Death_" + String(randi() % 1)
 				"Use":
 					new_animation = "Use"
 				"Shoot":
@@ -176,7 +187,7 @@ func start_animation(velocity):
 					if(moving):
 						new_animation = "Idle"
 		# Проверка на движение
-		if(new_animation == null):
+		if(new_animation == null && stat_HP > 0):
 			if (moving):
 				if(previous_animation != "Walk"):
 					new_animation = "Walk"

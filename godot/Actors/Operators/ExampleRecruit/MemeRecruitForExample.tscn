@@ -1,13 +1,321 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/ExampleRecruit/Sprites/accessory.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=3]
 
+[sub_resource type="CanvasItemMaterial" id=43]
+light_mode = 2
+
 [sub_resource type="CircleShape2D" id=1]
 
 [sub_resource type="RayShape2D" id=2]
 length = 5.00283
+
+[sub_resource type="Animation" id=37]
+resource_name = "Death_0"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Backpack:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.00270244 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Backpack:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.00270244, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5.50771, 0.582993 ), Vector2( -7.76706, 0.131127 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Arm_L:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.00270244, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.296, -11.5 ), Vector2( 13.689, -12.4037 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/Arm_L:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.00270244, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -37.0, -23.6349 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite/Foot_L:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.00270244, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.50489, -4.44207 ), Vector2( -14.7958, -1.73084 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite/Foot_R:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.00270244, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.40096, 5.69816 ), Vector2( -13.5442, 8.86125 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite/Arm_R:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.00418187, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.04322, 12.0598 ), Vector2( 14.114, 14.5451 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite/Arm_R:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.00418187, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -15.5678, -26.083 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite/Arm2_L:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.77845, -8.18288 ), Vector2( 3.58595, -12.0238 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sprite/Arm2_L:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -76.2459, -9.18378 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Sprite:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sprite/Head:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprite/Arm2_R:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 76.2, 26.6714 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Sprite/Arm2_R:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.190872, 7.32839 ), Vector2( 5.6133, 12.299 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Sprite/Arm3_L:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0.00467103, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.3291, -11.7974 ), Vector2( 21.4787, -12.038 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Sprite/Arm3_L:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0.00467103 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -100.906 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Sprite/Arm3_L:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0.00467103 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.554173, 0.797452 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Sprite/Arm3_R:frame")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Sprite/Arm3_R:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.586, 0.812 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Sprite/Arm3_R:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.57319, 11.5206 ), Vector2( 21.3218, 14.4578 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Sprite/Foot_R:rotation_degrees")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Sprite/Arm3_R:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -24.3589 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Sprite/Foot_L:rotation_degrees")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 19.1834 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle_1"
@@ -301,6 +609,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.04 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Idle_5"
@@ -593,6 +913,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -36.3298 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -898,6 +1230,18 @@ tracks/24/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 3, 7, 7, 3 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Sprite/Head:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1473,6 +1817,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ 0.0, -36.3298 ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.2
@@ -1764,6 +2120,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -36.3298, 0.0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -2058,6 +2426,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ -24.3589 ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "Use_5"
@@ -2350,6 +2730,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -36.3298 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -2645,6 +3037,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("Sprite/Head:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 length = 0.8
@@ -2926,6 +3330,21 @@ tracks/22/keys = {
 "update": 0,
 "values": [ Vector2( 7.7487, 9.48629 ) ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("Sprite/Head:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0.0950458 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.72096, 0.250551 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "Death_0"
 
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Idle_1"
@@ -3011,7 +3430,17 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
 [sub_resource type="AnimationNodeStateMachine" id=35]
+states/Death_0/node = SubResource( 38 )
+states/Death_0/position = Vector2( 908, -71 )
 states/Idle/node = SubResource( 16 )
 states/Idle/position = Vector2( 315, 106 )
 states/Idle_shooting/node = SubResource( 20 )
@@ -3020,18 +3449,21 @@ states/Use/node = SubResource( 24 )
 states/Use/position = Vector2( 153, 106 )
 states/Walk/node = SubResource( 28 )
 states/Walk/position = Vector2( 475, 106 )
-transitions = [ "Idle", "Use", SubResource( 29 ), "Use", "Idle", SubResource( 30 ), "Idle", "Walk", SubResource( 31 ), "Walk", "Idle", SubResource( 32 ), "Idle", "Idle_shooting", SubResource( 33 ), "Idle_shooting", "Idle", SubResource( 34 ) ]
+transitions = [ "Idle", "Use", SubResource( 29 ), "Use", "Idle", SubResource( 30 ), "Idle", "Walk", SubResource( 31 ), "Walk", "Idle", SubResource( 32 ), "Idle", "Idle_shooting", SubResource( 33 ), "Idle_shooting", "Idle", SubResource( 34 ), "Use", "Death_0", SubResource( 39 ), "Idle", "Death_0", SubResource( 40 ), "Walk", "Death_0", SubResource( 41 ), "Idle_shooting", "Death_0", SubResource( 42 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 0, -81.4497 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
 [node name="MemeRecruitForExample" type="KinematicBody2D"]
+material = SubResource( 43 )
 collision_layer = 2
 collision_mask = 11
 script = ExtResource( 1 )
 playable = true
 
 [node name="Sprite" type="Sprite" parent="."]
+use_parent_material = true
 rotation = 0.659525
 texture = ExtResource( 2 )
 vframes = 4
@@ -3040,6 +3472,7 @@ frame = 7
 
 [node name="Foot_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 6.80066, -4.30114 )
 rotation = -0.634075
 texture = ExtResource( 2 )
@@ -3048,6 +3481,7 @@ hframes = 4
 
 [node name="Foot_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 2.13853, 9.12815 )
 rotation = -0.487504
 texture = ExtResource( 2 )
@@ -3056,6 +3490,7 @@ hframes = 4
 
 [node name="Arm3_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 27.6157, -12.5469 )
 rotation = -0.664579
 texture = ExtResource( 2 )
@@ -3065,6 +3500,7 @@ frame = 3
 
 [node name="Arm3_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 16.3377, -2.20785 )
 rotation = -0.425143
 texture = ExtResource( 2 )
@@ -3073,6 +3509,7 @@ hframes = 4
 frame = 7
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
+use_parent_material = true
 position = Vector2( -5.50771, 0.582993 )
 texture = ExtResource( 2 )
 vframes = 4
@@ -3080,7 +3517,8 @@ hframes = 4
 frame = 5
 
 [node name="Head" type="Sprite" parent="Sprite"]
-position = Vector2( 1.69177, 0.273189 )
+use_parent_material = true
+position = Vector2( 1.72096, 0.250551 )
 rotation = -0.642644
 texture = ExtResource( 2 )
 vframes = 12
@@ -3089,6 +3527,7 @@ frame = 6
 
 [node name="Arm_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 18.2602, -15.6849 )
 rotation = -0.391139
 texture = ExtResource( 2 )
@@ -3098,6 +3537,7 @@ frame = 2
 
 [node name="Arm_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 14.0605, 4.74212 )
 rotation = -1.46912
 texture = ExtResource( 2 )
@@ -3107,6 +3547,7 @@ frame = 2
 
 [node name="Arm2_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 9.13662, -14.2389 )
 rotation = -0.365889
 texture = ExtResource( 2 )
@@ -3116,6 +3557,7 @@ frame = 1
 
 [node name="Arm2_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
+use_parent_material = true
 position = Vector2( 7.7487, 9.48629 )
 rotation = -0.397549
 texture = ExtResource( 2 )
@@ -3139,7 +3581,7 @@ position = Vector2( 20.1636, 0.643913 )
 position = Vector2( 24.8028, 0 )
 
 [node name="VisionShape" parent="PlayerElements/VisionArea" index="0"]
-position = Vector2( 241.17, -0.397217 )
+position = Vector2( 240.492, -1.97876 )
 
 [node name="CollisionShape2D" parent="PlayerElements/SetArea" index="0"]
 position = Vector2( 34.6368, 4.91901 )
@@ -3151,6 +3593,7 @@ shape = SubResource( 2 )
 position = Vector2( 0.250351, -0.250343 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Death_0 = SubResource( 37 )
 anims/Idle_1 = SubResource( 3 )
 anims/Idle_5 = SubResource( 4 )
 anims/Idle_shooting_1 = SubResource( 5 )
