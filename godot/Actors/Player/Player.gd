@@ -18,7 +18,7 @@ export var ammunitions = {
 export var stat_MAXHP = 100
 export var stat_HP = 100
 
-export (PackedScene) var control_script = preload("res://Actors/Player/PlayerControl.tscn") setget set_control_script
+export (PackedScene) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
 export (bool) var playable = false
 
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
@@ -48,21 +48,25 @@ var current_interactive_body = null
 
 func _ready():
 	# Устанавливает скрипт - правило управление player'ом
-	
-	add_child(control_script.instance())
-	if($PlayerControl):
-		$PlayerControl.set_process(false)
-		$PlayerControl.start()
-		# Нода отвечающая за весь инвентарь плеера
+	var PlayerControl = preload("res://Actors/Player/PlayerControl.tscn").instance()
+	PlayerControl.set_script(control_script)
+	add_child(PlayerControl)
+	$PlayerControl.start()
+
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
 		#TODO FIX DIS BUG
 		add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
+		# Нода отвечающая за весь инвентарь плеера
 		$PlayerEquipment.start(equipments, ammunitions)
 		
 		# Запускаев все жизненно важные органы
 		$PlayerElements/Light2D.enabled = true
 		$PlayerElements/HUDLayer/HUD.start(self)
+		
+	# удалить все ноды, которые не нужны для NPC
+	if not playable:
+		$PlayerElements/HUDLayer.queue_free()
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
@@ -115,7 +119,6 @@ func shoot(delta):
 	var hand = $PlayerEquipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"):
-			demanded_animation = "Shoot"
 			hand.shoot()
 		elif hand.has_method("setting"):
 			demanded_animation = "Shoot"
@@ -152,7 +155,7 @@ func get_equipment_position():
 	return $PlayerElements/EquipmentPosition
 	
 func set_control_script(script):
-	if(script):
+	if script:
 		control_script = script
 
 func start_animation(velocity):
@@ -201,7 +204,9 @@ func start_animation(velocity):
 			demanded_animation = null
 			animation_tree.travel(new_animation)
 			previous_animation = new_animation
-	
+
+func recoil():
+	demanded_animation = "Shoot"
 
 # Проверка, мешает ли что-то стрелять
 var count_entered_body = 0

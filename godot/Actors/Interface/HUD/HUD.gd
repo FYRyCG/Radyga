@@ -9,6 +9,7 @@ func _ready():
 	
 func start(player_):
 	player = weakref(player_)
+	$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 
 func get_player():
 	if player and player.get_ref():
