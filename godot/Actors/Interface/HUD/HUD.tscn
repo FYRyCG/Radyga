@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Actors/Interface/Hud.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Interface/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Actors/Interface/Sprites/Sanity.png" type="Texture" id=3]
 [ext_resource path="res://Actors/Interface/Sprites/Cross.png" type="Texture" id=4]
@@ -43,7 +43,7 @@ font_data = ExtResource( 2 )
 size = 32
 font_data = ExtResource( 2 )
 
-[node name="Hud" type="Control"]
+[node name="HUD" type="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -1025.0
@@ -217,5 +217,7 @@ margin_right = 128.0
 margin_bottom = 128.0
 
 [node name="Viewport" type="Viewport" parent="Minimap/MarginContainer/ViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 3
 
 [node name="MiniCam" type="Camera2D" parent="Minimap/MarginContainer/ViewportContainer/Viewport"]

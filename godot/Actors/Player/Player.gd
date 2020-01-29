@@ -59,7 +59,10 @@ func _ready():
 		#TODO FIX DIS BUG
 		add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
 		$PlayerEquipment.start(equipments, ammunitions)
+		
+		# Запускаев все жизненно важные органы
 		$PlayerElements/Light2D.enabled = true
+		$PlayerElements/HUDLayer/HUD.start(self)
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")

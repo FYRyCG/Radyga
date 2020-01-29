@@ -2,8 +2,14 @@ extends Control
 
 onready var tex = $Minimap/MarginContainer/TextureRect
 
-func _ready():
-	pass
+var player = null
+
+func start(player_):
+	player = weakref(player_)
+
+func get_player():
+	if player and player.get_ref():
+		return player.get_ref()
 
 """	
 func _process(delta):
