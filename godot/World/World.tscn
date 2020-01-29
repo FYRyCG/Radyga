@@ -25,7 +25,6 @@ drag_margin_bottom = 0.0
 color = Color( 0.509804, 0.509804, 0.509804, 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource( 4 )]
 script = ExtResource( 5 )
