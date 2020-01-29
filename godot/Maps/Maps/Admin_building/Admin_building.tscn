@@ -1850,10 +1850,10 @@ texture = ExtResource( 28 )
 color = Color( 1, 0.941176, 0.819608, 1 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_left = -0.282715
-margin_top = -0.569397
-margin_right = 127.717
-margin_bottom = 127.431
+margin_left = 387.488
+margin_top = -447.266
+margin_right = 908.488
+margin_bottom = 9.73444
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 128, 128 )
@@ -1870,8 +1870,10 @@ script = ExtResource( 23 )
 
 [node name="Minicam" type="Camera2D" parent="ViewportContainer/Viewport"]
 visible = false
-offset = Vector2( 500, 500 )
 current = true
+zoom = Vector2( 7, 7 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 script = ExtResource( 29 )
 [connection signal="body_entered" from="Eneterence" to="Eneterence" method="_on_Eneterence_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]

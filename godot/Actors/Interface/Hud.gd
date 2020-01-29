@@ -1,12 +1,12 @@
 extends Control
 
+onready var tex = $Minimap/MarginContainer/TextureRect
 
 func _ready():
 	pass
-	
 
-func _on_World_load_finished():
-	var Parent = self.get_parent().get_parent()
-	var Players = Parent.get_node("Players")
-	var Players_list = Players.get_child_count()
-	print(Players_list)
+"""	
+func _process(delta):
+	tex.texture = load("res://Actors/Interface/Sprites/screenshot.png")
+"""	
+	
