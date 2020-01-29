@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Actors/Interface/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Actors/Interface/Sprites/Sec_weap.png" type="Texture" id=6]
 [ext_resource path="res://Actors/Interface/Sprites/Bullet.png" type="Texture" id=7]
 [ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=8]
+[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -221,3 +222,4 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="MiniCam" type="Camera2D" parent="Minimap/MarginContainer/ViewportContainer/Viewport"]
+script = ExtResource( 9 )

@@ -1,9 +1,14 @@
 extends Control
 
 onready var tex = $Minimap/MarginContainer/TextureRect
-
+onready var viewport = $Minimap/MarginContainer/ViewportContainer/Viewport
 var player = null
 
+func _ready():
+	var map = $"/root/MapManager".get_wall_map()
+	#var Map = map_manager.get_wall_map()
+	viewport.world_2D = map
+	
 func start(player_):
 	player = weakref(player_)
 
