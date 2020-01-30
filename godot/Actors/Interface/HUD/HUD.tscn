@@ -7,8 +7,8 @@
 [ext_resource path="res://Actors/Interface/Sprites/Main_weap.png" type="Texture" id=5]
 [ext_resource path="res://Actors/Interface/Sprites/Sec_weap.png" type="Texture" id=6]
 [ext_resource path="res://Actors/Interface/Sprites/Bullet.png" type="Texture" id=7]
-[ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=8]
-[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=9]
+[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=8]
+[ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -200,14 +200,10 @@ text = "5"
 [node name="Minimap" type="MarginContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -154.0
-margin_right = -26.0
-margin_bottom = 128.0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Minimap"]
-margin_right = 128.0
-margin_bottom = 128.0
-texture = ExtResource( 8 )
+margin_left = -150.324
+margin_top = 18.3773
+margin_right = -22.3245
+margin_bottom = 146.377
 
 [node name="MarginContainer" type="MarginContainer" parent="Minimap"]
 margin_right = 128.0
@@ -218,8 +214,23 @@ margin_right = 128.0
 margin_bottom = 128.0
 
 [node name="Viewport" type="Viewport" parent="Minimap/MarginContainer/ViewportContainer"]
+size = Vector2( 128, 128 )
 handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="MiniCam" type="Camera2D" parent="Minimap/MarginContainer/ViewportContainer/Viewport"]
-script = ExtResource( 9 )
+current = true
+zoom = Vector2( 5, 5 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 8 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Minimap"]
+visible = false
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 9 )

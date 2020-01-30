@@ -10,6 +10,9 @@ var velocity = Vector2()
 func _ready():
 	pawn = weakref(get_parent())  # if it nullptr then you loh
 
+func start():
+	pass
+
 func _physics_process(delta):
 	#velocity = Vector2()
 	#velocity = velocity.normalized() * pawn_speed
