@@ -3,12 +3,13 @@
 [ext_resource path="res://Actors/Interface/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Actors/Interface/Sprites/Sanity.png" type="Texture" id=3]
-[ext_resource path="res://Actors/Interface/Sprites/Cross.png" type="Texture" id=4]
-[ext_resource path="res://Actors/Interface/Sprites/Main_weap.png" type="Texture" id=5]
-[ext_resource path="res://Actors/Interface/Sprites/Sec_weap.png" type="Texture" id=6]
-[ext_resource path="res://Actors/Interface/Sprites/Bullet.png" type="Texture" id=7]
-[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=8]
-[ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=9]
+[ext_resource path="res://Actors/Interface/HUD/HP_bar/BG_bar.png" type="Texture" id=4]
+[ext_resource path="res://Actors/Interface/Sprites/Cross.png" type="Texture" id=5]
+[ext_resource path="res://Actors/Interface/Sprites/Main_weap.png" type="Texture" id=6]
+[ext_resource path="res://Actors/Interface/Sprites/Sec_weap.png" type="Texture" id=7]
+[ext_resource path="res://Actors/Interface/Sprites/Bullet.png" type="Texture" id=8]
+[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=9]
+[ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -26,6 +27,8 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -37,10 +40,6 @@ size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=9]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -81,7 +80,6 @@ margin_right = 92.0
 margin_bottom = 84.0
 
 [node name="Stats" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 28.0
@@ -116,31 +114,29 @@ custom_fonts/font = SubResource( 4 )
 text = "100"
 
 [node name="Hp_st" type="HBoxContainer" parent="Stats"]
-editor/display_folded = true
 margin_top = 68.0
 margin_right = 204.0
 margin_bottom = 132.0
 
-[node name="TextureRect" type="TextureRect" parent="Stats/Hp_st"]
+[node name="MarginContainer" type="MarginContainer" parent="Stats/Hp_st"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 4 )
 
-[node name="Hp" type="Label" parent="Stats/Hp_st"]
-margin_left = 68.0
+[node name="TextureProgress" type="TextureProgress" parent="Stats/Hp_st/MarginContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+value = 50.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+fill_mode = 3
+
+[node name="value" type="Label" parent="Stats/Hp_st/MarginContainer"]
 margin_top = 17.0
-margin_right = 120.0
+margin_right = 64.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 5 )
-text = "  HP"
-
-[node name="value" type="Label" parent="Stats/Hp_st"]
-margin_left = 124.0
-margin_top = 17.0
-margin_right = 168.0
-margin_bottom = 47.0
-custom_fonts/font = SubResource( 6 )
 text = "100"
+align = 1
 
 [node name="Weapons" type="VBoxContainer" parent="."]
 editor/display_folded = true
@@ -154,13 +150,13 @@ margin_top = -153.0
 [node name="Main" type="TextureRect" parent="Weapons"]
 margin_right = 160.0
 margin_bottom = 74.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Secondary" type="TextureRect" parent="Weapons"]
 margin_top = 78.0
 margin_right = 160.0
 margin_bottom = 117.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Weapons"]
 editor/display_folded = true
@@ -171,14 +167,14 @@ margin_bottom = 153.0
 [node name="TextureRect" type="TextureRect" parent="Weapons/HBoxContainer"]
 margin_right = 43.0
 margin_bottom = 32.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Bullet_in_mag" type="Label" parent="Weapons/HBoxContainer"]
 margin_left = 47.0
 margin_top = 1.0
 margin_right = 79.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "30"
 
 [node name="Label" type="Label" parent="Weapons/HBoxContainer"]
@@ -186,7 +182,7 @@ margin_left = 83.0
 margin_top = 1.0
 margin_right = 97.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "/"
 
 [node name="Mags" type="Label" parent="Weapons/HBoxContainer"]
@@ -194,7 +190,7 @@ margin_left = 101.0
 margin_top = 1.0
 margin_right = 117.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "5"
 
 [node name="Minimap" type="MarginContainer" parent="."]
@@ -227,10 +223,9 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Minimap"]
-visible = false
 margin_right = 128.0
 margin_bottom = 128.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
