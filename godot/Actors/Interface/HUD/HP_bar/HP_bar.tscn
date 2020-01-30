@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Actors/Interface/HUD/HP_bar/HP_bar.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Interface/HUD/HP_bar/BG_bar.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Interface/HUD/HP_bar/Cross.png" type="Texture" id=3]
+[ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0.619608, 0.596078, 0.596078, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Hp_value"
+tracks/0/type = "value"
+tracks/0/path = NodePath("value:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[node name="HP_bar" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -960.0
+margin_bottom = -536.0
+script = ExtResource( 1 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+value = 50.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+
+[node name="value" type="Label" parent="."]
+margin_top = 17.0
+margin_right = 64.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
+text = "100"
+align = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hp_value = SubResource( 2 )

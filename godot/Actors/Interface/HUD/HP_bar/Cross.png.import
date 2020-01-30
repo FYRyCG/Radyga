@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cross.png-2a98f7b37c5b6d59cb6728a1c52939a9.stex"
+path="res://.import/Cross.png-19f864d9dd5e8bccbda58aa2d193dee0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/Sprites/Cross.png"
-dest_files=[ "res://.import/Cross.png-2a98f7b37c5b6d59cb6728a1c52939a9.stex" ]
+source_file="res://Actors/Interface/HUD/HP_bar/Cross.png"
+dest_files=[ "res://.import/Cross.png-19f864d9dd5e8bccbda58aa2d193dee0.stex" ]
 
 [params]
 
