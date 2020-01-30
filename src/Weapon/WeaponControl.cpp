@@ -118,6 +118,7 @@ namespace godot {
 		bullet->call("start", shoot_position, shoot_rotation);
 		weapon->get_node("WeaponElements")->call("shoot"); // draw Sprite
 		weapon->get_parent()->get_parent()->get_parent()->add_child(bullet);
+		player->call("recoil");
 		shoot_control->shoot();
 	}
 

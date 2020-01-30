@@ -11,9 +11,11 @@ func _ready():
 		for sp in current_map.get_node("SpawnPositions").get_children():
 			spawn_positions.append(sp)
 
-
 func get_next_spawn_position():
 	if next_spawn_position < spawn_positions.size():
 		var spawn_pos = spawn_positions[next_spawn_position]
 		next_spawn_position += 1
 		return spawn_pos
+
+func get_wall_map():
+	return current_map.get_node("WallMap")

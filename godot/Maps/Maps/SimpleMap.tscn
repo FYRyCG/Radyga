@@ -9,7 +9,7 @@
 [ext_resource path="res://Objects/SmartWall/SmartWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SmartWall/Tiles/SmartTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Actors/AI/AIBehaviour.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Actors/AI/AIBehaviour.gd" type="Script" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "asphalt.png 0"
@@ -851,7 +851,9 @@ position = Vector2( 0, 4 )
 position = Vector2( 0, 12 )
 rotation = 3.14159
 
+[node name="WallMap" type="TileMap" parent="."]
+format = 1
+
 [node name="MemeRecruitForExample" parent="." instance=ExtResource( 9 )]
-position = Vector2( -64.4565, 105.96 )
 control_script = ExtResource( 10 )
 playable = false
