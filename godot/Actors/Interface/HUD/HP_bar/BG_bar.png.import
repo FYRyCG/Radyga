@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cross.png-2a98f7b37c5b6d59cb6728a1c52939a9.stex"
+path="res://.import/BG_bar.png-3b13bb8163e2dea4cb9e74e07cbb86ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/Sprites/Cross.png"
-dest_files=[ "res://.import/Cross.png-2a98f7b37c5b6d59cb6728a1c52939a9.stex" ]
+source_file="res://Actors/Interface/HUD/HP_bar/BG_bar.png"
+dest_files=[ "res://.import/BG_bar.png-3b13bb8163e2dea4cb9e74e07cbb86ba.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
