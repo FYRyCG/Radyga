@@ -18,4 +18,7 @@ func get_next_spawn_position():
 		return spawn_pos
 
 func get_wall_map():
-	return current_map.get_node("WallMap")
+	if current_map.has_node("WallMap"):
+		return current_map.get_node("WallMap")
+	else:
+		return TileMap.new()
