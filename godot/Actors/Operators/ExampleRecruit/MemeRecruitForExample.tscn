@@ -3456,7 +3456,6 @@ script = ExtResource( 1 )
 playable = true
 
 [node name="Sprite" type="Sprite" parent="."]
-use_parent_material = true
 rotation = 0.659525
 texture = ExtResource( 2 )
 vframes = 4
@@ -3499,7 +3498,7 @@ rotation = -0.425143
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
-frame = 7
+frame = 3
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
@@ -3606,7 +3605,7 @@ tree_root = SubResource( 42 )
 anim_player = NodePath("..")
 active = true
 parameters/playback = SubResource( 43 )
-parameters/Idle/blend_position = Vector2( -0.502246, 0.525862 )
+parameters/Idle/blend_position = Vector2( -0.513075, 0.502304 )
 parameters/Idle_shooting/blend_position = Vector2( -0.511231, 0.586207 )
 parameters/Use/blend_position = Vector2( -0.50584, 0.543103 )
 parameters/Walk/blend_position = Vector2( -0.509434, 0.568966 )
