@@ -64,10 +64,7 @@ func take_object(obj):
 	if obj and obj.get_object_type() == "weapon":
 		var weapon_type = obj.get_type()
 		if equipments[weapon_type]:
-			if object_in_hand(equipments[weapon_type]):
-				hands = null
 			drop_object(equipments[weapon_type])
-			
 		obj.take(get_parent())
 		equipments[weapon_type] = obj
 		set_hand(obj)
