@@ -34,8 +34,8 @@ var demanded_animation = null
 # 2 - дробовик
 # 3 - пистолет
 # 5 - автомат
-var equipped_animation = 1
-var new_equipped = 1
+var equipped_animation = 5
+var new_equipped = 5
 # Положение на матрице для плавной смены положения:
 # (0.0, 0.0) = Без оружия/пробивной заряд
 # (-0.5, 0.5) = Автомат
@@ -98,8 +98,8 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
-			grenade.get_ref().start()
 			add_child(grenade.get_ref())
+			grenade.get_ref().start()
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
