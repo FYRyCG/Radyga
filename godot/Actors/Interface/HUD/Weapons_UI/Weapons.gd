@@ -1,16 +1,31 @@
 extends VBoxContainer
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var bullet_conter = $HBoxContainer/Bullets/Bullets_counter
+var curent_ammo
+var curent_mags
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+	
+func initilize(max_ammo, max_mags):
+	curent_ammo = max_ammo
+	curent_mags = max_mags
+	$HBoxContainer/Bullets/Bullets_counter.text = str(curent_ammo) + " / " + str(curent_mags)
+	
+func set_bullet_counter(ammo, mags):
+	bullet_conter.text = str(round(ammo)) + " / " + str(round(mags))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func animate_value(curent_ammo, curent_mags, ammo, mags):
+	pass
+	
+	
+func _on_HUD_ammo_changed(ammo, mags):
+	#Добавить преобразование в проценты
+	#animate_value(curent_ammo, curent_mags, ammo, mags)
+	set_bullet_counter(ammo, mags)
+	curent_ammo = ammo
+	curent_mags = mags

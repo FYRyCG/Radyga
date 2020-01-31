@@ -89,4 +89,5 @@ margin_right = 80.0
 margin_bottom = -16.0
 
 [node name="Weapons" parent="." instance=ExtResource( 3 )]
+[connection signal="ammo_changed" from="." to="Weapons" method="_on_HUD_ammo_changed"]
 [connection signal="hp_changed" from="." to="HP_bar" method="_on_HUD_hp_changed"]
