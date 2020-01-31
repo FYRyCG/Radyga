@@ -15,8 +15,8 @@ export var ammunitions = {
 	"5,56" : 30
 }
 
-export var stat_MAXHP = 100
-export var stat_HP = 100
+export var MAX_HP = 100
+export var MAX_STAMINA = 100
 
 export (Script) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
 export (bool) var playable = false
@@ -53,15 +53,19 @@ func _ready():
 	add_child(PlayerControl)
 	$PlayerControl.start()
 
+	add_child(preload("res://Actors/Player/Elements/Stats.tscn").instance())
+	$Stats.start(MAX_HP, MAX_STAMINA)
+
+	# Нода отвечающая за весь инвентарь плеера
+	add_child(preload("res://Actors/Player/Elements/Equipment.tscn").instance())
+	$Equipment.start(equipments, ammunitions)
+
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
-		#TODO FIX DIS BUG
-		add_child(preload("res://Actors/Player/PlayerEquipment.tscn").instance())
-		# Нода отвечающая за весь инвентарь плеера
-		$PlayerEquipment.start(equipments, ammunitions)
-		
 		# Запускаев все жизненно важные органы
 		$PlayerElements/Light2D.enabled = true
+		
+		$Stats.connect("health_changed", self, "change_hp")
 		$PlayerElements/HUDLayer/HUD.start(self)
 		
 	# удалить все ноды, которые не нужны для NPC
@@ -73,11 +77,11 @@ func _ready():
 
 # Берет объект в инвентарь
 func take_object(obj):
-	$PlayerEquipment.take_object(obj)
+	$Equipment.take_object(obj)
 
 # Выбрасывает объект из инвентаря
 func drop_object(obj):
-	$PlayerEquipment.drop_object(obj)
+	$Equipment.drop_object(obj)
 
 func set_object_shape(obj):
 	if obj.has_method("get_collision"):
@@ -102,21 +106,21 @@ func _physics_process(delta):
 				#demanded_animation = "Throw_HE"
 				
 		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
-			$PlayerEquipment.switch_weapon("primary")
+			$Equipment.switch_weapon("primary")
 			new_equipped = 5
 		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
-			$PlayerEquipment.switch_weapon("secondary")
+			$Equipment.switch_weapon("secondary")
 			new_equipped = 5
 		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
-			$PlayerEquipment.switch_weapon("gadget")
+			$Equipment.switch_weapon("gadget")
 			new_equipped = 1
 		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
-			$PlayerEquipment.reload()
+			$Equipment.reload()
 			demanded_animation = "Use"
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
-	var hand = $PlayerEquipment.get_hand()
+	var hand = $Equipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"):
 			hand.shoot()
@@ -129,12 +133,14 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
+			hit(80)
 			current_interactive_body.get_ref().use(self)
 
-func hit():
-	stat_HP -= 20
-	if(stat_HP < 1):
-		death()
+func hit(damage):
+	$Stats.change_hp(damage)
+
+func change_hp(cur_hp):
+	$PlayerElements/HUDLayer/HUD.change_hp_bar_value(cur_hp)
 
 func death():
 	demanded_animation = "Death"
@@ -193,7 +199,7 @@ func start_animation(velocity):
 					if(moving):
 						new_animation = "Idle"
 		# Проверка на движение
-		if(new_animation == null && stat_HP > 0):
+		if(new_animation == null && is_alive()):
 			if (moving):
 				if(previous_animation != "Walk"):
 					new_animation = "Walk"
@@ -207,6 +213,9 @@ func start_animation(velocity):
 
 func recoil():
 	demanded_animation = "Shoot"
+
+func is_alive():
+	return $Stats.is_alive()
 
 # Проверка, мешает ли что-то стрелять
 var count_entered_body = 0
