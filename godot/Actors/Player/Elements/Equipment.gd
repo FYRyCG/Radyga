@@ -10,8 +10,8 @@ var autoswap = true
 var hands = null
 
 func start(equipments_, ammunitions_):
-	equipments = equipments_
-	ammunitions = ammunitions_
+	equipments = equipments_.duplicate(true)
+	ammunitions = ammunitions_.duplicate(true)
 	# Создает экземпляры всего снаряжения
 	_init_equipment()
 	
@@ -29,6 +29,7 @@ func _instance_equipment(type):
 	if equipments[type]:
 		var instance = equipments[type].instance()
 		get_parent().get_parent().add_child(instance)
+		print("add in", get_parent().get_parent().get_path())
 		if instance.has_method("take"):
 			instance.take(get_parent())  # Подбираем оружие
 		instance.hide()  # Прячем в инвентарь

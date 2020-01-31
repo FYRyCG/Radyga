@@ -62,8 +62,6 @@ func _ready():
 
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
-		#TODO FIX DIS BUG
-		
 		# Запускаев все жизненно важные органы
 		$PlayerElements/Light2D.enabled = true
 		$PlayerElements/HUDLayer/HUD.start(self)
