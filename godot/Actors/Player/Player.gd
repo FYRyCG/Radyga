@@ -127,7 +127,7 @@ func shoot(delta):
 # Вызывается, когда игрок нажимает "pl_use"
 func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
-       and current_interactive_body.get_ref().get_class() != "Player":
+	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
 			current_interactive_body.get_ref().use(self)
 

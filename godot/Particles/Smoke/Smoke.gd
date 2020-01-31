@@ -29,4 +29,3 @@ func _on_StartMiddle_timeout():
 	$MiddleSmoke.emitting = true
 	if has_node("IncFirstOccluder"):
 		$IncFirstOccluder.queue_free()
-
