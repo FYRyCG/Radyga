@@ -7,6 +7,7 @@ var players = {
 	1 : "name"
 }
 
+
 func _ready():
 	pass
 	"""

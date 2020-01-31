@@ -1,10 +1,7 @@
 extends Node2D
 
-var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
-#var current_map = preload("res://Maps/Maps/Admin_building.tscn").instance()  #Мапа Санька
-#var current_map = preload("res://Maps/Maps/Outside.tscn").instance()
-#var map_list = [preload("res://Maps/Maps/Outside.tscn").instance(), 
-		#preload("res://Maps/Maps/Admin_building.tscn").instance()]
+#var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
+var current_map = preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance()  #Мапа Санька
 var spawn_positions = []
 var next_spawn_position = 0
 
@@ -14,9 +11,11 @@ func _ready():
 		for sp in current_map.get_node("SpawnPositions").get_children():
 			spawn_positions.append(sp)
 
-
 func get_next_spawn_position():
 	if next_spawn_position < spawn_positions.size():
 		var spawn_pos = spawn_positions[next_spawn_position]
 		next_spawn_position += 1
 		return spawn_pos
+
+func get_wall_map():
+	return current_map.get_node("WallMap")

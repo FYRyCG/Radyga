@@ -229,6 +229,7 @@ script = ExtResource( 1 )
 playable = true
 
 [node name="Hitboxes" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -0.387421, 0 )
 collision_layer = 0
 collision_mask = 8
@@ -264,21 +265,20 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 6 )
 
 [node name="Texture" type="Sprite" parent="."]
-light_mask = 0
 texture = ExtResource( 2 )
 
 [node name="Leg1" type="Sprite" parent="Texture"]
 show_behind_parent = true
 position = Vector2( -3.88214, -5.5759 )
 texture = ExtResource( 3 )
-vframes = 5
+vframes = 12
 hframes = 4
 
 [node name="Leg2" type="Sprite" parent="Texture"]
 show_behind_parent = true
 position = Vector2( -4.20441, 5.76326 )
 texture = ExtResource( 3 )
-vframes = 5
+vframes = 12
 hframes = 4
 
 [node name="PlayerElements" parent="." instance=ExtResource( 4 )]

@@ -7,6 +7,7 @@ func _ready():
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
 	gamestate.connect("game_ended", self, "_on_game_ended")
 	gamestate.connect("game_error", self, "_on_game_error")
+	
 
 func _on_host_pressed():
 	if get_node("connect/name").text == "":
@@ -42,6 +43,7 @@ func _on_join_pressed():
 func _on_connection_success():
 	get_node("connect").hide()
 	get_node("players").show()
+
 
 func _on_connection_failed():
 	get_node("connect/host").disabled = false

@@ -3,6 +3,5 @@
 [ext_resource path="res://bin/PlayerControl.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-
 class_name = "PlayerControl"
 library = ExtResource( 1 )

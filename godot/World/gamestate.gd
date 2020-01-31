@@ -67,11 +67,12 @@ remote func pre_start_game(spawn_points):
 
 	get_tree().get_root().get_node("lobby").hide()
 
-	var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
-
+	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
+	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
 	for p_id in spawn_points:
 		#var spawn_pos = world.get_node("spawn_points/" + str(spawn_points[p_id])).position
-		var spawn_pos = world.get_node("MapManager").get_next_spawn_position()
+		var spawn_pos = MapManager.get_next_spawn_position()
+		
 		var player = player_scene.instance()
 
 		player.set_name(str(p_id)) # Use unique ID as node name
@@ -82,7 +83,7 @@ remote func pre_start_game(spawn_points):
 			pass
 			# If node for this peer id, set name
 			#player.set_player_name(player_name)
-			world.get_node("MapManager/Camera").set_player(player)
+			world.get_node("Camera").set_player(player)
 		else:
 			pass
 			# Otherwise set name from peer
