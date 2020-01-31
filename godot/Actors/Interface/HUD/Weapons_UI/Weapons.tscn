@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/bullet_bg.png" type="Texture" id=1]
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Weapons.gd" type="Script" id=2]
+[ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Bullet.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Weapons" type="VBoxContainer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -175.0
+margin_top = -227.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Primary" type="TextureRect" parent="."]
+margin_right = 175.0
+
+[node name="Secondary" type="TextureRect" parent="."]
+margin_top = 4.0
+margin_right = 175.0
+margin_bottom = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 8.0
+margin_right = 175.0
+margin_bottom = 56.0
+
+[node name="Bullet_tex" type="TextureRect" parent="HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 48.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[node name="Bullets" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 47.0
+margin_right = 175.0
+margin_bottom = 48.0
+
+[node name="Bullets_counter" type="Label" parent="HBoxContainer/Bullets"]
+margin_top = 9.0
+margin_right = 128.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 1 )
+text = "30 / 5"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Bullets"]
+margin_right = 128.0
+margin_bottom = 48.0
+texture = ExtResource( 1 )

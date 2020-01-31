@@ -66,7 +66,7 @@ func _ready():
 		$PlayerElements/Light2D.enabled = true
 		
 		$Stats.connect("health_changed", self, "change_hp")
-		$PlayerElements/HUDLayer/HUD.start(self)
+		$PlayerElements/HUDLayer/HUD.start(self, MAX_HP)
 		
 	# удалить все ноды, которые не нужны для NPC
 	if not playable:

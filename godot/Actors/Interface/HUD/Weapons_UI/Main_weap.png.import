@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Main_weap.png-a16f74033a420f1759f7055c26696487.stex"
+path="res://.import/Main_weap.png-c2f1fc11b7c077f3a4d53e3c988d8b2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/Sprites/Main_weap.png"
-dest_files=[ "res://.import/Main_weap.png-a16f74033a420f1759f7055c26696487.stex" ]
+source_file="res://Actors/Interface/HUD/Weapons_UI/Main_weap.png"
+dest_files=[ "res://.import/Main_weap.png-c2f1fc11b7c077f3a4d53e3c988d8b2a.stex" ]
 
 [params]
 
