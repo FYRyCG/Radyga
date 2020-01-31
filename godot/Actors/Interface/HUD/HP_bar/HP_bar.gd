@@ -1,16 +1,19 @@
 extends MarginContainer
 
-onready var maximum_value = 100
+onready var maximum_value
 var curent_health
 
+"""
 func _ready():
 	$TextureProgress.max_value = maximum_value
 	$TextureProgress.value = maximum_value
+"""
 
 func initilized(maximum):
 	maximum_value = maximum
 	curent_health = maximum
 	$TextureProgress.max_value = maximum_value
+	$TextureProgress.value = maximum_value
 	
 	
 func animate_value(start, end):
