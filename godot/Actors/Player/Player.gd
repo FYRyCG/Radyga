@@ -64,6 +64,8 @@ func _ready():
 	if playable and is_network_master():
 		# Запускаев все жизненно важные органы
 		$PlayerElements/Light2D.enabled = true
+		
+		$Stats.connect("health_changed", self, "change_hp")
 		$PlayerElements/HUDLayer/HUD.start(self)
 		
 	# удалить все ноды, которые не нужны для NPC
@@ -131,10 +133,14 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
+			hit(80)
 			current_interactive_body.get_ref().use(self)
 
 func hit(damage):
 	$Stats.change_hp(damage)
+
+func change_hp(cur_hp):
+	$PlayerElements/HUDLayer/HUD.change_hp_bar_value(cur_hp)
 
 func death():
 	demanded_animation = "Death"

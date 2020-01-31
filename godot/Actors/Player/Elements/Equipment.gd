@@ -27,9 +27,14 @@ func _instance_equipment(type):
 	# parent == "Player"
 	# parent.parent == "map/Players"
 	if equipments[type]:
+		#print("add ", equipments[type])
 		var instance = equipments[type].instance()
+		print("inst ", instance)
+		print("add in ", get_parent().get_parent().get_path())
 		get_parent().get_parent().add_child(instance)
-		print("add in", get_parent().get_parent().get_path())
+		print("path =  ", instance.get_path())
+		#print("\n")
+		#print("add in", get_parent().get_parent().get_children())
 		if instance.has_method("take"):
 			instance.take(get_parent())  # Подбираем оружие
 		instance.hide()  # Прячем в инвентарь

@@ -11,7 +11,7 @@ signal stamina_over
 signal stamina_restored
 
 # Signals for HUD
-signal health_changed
+signal health_changed(current_hp)
 
 var died = false
 
@@ -30,7 +30,7 @@ func change_hp(damage):
 		emit_signal("died")
 		died = true
 	_current_health -= damage
-	emit_signal("health_changed")
+	emit_signal("health_changed", _current_health)
 
 func change_stamina(dt):
 	if dt >= _current_stamina:
