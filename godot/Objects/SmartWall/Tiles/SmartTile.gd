@@ -23,6 +23,6 @@ func set_size(new_size):
 	$BrokenSprite.scale = Vector2(sc, sc)
 	$CollisionShape2D.scale = Vector2(sc, sc)
 
-func hit():
+func hit(damage):
 	queue_free()
 	

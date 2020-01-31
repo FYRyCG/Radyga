@@ -20,11 +20,10 @@ func _ready():
 
 func start(explosion_time : int):
 	$ExplosionTimer.wait_time = explosion_time
-	$ExplosionTimer.start()
+	$ExplosionTimer.start(explosion_time)
 	
 	get_parent().set_physics_process(false)
 	get_parent().set_process(false)
-
 
 func throw(speed):
 	target_position = get_global_mouse_position()
@@ -55,5 +54,5 @@ func _physics_process(delta):
 
 func _on_ExplosionTimer_timeout():
 	get_parent().set_physics_process(false)
-	remain_speed_factor = 0  # fix bug with throwing explosion
+	remain_speed_factor = 0  # fixed bug with throwing explosion
 	get_parent().call("explosion")

@@ -10,8 +10,8 @@ var autoswap = true
 var hands = null
 
 func start(equipments_, ammunitions_):
-	equipments = equipments_
-	ammunitions = ammunitions_
+	equipments = equipments_.duplicate(true)
+	ammunitions = ammunitions_.duplicate(true)
 	# Создает экземпляры всего снаряжения
 	_init_equipment()
 	
@@ -27,8 +27,14 @@ func _instance_equipment(type):
 	# parent == "Player"
 	# parent.parent == "map/Players"
 	if equipments[type]:
+		#print("add ", equipments[type])
 		var instance = equipments[type].instance()
+		print("inst ", instance)
+		print("add in ", get_parent().get_parent().get_path())
 		get_parent().get_parent().add_child(instance)
+		print("path =  ", instance.get_path())
+		#print("\n")
+		#print("add in", get_parent().get_parent().get_children())
 		if instance.has_method("take"):
 			instance.take(get_parent())  # Подбираем оружие
 		instance.hide()  # Прячем в инвентарь
@@ -86,7 +92,6 @@ func switch_weapon(type):
 func _get_next_grenade(cur):
 	if not cur in equipments["grenades"]:
 		pass
-
 
 func reload():
 	if hands and hands.get_ref():

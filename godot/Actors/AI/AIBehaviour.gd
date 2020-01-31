@@ -18,4 +18,5 @@ func _physics_process(delta):
 	#velocity = velocity.normalized() * pawn_speed
 	#velocity = pawn.get_ref().move_and_slide(velocity)
 	pawn.get_ref().start_animation(velocity)
+	#print(pawn.get_ref().get_node("Equipment").get_hand().get_path())
 	pass

@@ -12,7 +12,7 @@ func _process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if collision.collider.has_method("hit"):
-			collision.collider.hit()
+			collision.collider.hit(20)
 		queue_free()
 
 func _on_Lifetime_timeout():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sec_weap.png-0eaebc1e9685e282c6404d506d0f376b.stex"
+path="res://.import/Sec_weap.png-650d51d0b606e60d11808bd741af6088.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/Sprites/Sec_weap.png"
-dest_files=[ "res://.import/Sec_weap.png-0eaebc1e9685e282c6404d506d0f376b.stex" ]
+source_file="res://Actors/Interface/HUD/Weapons_UI/Sec_weap.png"
+dest_files=[ "res://.import/Sec_weap.png-650d51d0b606e60d11808bd741af6088.stex" ]
 
 [params]
 

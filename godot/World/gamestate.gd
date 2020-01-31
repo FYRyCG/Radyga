@@ -70,26 +70,7 @@ remote func pre_start_game(spawn_points):
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
 	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
 	for p_id in spawn_points:
-		#var spawn_pos = world.get_node("spawn_points/" + str(spawn_points[p_id])).position
-		var spawn_pos = MapManager.get_next_spawn_position()
-		
-		var player = player_scene.instance()
-
-		player.set_name(str(p_id)) # Use unique ID as node name
-		player.position = spawn_pos.position
-		player.set_network_master(p_id) #set unique id as master
-
-		if p_id == get_tree().get_network_unique_id():
-			pass
-			# If node for this peer id, set name
-			#player.set_player_name(player_name)
-			world.get_node("Camera").set_player(player)
-		else:
-			pass
-			# Otherwise set name from peer
-			#player.set_player_name(players[p_id])
-
-		world.get_node("Players").add_child(player)
+		MapManager.spawn_player(p_id, player_scene)
 
 	if not get_tree().is_network_server():
 		# Tell server we are ready to start
