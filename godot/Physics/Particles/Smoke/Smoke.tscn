@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Particles/Smoke/Smoke.gd" type="Script" id=1]
-[ext_resource path="res://Particles/Smoke/smoke1.png" type="Texture" id=2]
+[ext_resource path="res://Physics/Particles/Smoke/Smoke.gd" type="Script" id=1]
+[ext_resource path="res://Physics/Particles/Smoke/smoke1.png" type="Texture" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1

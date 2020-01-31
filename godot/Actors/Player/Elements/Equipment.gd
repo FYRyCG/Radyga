@@ -87,7 +87,6 @@ func _get_next_grenade(cur):
 	if not cur in equipments["grenades"]:
 		pass
 
-
 func reload():
 	if hands and hands.get_ref():
 		if hands.get_ref().has_method("reload"):
