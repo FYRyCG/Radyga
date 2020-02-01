@@ -98,8 +98,8 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
-			grenade.get_ref().start()
 			add_child(grenade.get_ref())
+			grenade.get_ref().start()
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
