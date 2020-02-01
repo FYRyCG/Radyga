@@ -83,7 +83,7 @@ texture = ExtResource( 7 )
 [node name="HP_bar" parent="." instance=ExtResource( 8 )]
 anchor_top = 1.0
 anchor_right = 0.0
-margin_left = 16.0
+margin_left = 8.0
 margin_top = -80.0
 margin_right = 80.0
 margin_bottom = -16.0
@@ -91,3 +91,5 @@ margin_bottom = -16.0
 [node name="Weapons" parent="." instance=ExtResource( 3 )]
 [connection signal="ammo_changed" from="." to="Weapons" method="_on_HUD_ammo_changed"]
 [connection signal="hp_changed" from="." to="HP_bar" method="_on_HUD_hp_changed"]
+[connection signal="set_loadout" from="." to="Weapons" method="_on_HUD_set_loadout"]
+[connection signal="weapon_swap" from="." to="Weapons" method="_on_HUD_weapon_swap"]
