@@ -6,6 +6,9 @@ onready var hpbar = $HP_bar
 
 signal hp_changed(health)
 signal ammo_changed(amount)
+signal weapon_swap(number)
+signal set_loadout(primary, secondary)
+
 
 var player = null
 
@@ -19,6 +22,7 @@ func start(player_, max_health, max_ammo=30, max_mags=5):
 	$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 	hpbar.initilized(max_health)
 	weapons.initilize(max_ammo, max_mags)
+	
 
 func get_player():
 	if player and player.get_ref():
@@ -32,3 +36,10 @@ func change_hp_bar_value(value):
 func set_bullet_counter_value(amount):
 	emit_signal("ammo_changed", amount)
 
+
+func swap_weapons(number):
+	emit_signal("weapon_swap", number)
+	
+
+func set_weapon_loadout(primary, secondary):
+	emit_signal("set_loadout", primary, secondary)

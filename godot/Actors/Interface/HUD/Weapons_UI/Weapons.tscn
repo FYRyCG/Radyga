@@ -18,18 +18,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -175.0
 margin_top = -169.0
+alignment = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Primary" type="TextureRect" parent="."]
+visible = false
 margin_right = 175.0
 margin_bottom = 74.0
 texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Secondary" type="TextureRect" parent="."]
+visible = false
 margin_top = 78.0
 margin_right = 175.0
 margin_bottom = 117.0
