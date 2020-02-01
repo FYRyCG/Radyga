@@ -15,7 +15,11 @@ func initilized(maximum):
 	$TextureProgress.max_value = maximum_value
 	$TextureProgress.value = maximum_value
 	
-	
+func _process(delta):
+	if curent_health <= 20:
+		$AnimationPlayer.play("Hp_value")
+		
+		
 func animate_value(start, end):
 	$Tween.interpolate_property($TextureProgress, "value", start, end, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	$Tween.interpolate_method(self, "set_value_text", start, end, 0.3, Tween.TRANS_QUART, Tween.EASE_OUT)
