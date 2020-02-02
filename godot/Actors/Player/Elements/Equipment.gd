@@ -14,7 +14,8 @@ func start(equipments_, ammunitions_):
 	ammunitions = ammunitions_.duplicate(true)
 	# Создает экземпляры всего снаряжения
 	_init_equipment()
-	
+	show_weapon_on_HUD(equipments.primary, ammunitions[equipments.primary.Cartridge])
+
 # Создает экземпляры всего снаряжения
 func _init_equipment():
 	_instance_equipment("primary")
@@ -40,6 +41,8 @@ func set_hand(obj):
 		hands.get_ref().hide()  # Убираем в инвентарь
 	hands = weakref(obj)   # Меняем объект в руке
 	obj.show()  # Достаем из инвентаря
+	# меняем HUD
+	show_weapon_on_HUD(obj, ammunitions[obj.Cartridge])
 	# Ставим колизию объекта
 	get_parent().set_object_shape(obj)
 
@@ -89,11 +92,18 @@ func _get_next_grenade(cur):
 
 func reload():
 	if hands and hands.get_ref():
-		if hands.get_ref().has_method("reload"):
-			var weapon_ammo_rest = hands.get_ref().my_call("get_ammo")
+		if hands.get_ref().has_method("reload") and \
+				ammunitions[hands.get_ref().Cartridge] > 0:
+					
+			get_parent().reload()
+			var weapon_ammo_rest = hands.get_ref().get_ammo()
 			var player_ammo_rest = ammunitions[hands.get_ref().Cartridge]
 			var magazine_capacity = hands.get_ref().Capacity
 			var add_ammo = min(player_ammo_rest, magazine_capacity - weapon_ammo_rest)
 			ammunitions[hands.get_ref().Cartridge] -= add_ammo
 			hands.get_ref().call("reload", add_ammo)
+			
+			show_weapon_on_HUD(hands.get_ref(), ammunitions[hands.get_ref().Cartridge])
 
+func show_weapon_on_HUD(weapon, extra_ammo):
+	get_parent().get_HUD().show_weapon(weapon, extra_ammo)

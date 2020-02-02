@@ -17,12 +17,11 @@ func _ready():
 	viewport.add_child(MapManager.get_wall_map().duplicate())
 
 
-func start(player_, max_health, max_ammo=30, max_mags=5):
+func start(player_, max_health):
 	player = weakref(player_)
 	$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 	hpbar.initilized(max_health)
-	weapons.initilize(max_ammo, max_mags)
-	
+
 
 func get_player():
 	if player and player.get_ref():
@@ -32,14 +31,16 @@ func get_player():
 func change_hp_bar_value(value):
 	emit_signal("hp_changed", value)
 
+func show_weapon(weapon, extra_ammo):
+	weapons.show_weapon(weapon, extra_ammo)
 
-func set_bullet_counter_value(amount):
-	emit_signal("ammo_changed", amount)
+func set_bullet_counter_value(ammo, mags):
+	emit_signal("ammo_changed", ammo, mags)
 
 
 func swap_weapons(number):
 	emit_signal("weapon_swap", number)
-	
 
-func set_weapon_loadout(primary, secondary):
-	emit_signal("set_loadout", primary, secondary)
+
+func set_weapon_loadout(weapon):
+	emit_signal("set_loadout", weapon)

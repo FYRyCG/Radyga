@@ -116,7 +116,6 @@ func _physics_process(delta):
 			new_equipped = 1
 		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$Equipment.reload()
-			demanded_animation = "Use"
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
@@ -214,6 +213,9 @@ func start_animation(velocity):
 func recoil():
 	demanded_animation = "Shoot"
 
+func reload():
+	demanded_animation = "Use"
+
 func is_alive():
 	return $Stats.is_alive()
 
@@ -241,3 +243,6 @@ func _on_SetArea_body_exited(body):
 
 func get_walls():
 	return walls
+
+func get_HUD():
+	return $PlayerElements/HUDLayer/HUD
