@@ -4,33 +4,36 @@ const MS = 1000.0
 
 export (int) var rate_of_fire = 7 * MS
 export (int) var damage = 33
-export (int) var start_capacity = 30
+export (int) var ammo = 30
 
 const Cartridge = "7,62"
 const Type = "primary"
 const Object_type = "weapon"
 const Capacity = 30
 
+signal shoot(ammo)
+
 func _ready():
-	$WeaponElements/WeaponControl.start(damage, start_capacity, "res://Weapons/Rifles/RifleBullet.tscn")
+	$WeaponElements/WeaponControl.start(damage, ammo, "res://Weapons/Rifles/RifleBullet.tscn")
 	$WeaponElements/ShootDelay.wait_time = MS / rate_of_fire
 
-func my_call(method):
+func wc_call(method):
 	return $WeaponElements/WeaponControl.call(method)
 
+func get_ammo():
+	return $WeaponElements/WeaponControl.get_ammo()
+
 func shoot():
-	$WeaponElements/WeaponControl.shoot()
-	if($WeaponElements/WeaponControl.get_ammo() > 0):
-		
-		if(!has_node("CircleLight")):
-			var bulletLight = preload("res://Objects/Lights/CircleLight.tscn").instance()
-			bulletLight._color = Color.orange
-			bulletLight._timer = 0.3
-			#add_child(bulletLight) #Light is crap
+
+	if(get_ammo() > 0):
+		$WeaponElements/WeaponControl.shoot()
 		start_animation("Shoot")
-			
+		ammo = get_ammo()
+		emit_signal("shoot", ammo)
+
 func reload(add):
 	$WeaponElements/WeaponControl.reload(add)
+	ammo = get_ammo()
 	start_animation("Reload")
 
 func use(player):

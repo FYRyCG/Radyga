@@ -4,8 +4,9 @@
 [ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Weapons.gd" type="Script" id=2]
 [ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Bullet.png" type="Texture" id=4]
-[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Main_weap.png" type="Texture" id=5]
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/M4.png" type="Texture" id=5]
 [ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Sec_weap.png" type="Texture" id=6]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
