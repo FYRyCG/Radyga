@@ -3,7 +3,7 @@ extends StaticBody2D
 signal explosion
 
 const TYPE = "gadget"
-const OBJECT_TYPE = "weapon"
+const OBJECT_TYPE = "gadget"
 
 func _ready():
 	set_as_toplevel(true)
