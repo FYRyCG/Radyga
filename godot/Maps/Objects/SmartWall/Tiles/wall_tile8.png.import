@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Main_weap.png-c2f1fc11b7c077f3a4d53e3c988d8b2a.stex"
+path="res://.import/wall_tile8.png-740206385b853a661324611ba6c9c649.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/HUD/Weapons_UI/Main_weap.png"
-dest_files=[ "res://.import/Main_weap.png-c2f1fc11b7c077f3a4d53e3c988d8b2a.stex" ]
+source_file="res://Maps/Objects/SmartWall/Tiles/wall_tile8.png"
+dest_files=[ "res://.import/wall_tile8.png-740206385b853a661324611ba6c9c649.stex" ]
 
 [params]
 

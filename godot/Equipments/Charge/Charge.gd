@@ -10,7 +10,7 @@ const gray_texture = preload("res://Equipments/Charge/Sprites/charge-gray.png")
 const CHARGE_SETTING_TIME = 1
 
 const Type = "gadget"
-const Object_type = "weapon"
+const Object_type = "gadget"
 
 var __can_set = false
 var __setted = false
