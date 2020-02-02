@@ -132,7 +132,7 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
-			hit(80)
+			#hit(80) # Хватет убевать player'ов, чтобы делать из них игры
 			current_interactive_body.get_ref().use(self)
 
 func hit(damage):
@@ -146,7 +146,6 @@ func death():
 
 # Проверка, какой предмет находится в зоне досягаемости до player
 func _on_Interactive_body_entered(body):
-	print("entered")
 	current_interactive_body = weakref(body)
 
 func _on_Interactive_body_exited(body):

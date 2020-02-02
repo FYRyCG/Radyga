@@ -1,18 +1,208 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Maps/Objects/Sprites/door1.png" type="Texture" id=1]
 [ext_resource path="res://Maps/Objects/Interactable/Door.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -7, -28, 7, -28, 7, 28, -7, 28 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -13, -33, 12, -33, 12, -27, -13, -27 )
 
-[sub_resource type="OccluderPolygon2D" id=6]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -13, 33, 13, 33, 13, 28, -13, 28 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "Open_door"
+[sub_resource type="Animation" id=7]
+resource_name = "Close_door"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door_body:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Door_body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.71256, -31.7064 ), Vector2( 6.17898, -26.4048 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:busy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 29.4391, -25.6257 ), Vector2( 0.407785, 0.40781 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -90.0772, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Door_body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Destroy_door"
+length = 0.8
+step = 0.023
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door_body:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Door_body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.046, 0.115, 0.184, 0.276, 0.437, 0.552, 0.667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.17898, -26.4048 ), Vector2( 16.9438, -26.6551 ), Vector2( 21.4499, -26.6551 ), Vector2( 31.9644, -26.6551 ), Vector2( 41.2271, -26.1545 ), Vector2( 68.1339, -26.1545 ), Vector2( 76, -26.154 ), Vector2( 80, -26.154 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:busy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.407785, 0.40781 ), Vector2( 38.7423, 0.611713 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Door_body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.046, 0.092, 0.161, 0.253 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 3, 4, 5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Door_body/LightOccluder2D:occluder:polygon")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.046, 0.092, 0.161, 0.276, 0.414, 0.529 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ PoolVector2Array( -7, -28, 7, -28, 7, 28, -7, 28 ), PoolVector2Array( -9.17361, -27.6229, 9.5938, -27.6229, 9.42773, 27.5168, -7.51277, 27.5168, -13.4918, 22.2021, -13.3257, -22.8065 ), PoolVector2Array( 0.285835, -28.1211, 17.0602, -26.9585, 16.2298, 26.8524, 0.285835, 27.5168, -18.6477, 20.043, -17.9833, -20.3152 ), PoolVector2Array( 0.285835, -28.1211, 27.316, -27.1246, 26.3195, 24.8594, -1.25035, 26.5203, -26.3289, 19.2126, -25.6646, -21.3117 ), PoolVector2Array( -28.9654, -26.961, 15.3788, -26.1306, 15.8771, 20.871, -28.7993, 26.0196 ), PoolVector2Array( -23.2959, -23.9715, 2.11482, -21.1481, 2.61307, 18.2137, -22.9638, 23.5283 ), PoolVector2Array(  ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.368 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Door_body:rotation_degrees")
 tracks/0/interp = 1
@@ -37,53 +227,102 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 6.17898, -26.4048 ), Vector2( 2.71256, -31.7064 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:busy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.407785, 0.40781 ), Vector2( 29.4391, -25.6257 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0772 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Door_body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.7298, 27.6065 )
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( -7, -28, 7, -28, 7, 28, -7, 28 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 12, 27.606 )
 
 [node name="Door" type="StaticBody2D"]
 position = Vector2( 0, -1.01954 )
-collision_mask = 31775
+collision_mask = 31807
 script = ExtResource( 2 )
-
-[node name="Interactive_zone_R" type="Area2D" parent="."]
-position = Vector2( 0, 1.01954 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="Right_area" type="CollisionShape2D" parent="Interactive_zone_R"]
-position = Vector2( -16.9304, -0.552078 )
-scale = Vector2( 0.90917, -2.52384 )
-shape = SubResource( 4 )
-
-[node name="Interactive_zone_L" type="Area2D" parent="."]
-position = Vector2( 0, 1.01954 )
-
-[node name="Left_area" type="CollisionShape2D" parent="Interactive_zone_L"]
-position = Vector2( 17.1144, -0.36805 )
-scale = Vector2( 0.90917, -2.52384 )
-shape = SubResource( 4 )
+busy = true
 
 [node name="Door_body" type="Sprite" parent="."]
-position = Vector2( 6.17898, -26.4048 )
+position = Vector2( 5.4857, -27.4651 )
+rotation = -0.314159
 texture = ExtResource( 1 )
 offset = Vector2( -5.15946, 25.997 )
+vframes = 4
 hframes = 2
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door_body"]
+light_mask = 7
+position = Vector2( -5.73583, 26.9094 )
+occluder = SubResource( 6 )
+light_mask = 7
 
 [node name="Anchor_1" type="Sprite" parent="."]
 position = Vector2( 8.62586, -56.1752 )
 texture = ExtResource( 1 )
 offset = Vector2( -5.15946, 25.997 )
+vframes = 4
 hframes = 2
 frame = 1
 
 [node name="LightOccluderAnchor1" type="LightOccluder2D" parent="Anchor_1"]
 light_mask = 7
 position = Vector2( -8.49639, 56.2754 )
-occluder = SubResource( 5 )
+occluder = SubResource( 2 )
 light_mask = 7
 __meta__ = {
 "_editor_description_": ""
@@ -93,24 +332,22 @@ __meta__ = {
 position = Vector2( 9.23759, 4.38512 )
 texture = ExtResource( 1 )
 offset = Vector2( -5.15946, 25.997 )
+vframes = 4
 hframes = 2
 frame = 1
 
 [node name="LightOccluderAnchor2" type="LightOccluder2D" parent="Anchor_2"]
 light_mask = 7
 position = Vector2( -8.85885, -4.06455 )
-occluder = SubResource( 6 )
+occluder = SubResource( 3 )
 light_mask = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Open_door = SubResource( 1 )
+anims/Close_door = SubResource( 7 )
+anims/Destroy_door = SubResource( 8 )
+anims/Open_door = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.407785, 0.40781 )
-shape = SubResource( 2 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-light_mask = 7
-position = Vector2( 0.443146, 0.504589 )
-occluder = SubResource( 3 )
-light_mask = 7
+position = Vector2( 6.21406, -4.7989 )
+rotation = -0.314429
+shape = SubResource( 5 )
