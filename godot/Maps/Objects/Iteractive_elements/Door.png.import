@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Administrativnoe_zdanie_map.png-4d2359f992a4225c30d31d77ad0506e5.stex"
+path="res://.import/Door.png-8065ee2e001e3cae35a955b1f80c4916.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/Minimap/Administrativnoe_zdanie_map.png"
-dest_files=[ "res://.import/Administrativnoe_zdanie_map.png-4d2359f992a4225c30d31d77ad0506e5.stex" ]
+source_file="res://Maps/Objects/Iteractive_elements/Door.png"
+dest_files=[ "res://.import/Door.png-8065ee2e001e3cae35a955b1f80c4916.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

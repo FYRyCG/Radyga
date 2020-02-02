@@ -13,6 +13,9 @@ __meta__ = {
 [node name="connect" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="name" type="LineEdit" parent="connect"]
 margin_left = 190.258

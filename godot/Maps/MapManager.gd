@@ -4,12 +4,24 @@ extends Node2D
 var current_map = preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance()  #Мапа Санька
 var spawn_positions = []
 var next_spawn_position = 0
+#var current_map
 
 func _ready():
 	add_child(current_map)
 	if current_map.has_node("SpawnPositions"):
 		for sp in current_map.get_node("SpawnPositions").get_children():
 			spawn_positions.append(sp)
+
+
+func load_map(map):
+	current_map.queue_free()
+	spawn_positions = []
+	current_map = load(map).instance()
+	add_child(current_map)
+	if current_map.has_node("SpawnPositions"):
+		for sp in current_map.get_node("SpawnPositions").get_children():
+			spawn_positions.append(sp)
+			
 
 func get_next_spawn_position():
 	if next_spawn_position < spawn_positions.size():

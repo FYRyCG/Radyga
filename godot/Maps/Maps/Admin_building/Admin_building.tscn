@@ -1769,10 +1769,6 @@ extents = Vector2( 33.3402, 33.1123 )
 [node name="Admin_building" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Door1" parent="." instance=ExtResource( 29 )]
-position = Vector2( 348.023, -1417.42 )
-z_index = 1
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1
@@ -1800,7 +1796,7 @@ script = ExtResource( 23 )
 [node name="SpawnPositions" type="Node" parent="."]
 
 [node name="Spawn0" type="Node2D" parent="SpawnPositions"]
-position = Vector2( 283.195, -1378.17 )
+position = Vector2( 356.394, -77.7229 )
 scale = Vector2( 11643, 713.391 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -1846,5 +1842,14 @@ position = Vector2( 320.516, -189.067 )
 scale = Vector2( 0.813886, 0.813886 )
 texture = ExtResource( 28 )
 color = Color( 1, 0.941176, 0.819608, 1 )
+
+[node name="Interactive_objects" type="Node" parent="."]
+
+[node name="Door1" parent="Interactive_objects" instance=ExtResource( 29 )]
+position = Vector2( 348.023, -1417.42 )
+z_index = 1
+
+[node name="Door" parent="Interactive_objects" instance=ExtResource( 29 )]
+position = Vector2( 543.866, -32.3909 )
 [connection signal="body_entered" from="Eneterence" to="Eneterence" method="_on_Eneterence_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]
