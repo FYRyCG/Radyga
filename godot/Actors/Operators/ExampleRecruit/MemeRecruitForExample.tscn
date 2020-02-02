@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/ExampleRecruit/Sprites/accessory.png" type="Texture" id=2]
@@ -7,43 +7,7 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-uniform vec2 direction = vec2(-1.0, 0.0);
-uniform vec4  modulate : hint_color;
-uniform float glow_power = 1.0;
-uniform float glow_speed = 10.0;
-
-void fragment() {
-	vec2 ps = TEXTURE_PIXEL_SIZE;
-	vec2 shadow_uv = vec2(UV.x + 1.0 * ps.x, UV.y + 1.0 * ps.y);
-	vec4 shadow = texture(TEXTURE, shadow_uv);
-	shadow /= 8.0;
-	shadow *= modulate;
-	vec4 col = texture(TEXTURE, UV);
-	COLOR = shadow;
-	vec4 shader;
-	if (glow_power == 0.0) shader = mix(col, shadow, 0.1);
-	else shader = mix(col, shadow, fract(glow_power * 0.1 + glow_power * sin(TIME * glow_speed * 2.0) / 20.0));
-	COLOR = vec4(shader.rgb, ceil(shader.b));
-}
-
-
-
-
-
-
-
-"
-
 [sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/direction = Vector2( -1, 0 )
-shader_param/modulate = null
-shader_param/glow_power = 1.0
-shader_param/glow_speed = 10.0
 
 [sub_resource type="CircleShape2D" id=4]
 

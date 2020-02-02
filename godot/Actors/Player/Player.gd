@@ -146,6 +146,7 @@ func death():
 
 # Проверка, какой предмет находится в зоне досягаемости до player
 func _on_Interactive_body_entered(body):
+	print("entered")
 	current_interactive_body = weakref(body)
 
 func _on_Interactive_body_exited(body):
