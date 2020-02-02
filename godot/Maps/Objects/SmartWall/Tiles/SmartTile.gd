@@ -3,7 +3,7 @@ extends StaticBody2D
 
 class_name SmartTile
 
-export (Texture) var intact_texture = load("res://Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png")
+export (Texture) var intact_texture = load("res://Maps/Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png")
 
 const default_size = 8.0
 
