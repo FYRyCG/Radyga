@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/ExampleRecruit/Sprites/accessory.png" type="Texture" id=2]
@@ -7,13 +7,50 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+render_mode blend_mix;
 
-[sub_resource type="RayShape2D" id=3]
+uniform vec2 direction = vec2(-1.0, 0.0);
+uniform vec4  modulate : hint_color;
+uniform float glow_power = 1.0;
+uniform float glow_speed = 10.0;
+
+void fragment() {
+	vec2 ps = TEXTURE_PIXEL_SIZE;
+	vec2 shadow_uv = vec2(UV.x + 1.0 * ps.x, UV.y + 1.0 * ps.y);
+	vec4 shadow = texture(TEXTURE, shadow_uv);
+	shadow /= 8.0;
+	shadow *= modulate;
+	vec4 col = texture(TEXTURE, UV);
+	COLOR = shadow;
+	vec4 shader;
+	if (glow_power == 0.0) shader = mix(col, shadow, 0.1);
+	else shader = mix(col, shadow, fract(glow_power * 0.1 + glow_power * sin(TIME * glow_speed * 2.0) / 20.0));
+	COLOR = vec4(shader.rgb, ceil(shader.b));
+}
+
+
+
+
+
+
+
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/direction = Vector2( -1, 0 )
+shader_param/modulate = null
+shader_param/glow_power = 1.0
+shader_param/glow_speed = 10.0
+
+[sub_resource type="CircleShape2D" id=4]
+
+[sub_resource type="RayShape2D" id=5]
 length = 5.00283
 
-[sub_resource type="Animation" id=4]
-resource_name = "Death_0"
+[sub_resource type="Animation" id=6]
 length = 0.5
 step = 0.01
 tracks/0/type = "value"
@@ -317,7 +354,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 length = 0.1
 step = 0.01
 tracks/0/type = "value"
@@ -621,7 +658,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
@@ -925,7 +962,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 length = 2.0
 step = 0.01
 tracks/0/type = "value"
@@ -1241,7 +1278,7 @@ tracks/25/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 length = 0.2
 loop = true
 step = 0.01
@@ -1522,7 +1559,7 @@ tracks/22/keys = {
 "values": [ Vector2( 2.00949, 0.0268466 ), Vector2( 1.67023, 0.289886 ), Vector2( 2.00949, 0.0268466 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
@@ -1826,7 +1863,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
@@ -2130,7 +2167,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=13]
 length = 0.6
 step = 0.01
 tracks/0/type = "value"
@@ -2434,7 +2471,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=14]
 length = 0.6
 step = 0.01
 tracks/0/type = "value"
@@ -2738,7 +2775,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=15]
 length = 0.8
 loop = true
 step = 0.01
@@ -3043,7 +3080,7 @@ tracks/24/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=16]
 length = 0.8
 loop = true
 step = 0.01
@@ -3336,117 +3373,117 @@ tracks/23/keys = {
 "values": [ Vector2( 1.72096, 0.250551 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "Death_0"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "Idle_1"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "Idle_steady"
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "Idle_5"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=19]
-blend_point_0/node = SubResource( 16 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 18 )
 blend_point_0/pos = Vector2( 0, 0 )
-blend_point_1/node = SubResource( 17 )
+blend_point_1/node = SubResource( 19 )
 blend_point_1/pos = Vector2( -0.25, 0 )
-blend_point_2/node = SubResource( 18 )
+blend_point_2/node = SubResource( 20 )
 blend_point_2/pos = Vector2( -0.5, 0.5 )
-
-[sub_resource type="AnimationNodeAnimation" id=20]
-animation = "Idle_shooting_1"
-
-[sub_resource type="AnimationNodeAnimation" id=21]
-animation = "Idle_shooting_1"
 
 [sub_resource type="AnimationNodeAnimation" id=22]
-animation = "Idle_shooting_5"
+animation = "Idle_shooting_1"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=23]
-blend_point_0/node = SubResource( 20 )
-blend_point_0/pos = Vector2( 0, 0 )
-blend_point_1/node = SubResource( 21 )
-blend_point_1/pos = Vector2( -0.25, 0 )
-blend_point_2/node = SubResource( 22 )
-blend_point_2/pos = Vector2( -0.5, 0.5 )
-blend_mode = 2
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Idle_shooting_1"
 
 [sub_resource type="AnimationNodeAnimation" id=24]
-animation = "Use_1"
+animation = "Idle_shooting_5"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
-animation = "Use_5"
+[sub_resource type="AnimationNodeBlendSpace2D" id=25]
+blend_point_0/node = SubResource( 22 )
+blend_point_0/pos = Vector2( 0, 0 )
+blend_point_1/node = SubResource( 23 )
+blend_point_1/pos = Vector2( -0.25, 0 )
+blend_point_2/node = SubResource( 24 )
+blend_point_2/pos = Vector2( -0.5, 0.5 )
+blend_mode = 2
 
 [sub_resource type="AnimationNodeAnimation" id=26]
 animation = "Use_1"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=27]
-blend_point_0/node = SubResource( 24 )
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Use_5"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Use_1"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=29]
+blend_point_0/node = SubResource( 26 )
 blend_point_0/pos = Vector2( 0, 0 )
-blend_point_1/node = SubResource( 25 )
+blend_point_1/node = SubResource( 27 )
 blend_point_1/pos = Vector2( -0.5, 0.5 )
-blend_point_2/node = SubResource( 26 )
+blend_point_2/node = SubResource( 28 )
 blend_point_2/pos = Vector2( -0.25, 0 )
 blend_mode = 2
 
-[sub_resource type="AnimationNodeAnimation" id=28]
-animation = "Walk_1"
-
-[sub_resource type="AnimationNodeAnimation" id=29]
-animation = "Walk_1"
-
 [sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Walk_1"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Walk_1"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "Walk_5"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=31]
-blend_point_0/node = SubResource( 28 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=33]
+blend_point_0/node = SubResource( 30 )
 blend_point_0/pos = Vector2( 0, 0 )
-blend_point_1/node = SubResource( 29 )
+blend_point_1/node = SubResource( 31 )
 blend_point_1/pos = Vector2( -0.25, 0 )
-blend_point_2/node = SubResource( 30 )
+blend_point_2/node = SubResource( 32 )
 blend_point_2/pos = Vector2( -0.5, 0.5 )
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=32]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=33]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=37]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=38]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=39]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
 
-[sub_resource type="AnimationNodeStateMachine" id=42]
-states/Death_0/node = SubResource( 15 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachine" id=44]
+states/Death_0/node = SubResource( 17 )
 states/Death_0/position = Vector2( 908, -71 )
-states/Idle/node = SubResource( 19 )
+states/Idle/node = SubResource( 21 )
 states/Idle/position = Vector2( 315, 106 )
-states/Idle_shooting/node = SubResource( 23 )
+states/Idle_shooting/node = SubResource( 25 )
 states/Idle_shooting/position = Vector2( 320, 204 )
-states/Use/node = SubResource( 27 )
+states/Use/node = SubResource( 29 )
 states/Use/position = Vector2( 153, 106 )
-states/Walk/node = SubResource( 31 )
+states/Walk/node = SubResource( 33 )
 states/Walk/position = Vector2( 475, 106 )
-transitions = [ "Idle", "Use", SubResource( 32 ), "Use", "Idle", SubResource( 33 ), "Idle", "Walk", SubResource( 34 ), "Walk", "Idle", SubResource( 35 ), "Idle", "Idle_shooting", SubResource( 36 ), "Idle_shooting", "Idle", SubResource( 37 ), "Use", "Death_0", SubResource( 38 ), "Idle", "Death_0", SubResource( 39 ), "Walk", "Death_0", SubResource( 40 ), "Idle_shooting", "Death_0", SubResource( 41 ) ]
+transitions = [ "Idle", "Use", SubResource( 34 ), "Use", "Idle", SubResource( 35 ), "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ), "Idle", "Idle_shooting", SubResource( 38 ), "Idle_shooting", "Idle", SubResource( 39 ), "Use", "Death_0", SubResource( 40 ), "Idle", "Death_0", SubResource( 41 ), "Walk", "Death_0", SubResource( 42 ), "Idle_shooting", "Death_0", SubResource( 43 ) ]
 start_node = "Idle"
 graph_offset = Vector2( 0, -81.4497 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=43]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
 [node name="MemeRecruitForExample" type="KinematicBody2D"]
 material = SubResource( 1 )
@@ -3456,6 +3493,8 @@ script = ExtResource( 1 )
 playable = true
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+use_parent_material = true
 rotation = 0.659525
 texture = ExtResource( 2 )
 vframes = 4
@@ -3498,7 +3537,7 @@ rotation = -0.425143
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
-frame = 3
+frame = 7
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
@@ -3559,7 +3598,7 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.94465, 1.94548 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PlayerElements" parent="." instance=ExtResource( 3 )]
 
@@ -3582,29 +3621,29 @@ position = Vector2( 239.876, 4.48458 )
 position = Vector2( 34.6368, 4.91901 )
 rotation = -1.5708
 scale = Vector2( 0.3, 0.6 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="WeaponCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.250351, -0.250343 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Death_0 = SubResource( 4 )
-anims/Idle_1 = SubResource( 5 )
-anims/Idle_5 = SubResource( 6 )
-anims/Idle_shooting_1 = SubResource( 7 )
-anims/Idle_shooting_5 = SubResource( 8 )
-anims/Idle_steady = SubResource( 9 )
-anims/Idle_stop = SubResource( 10 )
-anims/Use_1 = SubResource( 11 )
-anims/Use_5 = SubResource( 12 )
-anims/Walk_1 = SubResource( 13 )
-anims/Walk_5 = SubResource( 14 )
+anims/Death_0 = SubResource( 6 )
+anims/Idle_1 = SubResource( 7 )
+anims/Idle_5 = SubResource( 8 )
+anims/Idle_shooting_1 = SubResource( 9 )
+anims/Idle_shooting_5 = SubResource( 10 )
+anims/Idle_steady = SubResource( 11 )
+anims/Idle_stop = SubResource( 12 )
+anims/Use_1 = SubResource( 13 )
+anims/Use_5 = SubResource( 14 )
+anims/Walk_1 = SubResource( 15 )
+anims/Walk_5 = SubResource( 16 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-tree_root = SubResource( 42 )
+tree_root = SubResource( 44 )
 anim_player = NodePath("..")
 active = true
-parameters/playback = SubResource( 43 )
+parameters/playback = SubResource( 45 )
 parameters/Idle/blend_position = Vector2( -0.513075, 0.502304 )
 parameters/Idle_shooting/blend_position = Vector2( -0.511231, 0.586207 )
 parameters/Use/blend_position = Vector2( -0.50584, 0.543103 )

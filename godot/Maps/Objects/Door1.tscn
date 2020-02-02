@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Maps/Objects/Sprites/door1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 15 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Door1" type="Node2D"]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( -61.3178, -2.99523 )
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 52.8494, -26.3027 )
+rest = Transform2D( 1, 0, 0, 1, 52.8494, -26.3027 )
+
+[node name="Anchor_body" type="StaticBody2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 8.39502, -9.21497 )
+rotation = -3.14159
+scale = Vector2( 1.3227, 0.101963 )
+collision_mask = 31775
+
+[node name="doorjoint1" type="Sprite" parent="Skeleton2D/Bone2D/Anchor_body"]
+position = Vector2( -3.64258, -83.0043 )
+rotation = 3.14145
+scale = Vector2( 0.756033, 9.80747 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Bone2D/Anchor_body"]
+position = Vector2( -1.20904, -69.9268 )
+shape = SubResource( 1 )
+
+[node name="Anchor_body2" type="StaticBody2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 8.39502, 57.888 )
+rotation = -3.14159
+scale = Vector2( 1.3227, 0.101963 )
+collision_mask = 31775
+
+[node name="doorjoint2" type="Sprite" parent="Skeleton2D/Bone2D/Anchor_body2"]
+position = Vector2( -3.64258, -7.66553 )
+rotation = 3.14145
+scale = Vector2( 0.756033, 9.80747 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Bone2D/Anchor_body2"]
+position = Vector2( -0.525782, -16.7465 )
+shape = SubResource( 2 )
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 9.35277, -0.210247 )
+rotation = 1.5708
+scale = Vector2( 3.25403, 0.992866 )
+rest = Transform2D( -1.42238e-07, 3.25403, -0.992866, -4.33995e-08, 9.35277, -0.210247 )
+
+[node name="Door_Body" type="RigidBody2D" parent="Skeleton2D/Bone2D/Bone2D2"]
+position = Vector2( 1.37481, -0.170992 )
+rotation = -1.5708
+scale = Vector2( 1.00719, 0.307311 )
+collision_mask = 31775
+gravity_scale = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/Bone2D/Bone2D2/Door_Body"]
+position = Vector2( 0.263535, 26.352 )
+scale = Vector2( 0.883296, 2.74078 )
+shape = SubResource( 3 )
+
+[node name="door" type="Sprite" parent="Skeleton2D/Bone2D/Bone2D2/Door_Body"]
+position = Vector2( 1.20529, 29.7792 )
+rotation = 9.95489e-08
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+position = Vector2( 0.677811, -29.5976 )
+node_a = NodePath("../Skeleton2D/Bone2D/Anchor_body")
+node_b = NodePath("../Skeleton2D/Bone2D/Bone2D2/Door_Body")
+bias = 0.9
+initial_offset = 10.0

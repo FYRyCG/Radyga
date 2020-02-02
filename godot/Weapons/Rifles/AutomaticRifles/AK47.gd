@@ -21,6 +21,12 @@ func my_call(method):
 func shoot():
 	$WeaponElements/WeaponControl.shoot()
 	if($WeaponElements/WeaponControl.get_ammo() > 0):
+		
+		if(!has_node("CircleLight")):
+			var bulletLight = preload("res://Objects/Lights/CircleLight.tscn").instance()
+			bulletLight._color = Color.orange
+			bulletLight._timer = 0.3
+			#add_child(bulletLight) #Light is crap
 		start_animation("Shoot")
 			
 func reload(add):

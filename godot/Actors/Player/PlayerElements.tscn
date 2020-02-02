@@ -59,5 +59,15 @@ shape = SubResource( 3 )
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="HUDLayer" instance=ExtResource( 3 )]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -214.67
+margin_top = 93.6842
+margin_right = -174.67
+margin_bottom = 133.684
+rect_scale = Vector2( 2.5438, 2.19077 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]

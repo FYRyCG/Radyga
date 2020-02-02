@@ -260,7 +260,7 @@ shape = SubResource( 5 )
 disabled = true
 
 [node name="CircleCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1.52588e-005 )
+position = Vector2( 0, -1.52588e-05 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 6 )
 
