@@ -55,11 +55,11 @@ func _extra_ammo_changed(extra_ammo):
 
 func set_weapon_loadout(weapon):  #При подборе оружия
 	if weapon.get_type() == "primary":
-		curent_primary_weapon_texture = weapon.get_node("Sprite").texture
-		$Primary.texture = weapon.get_node("Sprite").texture
+		curent_primary_weapon_texture = weapon.get_node("WeaponElements/HUDSprite").texture
+		$Primary.texture = weapon.get_node("WeaponElements/HUDSprite").texture
 	else:
-		curent_secondary_weapon_texture = weapon.get_node("Sprite").texture
-		$Secondary.texture = weapon.get_node("Sprite").texture
+		curent_secondary_weapon_texture = weapon.get_node("WeaponElements/HUDSprite").texture
+		$Secondary.texture = weapon.get_node("WeaponElements/HUDSprite").texture
 
 
 func show_curent_weapon(number): #При переключении оружий 

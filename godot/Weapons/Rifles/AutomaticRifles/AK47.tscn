@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Weapons/Rifles/AutomaticRifles/AK47.gd" type="Script" id=1]
 [ext_resource path="res://Weapons/Rifles/Sprites/AK47.png" type="Texture" id=2]
 [ext_resource path="res://Weapons/WeaponElements.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/AK.png" type="Texture" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -190,6 +191,9 @@ shape = SubResource( 2 )
 
 [node name="Muzzle" parent="WeaponElements" index="0"]
 position = Vector2( 22.0827, -0.0694418 )
+
+[node name="HUDSprite" parent="WeaponElements" index="4"]
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hide = SubResource( 3 )
