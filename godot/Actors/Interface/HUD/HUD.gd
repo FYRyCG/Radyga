@@ -34,13 +34,3 @@ func change_hp_bar_value(value):
 func show_weapon(weapon, extra_ammo):
 	weapons.show_weapon(weapon, extra_ammo)
 
-func set_bullet_counter_value(ammo, mags):
-	emit_signal("ammo_changed", ammo, mags)
-
-
-func swap_weapons(number):
-	emit_signal("weapon_swap", number)
-
-
-func set_weapon_loadout(weapon):
-	emit_signal("set_loadout", weapon)

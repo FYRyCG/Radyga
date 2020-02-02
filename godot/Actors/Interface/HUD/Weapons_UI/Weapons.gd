@@ -12,12 +12,6 @@ onready var weapon_compliance = {1: $Primary, 2: $Secondary}
 
 var curent_weapon
 
-func _ready():
-	pass
-	
-func initilize(primary_weapon, secondary_weapon):
-	pass
-
 func show_weapon(weapon, extra_ammo):
 	if curent_weapon and curent_weapon.get_ref():
 		curent_weapon.get_ref().disconnect("shoot", self, "_ammo_changed")
@@ -36,21 +30,9 @@ func set_bullet_counter(ammo, mags):
 func update_bullet_counter():
 	bullet_conter.text = str(round(curent_ammo)) + " / " + str(round(curent_mags))
 
-func animate_value(curent_ammo, curent_mags, ammo, mags):
-	pass
-
-func _on_HUD_ammo_changed(ammo, mags):
-	#animate_value(curent_ammo, curent_mags, ammo, mags)
-	set_bullet_counter(ammo, mags)
-	curent_ammo = ammo
-	curent_mags = mags
 
 func _ammo_changed(ammo):
 	curent_ammo = ammo
-	update_bullet_counter()
-
-func _extra_ammo_changed(extra_ammo):
-	curent_ammo = extra_ammo
 	update_bullet_counter()
 
 func set_weapon_loadout(weapon):  #При подборе оружия
@@ -67,12 +49,4 @@ func show_curent_weapon(number): #При переключении оружий
 	curent_weapon_texture.visible = false
 	curent_weapon_texture = weapon_compliance[number]
 	curent_weapon_texture.visible = true
-
-
-func _on_HUD_set_loadout(weapon):
-	set_weapon_loadout(weapon)
-
-
-func _on_HUD_weapon_swap(number):
-	show_curent_weapon(number)
 
