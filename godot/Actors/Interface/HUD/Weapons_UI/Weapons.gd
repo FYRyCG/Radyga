@@ -56,6 +56,13 @@ func set_weapon_loadout(weapon):  #При подборе оружия
 
 func show_curent_weapon(number): #При переключении оружий 
 	#number - номер клавиши (1 или 2) 
-	curent_weapon_texture.visible = false
+	weapon_compliance[number].visible = true
+	for elem in weapon_compliance:
+		if elem != number:
+			print(elem)
+			weapon_compliance[elem].visible = true
+			$AnimationPlayer.play(str(elem))
+			yield($AnimationPlayer, "animation_finished")
+			weapon_compliance[elem].modulate = "ffffff"
+			weapon_compliance[elem].visible = false
 	curent_weapon_texture = weapon_compliance[number]
-	curent_weapon_texture.visible = true
