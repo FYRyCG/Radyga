@@ -234,7 +234,6 @@ func _on_WeaponArea_body_exited(body):
 var walls = {}
 func _on_SetArea_body_entered(body):
 	if body is SmartTile:
-		
 		walls[body] = "0"
 
 func _on_SetArea_body_exited(body):

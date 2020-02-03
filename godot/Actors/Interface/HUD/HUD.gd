@@ -34,3 +34,6 @@ func change_hp_bar_value(value):
 func show_weapon(weapon, extra_ammo):
 	weapons.show_weapon(weapon, extra_ammo)
 
+func update_ammo(weapon, extra_ammo):
+	weapons.update_ammo(weapon, extra_ammo)
+

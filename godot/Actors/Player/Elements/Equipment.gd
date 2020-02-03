@@ -14,7 +14,6 @@ func start(equipments_, ammunitions_):
 	ammunitions = ammunitions_.duplicate(true)
 	# Создает экземпляры всего снаряжения
 	_init_equipment()
-	show_weapon_on_HUD(equipments.primary, ammunitions[equipments.primary.Cartridge])
 
 # Создает экземпляры всего снаряжения
 func _init_equipment():
@@ -107,7 +106,11 @@ func reload():
 			ammunitions[hands.get_ref().Cartridge] -= add_ammo
 			hands.get_ref().call("reload", add_ammo)
 			
-			show_weapon_on_HUD(hands.get_ref(), ammunitions[hands.get_ref().Cartridge])
+			update_ammo_on_HUD(hands.get_ref(), ammunitions[hands.get_ref().Cartridge])
 
 func show_weapon_on_HUD(weapon, extra_ammo):
 	get_parent().get_HUD().show_weapon(weapon, extra_ammo)
+
+func update_ammo_on_HUD(weapon, extra_ammo):
+	get_parent().get_HUD().update_ammo(weapon, extra_ammo)
+
