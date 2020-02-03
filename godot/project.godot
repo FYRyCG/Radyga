@@ -50,6 +50,7 @@ MapManager="*res://Maps/MapManager.tscn"
 [display]
 
 window/vsync/use_vsync=false
+window/stretch/mode="viewport"
 
 [input]
 
