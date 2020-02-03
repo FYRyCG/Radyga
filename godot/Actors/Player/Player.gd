@@ -81,6 +81,8 @@ func take_object(obj):
 
 # Выбрасывает объект из инвентаря
 func drop_object(obj):
+	if current_interactive_body.get_ref() == obj:
+		current_interactive_body = null
 	$Equipment.drop_object(obj)
 
 func set_object_shape(obj):
@@ -132,7 +134,8 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
-			#hit(80) # Хватет убевать player'ов, чтобы делать из них игры
+			#ПЛАУЕРОВ НАДО УБИВАТ!
+			hit(80) # Хватет убевать player'ов, чтобы делать из них игры
 			current_interactive_body.get_ref().use(self)
 
 func hit(damage):

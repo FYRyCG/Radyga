@@ -4,8 +4,7 @@
 [ext_resource path="res://Maps/Objects/Sprites/Lights/Light_test_without.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Interface/HUD/HUD.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.6252, 11.0876 )
+[sub_resource type="RayShape2D" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 267.278, 517.124 )
@@ -23,6 +22,7 @@ script = ExtResource( 1 )
 [node name="InteractiveZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveZone"]
+rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
