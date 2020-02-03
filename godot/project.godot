@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "StaticBody2D",
 "class": "SmartTile",
 "language": "GDScript",
-"path": "res://Objects/SmartWall/Tiles/SmartTile.gd"
+"path": "res://Maps/Objects/SmartWall/Tiles/SmartTile.gd"
 }, {
 "base": "Node2D",
 "class": "SmartWall",
 "language": "GDScript",
-"path": "res://Objects/SmartWall/SmartWall.gd"
+"path": "res://Maps/Objects/SmartWall/SmartWall.gd"
 } ]
 _global_script_class_icons={
 "Charge": "",
@@ -144,6 +144,7 @@ pl_gadget={
 2d_physics/layer_3="Weapon"
 2d_physics/layer_4="Bullet"
 2d_physics/layer_5="SmallObject"
+2d_physics/layer_6="Interactive"
 
 [physics]
 

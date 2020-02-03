@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Objects/Lights/Lightmap1.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Lights/LightSettings.gd" type="Script" id=2]
+[ext_resource path="res://Maps/Objects/Lights/Lightmap1.png" type="Texture" id=1]
+[ext_resource path="res://Maps/Objects/Lights/LightSettings.gd" type="Script" id=2]
 
 [node name="CircleLight" type="Node2D"]
 process_priority = 10

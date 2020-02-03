@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_frame_brovn8.png-bf8561efb2838a8972765fa6b2e7f6ed.stex"
+path="res://.import/Lightmap1.png-b7799e6139ec45a573954afacdb29e16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/SmartWall/Tiles/TileSprites/wall_frame_brovn8.png"
-dest_files=[ "res://.import/wall_frame_brovn8.png-bf8561efb2838a8972765fa6b2e7f6ed.stex" ]
+source_file="res://Maps/Objects/Lights/Lightmap1.png"
+dest_files=[ "res://.import/Lightmap1.png-b7799e6139ec45a573954afacdb29e16.stex" ]
 
 [params]
 

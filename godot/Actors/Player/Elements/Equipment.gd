@@ -42,7 +42,10 @@ func set_hand(obj):
 	hands = weakref(obj)   # Меняем объект в руке
 	obj.show()  # Достаем из инвентаря
 	# меняем HUD
-	show_weapon_on_HUD(obj, ammunitions[obj.Cartridge])
+	if obj.get_object_type() == "weapon":
+		show_weapon_on_HUD(obj, ammunitions[obj.Cartridge])
+	else:
+		pass
 	# Ставим колизию объекта
 	get_parent().set_object_shape(obj)
 
@@ -64,7 +67,8 @@ func object_in_hand(obj):
 		return false
 
 func take_object(obj):
-	if obj and obj.get_object_type() == "weapon":
+	var obj_type = obj.get_object_type()
+	if obj and (obj_type == "weapon" or obj_type == "gadget"):
 		var weapon_type = obj.get_type()
 		if equipments[weapon_type]:
 			drop_object(equipments[weapon_type])

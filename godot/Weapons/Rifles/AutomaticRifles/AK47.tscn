@@ -175,6 +175,7 @@ tracks/2/keys = {
 
 [node name="AK47" type="StaticBody2D"]
 material = SubResource( 1 )
+z_index = 1
 collision_layer = 4
 script = ExtResource( 1 )
 

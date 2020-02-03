@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Objects/SmartWall/Tiles/SmartTile.gd" type="Script" id=1]
-[ext_resource path="res://Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png" type="Texture" id=2]
+[ext_resource path="res://Maps/Objects/SmartWall/Tiles/SmartTile.gd" type="Script" id=1]
+[ext_resource path="res://Maps/Objects/SmartWall/Tiles/TileSprites/wall_tile_gray8.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.97242, 3.96877 )

@@ -11,7 +11,7 @@ export var tiles = []
 
 const DEFAULT_TILE_SIZE = 8
 
-var smart_tile = preload("res://Objects/SmartWall/Tiles/SmartTile.tscn")
+var smart_tile = preload("res://Maps/Objects/SmartWall/Tiles/SmartTile.tscn")
 
 var __prev_size_x = 0
 var __prev_size_y = 0
