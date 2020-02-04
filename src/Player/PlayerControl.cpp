@@ -58,10 +58,9 @@ namespace godot {
 				motion.y -= 1;
 			}
 
-			if (input->is_action_just_pressed("pl_run") && !busy) {
+			if (input->is_action_pressed("pl_run") && !busy) {
 				player_speed = run_speed;
-			}
-			if (input->is_action_just_released("pl_run") && !busy) {
+			} else {
 				player_speed = walk_speed;
 			}
 

@@ -21,6 +21,8 @@ export var MAX_STAMINA = 100
 export (Script) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
 export (bool) var playable = false
 
+export (PackedScene) var skill = preload("res://Actors/Operators/Recruit/RecruitSkill.tscn")
+
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
 # Строка, содержащая указание для изменения анимации
@@ -60,6 +62,11 @@ func _ready():
 	add_child(preload("res://Actors/Player/Elements/Equipment.tscn").instance())
 	$Equipment.start(equipments, ammunitions)
 
+	# Переименуем ноду скила, чтобы можно было обращатся к ней
+	var skill_node = skill.instance()
+	skill_node.set_name("Skill")
+	add_child(skill_node)
+
 	# Проверка, будет ли player управляться игроком
 	if playable and is_network_master():
 		# Запускаев все жизненно важные органы
@@ -96,7 +103,7 @@ func set_object_shape(obj):
 
 var grenade
 func _physics_process(delta):
-	if playable and is_network_master():
+	if playable and is_network_master() and not $PlayerControl.is_busy():
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
@@ -118,6 +125,8 @@ func _physics_process(delta):
 			new_equipped = 1
 		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
 			$Equipment.reload()
+		if Input.is_action_just_pressed("pl_skill"):
+			$Skill.use()
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
@@ -248,3 +257,6 @@ func get_walls():
 
 func get_HUD():
 	return $PlayerElements/HUDLayer/HUD
+
+func get_control():
+	return $PlayerControl
