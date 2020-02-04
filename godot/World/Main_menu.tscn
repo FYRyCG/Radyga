@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Maps/Maps/Admin_building/Simple_map_screen.PNG" type="Texture" id=1]
 [ext_resource path="res://Maps/Maps/Admin_building/Admin_build_screen.PNG" type="Texture" id=2]
 [ext_resource path="res://World/Main_menu.gd" type="Script" id=3]
 [ext_resource path="res://Actors/Operators/Recruit/Sprites/boi2.png" type="Texture" id=4]
+[ext_resource path="res://World/Main_menu/Icon_bg.png" type="Texture" id=5]
+[ext_resource path="res://World/Main_menu/Icons/icon2.png" type="Texture" id=6]
+[ext_resource path="res://World/Main_menu/Icons/icon3.png" type="Texture" id=7]
+[ext_resource path="res://World/Main_menu/Icons/icon4.png" type="Texture" id=8]
 
 [node name="Main_menu" type="Control"]
 anchor_right = 1.0
@@ -74,6 +78,26 @@ margin_top = -20.4
 margin_right = 50.436
 margin_bottom = 20.6
 text = "Operators"
+
+[node name="Profile_icon" type="CenterContainer" parent="Main"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="Main/Profile_icon"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="Main/Profile_icon"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 32.0
 
 [node name="Level_panel" type="Panel" parent="."]
 visible = false
@@ -182,11 +206,88 @@ margin_bottom = 124.316
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Exit" type="Button" parent="Operators"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -101.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 49.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile" type="Panel" parent="."]
+margin_right = 1026.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="CenterContainer" parent="Profile"]
+margin_left = 64.0
+margin_top = 48.0
+margin_right = 192.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="Profile/Icon"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 96.0
+margin_bottom = 96.0
+texture = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="Profile/Icon"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Profile"]
+margin_left = 82.1269
+margin_top = 163.351
+margin_right = 172.127
+margin_bottom = 203.351
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon_change" type="Button" parent="Profile/VBoxContainer"]
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Change Icon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupMenu" type="PopupMenu" parent="Profile/VBoxContainer"]
+margin_top = 24.0
+margin_right = 130.0
+margin_bottom = 108.0
+items = [ "Icon_1", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false, "Icon_2", ExtResource( 7 ), 0, false, false, 3, 0, null, "", false, "Icon_3", ExtResource( 8 ), 0, false, false, 4, 0, null, "", false ]
+
+[node name="Exit" type="Button" parent="Profile"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -99.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 55.0
+text = "Exit"
 [connection signal="pressed" from="Main/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Main/Profile" to="." method="_on_Select_level_pressed"]
+[connection signal="pressed" from="Main/Profile" to="." method="_on_Profilel_pressed"]
 [connection signal="pressed" from="Main/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Main/Operators" to="." method="_on_Operators_pressed"]
 [connection signal="pressed" from="Level_panel/Simple_Button" to="." method="_on_Simple_Button_pressed"]
 [connection signal="pressed" from="Level_panel/Admin_Button" to="." method="_on_Admin_Button_pressed"]
 [connection signal="pressed" from="Operators/Button1" to="." method="_on_Button1_pressed" binds= [ "boi2" ]]
 [connection signal="pressed" from="Operators/Button2" to="." method="_on_Button1_pressed" binds= [ "boi3" ]]
+[connection signal="pressed" from="Operators/Exit" to="." method="_on_Operators_Exit_pressed"]
+[connection signal="pressed" from="Profile/VBoxContainer/Icon_change" to="." method="_on_Icon_change_pressed"]
+[connection signal="id_pressed" from="Profile/VBoxContainer/PopupMenu" to="." method="_on_PopupMenu_id_pressed"]
+[connection signal="pressed" from="Profile/Exit" to="." method="_on_Profile_Exit_pressed"]
