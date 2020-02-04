@@ -15,8 +15,10 @@ color = Color( 0.509804, 0.509804, 0.509804, 1 )
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 show_behind_parent = true
 scale = Vector2( 1, 0.719308 )
-smoothing_speed = 144.0
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_speed = 30.0
+drag_margin_left = 0.02
+drag_margin_top = 0.02
+drag_margin_right = 0.02
+drag_margin_bottom = 0.02
