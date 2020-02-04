@@ -29,6 +29,8 @@ namespace godot {
 		Vector2 puppet_motion;
 		float puppet_rotation;
 
+		enum equipment {FREE, SHOTGUN, PISTOL, RIFLE};
+
 	public:
 		static void _register_methods();
 

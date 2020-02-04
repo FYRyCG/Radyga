@@ -76,6 +76,26 @@ namespace godot {
 				player->call("use");
 			}
 
+			if (input->is_action_just_pressed("pl_primary_weapon") && !busy) {
+				player->get_node("Equipment")->call("switch_weapon", "primary");
+				player->call("set_equipped", RIFLE);
+			}
+			if (input->is_action_just_pressed("pl_secondary_weapon") && !busy) {
+				player->get_node("Equipment")->call("switch_weapon", "secondary");
+				player->call("set_equipped", RIFLE);
+			}
+			if (input->is_action_just_pressed("pl_gadget") && !busy) {
+				player->get_node("Equipment")->call("switch_weapon", "gadget");
+				player->call("set_equipped", FREE);
+			}
+
+			if (input->is_action_just_pressed("pl_reload") && !busy) {
+				player->get_node("Equipment")->call("reload");
+			}
+			if (input->is_action_just_pressed("pl_skill") && !busy) {
+				player->get_node("Skill")->call("use");
+			}
+
 			rset("puppet_motion", motion);
 			rset("puppet_rotation", player->get_global_rotation());
 			rset("puppet_position", player->get_global_position());

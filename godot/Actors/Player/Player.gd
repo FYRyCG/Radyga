@@ -32,12 +32,13 @@ var can_shoot = true
 # "Idle" - остановить движение
 var demanded_animation = null
 # Выбранный игроком объект, который будет влиять на анимацию:
-# 1 - пробивной заряд/без оружия
-# 2 - дробовик
-# 3 - пистолет
-# 5 - автомат
-var equipped_animation = 5
-var new_equipped = 5
+# 0 - пробивной заряд/без оружия
+# 1 - дробовик
+# 2 - пистолет
+# 3 - автомат
+enum equipment {FREE, SHOTGUN, PISTOL, RIFLE};
+var equipped_animation = equipment.RIFLE
+var new_equipped = equipment.RIFLE
 # Положение на матрице для плавной смены положения:
 # (0.0, 0.0) = Без оружия/пробивной заряд
 # (-0.5, 0.5) = Автомат
@@ -113,20 +114,9 @@ func _physics_process(delta):
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
 				#demanded_animation = "Throw_HE"
-				
-		if Input.is_action_just_pressed("pl_primary_weapon") and not $PlayerControl.is_busy():
-			$Equipment.switch_weapon("primary")
-			new_equipped = 5
-		if Input.is_action_just_pressed("pl_secondary_weapon") and not $PlayerControl.is_busy():
-			$Equipment.switch_weapon("secondary")
-			new_equipped = 5
-		if Input.is_action_just_pressed("pl_gadget") and not $PlayerControl.is_busy():
-			$Equipment.switch_weapon("gadget")
-			new_equipped = 1
-		if Input.is_action_just_pressed("pl_reload") and not $PlayerControl.is_busy():
-			$Equipment.reload()
-		if Input.is_action_just_pressed("pl_skill"):
-			$Skill.use()
+
+func set_equipped(type):
+	new_equipped = type
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
@@ -183,7 +173,7 @@ func start_animation(velocity):
 		if(new_equipped != equipped_animation && demanded_animation != "Death"):
 			equipped_animation = -1 # Пока анимация не зафиксирована, будет значение -1
 			var demanded_blend
-			if(new_equipped == 5):
+			if(new_equipped == equipment.RIFLE):
 				demanded_blend = Vector2(-0.5,0.5)
 			else:
 				demanded_blend = Vector2.ZERO
