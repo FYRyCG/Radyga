@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Player/Camera/Camera.tscn" type="PackedScene" id=2]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,12 +10,3 @@ script = ExtResource( 1 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 light_mask = 7
 color = Color( 0.509804, 0.509804, 0.509804, 1 )
-
-[node name="Camera" parent="." instance=ExtResource( 2 )]
-show_behind_parent = true
-scale = Vector2( 1, 0.719308 )
-smoothing_speed = 144.0
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0

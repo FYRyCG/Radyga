@@ -68,9 +68,13 @@ func _ready():
 		$Stats.connect("health_changed", self, "change_hp")
 		$PlayerElements/HUDLayer/HUD.start(self, MAX_HP)
 		
+		#Настраиваем камеру
+		$PlayerElements/Camera.set_player(self)
+		
 	# удалить все ноды, которые не нужны для NPC
 	if not playable:
 		$PlayerElements/HUDLayer.queue_free()
+		$PlayerElements/Camera.queue_free()
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")

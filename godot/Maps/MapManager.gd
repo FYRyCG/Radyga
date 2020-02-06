@@ -60,7 +60,6 @@ func spawn_player(p_id, operator_scene):
 		pass
 		# If node for this peer id, set name
 		#player.set_player_name(player_name)
-		get_tree().get_root().get_node("World/Camera").set_player(player)
 	else:
 		pass
 		# Otherwise set name from peer

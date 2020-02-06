@@ -13,12 +13,14 @@ func _ready():
 func set_player(player_):
 	player = weakref(player_)
 	zoom = Vector2(0.5, 0.5)
+	make_current()
+	
 	set_physics_process(true)
 
 
 func _physics_process(delta):
 	if player.get_ref():
-		position = player.get_ref().position
+		global_position = player.get_ref().global_position
 	
 	var pl_pos = player.get_ref().global_position
 	var mouse_pos = get_global_mouse_position()
@@ -31,7 +33,7 @@ func _physics_process(delta):
 		offset_.x = min(distance_slide, max(0, abs(vec.x) - abs(def_size.x))) * -sign(vec.x)
 	if abs(vec.y) - abs(def_size.y) > 0:
 		offset_.y = min(distance_slide, max(0, abs(vec.y) - abs(def_size.y))) * -sign(vec.y)
-	slide_camera(get_offset(), offset_)
+	#slide_camera(get_offset(), offset_)
 
 var offset_vector = Vector2()
 func slide_camera(old, new):
