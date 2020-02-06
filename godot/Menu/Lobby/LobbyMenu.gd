@@ -4,6 +4,8 @@ var mouse_in_menu = false
 
 signal menu_visible(enable)
 
+signal change_icon_pressed()
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
@@ -15,3 +17,6 @@ func _on_VBoxContainer_mouse_entered():
 
 func _on_VBoxContainer_mouse_exited():
 	mouse_in_menu = false
+
+func _on_Button_pressed():
+	emit_signal("change_icon_pressed")
