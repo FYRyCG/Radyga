@@ -1,9 +1,32 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://World/World.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var player = load(\"res://Actors/Operators/Recruit/Recruit.tscn\")
+#var player = preload(\"res://Actors/Operators/MemeRecruitForExample.tscn\")
+
+var players = {
+	1 : \"name\"
+}
+
+
+func _ready():
+	pass
+	\"\"\"
+	for pl in players:
+		var p = player.instance()
+		var sp = $MapManager.get_next_spawn_position()
+		p.position = sp.global_position
+		$Players.add_child(p)
+		
+		if pl == 1:
+			$MapManager/Camera.set_player(p)
+	\"\"\"
+"
 
 [node name="World" type="Node2D"]
-script = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="Players" type="Node" parent="."]
 

@@ -33,7 +33,7 @@ func _physics_process(delta):
 		offset_.x = min(distance_slide, max(0, abs(vec.x) - abs(def_size.x))) * -sign(vec.x)
 	if abs(vec.y) - abs(def_size.y) > 0:
 		offset_.y = min(distance_slide, max(0, abs(vec.y) - abs(def_size.y))) * -sign(vec.y)
-	#slide_camera(get_offset(), offset_)
+	slide_camera(get_offset(), offset_)
 
 var offset_vector = Vector2()
 func slide_camera(old, new):
