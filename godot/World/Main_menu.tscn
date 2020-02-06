@@ -268,7 +268,7 @@ __meta__ = {
 [node name="PopupMenu" type="PopupMenu" parent="Profile/VBoxContainer"]
 margin_top = 24.0
 margin_right = 130.0
-margin_bottom = 108.0
+margin_bottom = 244.0
 items = [ "Icon_1", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false, "Icon_2", ExtResource( 7 ), 0, false, false, 3, 0, null, "", false, "Icon_3", ExtResource( 8 ), 0, false, false, 4, 0, null, "", false ]
 
 [node name="Exit" type="Button" parent="Profile"]

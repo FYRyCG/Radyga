@@ -3,7 +3,6 @@
 [ext_resource path="res://World/Main_menu/Game_menu_bg.png" type="Texture" id=1]
 [ext_resource path="res://World/Game_menu.gd" type="Script" id=2]
 
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
