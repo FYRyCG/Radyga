@@ -143,6 +143,7 @@ margin_bottom = -362.0
 [node name="Profile" parent="." instance=ExtResource( 5 )]
 visible = false
 [connection signal="menu_visible" from="Panel/UpBar/LobbyBar/Lobby" to="." method="menu_visible"]
+[connection signal="start" from="Play" to="." method="_on_Play_start"]
 [connection signal="change_icon_pressed" from="LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
 [connection signal="menu_visible" from="LobbyMenu" to="." method="menu_visible"]
 [connection signal="icon_selected" from="Profile" to="." method="_on_Profile_icon_selected"]

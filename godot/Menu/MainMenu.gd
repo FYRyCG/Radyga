@@ -5,6 +5,8 @@ enum {MAIN, PLAY, OPERATORS, SHOP}
 var current_menu = MAIN
 
 func _ready():
+	gamestate.host_game("Player")
+	
 	$Panel/UpBar/MenuBar/MainBtn.connect("pressed", self, "change_menu", [MAIN])
 	$Panel/UpBar/MenuBar/PlayBtn.connect("pressed", self, "change_menu", [PLAY])
 	$Panel/UpBar/MenuBar/OperatorsBtn.connect("pressed", self, "change_menu", [OPERATORS])
@@ -40,3 +42,7 @@ func hide_current_menu():
 			$Main.hide()
 		PLAY:
 			$Play.hide()
+
+
+func _on_Play_start():
+	hide()
