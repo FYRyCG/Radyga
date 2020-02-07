@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Actors/Player/PlayerElements.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Lights/Light_test_without.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Interface/HUD/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/Camera/Camera.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RayShape2D" id=1]
 
@@ -69,5 +70,13 @@ rect_scale = Vector2( 2.5438, 2.19077 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera" parent="." instance=ExtResource( 4 )]
+smoothing_enabled = false
+smoothing_speed = 60.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]

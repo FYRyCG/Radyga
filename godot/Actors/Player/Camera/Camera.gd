@@ -13,12 +13,14 @@ func _ready():
 func set_player(player_):
 	player = weakref(player_)
 	zoom = Vector2(0.5, 0.5)
+	make_current()
+	
 	set_physics_process(true)
 
 
 func _physics_process(delta):
 	if player.get_ref():
-		position = player.get_ref().position
+		global_position = player.get_ref().global_position
 	
 	var pl_pos = player.get_ref().global_position
 	var mouse_pos = get_global_mouse_position()

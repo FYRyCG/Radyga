@@ -65,7 +65,7 @@ remote func pre_start_game(spawn_points):
 	var world = load("res://World/World.tscn").instance()
 	get_tree().get_root().add_child(world)
 
-	get_tree().get_root().get_node("lobby").hide()
+	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
 	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
