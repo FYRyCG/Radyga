@@ -32,6 +32,7 @@ func change_menu(type):
 			$Play.show()
 		OPERATORS:
 			$Panel/Type.text = "Operators"
+			$Operators.show()
 		SHOP:
 			$Panel/Type.text = "Shop"
 	current_menu = type
@@ -42,6 +43,8 @@ func hide_current_menu():
 			$Main.hide()
 		PLAY:
 			$Play.hide()
+		OPERATORS:
+			$Operators.hide()
 
 
 func _on_Play_start():

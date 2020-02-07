@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menu/Icons/setting.png" type="Texture" id=1]
 [ext_resource path="res://Menu/Lobby/Lobby.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menu/Lobby/LobbyMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://Menu/Profile/Profile.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Menu/Menus/Play.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu/Menus/Play/Play.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu/Menus/Operators/Operators.tscn" type="PackedScene" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -132,6 +133,13 @@ margin_top = 220.0
 margin_right = -625.053
 margin_bottom = -60.0
 rect_min_size = Vector2( 320, 320 )
+
+[node name="Operators" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = 58.0
+margin_top = 138.0
+margin_right = -37.0
+margin_bottom = -38.0
 
 [node name="LobbyMenu" parent="." instance=ExtResource( 3 )]
 visible = false

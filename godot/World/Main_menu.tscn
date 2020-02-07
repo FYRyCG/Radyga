@@ -100,6 +100,7 @@ margin_right = 32.0
 margin_bottom = 32.0
 
 [node name="Level_panel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.3
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -159,7 +160,6 @@ __meta__ = {
 }
 
 [node name="Operators" type="Panel" parent="."]
-visible = false
 margin_right = 1028.0
 margin_bottom = 598.0
 __meta__ = {
