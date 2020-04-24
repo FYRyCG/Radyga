@@ -15,9 +15,6 @@ func _ready():
 func menu_visible(enable):
 	$LobbyMenu.visible = enable
 
-func _on_LobbyMenu_change_icon_pressed():
-	$Profile.show()
-
 func _on_Profile_icon_selected(icon):
 	$Panel/UpBar/LobbyBar/Lobby.set_player_icon(icon)
 
@@ -49,3 +46,12 @@ func hide_current_menu():
 
 func _on_Play_start():
 	hide()
+
+func _on_LobbyMenu_change_icon_pressed():
+	$Profile.show()
+
+func _on_LobbyMenu_connect():
+	$LobbyMenu/InputDialog.popup_centered_clamped()
+
+func _on_ConnectDialog_connect(toIp):
+	print("connect to " , toIp)

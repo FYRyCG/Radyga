@@ -2,12 +2,81 @@
 
 [ext_resource path="res://Maps/Maps/Admin_building/Simple_map_screen.PNG" type="Texture" id=1]
 [ext_resource path="res://Maps/Maps/Admin_building/Admin_build_screen.PNG" type="Texture" id=2]
-[ext_resource path="res://World/Main_menu.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "xtends Control
+
+var lobby = preload(\"res://World/Lobby.tscn\")
+onready var icon = load(\"res://icon.png\")
+
+
+func _ready():
+	$Level_panel.visible = false
+	$Main/Profile_icon/TextureRect.texture = icon
+	$Profile/Icon/TextureRect.texture = icon
+	
+func _on_Button_pressed():
+	print(\"Nothing to see here\")
+
+
+
+func _on_Start_pressed():
+	$Level_panel.show()
+	\"\"\"
+	get_tree().get_root().add_child(lobby.instance())
+	self.queue_free()
+	\"\"\"
+
+func _on_Simple_Button_pressed():
+	MapManager.load_map(\"res://Maps/Maps/SimpleMap.tscn\")
+	$Level_panel.hide()
+	get_tree().get_root().add_child(lobby.instance())
+	self.queue_free()
+
+
+func _on_Admin_Button_pressed():
+	MapManager.load_map(\"res://Maps/Maps/Admin_building/Admin_building.tscn\")
+	$Level_panel.hide()
+	get_tree().get_root().add_child(lobby.instance())
+	self.queue_free()
+
+
+func _on_Button1_pressed(op_name):
+	print(op_name)
+	
+
+
+func _on_Operators_pressed():
+	$Operators.show()
+
+
+func _on_Operators_Exit_pressed():
+	$Operators.hide()
+
+
+func _on_Icon_change_pressed():
+	$Profile/VBoxContainer/PopupMenu.show()
+
+
+func _on_Profilel_pressed():
+	$Profile.show()
+
+
+func _on_PopupMenu_id_pressed(id):
+	icon = load(\"res://World/Main_menu/Icons/icon\"+str(id)+\".png\")
+	$Profile/VBoxContainer/PopupMenu.hide()
+	$Main/Profile_icon/TextureRect.texture = icon
+	$Profile/Icon/TextureRect.texture = icon
+
+
+func _on_Profile_Exit_pressed():
+	$Profile.hide()
+"
 
 [node name="Main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
