@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://World/Main_menu/Icons/icon2.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Icons/icon1.png" type="Texture" id=2]
 [ext_resource path="res://Menu/Lobby/Lobby.gd" type="Script" id=3]
 
 [node name="Lobby" type="Control"]

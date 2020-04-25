@@ -4,7 +4,7 @@
 [ext_resource path="res://Maps/Maps/Admin_building/Admin_build_screen.PNG" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
-script/source = "xtends Control
+script/source = "extends Control
 
 var lobby = preload(\"res://World/Lobby.tscn\")
 onready var icon = load(\"res://icon.png\")

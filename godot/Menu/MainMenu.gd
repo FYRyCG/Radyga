@@ -11,10 +11,13 @@ func _ready():
 	$Panel/UpBar/MenuBar/PlayBtn.connect("pressed", self, "change_menu", [PLAY])
 	$Panel/UpBar/MenuBar/OperatorsBtn.connect("pressed", self, "change_menu", [OPERATORS])
 	$Panel/UpBar/MenuBar/ShopBtn.connect("pressed", self, "change_menu", [SHOP])
+	
+	gamestate.connect("player_list_changed", self, "refresh_lobby")
 
 func menu_visible(enable):
 	$LobbyMenu.visible = enable
 
+# connect через графический
 func _on_Profile_icon_selected(icon):
 	$Panel/UpBar/LobbyBar/Lobby.set_player_icon(icon)
 
@@ -54,4 +57,9 @@ func _on_LobbyMenu_connect():
 	$LobbyMenu/InputDialog.popup_centered_clamped()
 
 func _on_ConnectDialog_connect(toIp):
-	print("connect to " , toIp)
+	var icon = $Panel/UpBar/LobbyBar/Lobby.get_player_icon()
+	print(icon)
+	gamestate.join_game(toIp, "newName", icon)
+	
+func refresh_lobby():
+	$Panel/UpBar/LobbyBar/Lobby.refresh(gamestate.get_player_list())

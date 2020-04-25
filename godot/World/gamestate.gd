@@ -4,10 +4,11 @@ extends Node
 const DEFAULT_PORT = 10567
 
 # Max number of players
-const MAX_PEERS = 12
+const MAX_PEERS = 5
 
 # Name for my player
 var player_name = "The Warrior"
+var player_icon = "res://Resources/Icons/icon1.png"
 
 # Names for remote players in id:name format
 var players = {}
@@ -22,7 +23,8 @@ signal game_error(what)
 # Callback from SceneTree
 func _player_connected(id):
 	# Registration of a client beings here, tell the connected player that we are here
-	rpc_id(id, "register_player", player_name)
+	print("pl icon = ", player_icon)
+	rpc_id(id, "register_player", player_name, player_icon)
 
 # Callback from SceneTree
 func _player_disconnected(id):
@@ -50,10 +52,13 @@ func _connected_fail():
 	emit_signal("connection_failed")
 
 # Lobby management functions
-
-remote func register_player(new_player_name):
+remote func register_player(new_player_name, player_icon):
 	var id = get_tree().get_rpc_sender_id()
-	players[id] = new_player_name
+	print("Connected id = ", id)
+	players[id] = {
+			"name" : new_player_name,
+			"icon" : player_icon
+		}
 	emit_signal("player_list_changed")
 
 func unregister_player(id):
@@ -100,8 +105,15 @@ func host_game(new_player_name):
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
 
-func join_game(ip, new_player_name):
+func join_game(ip, new_player_name, icon):
+	# Так как перед подключение он был уже хостом
+	print("joining")
+	get_tree().set_network_peer(null) # End networking
+	
+	print("join to ", ip)
+	
 	player_name = new_player_name
+	player_icon = icon
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
@@ -111,6 +123,12 @@ func get_player_list():
 
 func get_player_name():
 	return player_name
+
+func get_player_icon():
+	return player_icon
+	
+func change_icon(icon):
+	player_icon = icon
 
 func begin_game():
 	assert(get_tree().is_network_server())

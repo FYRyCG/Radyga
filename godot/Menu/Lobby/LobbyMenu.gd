@@ -26,4 +26,3 @@ func _on_Connect_pressed():
 	hide()
 	get_parent().get_node("ConnectDialog").show()
 	get_parent().get_node("ConnectDialog").set_global_position(rect_global_position)
-
