@@ -49,8 +49,10 @@ func get_wall_map():
 
 func spawn_player(p_id, operator_scene):
 	var spawn_pos = get_next_spawn_position()
-		
+	
+	print("spawn player start instance")
 	var player = operator_scene.instance()
+	print("spawn player end instance")
 
 	player.set_name(str(p_id)) # Use unique ID as node name
 	player.position = spawn_pos.position

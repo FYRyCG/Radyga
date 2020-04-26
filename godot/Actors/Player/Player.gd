@@ -19,6 +19,7 @@ export var MAX_HP = 100
 export var MAX_STAMINA = 100
 
 export (Script) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
+# Управляется игроком или компом
 export (bool) var playable = false
 
 export (PackedScene) var skill = preload("res://Actors/Operators/Recruit/RecruitSkill.tscn")
@@ -80,7 +81,7 @@ func _ready():
 		$PlayerElements/Camera.set_player(self)
 		
 	# удалить все ноды, которые не нужны для NPC
-	if not playable:
+	if not playable or not is_network_master():
 		$PlayerElements/HUDLayer.queue_free()
 		$PlayerElements/Camera.queue_free()
 	

@@ -1,7 +1,7 @@
 extends MarginContainer
 
 onready var maximum_value
-var curent_health
+var curent_health = 0
 
 """
 func _ready():

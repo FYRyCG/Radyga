@@ -10,7 +10,7 @@ const MAX_PEERS = 5
 var player_name = "The Warrior"
 var player_icon = "res://Resources/Icons/icon1.png"
 
-# Names for remote players in id:name format
+# Names for remote players 
 var players = {}
 
 # Signals to let lobby GUI know what's going on
@@ -57,7 +57,7 @@ remote func register_player(new_player_name, player_icon):
 	print("Connected id = ", id)
 	players[id] = {
 			"name" : new_player_name,
-			"icon" : player_icon
+			"icon" : player_icon,
 		}
 	emit_signal("player_list_changed")
 
@@ -65,15 +65,18 @@ func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
-remote func pre_start_game(spawn_points):
+remote func pre_start_game(spawn_points, map):
 	# Change scene
 	var world = load("res://World/World.tscn").instance()
 	get_tree().get_root().add_child(world)
 
+	MapManager.set_map(map)
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
 	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
+	print("pl scene = ", player_scene)
+	print("pre start game ", spawn_points)
 	for p_id in spawn_points:
 		MapManager.spawn_player(p_id, player_scene)
 
@@ -130,7 +133,7 @@ func get_player_icon():
 func change_icon(icon):
 	player_icon = icon
 
-func begin_game():
+func begin_game(map):
 	assert(get_tree().is_network_server())
 
 	# Create a dictionary with peer id and respective spawn points, could be improved by randomizing
@@ -142,9 +145,10 @@ func begin_game():
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points
 	for p in players:
-		rpc_id(p, "pre_start_game", spawn_points)
+		#map - та карта на которой начинается игра
+		rpc_id(p, "pre_start_game", spawn_points, map)
 
-	pre_start_game(spawn_points)
+	pre_start_game(spawn_points, map)
 
 func end_game():
 	if has_node("/root/World"): # Game is in progress
