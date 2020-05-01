@@ -5,7 +5,8 @@ var mouse_in_menu = false
 signal menu_visible(enable)
 
 signal change_icon_pressed()
-signal connect(ip)
+signal connect(toIp)
+signal disconnect()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -25,4 +26,18 @@ func _on_Button_pressed():
 func _on_Connect_pressed():
 	hide()
 	get_parent().get_node("ConnectDialog").show()
-	get_parent().get_node("ConnectDialog").set_global_position(rect_global_position)
+
+func _on_Disconnect_pressed():
+	emit_signal("disconnect")
+	$Panel/VBoxContainer/Connect.show()
+	$Panel/VBoxContainer/Disconnect.hide()
+
+func _on_ConnectDialog_connect(toIp):
+	emit_signal("connect", toIp)
+
+func connection_succeeded():
+	$Panel/VBoxContainer/Connect.hide()
+	$Panel/VBoxContainer/Disconnect.show()
+
+
+

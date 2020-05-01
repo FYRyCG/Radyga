@@ -28,13 +28,13 @@ func _player_connected(id):
 
 # Callback from SceneTree
 func _player_disconnected(id):
+	print("dis = ", id)
 	if has_node("/root/world"): # Game is in progress
 		if get_tree().is_network_server():
 			emit_signal("game_error", "Player " + players[id] + " disconnected")
 			end_game()
-	else: # Game is not in progress
-		# Unregister this player
-		unregister_player(id)
+	unregister_player(id)
+	
 
 # Callback from SceneTree, only for clients (not server)
 func _connected_ok():
@@ -121,6 +121,11 @@ func join_game(ip, new_player_name, icon):
 	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
 
+func disconnect_game():
+	players.clear()
+	emit_signal("player_list_changed")
+	get_tree().set_network_peer(null) # End networking
+
 func get_player_list():
 	return players.values()
 
@@ -156,8 +161,7 @@ func end_game():
 		get_node("/root/World").queue_free()
 
 	emit_signal("game_ended")
-	players.clear()
-	get_tree().set_network_peer(null) # End networking
+	disconnect_game()
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")

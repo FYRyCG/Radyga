@@ -13,9 +13,11 @@ func _ready():
 	$Panel/UpBar/MenuBar/ShopBtn.connect("pressed", self, "change_menu", [SHOP])
 	
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
+	gamestate.connect("connection_succeeded", self, "connection_succeeded")
+	#gamestate.connect("connection_failed", self, "connection_faild")
 
 func menu_visible(enable):
-	$LobbyMenu.visible = enable
+	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.visible = enable
 
 # connect через графический
 func _on_Profile_icon_selected(icon):
@@ -53,13 +55,15 @@ func _on_Play_start():
 func _on_LobbyMenu_change_icon_pressed():
 	$Profile.show()
 
-func _on_LobbyMenu_connect():
-	$LobbyMenu/InputDialog.popup_centered_clamped()
-
-func _on_ConnectDialog_connect(toIp):
-	var icon = $Panel/UpBar/LobbyBar/Lobby.get_player_icon()
-	print(icon)
+func _on_LobbyMenu_connect(toIp):
+	var icon = $Panel/UpBar/LobbyBar/VBoxContainer/Lobby.get_player_icon()
 	gamestate.join_game(toIp, "newName", icon)
-	
+
+func connection_succeeded():
+	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.connection_succeeded()
+
+func _on_LobbyMenu_disconnect():
+	gamestate.disconnect_game()	
+
 func refresh_lobby():
-	$Panel/UpBar/LobbyBar/Lobby.refresh(gamestate.get_player_list())
+	$Panel/UpBar/LobbyBar/VBoxContainer/Lobby.refresh(gamestate.get_player_list())

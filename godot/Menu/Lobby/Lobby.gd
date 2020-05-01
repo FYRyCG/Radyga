@@ -19,6 +19,10 @@ func get_player_icon():
 	return $Panel/HBoxContainer/Me.texture.resource_path
 
 func refresh(list):
+	for i in range(4):
+		get_node("Panel/HBoxContainer/Friend" + str(i)) \
+			.texture = load("res://Resources/Icons/icon0.png")
+
 	var indx = 0
 	for p in list:
 		print("p = ", p)

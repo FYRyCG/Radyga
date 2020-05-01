@@ -87,12 +87,35 @@ margin_right = 974.0
 margin_bottom = 66.0
 custom_constants/separation = 13
 
-[node name="Lobby" parent="Panel/UpBar/LobbyBar" instance=ExtResource( 2 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/UpBar/LobbyBar"]
+margin_right = 362.0
+margin_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Lobby" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 362.0
 margin_bottom = 66.0
 mouse_filter = 1
+
+[node name="LobbyMenu" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 70.0
+margin_right = 362.0
+margin_bottom = 70.0
+
+[node name="ConnectDialog" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 8 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 70.0
+margin_right = 362.0
+margin_bottom = 70.0
 
 [node name="TextureRect" type="Label" parent="Panel/UpBar/LobbyBar"]
 margin_left = 375.0
@@ -142,22 +165,13 @@ margin_top = 138.0
 margin_right = -37.0
 margin_bottom = -38.0
 
-[node name="LobbyMenu" parent="." instance=ExtResource( 3 )]
-visible = false
-margin_left = 561.0
-margin_top = 117.0
-margin_right = -143.0
-margin_bottom = -362.0
-
-[node name="ConnectDialog" parent="." instance=ExtResource( 8 )]
-visible = false
-
 [node name="Profile" parent="." instance=ExtResource( 5 )]
 visible = false
-[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/Lobby" to="." method="menu_visible"]
+[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/Lobby" to="." method="menu_visible"]
+[connection signal="change_icon_pressed" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
+[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_connect"]
+[connection signal="disconnect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
+[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="menu_visible"]
+[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/ConnectDialog" to="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" method="_on_ConnectDialog_connect"]
 [connection signal="start" from="Play" to="." method="_on_Play_start"]
-[connection signal="change_icon_pressed" from="LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
-[connection signal="connect" from="LobbyMenu" to="." method="_on_LobbyMenu_connect"]
-[connection signal="menu_visible" from="LobbyMenu" to="." method="menu_visible"]
-[connection signal="connect" from="ConnectDialog" to="." method="_on_ConnectDialog_connect"]
 [connection signal="icon_selected" from="Profile" to="." method="_on_Profile_icon_selected"]

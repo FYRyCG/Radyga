@@ -11,8 +11,8 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 320.0
-margin_bottom = 192.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 320, 192 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -30,24 +30,36 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
-margin_right = 310.0
+margin_right = 1014.0
 margin_bottom = 20.0
 mouse_filter = 1
 text = "Change Icon, for example"
 
 [node name="Connect" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 24.0
-margin_right = 310.0
+margin_right = 1014.0
 margin_bottom = 44.0
 mouse_filter = 1
 text = "Connect"
 
+[node name="Disconnect" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+margin_top = 48.0
+margin_right = 1014.0
+margin_bottom = 68.0
+mouse_filter = 1
+text = "Disconnect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button3" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 48.0
-margin_right = 310.0
+margin_right = 1014.0
 margin_bottom = 68.0
 mouse_filter = 1
 [connection signal="mouse_entered" from="Panel/VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/VBoxContainer" to="." method="_on_VBoxContainer_mouse_exited"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Connect" to="." method="_on_Connect_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Disconnect" to="." method="_on_Disconnect_pressed"]
