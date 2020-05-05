@@ -111,11 +111,11 @@ func set_object_shape(obj):
 
 var grenade
 func _physics_process(delta):
-	if Input.is_action_just_pressed("game_esc"):
-		_pause = not _pause
-		$PlayerControl.pause(_pause)
-	
 	if playable and is_network_master() and not $PlayerControl.is_busy():
+		if Input.is_action_just_pressed("game_esc"):
+			_pause = not _pause
+			$PlayerControl.pause(_pause)
+		
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
