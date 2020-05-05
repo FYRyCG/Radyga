@@ -61,9 +61,16 @@ func _on_LobbyMenu_connect(toIp):
 
 func connection_succeeded():
 	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.connection_succeeded()
+	update_button_accessibility()
 
 func _on_LobbyMenu_disconnect():
-	gamestate.disconnect_game()	
+	gamestate.disconnect_game()
+	gamestate.host_game("Player")
+	update_button_accessibility()
 
 func refresh_lobby():
 	$Panel/UpBar/LobbyBar/VBoxContainer/Lobby.refresh(gamestate.get_player_list())
+
+func update_button_accessibility():
+	change_menu(MAIN)
+	$Panel/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
