@@ -22,7 +22,7 @@ func menu_visible(enable):
 
 # connect через графический
 func _on_Profile_icon_selected(icon):
-	$Panel/UpBar/LobbyBar/Lobby.set_player_icon(icon)
+	$Panel/UpBar/LobbyBar/VBoxContainer/Lobby.set_player_icon(icon)
 
 func change_menu(type):
 	hide_current_menu()
