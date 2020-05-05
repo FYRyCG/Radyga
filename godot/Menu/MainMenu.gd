@@ -15,6 +15,7 @@ func _ready():
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
 	gamestate.connect("connection_succeeded", self, "connection_succeeded")
 	#gamestate.connect("connection_failed", self, "connection_faild")
+	gamestate.connect("game_ended", self, "game_ended")
 
 func menu_visible(enable):
 	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.visible = enable
@@ -74,3 +75,7 @@ func refresh_lobby():
 func update_button_accessibility():
 	change_menu(MAIN)
 	$Panel/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
+
+func game_ended():
+	show()
+	update_button_accessibility()

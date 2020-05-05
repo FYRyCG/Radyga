@@ -1,4 +1,4 @@
-#include "PlayerControl.hpp"
+﻿#include "PlayerControl.hpp"
 
 namespace godot {
 
@@ -28,6 +28,8 @@ namespace godot {
 
 		register_method("set_busy", &PlayerControl::set_busy, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("is_busy", &PlayerControl::is_busy, GODOT_METHOD_RPC_MODE_DISABLED);
+
+		register_method("pause", &PlayerControl::pause, GODOT_METHOD_RPC_MODE_DISABLED);
 	}
 
 	void PlayerControl::_init() {
@@ -39,12 +41,18 @@ namespace godot {
 	}
 
 	void PlayerControl::_physics_process(float delta) {
+		if (pause_) {
+			return;
+		}
+
 		if (is_network_master()) {
+			Input* input = Input::get_singleton();
+			motion = Vector2();
+
 			if (!busy) {
 				player->look_at(get_global_mouse_position());
 			}
-			motion = Vector2();
-			Input* input = Input::get_singleton();
+
 			if (input->is_action_pressed("ui_left") && !busy) {
 				motion.x -= 1;
 			}
@@ -126,6 +134,10 @@ namespace godot {
 	bool PlayerControl::is_busy()
 	{
 		return busy;
+	}
+
+	void PlayerControl::pause(bool enable) {
+		pause_ = enable;
 	}
 
 }

@@ -70,13 +70,14 @@ remote func pre_start_game(spawn_points, map):
 	var world = load("res://World/World.tscn").instance()
 	get_tree().get_root().add_child(world)
 
+	get_tree().get_root().get_node("MainMenu").hide()
+
 	MapManager.set_map(map)
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
 	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
-	print("pl scene = ", player_scene)
-	print("pre start game ", spawn_points)
+
 	for p_id in spawn_points:
 		MapManager.spawn_player(p_id, player_scene)
 
