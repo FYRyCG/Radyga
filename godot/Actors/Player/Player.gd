@@ -58,6 +58,7 @@ func _ready():
 	PlayerControl.set_script(control_script)
 	add_child(PlayerControl)
 	$PlayerControl.start()
+	$PlayerControl.set_network_master(get_network_master())
 
 	add_child(preload("res://Actors/Player/Elements/Stats.tscn").instance())
 	$Stats.start(MAX_HP, MAX_STAMINA)
@@ -65,6 +66,7 @@ func _ready():
 	# Нода отвечающая за весь инвентарь плеера
 	add_child(preload("res://Actors/Player/Elements/Equipment.tscn").instance())
 	$Equipment.start(equipments, ammunitions)
+	$Equipment.set_network_master(get_network_master())
 
 	# Переименуем ноду скила, чтобы можно было обращатся к ней
 	var skill_node = skill.instance()
@@ -92,6 +94,7 @@ func _ready():
 
 # Берет объект в инвентарь
 func take_object(obj):
+	print("take is ", is_network_master())
 	$Equipment.take_object(obj)
 
 # Выбрасывает объект из инвентаря
@@ -144,8 +147,6 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
-			#ПЛАУЕРОВ НАДО УБИВАТ!
-			hit(80) # Хватет убевать player'ов, чтобы делать из них игры
 			current_interactive_body.get_ref().use(self)
 
 func hit(damage):

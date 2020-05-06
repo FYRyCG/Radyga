@@ -41,11 +41,11 @@ namespace godot {
 	}
 
 	void PlayerControl::_physics_process(float delta) {
-		if (pause_) {
-			return;
-		}
-
 		if (is_network_master()) {
+			if (pause_) {
+				return;
+			}
+
 			Input* input = Input::get_singleton();
 			motion = Vector2();
 
