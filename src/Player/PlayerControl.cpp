@@ -87,25 +87,16 @@ namespace godot {
 			}
 
 			if (input->is_action_just_pressed("pl_primary_weapon") && !busy) {
-				std::cout << "pl_primary_kkeeek" << std::endl;
 				rpc("sync_switch_weapon", "primary", RIFLE);
 				sync_switch_weapon("primary", RIFLE);
-				//player->get_node("Equipment")->call("switch_weapon", "primary");
-				//player->call("set_equipped", RIFLE);
 			}
 			if (input->is_action_just_pressed("pl_secondary_weapon") && !busy) {
 				rpc("sync_switch_weapon", "secondary", RIFLE);
 				sync_switch_weapon("secondary", RIFLE);
-				//player->get_node("Equipment")->call("switch_weapon", "secondary");
-				//player->call("set_equipped", RIFLE);
 			}
 			if (input->is_action_just_pressed("pl_gadget") && !busy) {
 				rpc("sync_switch_weapon", "gadget", FREE);
 				sync_switch_weapon("gadget", FREE);
-				/*
-				player->get_node("Equipment")->call("switch_weapon", "gadget");
-				player->call("set_equipped", FREE);
-				*/
 			}
 
 			if (input->is_action_just_pressed("pl_reload") && !busy) {
