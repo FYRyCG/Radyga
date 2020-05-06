@@ -109,8 +109,8 @@ func reload():
 			update_ammo_on_HUD(hands.get_ref(), ammunitions[hands.get_ref().Cartridge])
 
 func show_weapon_on_HUD(weapon, extra_ammo):
-	print("take ", get_tree().get_network_unique_id())
-	print(is_network_master())
+	#print("take ", get_tree().get_network_unique_id())
+	#print(is_network_master())
 	if is_network_master():
 		get_parent().get_HUD().show_weapon(weapon, extra_ammo)
 

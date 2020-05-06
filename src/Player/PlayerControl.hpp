@@ -46,6 +46,8 @@ namespace godot {
 		bool is_busy();
 
 		void pause(bool enable);
+	private:
+		void sync_switch_weapon(String equip_type, int type);
 	};
 
 }

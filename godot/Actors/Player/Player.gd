@@ -94,7 +94,6 @@ func _ready():
 
 # Берет объект в инвентарь
 func take_object(obj):
-	print("take is ", is_network_master())
 	$Equipment.take_object(obj)
 
 # Выбрасывает объект из инвентаря
