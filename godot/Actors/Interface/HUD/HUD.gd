@@ -1,8 +1,6 @@
 extends Control
 
 onready var viewport = $Minimap/MarginContainer/ViewportContainer/Viewport
-onready var weapons = $Weapons
-onready var hpbar = $HP_bar
 
 signal hp_changed(health)
 signal ammo_changed(amount)
@@ -20,7 +18,7 @@ func _ready():
 func start(player_, max_health):
 	player = weakref(player_)
 	$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
-	hpbar.initilized(max_health)
+	$HP_bar.initilized(max_health)
 
 
 func get_player():
@@ -32,8 +30,8 @@ func change_hp_bar_value(value):
 	emit_signal("hp_changed", value)
 
 func show_weapon(weapon, extra_ammo):
-	weapons.show_weapon(weapon, extra_ammo)
+	$Weapons.show_weapon(weapon, extra_ammo)
 
 func update_ammo(weapon, extra_ammo):
-	weapons.update_ammo(weapon, extra_ammo)
+	$Weapons.update_ammo(weapon, extra_ammo)
 
