@@ -99,6 +99,8 @@ namespace godot {
 				sync_switch_weapon("gadget", FREE);
 			}
 
+
+
 			if (input->is_action_just_pressed("pl_reload") && !busy) {
 				player->get_node("Equipment")->call("reload");
 			}

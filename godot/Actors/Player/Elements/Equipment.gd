@@ -96,7 +96,8 @@ func _get_next_grenade(cur):
 func reload():
 	if hands and hands.get_ref():
 		if hands.get_ref().has_method("reload") and \
-				ammunitions[hands.get_ref().Cartridge] > 0:
+			ammunitions[hands.get_ref().Cartridge] > 0 and \
+			hands.get_ref().get_ammo() < hands.get_ref().Capacity:
 					
 			get_parent().reload()
 			var weapon_ammo_rest = hands.get_ref().get_ammo()

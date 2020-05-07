@@ -77,7 +77,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -175.0
-margin_top = -169.0
+margin_top = -206.0
 alignment = 2
 script = ExtResource( 2 )
 __meta__ = {
@@ -87,22 +87,24 @@ __meta__ = {
 [node name="Primary" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 175.0
-margin_bottom = 74.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 175, 75 )
 texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Secondary" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 78.0
+margin_top = 79.0
 margin_right = 175.0
-margin_bottom = 117.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 175, 75 )
 texture = ExtResource( 6 )
 stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 121.0
+margin_top = 158.0
 margin_right = 175.0
-margin_bottom = 169.0
+margin_bottom = 206.0
 
 [node name="Bullet_tex" type="TextureRect" parent="HBoxContainer"]
 margin_right = 43.0
