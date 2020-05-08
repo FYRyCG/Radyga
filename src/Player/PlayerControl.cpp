@@ -108,9 +108,9 @@ namespace godot {
 				player->get_node("Skill")->call("use");
 			}
 
-			rset("puppet_motion", motion);
-			rset("puppet_rotation", player->get_global_rotation());
-			rset("puppet_position", player->get_global_position());
+			rset_unreliable("puppet_motion", motion);
+			rset_unreliable("puppet_rotation", player->get_global_rotation());
+			rset_unreliable("puppet_position", player->get_global_position());
 		} else {
 			player->set_global_position(puppet_position);
 			player->set_global_rotation(puppet_rotation);
