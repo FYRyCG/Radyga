@@ -77,5 +77,7 @@ func update_button_accessibility():
 	$Panel/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
 
 func game_ended():
+	gamestate.host_game("Player")
 	show()
 	update_button_accessibility()
+

@@ -160,9 +160,9 @@ func end_game():
 	if has_node("/root/World"): # Game is in progress
 		# End it
 		get_node("/root/World").queue_free()
-
-	emit_signal("game_ended")
+		
 	disconnect_game()
+	emit_signal("game_ended")
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")

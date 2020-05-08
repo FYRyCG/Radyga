@@ -5,6 +5,10 @@ func _physics_process(delta):
 		visible = not visible
 		Input.action_release("game_esc")
 
+
 func _on_Cancel_pressed():
 	Input.action_press("game_esc")
-	
+
+
+func _on_Exit_pressed():
+	gamestate.end_game()

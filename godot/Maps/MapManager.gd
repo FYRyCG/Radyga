@@ -6,7 +6,9 @@ var maps = {
 }
 
 #var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
-var current_map = preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance()  #Мапа Санька
+var current_map = weakref(\
+	preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance())  #Мапа Санька
+	
 var spawn_positions = []
 var next_spawn_position = 0
 
@@ -17,12 +19,16 @@ func set_map(name):
 	load_map(maps[name])
 
 func load_map(map):
-	current_map.queue_free()
+	if current_map.get_ref():
+		current_map.get_ref().queue_free()
+		
 	spawn_positions = []
-	current_map = load(map).instance()
-	get_tree().get_root().get_node("World/Map").add_child(current_map)
-	if current_map.has_node("SpawnPositions"):
-		for sp in current_map.get_node("SpawnPositions").get_children():
+	next_spawn_position = 0
+	
+	current_map = weakref(load(map).instance())
+	get_tree().get_root().get_node("World/Map").add_child(current_map.get_ref())
+	if current_map().has_node("SpawnPositions"):
+		for sp in current_map().get_node("SpawnPositions").get_children():
 			spawn_positions.append(sp)
 
 
@@ -34,8 +40,8 @@ func get_next_spawn_position():
 
 
 func get_wall_map():
-	if current_map.has_node("WallMap"):
-		return current_map.get_node("WallMap")
+	if current_map().has_node("WallMap"):
+		return current_map().get_node("WallMap")
 	else:
 		return TileMap.new()
 
@@ -58,4 +64,8 @@ func spawn_player(p_id, operator_scene):
 		# Otherwise set name from peer
 		#player.set_player_name(players[p_id])
 
-	current_map.add_child(player)
+	current_map().add_child(player)
+
+func current_map():
+	return current_map.get_ref()
+	

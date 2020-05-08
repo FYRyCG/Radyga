@@ -58,3 +58,4 @@ margin_right = 187.0
 margin_bottom = 289.0
 text = "Exit"
 [connection signal="pressed" from="BG/VBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="BG/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
