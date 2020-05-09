@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex"
+path="res://.import/top_view.png-3a549916a3596d5591cd439758619b3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/HUD/Weapons_UI/Ak.png"
-dest_files=[ "res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex" ]
+source_file="res://Actors/Operators/StrongBoi/top_view.png"
+dest_files=[ "res://.import/top_view.png-3a549916a3596d5591cd439758619b3b.stex" ]
 
 [params]
 

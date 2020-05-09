@@ -1679,6 +1679,16 @@ extents = Vector2( 33.3402, 33.1123 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shapes = [  ]
 1/z_index = 0
+2/name = "Furniture_tiles.png 2"
+2/texture = ExtResource( 26 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 160, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
 
 [sub_resource type="TileSet" id=72]
 0/name = "Porebrik_2.png 0"
@@ -1864,6 +1874,7 @@ shape = SubResource( 70 )
 tile_set = SubResource( 71 )
 cell_size = Vector2( 32, 32 )
 format = 1
+tile_data = PoolIntArray( -1048558, 2, 0, -524270, 2, 0 )
 
 [node name="Out_porops" type="TileMap" parent="Props"]
 tile_set = SubResource( 72 )
