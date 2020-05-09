@@ -65,3 +65,4 @@ func show_curent_weapon(number): #При переключении оружий
 	curent_weapon_texture = weapon_compliance[number]
 	curent_weapon_texture.modulate = "ffffff"
 	curent_weapon_texture.visible = true
+	

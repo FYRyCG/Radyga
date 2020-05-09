@@ -8,7 +8,8 @@ var player = null
 func _ready():
 	set_physics_process(false)
 	set_process(false)
-	make_current()
+	if is_network_master():
+		make_current()
 
 func set_player(player_):
 	player = weakref(player_)

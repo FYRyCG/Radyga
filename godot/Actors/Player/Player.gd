@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 class_name Player
 func get_class(): return "Player"
-	
+
+var _pause = false
+
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
@@ -19,6 +21,7 @@ export var MAX_HP = 100
 export var MAX_STAMINA = 100
 
 export (Script) var control_script = preload("res://bin/PlayerControl.gdns") setget set_control_script
+# Управляется игроком или компом
 export (bool) var playable = false
 
 export (PackedScene) var skill = preload("res://Actors/Operators/Recruit/RecruitSkill.tscn")
@@ -55,6 +58,7 @@ func _ready():
 	PlayerControl.set_script(control_script)
 	add_child(PlayerControl)
 	$PlayerControl.start()
+	$PlayerControl.set_network_master(get_network_master())
 
 	add_child(preload("res://Actors/Player/Elements/Stats.tscn").instance())
 	$Stats.start(MAX_HP, MAX_STAMINA)
@@ -62,6 +66,7 @@ func _ready():
 	# Нода отвечающая за весь инвентарь плеера
 	add_child(preload("res://Actors/Player/Elements/Equipment.tscn").instance())
 	$Equipment.start(equipments, ammunitions)
+	$Equipment.set_network_master(get_network_master())
 
 	# Переименуем ноду скила, чтобы можно было обращатся к ней
 	var skill_node = skill.instance()
@@ -80,7 +85,7 @@ func _ready():
 		$PlayerElements/Camera.set_player(self)
 		
 	# удалить все ноды, которые не нужны для NPC
-	if not playable:
+	if not playable or not is_network_master():
 		$PlayerElements/HUDLayer.queue_free()
 		$PlayerElements/Camera.queue_free()
 	
@@ -109,6 +114,10 @@ func set_object_shape(obj):
 var grenade
 func _physics_process(delta):
 	if playable and is_network_master() and not $PlayerControl.is_busy():
+		if Input.is_action_just_pressed("game_esc"):
+			_pause = not _pause
+			$PlayerControl.pause(_pause)
+		
 		if Input.is_action_just_pressed("pl_throw_grenade"):
 			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
 			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
@@ -137,8 +146,6 @@ func use():
 	if current_interactive_body and current_interactive_body.get_ref() \
 	   and current_interactive_body.get_ref().get_class() != "Player":
 		if current_interactive_body.get_ref().has_method("use"):
-			#ПЛАУЕРОВ НАДО УБИВАТ!
-			hit(80) # Хватет убевать player'ов, чтобы делать из них игры
 			current_interactive_body.get_ref().use(self)
 
 func hit(damage):

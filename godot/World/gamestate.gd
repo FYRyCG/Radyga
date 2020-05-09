@@ -4,12 +4,13 @@ extends Node
 const DEFAULT_PORT = 10567
 
 # Max number of players
-const MAX_PEERS = 12
+const MAX_PEERS = 5
 
 # Name for my player
 var player_name = "The Warrior"
+var player_icon = "res://Resources/Icons/icon1.png"
 
-# Names for remote players in id:name format
+# Names for remote players 
 var players = {}
 
 # Signals to let lobby GUI know what's going on
@@ -22,17 +23,18 @@ signal game_error(what)
 # Callback from SceneTree
 func _player_connected(id):
 	# Registration of a client beings here, tell the connected player that we are here
-	rpc_id(id, "register_player", player_name)
+	print("pl icon = ", player_icon)
+	rpc_id(id, "register_player", player_name, player_icon)
 
 # Callback from SceneTree
 func _player_disconnected(id):
+	print("dis = ", id)
 	if has_node("/root/world"): # Game is in progress
 		if get_tree().is_network_server():
 			emit_signal("game_error", "Player " + players[id] + " disconnected")
 			end_game()
-	else: # Game is not in progress
-		# Unregister this player
-		unregister_player(id)
+	unregister_player(id)
+	
 
 # Callback from SceneTree, only for clients (not server)
 func _connected_ok():
@@ -50,25 +52,32 @@ func _connected_fail():
 	emit_signal("connection_failed")
 
 # Lobby management functions
-
-remote func register_player(new_player_name):
+remote func register_player(new_player_name, player_icon):
 	var id = get_tree().get_rpc_sender_id()
-	players[id] = new_player_name
+	print("Connected id = ", id)
+	players[id] = {
+			"name" : new_player_name,
+			"icon" : player_icon,
+		}
 	emit_signal("player_list_changed")
 
 func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
-remote func pre_start_game(spawn_points):
+remote func pre_start_game(spawn_points, map):
 	# Change scene
 	var world = load("res://World/World.tscn").instance()
 	get_tree().get_root().add_child(world)
 
+	get_tree().get_root().get_node("MainMenu").hide()
+
+	MapManager.set_map(map)
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
 	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
+
 	for p_id in spawn_points:
 		MapManager.spawn_player(p_id, player_scene)
 
@@ -100,11 +109,23 @@ func host_game(new_player_name):
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
 
-func join_game(ip, new_player_name):
+func join_game(ip, new_player_name, icon):
+	# Так как перед подключение он был уже хостом
+	print("joining")
+	get_tree().set_network_peer(null) # End networking
+	
+	print("join to ", ip)
+	
 	player_name = new_player_name
+	player_icon = icon
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
+
+func disconnect_game():
+	players.clear()
+	emit_signal("player_list_changed")
+	get_tree().set_network_peer(null) # End networking
 
 func get_player_list():
 	return players.values()
@@ -112,7 +133,13 @@ func get_player_list():
 func get_player_name():
 	return player_name
 
-func begin_game():
+func get_player_icon():
+	return player_icon
+	
+func change_icon(icon):
+	player_icon = icon
+
+func begin_game(map):
 	assert(get_tree().is_network_server())
 
 	# Create a dictionary with peer id and respective spawn points, could be improved by randomizing
@@ -124,9 +151,10 @@ func begin_game():
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points
 	for p in players:
-		rpc_id(p, "pre_start_game", spawn_points)
+		#map - та карта на которой начинается игра
+		rpc_id(p, "pre_start_game", spawn_points, map)
 
-	pre_start_game(spawn_points)
+	pre_start_game(spawn_points, map)
 
 func end_game():
 	if has_node("/root/World"): # Game is in progress
@@ -134,8 +162,7 @@ func end_game():
 		get_node("/root/World").queue_free()
 
 	emit_signal("game_ended")
-	players.clear()
-	get_tree().set_network_peer(null) # End networking
+	disconnect_game()
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")

@@ -18,6 +18,7 @@ namespace godot {
 		std::shared_ptr<KinematicBody2D> player;
 		//WeakRef player;
 		bool busy = false;
+		bool pause_ = false;
 
 		int walk_speed = 200;
 		int run_speed = 300;
@@ -43,6 +44,10 @@ namespace godot {
 		void set_busy(bool flag);
 
 		bool is_busy();
+
+		void pause(bool enable);
+	private:
+		void sync_switch_weapon(String equip_type, int type);
 	};
 
 }

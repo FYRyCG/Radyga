@@ -9,16 +9,9 @@ var maps = {
 var current_map = preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance()  #Мапа Санька
 var spawn_positions = []
 var next_spawn_position = 0
-#var current_map
 
 func _ready():
 	pass
-	"""
-	add_child(current_map)
-	if current_map.has_node("SpawnPositions"):
-		for sp in current_map.get_node("SpawnPositions").get_children():
-			spawn_positions.append(sp)
-	"""
 
 func set_map(name):
 	load_map(maps[name])
@@ -27,7 +20,7 @@ func load_map(map):
 	current_map.queue_free()
 	spawn_positions = []
 	current_map = load(map).instance()
-	add_child(current_map)
+	get_tree().get_root().get_node("World/Map").add_child(current_map)
 	if current_map.has_node("SpawnPositions"):
 		for sp in current_map.get_node("SpawnPositions").get_children():
 			spawn_positions.append(sp)
@@ -49,7 +42,7 @@ func get_wall_map():
 
 func spawn_player(p_id, operator_scene):
 	var spawn_pos = get_next_spawn_position()
-		
+	
 	var player = operator_scene.instance()
 
 	player.set_name(str(p_id)) # Use unique ID as node name
