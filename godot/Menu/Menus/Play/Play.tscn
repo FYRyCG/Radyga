@@ -10,24 +10,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 320.0
 rect_min_size = Vector2( 320, 320 )
-custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SimpleMap" type="Button" parent="VBoxContainer"]
+[node name="Multiplayer" type="Button" parent="VBoxContainer2"]
 margin_right = 320.0
 margin_bottom = 20.0
-text = "Simple Map"
+text = "Multiplayer"
 
-[node name="Build" type="Button" parent="VBoxContainer"]
-margin_top = 30.0
+[node name="COOP" type="Button" parent="VBoxContainer2"]
+margin_top = 24.0
 margin_right = 320.0
-margin_bottom = 50.0
-text = "Adm Build"
-[connection signal="pressed" from="VBoxContainer/SimpleMap" to="." method="_on_SimpleMap_pressed"]
-[connection signal="pressed" from="VBoxContainer/Build" to="." method="_on_Build_pressed"]
+margin_bottom = 44.0
+text = "COOP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer2/Multiplayer" to="." method="_on_Multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer2/COOP" to="." method="_on_COOP_pressed"]
