@@ -37,7 +37,7 @@ __meta__ = {
 }
 
 [node name="MenuBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_right = 368.0
+margin_right = 296.0
 margin_bottom = 66.0
 grow_vertical = 0
 custom_constants/separation = 8
@@ -64,18 +64,10 @@ margin_bottom = 66.0
 text = "OPERATORS"
 flat = true
 
-[node name="ShopBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_left = 304.0
-margin_right = 368.0
-margin_bottom = 66.0
-rect_min_size = Vector2( 64, 0 )
-text = "SHOP"
-flat = true
-
 [node name="HSeparator" type="HSeparator" parent="Panel/UpBar"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 372.0
+margin_left = 300.0
 margin_right = 510.0
 margin_bottom = 66.0
 size_flags_horizontal = 3
@@ -129,16 +121,6 @@ margin_left = 396.0
 margin_right = 460.0
 margin_bottom = 66.0
 texture_normal = ExtResource( 1 )
-
-[node name="Type" type="Label" parent="Panel"]
-margin_left = 52.8759
-margin_top = 147.165
-margin_right = 195.876
-margin_bottom = 202.165
-text = "HOME
-"
-align = 1
-valign = 1
 
 [node name="Main" type="Button" parent="."]
 margin_left = 112.263

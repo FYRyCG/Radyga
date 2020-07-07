@@ -10,7 +10,7 @@ func _ready():
 	$Panel/UpBar/MenuBar/MainBtn.connect("pressed", self, "change_menu", [MAIN])
 	$Panel/UpBar/MenuBar/PlayBtn.connect("pressed", self, "change_menu", [PLAY])
 	$Panel/UpBar/MenuBar/OperatorsBtn.connect("pressed", self, "change_menu", [OPERATORS])
-	$Panel/UpBar/MenuBar/ShopBtn.connect("pressed", self, "change_menu", [SHOP])
+	#$Panel/UpBar/MenuBar/ShopBtn.connect("pressed", self, "change_menu", [SHOP])
 	
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
 	gamestate.connect("connection_succeeded", self, "connection_succeeded")
@@ -29,15 +29,10 @@ func change_menu(type):
 	match type:
 		MAIN:
 			$Main.show()
-			$Panel/Type.text = "Main"
 		PLAY:
-			$Panel/Type.text = "Play"
 			$Play.show()
 		OPERATORS:
-			$Panel/Type.text = "Operators"
 			$Operators.show()
-		SHOP:
-			$Panel/Type.text = "Shop"
 	current_menu = type
 
 func hide_current_menu():
@@ -79,3 +74,7 @@ func update_button_accessibility():
 func game_ended():
 	show()
 	update_button_accessibility()
+
+
+func _on_Map_pick_play():
+	hide()
