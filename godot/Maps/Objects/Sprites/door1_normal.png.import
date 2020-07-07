@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex"
+path="res://.import/door1_normal.png-fd81aee1d2dc685cae6e2753004210c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/HUD/Weapons_UI/Ak.png"
-dest_files=[ "res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex" ]
+source_file="res://Maps/Objects/Sprites/door1_normal.png"
+dest_files=[ "res://.import/door1_normal.png-fd81aee1d2dc685cae6e2753004210c2.stex" ]
 
 [params]
 
