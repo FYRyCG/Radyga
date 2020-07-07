@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex"
+path="res://.import/boi1.png-647a7a9a4420eee8f986d27d214ecaf1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Interface/HUD/Weapons_UI/Ak.png"
-dest_files=[ "res://.import/Ak.png-46b3eeecb2ad869070635c2e93bff373.stex" ]
+source_file="res://Actors/Operators/Speedy/Sprites/boi1.png"
+dest_files=[ "res://.import/boi1.png-647a7a9a4420eee8f986d27d214ecaf1.stex" ]
 
 [params]
 

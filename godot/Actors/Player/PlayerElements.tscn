@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/Player/PlayerElements.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Objects/Sprites/Lights/Light_test_without.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Interface/HUD/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/Player/Camera/Camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/GameMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RayShape2D" id=1]
 
@@ -60,6 +61,10 @@ shape = SubResource( 3 )
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="HUDLayer" instance=ExtResource( 3 )]
+mouse_filter = 2
+
+[node name="GameMenu" parent="HUDLayer" instance=ExtResource( 5 )]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -214.67

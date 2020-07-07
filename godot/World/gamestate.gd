@@ -70,13 +70,14 @@ remote func pre_start_game(spawn_points, map):
 	var world = load("res://World/World.tscn").instance()
 	get_tree().get_root().add_child(world)
 
+	get_tree().get_root().get_node("MainMenu").hide()
+
 	MapManager.set_map(map)
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
-	var player_scene = preload("res://Actors/Operators/ExampleRecruit/MemeRecruitForExample.tscn")
-	print("pl scene = ", player_scene)
-	print("pre start game ", spawn_points)
+	var player_scene = preload("res://Actors/Operators/Speedy/Sprites/Hermes.tscn")
+
 	for p_id in spawn_points:
 		MapManager.spawn_player(p_id, player_scene)
 
@@ -159,9 +160,9 @@ func end_game():
 	if has_node("/root/World"): # Game is in progress
 		# End it
 		get_node("/root/World").queue_free()
-
-	emit_signal("game_ended")
+		
 	disconnect_game()
+	emit_signal("game_ended")
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")

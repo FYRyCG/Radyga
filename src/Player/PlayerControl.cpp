@@ -1,4 +1,4 @@
-#include "PlayerControl.hpp"
+﻿#include "PlayerControl.hpp"
 
 namespace godot {
 
@@ -28,6 +28,10 @@ namespace godot {
 
 		register_method("set_busy", &PlayerControl::set_busy, GODOT_METHOD_RPC_MODE_DISABLED);
 		register_method("is_busy", &PlayerControl::is_busy, GODOT_METHOD_RPC_MODE_DISABLED);
+
+		register_method("pause", &PlayerControl::pause, GODOT_METHOD_RPC_MODE_DISABLED);
+
+		register_method("sync_switch_weapon", &PlayerControl::sync_switch_weapon, GODOT_METHOD_RPC_MODE_REMOTE);
 	}
 
 	void PlayerControl::_init() {
@@ -40,11 +44,17 @@ namespace godot {
 
 	void PlayerControl::_physics_process(float delta) {
 		if (is_network_master()) {
+			if (pause_) {
+				return;
+			}
+
+			Input* input = Input::get_singleton();
+			motion = Vector2();
+
 			if (!busy) {
 				player->look_at(get_global_mouse_position());
 			}
-			motion = Vector2();
-			Input* input = Input::get_singleton();
+
 			if (input->is_action_pressed("ui_left") && !busy) {
 				motion.x -= 1;
 			}
@@ -77,17 +87,19 @@ namespace godot {
 			}
 
 			if (input->is_action_just_pressed("pl_primary_weapon") && !busy) {
-				player->get_node("Equipment")->call("switch_weapon", "primary");
-				player->call("set_equipped", RIFLE);
+				rpc("sync_switch_weapon", "primary", RIFLE);
+				sync_switch_weapon("primary", RIFLE);
 			}
 			if (input->is_action_just_pressed("pl_secondary_weapon") && !busy) {
-				player->get_node("Equipment")->call("switch_weapon", "secondary");
-				player->call("set_equipped", RIFLE);
+				rpc("sync_switch_weapon", "secondary", RIFLE);
+				sync_switch_weapon("secondary", RIFLE);
 			}
 			if (input->is_action_just_pressed("pl_gadget") && !busy) {
-				player->get_node("Equipment")->call("switch_weapon", "gadget");
-				player->call("set_equipped", FREE);
+				rpc("sync_switch_weapon", "gadget", FREE);
+				sync_switch_weapon("gadget", FREE);
 			}
+
+
 
 			if (input->is_action_just_pressed("pl_reload") && !busy) {
 				player->get_node("Equipment")->call("reload");
@@ -96,9 +108,9 @@ namespace godot {
 				player->get_node("Skill")->call("use");
 			}
 
-			rset("puppet_motion", motion);
-			rset("puppet_rotation", player->get_global_rotation());
-			rset("puppet_position", player->get_global_position());
+			rset_unreliable("puppet_motion", motion);
+			rset_unreliable("puppet_rotation", player->get_global_rotation());
+			rset_unreliable("puppet_position", player->get_global_position());
 		} else {
 			player->set_global_position(puppet_position);
 			player->set_global_rotation(puppet_rotation);
@@ -126,6 +138,17 @@ namespace godot {
 	bool PlayerControl::is_busy()
 	{
 		return busy;
+	}
+
+	void PlayerControl::pause(bool enable) {
+		pause_ = enable;
+	}
+
+	void PlayerControl::sync_switch_weapon(String equip_type, int type)
+	{
+		std::cout << "kek" << std::endl;
+		player->get_node("Equipment")->call("switch_weapon", equip_type);
+		player->call("set_equipped", type);
 	}
 
 }

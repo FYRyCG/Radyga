@@ -96,7 +96,8 @@ func _get_next_grenade(cur):
 func reload():
 	if hands and hands.get_ref():
 		if hands.get_ref().has_method("reload") and \
-				ammunitions[hands.get_ref().Cartridge] > 0:
+			ammunitions[hands.get_ref().Cartridge] > 0 and \
+			hands.get_ref().get_ammo() < hands.get_ref().Capacity:
 					
 			get_parent().reload()
 			var weapon_ammo_rest = hands.get_ref().get_ammo()
@@ -109,8 +110,12 @@ func reload():
 			update_ammo_on_HUD(hands.get_ref(), ammunitions[hands.get_ref().Cartridge])
 
 func show_weapon_on_HUD(weapon, extra_ammo):
-	get_parent().get_HUD().show_weapon(weapon, extra_ammo)
+	#print("take ", get_tree().get_network_unique_id())
+	#print(is_network_master())
+	if is_network_master():
+		get_parent().get_HUD().show_weapon(weapon, extra_ammo)
 
 func update_ammo_on_HUD(weapon, extra_ammo):
-	get_parent().get_HUD().update_ammo(weapon, extra_ammo)
+	if is_network_master():
+		get_parent().get_HUD().update_ammo(weapon, extra_ammo)
 

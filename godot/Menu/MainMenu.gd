@@ -15,13 +15,14 @@ func _ready():
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
 	gamestate.connect("connection_succeeded", self, "connection_succeeded")
 	#gamestate.connect("connection_failed", self, "connection_faild")
+	gamestate.connect("game_ended", self, "game_ended")
 
 func menu_visible(enable):
 	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.visible = enable
 
 # connect через графический
 func _on_Profile_icon_selected(icon):
-	$Panel/UpBar/LobbyBar/Lobby.set_player_icon(icon)
+	$Panel/UpBar/LobbyBar/VBoxContainer/Lobby.set_player_icon(icon)
 
 func change_menu(type):
 	hide_current_menu()
@@ -61,9 +62,22 @@ func _on_LobbyMenu_connect(toIp):
 
 func connection_succeeded():
 	$Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu.connection_succeeded()
+	update_button_accessibility()
 
 func _on_LobbyMenu_disconnect():
-	gamestate.disconnect_game()	
+	gamestate.disconnect_game()
+	gamestate.host_game("Player")
+	update_button_accessibility()
 
 func refresh_lobby():
 	$Panel/UpBar/LobbyBar/VBoxContainer/Lobby.refresh(gamestate.get_player_list())
+
+func update_button_accessibility():
+	change_menu(MAIN)
+	$Panel/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
+
+func game_ended():
+	gamestate.host_game("Player")
+	show()
+	update_button_accessibility()
+
