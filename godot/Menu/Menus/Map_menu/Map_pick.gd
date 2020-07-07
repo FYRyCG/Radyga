@@ -21,3 +21,4 @@ func _on_Play_pressed():
 	print(curent_map)
 	#emit_signal("start")
 	gamestate.begin_game(curent_map)
+	queue_free()
