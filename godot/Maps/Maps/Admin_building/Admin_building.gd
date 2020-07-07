@@ -21,3 +21,6 @@ func _on_Wall_map_room_exited(current_room):
 	var node = current_room.find_node("Cover_vis")
 	node.visible = true
 """
+
+func get_navigation():
+	return $Navi

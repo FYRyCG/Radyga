@@ -265,6 +265,7 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 6 )
 
 [node name="Texture" type="Sprite" parent="."]
+use_parent_material = true
 texture = ExtResource( 2 )
 
 [node name="Leg1" type="Sprite" parent="Texture"]

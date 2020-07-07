@@ -69,3 +69,11 @@ func spawn_player(p_id, operator_scene):
 func current_map():
 	return current_map.get_ref()
 	
+func build_path(point_a, point_b) -> Line2D:
+	var navigation = current_map.get_ref().get_navigation()
+	var line_2d = Line2D.new()
+	line_2d.points = navigation.get_simple_path(point_a, point_b)
+	return line_2d
+	
+func get_patrol_point(current_index):
+	return current_map.get_ref().get_patrol_point(current_index)

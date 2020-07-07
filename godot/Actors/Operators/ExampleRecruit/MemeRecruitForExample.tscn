@@ -3434,7 +3434,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=43]
 states/Death_0/node = SubResource( 16 )
-states/Death_0/position = Vector2( 908, -71 )
+states/Death_0/position = Vector2( 754, -18 )
 states/Idle/node = SubResource( 20 )
 states/Idle/position = Vector2( 315, 106 )
 states/Idle_shooting/node = SubResource( 24 )
@@ -3460,7 +3460,6 @@ playable = true
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 use_parent_material = true
-rotation = 0.659525
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 4
@@ -3469,8 +3468,8 @@ frame = 7
 [node name="Foot_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 6.80066, -4.30114 )
-rotation = -0.634075
+position = Vector2( -14.7958, -1.73084 )
+rotation = 0.334813
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3478,8 +3477,7 @@ hframes = 4
 [node name="Foot_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 2.13853, 9.12815 )
-rotation = -0.487504
+position = Vector2( -13.5442, 8.86125 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3487,8 +3485,9 @@ hframes = 4
 [node name="Arm3_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 27.6157, -12.5469 )
-rotation = -0.664579
+position = Vector2( 21.4787, -12.038 )
+rotation = -1.76114
+scale = Vector2( 0.554173, 0.797452 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3497,16 +3496,17 @@ frame = 3
 [node name="Arm3_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 16.3377, -2.20785 )
+position = Vector2( 21.3218, 14.4578 )
 rotation = -0.425143
+scale = Vector2( 0.586, 0.812 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
-frame = 7
+frame = 3
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
-position = Vector2( -5.50771, 0.582993 )
+position = Vector2( -7.76706, 0.131127 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 4
@@ -3515,7 +3515,6 @@ frame = 5
 [node name="Head" type="Sprite" parent="Sprite"]
 use_parent_material = true
 position = Vector2( 1.72096, 0.250551 )
-rotation = -0.642644
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3524,8 +3523,8 @@ frame = 6
 [node name="Arm_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 18.2602, -15.6849 )
-rotation = -0.391139
+position = Vector2( 13.689, -12.4037 )
+rotation = -0.412507
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3534,8 +3533,8 @@ frame = 2
 [node name="Arm_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 14.0605, 4.74212 )
-rotation = -1.46912
+position = Vector2( 14.114, 14.5451 )
+rotation = -0.455234
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3544,8 +3543,8 @@ frame = 2
 [node name="Arm2_L" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 9.13662, -14.2389 )
-rotation = -0.365889
+position = Vector2( 3.58595, -12.0238 )
+rotation = -0.160287
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
@@ -3554,8 +3553,8 @@ frame = 1
 [node name="Arm2_R" type="Sprite" parent="Sprite"]
 show_behind_parent = true
 use_parent_material = true
-position = Vector2( 7.7487, 9.48629 )
-rotation = -0.397549
+position = Vector2( 5.6133, 12.299 )
+rotation = 0.465504
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
