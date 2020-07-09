@@ -1,8 +1,8 @@
 extends Control
 
 var stages = {
-	0 : "res://Menu/Menus/Cooperative/MapSelector/Map_pick.tscn",
-	1 : "res://Menu/Menus/Cooperative/OpsSelector/Selector.tscn"
+	0 : "res://Menu/Menus/StartGame/MapSelector/Map_pick.tscn",
+	1 : "res://Menu/Menus/StartGame/OpsSelector/Selector.tscn"
 }
 
 var stage = 0
@@ -13,7 +13,6 @@ func _ready():
 	load_stage(stage)
 
 func next_stage():
-	print("queue")
 	cur_stage.queue_free()
 	stage += 1
 	
