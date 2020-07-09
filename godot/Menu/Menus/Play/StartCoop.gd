@@ -19,6 +19,8 @@ func next_stage():
 	
 	if stage < stages.size():
 		load_stage(stage)
+	else:
+		gamestate.begin_game()
 
 func load_stage(stage):
 	cur_stage = load(stages[stage]).instance()

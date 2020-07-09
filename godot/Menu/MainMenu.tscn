@@ -155,5 +155,4 @@ visible = false
 [connection signal="disconnect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
 [connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="menu_visible"]
 [connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/ConnectDialog" to="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" method="_on_ConnectDialog_connect"]
-[connection signal="start" from="Play" to="." method="_on_Play_start"]
 [connection signal="icon_selected" from="Profile" to="." method="_on_Profile_icon_selected"]

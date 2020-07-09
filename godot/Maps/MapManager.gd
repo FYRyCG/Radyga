@@ -20,8 +20,11 @@ func _ready():
 func set_map(name):
 	map_name = name
 
-func load_map_by_name(name):
-	load_map(maps[name])
+func get_map_name():
+	return map_name
+
+func load_selected_map():
+	load_map(maps[map_name])
 
 func load_map(map):
 	if current_map.get_ref():
@@ -73,6 +76,3 @@ func spawn_player(p_id, operator_scene):
 
 func current_map():
 	return current_map.get_ref()
-
-func start_game():
-	gamestate.begin_game(map_name)

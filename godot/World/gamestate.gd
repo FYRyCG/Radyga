@@ -72,7 +72,7 @@ remote func pre_start_game(spawn_points, map):
 
 	get_tree().get_root().get_node("MainMenu").hide()
 
-	MapManager.load_map_by_name(map)
+	MapManager.load_selected_map()
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
@@ -139,8 +139,10 @@ func get_player_icon():
 func change_icon(icon):
 	player_icon = icon
 
-func begin_game(map):
+func begin_game():
 	assert(get_tree().is_network_server())
+
+	var map = MapManager.get_map_name()
 
 	# Create a dictionary with peer id and respective spawn points, could be improved by randomizing
 	var spawn_points = {}
