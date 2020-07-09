@@ -60,13 +60,13 @@ margin_bottom = 501.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBox/HBox/Info"]
+[node name="Image" type="TextureRect" parent="Panel/VBox/HBox/Info"]
 margin_right = 327.0
 margin_bottom = 331.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Label" type="Label" parent="Panel/VBox/HBox/Info"]
+[node name="Description" type="Label" parent="Panel/VBox/HBox/Info"]
 margin_top = 411.0
 margin_right = 327.0
 margin_bottom = 425.0
@@ -95,4 +95,5 @@ margin_left = 942.0
 margin_right = 984.0
 margin_bottom = 20.0
 text = "Next"
+[connection signal="operative_selected" from="Panel/VBox/HBox/List/OpsList" to="." method="_on_OpsList_operative_selected"]
 [connection signal="pressed" from="Panel/VBox/HBox2/OK" to="." method="_on_OK_pressed"]
