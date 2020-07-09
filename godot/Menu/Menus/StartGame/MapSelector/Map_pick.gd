@@ -7,8 +7,6 @@ var curent_map
 signal stage_complited
 
 func _on_CheckButton_toggled(button_pressed, map_name):
-	print(map_name)	
-	print(button_pressed)
 	if (button_pressed == true):
 		picked_maps.append(map_name)
 	else:
