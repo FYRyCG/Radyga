@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Menu/Menus/Cooperative/OpsSelector/Selector.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Menus/Cooperative/OpsSelector/Parts/OpsList.tscn" type="PackedScene" id=2]
 
 [node name="Selector" type="Control"]
 anchor_right = 1.0
@@ -46,11 +47,30 @@ margin_bottom = 501.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Info" type="MarginContainer" parent="Panel/VBox/HBox"]
+[node name="OpsList" parent="Panel/VBox/HBox/List" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 653.0
+margin_bottom = 501.0
+
+[node name="Info" type="VBoxContainer" parent="Panel/VBox/HBox"]
 margin_left = 657.0
 margin_right = 984.0
 margin_bottom = 501.0
 size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBox/HBox/Info"]
+margin_right = 327.0
+margin_bottom = 331.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label" type="Label" parent="Panel/VBox/HBox/Info"]
+margin_top = 411.0
+margin_right = 327.0
+margin_bottom = 425.0
+size_flags_vertical = 6
 
 [node name="HBox2" type="HBoxContainer" parent="Panel/VBox"]
 margin_top = 540.0

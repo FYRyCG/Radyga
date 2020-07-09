@@ -1,8 +1,30 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="OpsList" type="Control"]
+[ext_resource path="res://Menu/Menus/Cooperative/OpsSelector/Parts/OpsList.gd" type="Script" id=1]
+
+[node name="OpsList" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_constants/separation = 18
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 64.0
+
+[node name="Rectuit" type="Button" parent="HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "Recruit"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_top = 82.0
+margin_right = 1024.0
+margin_bottom = 82.0
+custom_constants/vseparation = 18
+custom_constants/hseparation = 18
+columns = 8
