@@ -2,7 +2,7 @@ extends StaticBody2D
 
 const MS = 1000.0
 
-export (int) var rate_of_fire = 14 * MS
+export (int) var rate_of_fire = 9 * MS
 export (int) var damage = 29
 export (int) var ammo = 30
 

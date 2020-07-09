@@ -3,8 +3,9 @@ extends Control
 signal play
 var picked_maps = []
 var curent_map
-	
-	
+
+signal stage_complited
+
 func _on_CheckButton_toggled(button_pressed, map_name):
 	print(map_name)	
 	print(button_pressed)
@@ -18,7 +19,7 @@ func _on_CheckButton_toggled(button_pressed, map_name):
 func _on_Play_pressed():
 	randomize()
 	curent_map = picked_maps[randi()%picked_maps.size()]
-	print(curent_map)
 	#emit_signal("start")
-	gamestate.begin_game(curent_map)
+	MapManager.set_map(curent_map)
+	emit_signal("stage_complited")
 	queue_free()

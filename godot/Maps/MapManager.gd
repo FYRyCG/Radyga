@@ -5,6 +5,8 @@ var maps = {
 	"Build" : "res://Maps/Maps/Admin_building/Admin_building.tscn"
 }
 
+var map_name = ""
+
 #var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
 var current_map = weakref(\
 	preload("res://Maps/Maps/Admin_building/Admin_building.tscn").instance())  #Мапа Санька
@@ -16,6 +18,9 @@ func _ready():
 	pass
 
 func set_map(name):
+	map_name = name
+
+func load_map_by_name(name):
 	load_map(maps[name])
 
 func load_map(map):
@@ -68,4 +73,6 @@ func spawn_player(p_id, operator_scene):
 
 func current_map():
 	return current_map.get_ref()
-	
+
+func start_game():
+	gamestate.begin_game(map_name)

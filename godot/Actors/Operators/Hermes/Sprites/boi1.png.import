@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/smoke1.png-954623521bfa1d185cedf9a4ba260934.stex"
+path="res://.import/boi1.png-22c539dcb09d2893163202fe7656611d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bin/Particles/Smoke/smoke1.png"
-dest_files=[ "res://.import/smoke1.png-954623521bfa1d185cedf9a4ba260934.stex" ]
+source_file="res://Actors/Operators/Hermes/Sprites/boi1.png"
+dest_files=[ "res://.import/boi1.png-22c539dcb09d2893163202fe7656611d.stex" ]
 
 [params]
 

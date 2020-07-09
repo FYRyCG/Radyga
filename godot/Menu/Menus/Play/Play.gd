@@ -4,7 +4,6 @@ signal start
 signal map_pick
 
 
-
 func _on_SimpleMap_pressed():
 	emit_signal("start")
 	#MapManager.set_map("Simple")
@@ -23,5 +22,5 @@ func _on_Multiplayer_pressed():
 
 
 func _on_COOP_pressed():
-	var select_window = load("res://Menu/Menus/Map_menu/Map_pick.tscn").instance()
-	get_tree().get_root().add_child(select_window)
+	var window = load("res://Menu/Menus/Play/StartCoop.tscn").instance()
+	get_tree().get_root().add_child(window)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boi1.png-647a7a9a4420eee8f986d27d214ecaf1.stex"
+path="res://.import/boi2.png-00abb7f8173cb1f7fa8ff82bf6ff1c0b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Operators/Speedy/Sprites/boi1.png"
-dest_files=[ "res://.import/boi1.png-647a7a9a4420eee8f986d27d214ecaf1.stex" ]
+source_file="res://Actors/Operators/Hermes/Sprites/boi2.png"
+dest_files=[ "res://.import/boi2.png-00abb7f8173cb1f7fa8ff82bf6ff1c0b.stex" ]
 
 [params]
 

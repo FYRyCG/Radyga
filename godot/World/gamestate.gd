@@ -72,11 +72,11 @@ remote func pre_start_game(spawn_points, map):
 
 	get_tree().get_root().get_node("MainMenu").hide()
 
-	MapManager.set_map(map)
+	MapManager.load_map_by_name(map)
 	#get_tree().get_root().get_node("lobby").hide()
 
 	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
-	var player_scene = preload("res://Actors/Operators/Speedy/Sprites/Hermes.tscn")
+	var player_scene = preload("res://Actors/Operators/Hermes/Hermes.tscn")
 
 	for p_id in spawn_points:
 		MapManager.spawn_player(p_id, player_scene)

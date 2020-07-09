@@ -5,6 +5,8 @@ func get_class(): return "Player"
 
 var _pause = false
 
+
+
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
@@ -24,8 +26,9 @@ export (Script) var control_script = preload("res://bin/PlayerControl.gdns") set
 # Управляется игроком или компом
 export (bool) var playable = false
 
-export (PackedScene) var skill = preload("res://Actors/Operators/Recruit/RecruitSkill.tscn")
+export (PackedScene) var skill = preload("res://Actors/Operators/Recruit/Skill/RecruitSkill.tscn")
 
+export (Script) var operative_information = null
 # Проверяет возможность стрелять (если игроку мешает стрелять стена, то он не стреляет)
 var can_shoot = true
 # Строка, содержащая указание для изменения анимации

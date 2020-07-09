@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Operators/Speedy/Sprites/accessory.png" type="Texture" id=2]
-[ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Operators/Hermes/OperativeInfo/HermesInfo.gd" type="Script" id=3]
+[ext_resource path="res://Actors/Operators/Hermes/Sprites/accessory.png" type="Texture" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -3456,11 +3457,12 @@ collision_layer = 2
 collision_mask = 11
 script = ExtResource( 1 )
 playable = true
+operative_information = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 rotation = 0.659525
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 4
 hframes = 4
 frame = 7
@@ -3470,7 +3472,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 6.80066, -4.30114 )
 rotation = -0.634075
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 
@@ -3479,7 +3481,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 2.13853, 9.12815 )
 rotation = -0.487504
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 
@@ -3488,7 +3490,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 27.6157, -12.5469 )
 rotation = -0.664579
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 3
@@ -3498,7 +3500,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 16.3377, -2.20785 )
 rotation = -0.425143
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 7
@@ -3506,7 +3508,7 @@ frame = 7
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
 position = Vector2( -5.50771, 0.582993 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 4
 hframes = 4
 frame = 5
@@ -3515,7 +3517,7 @@ frame = 5
 use_parent_material = true
 position = Vector2( 1.72096, 0.250551 )
 rotation = -0.642644
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 6
@@ -3525,7 +3527,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 18.2602, -15.6849 )
 rotation = -0.391139
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 2
@@ -3535,7 +3537,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 14.0605, 4.74212 )
 rotation = -1.46912
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 2
@@ -3545,7 +3547,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 9.13662, -14.2389 )
 rotation = -0.365889
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 1
@@ -3555,7 +3557,7 @@ show_behind_parent = true
 use_parent_material = true
 position = Vector2( 7.7487, 9.48629 )
 rotation = -0.397549
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 vframes = 12
 hframes = 4
 frame = 1
@@ -3564,7 +3566,7 @@ frame = 1
 scale = Vector2( 1.94465, 1.94548 )
 shape = SubResource( 3 )
 
-[node name="PlayerElements" parent="." instance=ExtResource( 3 )]
+[node name="PlayerElements" parent="." instance=ExtResource( 2 )]
 
 [node name="WeaponPosition" parent="PlayerElements" index="0"]
 position = Vector2( 25.5185, 6.92525 )
