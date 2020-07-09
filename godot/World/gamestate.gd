@@ -12,6 +12,7 @@ var player_icon = "res://Resources/Icons/icon1.png"
 
 # Names for remote players 
 var players = {}
+var operatives_selected = {}
 
 # Signals to let lobby GUI know what's going on
 signal player_list_changed()
@@ -74,12 +75,15 @@ remote func pre_start_game(spawn_points, map):
 
 	MapManager.load_selected_map()
 	#get_tree().get_root().get_node("lobby").hide()
-
-	#var player_scene = load("res://Actors/Operators/Recruit/Recruit.tscn")
-	var player_scene = preload("res://Actors/Operators/Hermes/Hermes.tscn")
-
+	
 	for p_id in spawn_points:
-		MapManager.spawn_player(p_id, player_scene)
+		var operative = null
+		if operatives_selected.has(p_id):
+			operative = OperativeManager.get_operative_by_name(operatives_selected[p_id])
+		else:
+			operative = "res://Actors/Operators/Hermes/Hermes.tscn"
+			
+		MapManager.spawn_player(p_id, operative)
 
 	if not get_tree().is_network_server():
 		# Tell server we are ready to start
@@ -139,6 +143,9 @@ func get_player_icon():
 func change_icon(icon):
 	player_icon = icon
 
+remotesync func operative_selected(p_id, name):
+	operatives_selected[p_id] = name
+	
 func begin_game():
 	assert(get_tree().is_network_server())
 

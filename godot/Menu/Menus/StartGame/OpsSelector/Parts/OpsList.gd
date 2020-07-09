@@ -12,7 +12,7 @@ func _ready():
 		
 		assert(info) # У всех ли оперативников есть инофрмация о них
 		
-		if info.NAME == "Recruite":
+		if info.NAME == "Recruit":
 			$HBoxContainer/Rectuit.connect("pressed", self, "selected", [null, info])
 			continue
 		

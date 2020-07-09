@@ -25,6 +25,7 @@ func next_stage():
 	if stage < stages.size():
 		load_stage(stage)
 	else:
+		queue_free()
 		gamestate.begin_game()
 
 func load_stage(stage):

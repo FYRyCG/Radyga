@@ -54,10 +54,11 @@ func get_wall_map():
 		return TileMap.new()
 
 
-func spawn_player(p_id, operator_scene):
+func spawn_player(p_id, operative_scene):
 	var spawn_pos = get_next_spawn_position()
 	
-	var player = operator_scene.instance()
+	print("spawn = ", operative_scene)
+	var player = load(operative_scene).instance()
 
 	player.set_name(str(p_id)) # Use unique ID as node name
 	player.position = spawn_pos.position

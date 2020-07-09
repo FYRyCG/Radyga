@@ -10,3 +10,6 @@ func _on_OK_pressed():
 func _on_OpsList_operative_selected(image, info):
 	$Panel/VBox/HBox/Info/Description.text = "Name: " + info.NAME + "\n\n" \
 											+ "Skill: " + info.SKILL_DESCRIPTION
+	gamestate.rpc("operative_selected",
+					 get_tree().get_network_unique_id(),
+					 info.NAME)
