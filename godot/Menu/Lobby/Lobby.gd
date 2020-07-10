@@ -12,15 +12,15 @@ func _on_LobbyMenuBtn_pressed():
 	emit_signal("menu_visible", true)
 
 func set_player_icon(icon):
-	$Panel/HBoxContainer/Me.texture = icon
-	emit_signal("icon_changed", $Panel/HBoxContainer/Me.texture.resource_path)
+	$VBoxContainer/MarginContainer/HBoxContainer/Me.texture = icon
+	emit_signal("icon_changed", $VBoxContainer/MarginContainer/HBoxContainer/Me.texture.resource_path)
 
 func get_player_icon():
-	return $Panel/HBoxContainer/Me.texture.resource_path
+	return $VBoxContainer/MarginContainer/HBoxContainer/Me.texture.resource_path
 
 func refresh(list):
 	for i in range(4):
-		get_node("Panel/HBoxContainer/Friend" + str(i)) \
+		get_node("VBoxContainer/MarginContainer/HBoxContainer/Friend" + str(i)) \
 			.texture = load("res://Resources/Icons/icon0.png")
 
 	var indx = 0

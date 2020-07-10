@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Menu/Icons/setting.png" type="Texture" id=1]
 [ext_resource path="res://Menu/Lobby/Lobby.tscn" type="PackedScene" id=2]
@@ -8,6 +8,18 @@
 [ext_resource path="res://Menu/Menus/Play/Play.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Menu/Menus/Operators/Operators.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menu/Dialogs/ConnectDialog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Resources/Fonts/ofont.ru_Comfortaa.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 42
+font_data = ExtResource( 9 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -15,7 +27,7 @@ anchor_bottom = 1.0
 mouse_filter = 1
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Panel" type="Panel" parent="."]
@@ -23,136 +35,225 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="UpBar" type="HBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
-margin_left = 25.0
-margin_top = 50.2789
-margin_right = -25.0
-margin_bottom = 115.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_right = 296.0
-margin_bottom = 66.0
-grow_vertical = 0
+[node name="Split" type="VBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 307.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+theme = SubResource( 2 )
+
+[node name="UpBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split"]
+margin_right = 1920.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split/UpBar"]
+margin_right = 1920.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 1920, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 custom_constants/separation = 8
 
-[node name="MainBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_right = 128.0
-margin_bottom = 66.0
-rect_min_size = Vector2( 128, 66 )
+[node name="MainBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_right = 256.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 132 )
+custom_fonts/font = SubResource( 3 )
 text = "MAIN"
 flat = true
 
-[node name="PlayBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_left = 136.0
-margin_right = 200.0
-margin_bottom = 66.0
-rect_min_size = Vector2( 64, 0 )
+[node name="PlayBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 264.0
+margin_right = 520.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 132 )
+custom_fonts/font = SubResource( 3 )
 text = "PLAY"
 flat = true
 
-[node name="OperatorsBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_left = 208.0
-margin_right = 296.0
-margin_bottom = 66.0
+[node name="OperatorsBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 528.0
+margin_right = 793.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 0 )
+custom_fonts/font = SubResource( 3 )
 text = "OPERATORS"
 flat = true
 
-[node name="HSeparator" type="HSeparator" parent="Panel/UpBar"]
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 300.0
-margin_right = 510.0
-margin_bottom = 66.0
+margin_left = 801.0
+margin_right = 1308.0
+margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LobbyBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_left = 514.0
-margin_right = 974.0
-margin_bottom = 66.0
-custom_constants/separation = 13
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/UpBar/LobbyBar"]
-margin_right = 362.0
-margin_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Lobby" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Lobby" parent="Panel/VBoxContainer/Split/UpBar/MenuBar" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 362.0
-margin_bottom = 66.0
+margin_left = 1316.0
+margin_right = 1823.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LobbyMenu" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 3 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 70.0
-margin_right = 362.0
-margin_bottom = 70.0
-
-[node name="ConnectDialog" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 8 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 70.0
-margin_right = 362.0
-margin_bottom = 70.0
-
-[node name="TextureRect" type="Label" parent="Panel/UpBar/LobbyBar"]
-margin_left = 375.0
-margin_top = 26.0
-margin_right = 383.0
-margin_bottom = 40.0
+[node name="TextureRect" type="Label" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 1831.0
+margin_top = 45.0
+margin_right = 1848.0
+margin_bottom = 86.0
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton" type="TextureButton" parent="Panel/UpBar/LobbyBar"]
-margin_left = 396.0
-margin_right = 460.0
-margin_bottom = 66.0
+[node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 1856.0
+margin_right = 1920.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 3
 texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
 
-[node name="Main" type="Button" parent="."]
-margin_left = 112.263
-margin_top = 220.368
-margin_right = 369.263
-margin_bottom = 316.368
+[node name="DownBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split"]
+margin_top = 136.0
+margin_right = 1920.0
+margin_bottom = 307.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Image" type="TextureRect" parent="Panel/VBoxContainer/Split/DownBar"]
+margin_right = 90.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 90, 64 )
+
+[node name="StageName" type="Label" parent="Panel/VBoxContainer/Split/DownBar"]
+margin_left = 94.0
+margin_top = 65.0
+margin_right = 322.0
+margin_bottom = 106.0
+text = "Name of stage"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/DownBar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 326.0
+margin_right = 1785.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.9
+
+[node name="LobbyMenu" parent="Panel/VBoxContainer/Split/DownBar" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1311.0
+margin_right = 1827.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ConnectDialog" parent="Panel/VBoxContainer/Split/DownBar" instance=ExtResource( 8 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1452.0
+margin_right = 1848.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer/Split/DownBar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1789.0
+margin_right = 1920.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.17
+
+[node name="Parts" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 311.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Stages" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
+margin_right = 958.0
+margin_bottom = 769.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Main" type="Button" parent="Panel/VBoxContainer/Parts/Stages"]
+margin_right = 958.0
+margin_bottom = 769.0
 text = "MAIN"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" parent="." instance=ExtResource( 6 )]
+[node name="Play" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 6 )]
 visible = false
-margin_left = 78.9474
-margin_top = 220.0
-margin_right = -625.053
-margin_bottom = -60.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 958.0
+margin_bottom = 769.0
 rect_min_size = Vector2( 320, 320 )
 
-[node name="Operators" parent="." instance=ExtResource( 7 )]
+[node name="Operators" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 7 )]
 visible = false
-margin_left = 58.0
-margin_top = 138.0
-margin_right = -37.0
-margin_bottom = -38.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 958.0
+margin_bottom = 769.0
 
-[node name="Profile" parent="." instance=ExtResource( 5 )]
+[node name="Profile" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 5 )]
 visible = false
-[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/Lobby" to="." method="menu_visible"]
-[connection signal="change_icon_pressed" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
-[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_connect"]
-[connection signal="disconnect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
-[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="menu_visible"]
-[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/ConnectDialog" to="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" method="_on_ConnectDialog_connect"]
-[connection signal="icon_selected" from="Profile" to="." method="_on_Profile_icon_selected"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 958.0
+margin_bottom = 769.0
+
+[node name="Empty" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 769.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="menu_visible" from="Panel/VBoxContainer/Split/UpBar/MenuBar/Lobby" to="." method="menu_visible"]
+[connection signal="change_icon_pressed" from="Panel/VBoxContainer/Split/DownBar/LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
+[connection signal="connect" from="Panel/VBoxContainer/Split/DownBar/LobbyMenu" to="." method="_on_LobbyMenu_connect"]
+[connection signal="disconnect" from="Panel/VBoxContainer/Split/DownBar/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
+[connection signal="menu_visible" from="Panel/VBoxContainer/Split/DownBar/LobbyMenu" to="." method="menu_visible"]
+[connection signal="connect" from="Panel/VBoxContainer/Split/DownBar/ConnectDialog" to="Panel/VBoxContainer/Split/DownBar/LobbyMenu" method="_on_ConnectDialog_connect"]
+[connection signal="icon_selected" from="Panel/VBoxContainer/Parts/Stages/Profile" to="." method="_on_Profile_icon_selected"]

@@ -31,7 +31,7 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="Panel/HBoxContainer"]
-margin_right = 1004.0
+margin_right = 1900.0
 margin_bottom = 70.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 10
@@ -76,14 +76,14 @@ flat = true
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 80.0
-margin_right = 1004.0
-margin_bottom = 550.0
+margin_right = 1900.0
+margin_bottom = 1030.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer"]
-margin_top = 560.0
-margin_right = 1004.0
-margin_bottom = 580.0
+margin_top = 1040.0
+margin_right = 1900.0
+margin_bottom = 1060.0
 rect_min_size = Vector2( 200, 0 )
 
 [node name="Save" type="Button" parent="Panel/HBoxContainer/VBoxContainer"]
