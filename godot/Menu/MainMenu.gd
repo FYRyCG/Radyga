@@ -69,7 +69,7 @@ func refresh_lobby():
 
 func update_button_accessibility():
 	change_menu(MAIN)
-	$Panel/VBoxContainer/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
+	$Panel/VBoxContainer/Split/UpBar/MenuBar/PlayBtn.disabled = not get_tree().is_network_server()
 
 func game_ended():
 	gamestate.host_game("Player")

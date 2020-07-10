@@ -41,17 +41,15 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
-margin_bottom = -20.0
 size_flags_horizontal = 3
-size_flags_vertical = 7
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Split" type="VBoxContainer" parent="Panel/VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 296.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
@@ -147,28 +145,28 @@ stretch_mode = 5
 [node name="DownBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split"]
 margin_top = 136.0
 margin_right = 1920.0
-margin_bottom = 296.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="Image" type="TextureRect" parent="Panel/VBoxContainer/Split/DownBar"]
 margin_right = 90.0
-margin_bottom = 160.0
+margin_bottom = 171.0
 rect_min_size = Vector2( 90, 64 )
 
 [node name="StageName" type="Label" parent="Panel/VBoxContainer/Split/DownBar"]
 margin_left = 94.0
-margin_top = 59.0
+margin_top = 65.0
 margin_right = 322.0
-margin_bottom = 100.0
+margin_bottom = 106.0
 text = "Name of stage"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/DownBar"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 326.0
 margin_right = 1785.0
-margin_bottom = 160.0
+margin_bottom = 171.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.9
@@ -197,27 +195,27 @@ size_flags_vertical = 3
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 1789.0
 margin_right = 1920.0
-margin_bottom = 160.0
+margin_bottom = 171.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.17
 
 [node name="Parts" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 300.0
+margin_top = 311.0
 margin_right = 1920.0
-margin_bottom = 1040.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stages" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
 margin_right = 958.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Main" type="Button" parent="Panel/VBoxContainer/Parts/Stages"]
 margin_right = 958.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 text = "MAIN"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -228,7 +226,7 @@ visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 958.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 rect_min_size = Vector2( 320, 320 )
 
 [node name="Operators" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 7 )]
@@ -236,19 +234,19 @@ visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 958.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 
 [node name="Profile" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 5 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 958.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 
 [node name="Empty" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
 margin_left = 962.0
 margin_right = 1920.0
-margin_bottom = 740.0
+margin_bottom = 769.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3

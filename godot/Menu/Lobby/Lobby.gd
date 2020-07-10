@@ -20,7 +20,7 @@ func get_player_icon():
 
 func refresh(list):
 	for i in range(4):
-		get_node("Panel/HBoxContainer/Friend" + str(i)) \
+		get_node("VBoxContainer/MarginContainer/HBoxContainer/Friend" + str(i)) \
 			.texture = load("res://Resources/Icons/icon0.png")
 
 	var indx = 0
