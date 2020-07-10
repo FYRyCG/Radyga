@@ -18,7 +18,7 @@ func _ready():
 	gamestate.connect("game_ended", self, "game_ended")
 
 func menu_visible(enable):
-	$Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu.visible = enable
+	$Panel/VBoxContainer/Split/DownBar/LobbyMenu.visible = enable
 
 # connect через графический
 func _on_Profile_icon_selected(icon):
@@ -49,14 +49,14 @@ func _on_Play_start():
 	hide()
 
 func _on_LobbyMenu_change_icon_pressed():
-	$Panel/VBoxContainer/Split/UpBar/MenuBar/Lobby.show()
+	$Panel/VBoxContainer/Parts/Stages/Profile.show()
 
 func _on_LobbyMenu_connect(toIp):
 	var icon = $Panel/VBoxContainer/Split/UpBar/MenuBar/Lobby.get_player_icon()
 	gamestate.join_game(toIp, "newName", icon)
 
 func connection_succeeded():
-	$Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu.connection_succeeded()
+	$Panel/VBoxContainer/Split/DownBar/LobbyMenu.connection_succeeded()
 	update_button_accessibility()
 
 func _on_LobbyMenu_disconnect():
