@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 mouse_filter = 1
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Panel" type="Panel" parent="."]
@@ -23,136 +23,210 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="UpBar" type="HBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
-margin_left = 25.0
-margin_top = 50.2789
-margin_right = -25.0
-margin_bottom = 115.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_right = 296.0
-margin_bottom = 66.0
-grow_vertical = 0
+[node name="Split" type="VBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 1924.0
+margin_bottom = 215.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="UpBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split"]
+margin_right = 1924.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBar" type="HBoxContainer" parent="Panel/VBoxContainer/Split/UpBar"]
+margin_left = 2.0
+margin_right = 1924.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 1920, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 custom_constants/separation = 8
 
-[node name="MainBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_right = 128.0
-margin_bottom = 66.0
-rect_min_size = Vector2( 128, 66 )
+[node name="MainBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_right = 256.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 132 )
 text = "MAIN"
 flat = true
 
-[node name="PlayBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_left = 136.0
-margin_right = 200.0
-margin_bottom = 66.0
-rect_min_size = Vector2( 64, 0 )
+[node name="PlayBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 264.0
+margin_right = 520.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 132 )
 text = "PLAY"
 flat = true
 
-[node name="OperatorsBtn" type="Button" parent="Panel/UpBar/MenuBar"]
-margin_left = 208.0
-margin_right = 296.0
-margin_bottom = 66.0
+[node name="OperatorsBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 528.0
+margin_right = 784.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 256, 0 )
 text = "OPERATORS"
 flat = true
 
-[node name="HSeparator" type="HSeparator" parent="Panel/UpBar"]
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 300.0
-margin_right = 510.0
-margin_bottom = 66.0
+margin_left = 792.0
+margin_right = 1309.0
+margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LobbyBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_left = 514.0
-margin_right = 974.0
-margin_bottom = 66.0
-custom_constants/separation = 13
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/UpBar/LobbyBar"]
-margin_right = 362.0
-margin_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Lobby" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Lobby" parent="Panel/VBoxContainer/Split/UpBar/MenuBar" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 362.0
-margin_bottom = 66.0
+margin_left = 1317.0
+margin_right = 1834.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LobbyMenu" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 3 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 70.0
-margin_right = 362.0
-margin_bottom = 70.0
-
-[node name="ConnectDialog" parent="Panel/UpBar/LobbyBar/VBoxContainer" instance=ExtResource( 8 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 70.0
-margin_right = 362.0
-margin_bottom = 70.0
-
-[node name="TextureRect" type="Label" parent="Panel/UpBar/LobbyBar"]
-margin_left = 375.0
-margin_top = 26.0
-margin_right = 383.0
-margin_bottom = 40.0
+[node name="TextureRect" type="Label" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 1842.0
+margin_top = 59.0
+margin_right = 1850.0
+margin_bottom = 73.0
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton" type="TextureButton" parent="Panel/UpBar/LobbyBar"]
-margin_left = 396.0
-margin_right = 460.0
-margin_bottom = 66.0
+[node name="TextureButton" type="TextureButton" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
+margin_left = 1858.0
+margin_right = 1922.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 3
 texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
 
-[node name="Main" type="Button" parent="."]
-margin_left = 112.263
-margin_top = 220.368
-margin_right = 369.263
-margin_bottom = 316.368
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/Split"]
+margin_top = 136.0
+margin_right = 1924.0
+margin_bottom = 215.0
+size_flags_horizontal = 11
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1802.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.6
+
+[node name="LobbyMenu" parent="Panel/VBoxContainer/Split/HBoxContainer" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1325.0
+margin_right = 1833.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ConnectDialog" parent="Panel/VBoxContainer/Split/HBoxContainer" instance=ExtResource( 8 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1325.0
+margin_right = 1833.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer/Split/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1806.0
+margin_right = 1924.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.17
+
+[node name="Parts" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 219.0
+margin_right = 1924.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Stages" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
+margin_right = 960.0
+margin_bottom = 861.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Main" type="Button" parent="Panel/VBoxContainer/Parts/Stages"]
+margin_right = 960.0
+margin_bottom = 861.0
 text = "MAIN"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" parent="." instance=ExtResource( 6 )]
+[node name="Play" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 6 )]
 visible = false
-margin_left = 78.9474
-margin_top = 220.0
-margin_right = -625.053
-margin_bottom = -60.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 960.0
+margin_bottom = 861.0
 rect_min_size = Vector2( 320, 320 )
 
-[node name="Operators" parent="." instance=ExtResource( 7 )]
+[node name="Operators" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 7 )]
 visible = false
-margin_left = 58.0
-margin_top = 138.0
-margin_right = -37.0
-margin_bottom = -38.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 960.0
+margin_bottom = 861.0
 
-[node name="Profile" parent="." instance=ExtResource( 5 )]
+[node name="Profile" parent="Panel/VBoxContainer/Parts/Stages" instance=ExtResource( 5 )]
 visible = false
-[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/Lobby" to="." method="menu_visible"]
-[connection signal="change_icon_pressed" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
-[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_connect"]
-[connection signal="disconnect" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
-[connection signal="menu_visible" from="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" to="." method="menu_visible"]
-[connection signal="connect" from="Panel/UpBar/LobbyBar/VBoxContainer/ConnectDialog" to="Panel/UpBar/LobbyBar/VBoxContainer/LobbyMenu" method="_on_ConnectDialog_connect"]
-[connection signal="icon_selected" from="Profile" to="." method="_on_Profile_icon_selected"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 960.0
+margin_bottom = 861.0
+
+[node name="Empty" type="MarginContainer" parent="Panel/VBoxContainer/Parts"]
+margin_left = 964.0
+margin_right = 1924.0
+margin_bottom = 861.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="menu_visible" from="Panel/VBoxContainer/Split/UpBar/MenuBar/Lobby" to="." method="menu_visible"]
+[connection signal="change_icon_pressed" from="Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_change_icon_pressed"]
+[connection signal="connect" from="Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_connect"]
+[connection signal="disconnect" from="Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu" to="." method="_on_LobbyMenu_disconnect"]
+[connection signal="menu_visible" from="Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu" to="." method="menu_visible"]
+[connection signal="connect" from="Panel/VBoxContainer/Split/HBoxContainer/ConnectDialog" to="Panel/VBoxContainer/Split/HBoxContainer/LobbyMenu" method="_on_ConnectDialog_connect"]
+[connection signal="icon_selected" from="Panel/VBoxContainer/Parts/Stages/Profile" to="." method="_on_Profile_icon_selected"]

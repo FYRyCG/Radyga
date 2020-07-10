@@ -30,14 +30,14 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
-margin_right = 1014.0
+margin_right = 1910.0
 margin_bottom = 20.0
 mouse_filter = 1
 text = "Change Icon, for example"
 
 [node name="Connect" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 24.0
-margin_right = 1014.0
+margin_right = 1910.0
 margin_bottom = 44.0
 mouse_filter = 1
 text = "Connect"
@@ -55,7 +55,7 @@ __meta__ = {
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 48.0
-margin_right = 1014.0
+margin_right = 1910.0
 margin_bottom = 68.0
 mouse_filter = 1
 [connection signal="mouse_entered" from="Panel/VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
