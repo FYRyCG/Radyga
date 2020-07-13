@@ -3450,7 +3450,7 @@ graph_offset = Vector2( 0, -81.4497 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=44]
 
-[node name="MemeRecruitForExample" type="KinematicBody2D"]
+[node name="Recruit" type="KinematicBody2D"]
 material = SubResource( 1 )
 z_index = 1
 collision_layer = 2
@@ -3588,9 +3588,6 @@ position = Vector2( 34.6368, 4.91901 )
 rotation = -1.5708
 scale = Vector2( 0.3, 0.6 )
 shape = SubResource( 4 )
-
-[node name="WeaponCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.250351, -0.250343 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death_0 = SubResource( 5 )
