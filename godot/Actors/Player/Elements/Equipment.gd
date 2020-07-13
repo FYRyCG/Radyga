@@ -4,6 +4,12 @@ export var equipments = {}
 
 var ammunitions = {}
 
+var equipment_types = {
+	"gadget" : 0,
+	"free" : 0,
+	"weapon" : 3
+}
+
 # Автоматическая смена на поднятое оружие
 var autoswap = true
 # Текущий предмет в руках
@@ -45,7 +51,7 @@ func set_hand(obj):
 	if hands and hands.get_ref():
 		hands.get_ref().hide()  # Убираем в инвентарь
 	hands = weakref(obj)   # Меняем объект в руке
-	player.get_ref().set_equipped(obj.get_object_type())
+	player.get_ref().set_equipped(equipment_types[obj.get_object_type()])
 	obj.show()  # Достаем из инвентаря
 	# меняем HUD
 	if obj.get_object_type() == "weapon":
