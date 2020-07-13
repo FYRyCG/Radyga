@@ -36,7 +36,7 @@ func _instance_equipment(type):
 		
 # Кладет obj в руки
 func set_hand(obj):
-	if hands and hands.get_ref():
+	if hands and hands.get_ref() and obj:
 		hands.get_ref().hide()  # Убираем в инвентарь
 	hands = weakref(obj)   # Меняем объект в руке
 	obj.show()  # Достаем из инвентаря

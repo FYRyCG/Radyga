@@ -3503,7 +3503,7 @@ rotation = -0.425143
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 4
-frame = 7
+frame = 3
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
