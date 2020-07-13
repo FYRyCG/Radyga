@@ -37,6 +37,13 @@ var can_shoot = true
 # "Stop" - прекратить действие
 # "Idle" - остановить движение
 var demanded_animation = null
+
+var equipment_types = {
+	"gadget" : 0,
+	"free" : 0,
+	"weapon" : 3
+}
+
 # Выбранный игроком объект, который будет влиять на анимацию:
 # 0 - пробивной заряд/без оружия
 # 1 - дробовик
@@ -132,7 +139,7 @@ func _physics_process(delta):
 				#demanded_animation = "Throw_HE"
 
 func set_equipped(type):
-	new_equipped = type
+	new_equipped = equipment_types[type]
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):

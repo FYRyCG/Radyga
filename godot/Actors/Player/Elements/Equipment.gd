@@ -9,7 +9,11 @@ var autoswap = true
 # Текущий предмет в руках
 var hands = null
 
+var player = null
+
 func start(equipments_, ammunitions_):
+	player = weakref(get_parent()) # Player
+	
 	equipments = equipments_.duplicate(true)
 	ammunitions = ammunitions_.duplicate(true)
 	# Создает экземпляры всего снаряжения
@@ -36,9 +40,12 @@ func _instance_equipment(type):
 		
 # Кладет obj в руки
 func set_hand(obj):
-	if hands and hands.get_ref() and obj:
+	if not obj:
+		return
+	if hands and hands.get_ref():
 		hands.get_ref().hide()  # Убираем в инвентарь
 	hands = weakref(obj)   # Меняем объект в руке
+	player.get_ref().set_equipped(obj.get_object_type())
 	obj.show()  # Достаем из инвентаря
 	# меняем HUD
 	if obj.get_object_type() == "weapon":

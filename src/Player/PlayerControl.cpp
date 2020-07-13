@@ -147,7 +147,7 @@ namespace godot {
 	void PlayerControl::sync_switch_weapon(String equip_type, int type)
 	{
 		player->get_node("Equipment")->call("switch_weapon", equip_type);
-		player->call("set_equipped", type);
+		//player->call("set_equipped", type);
 	}
 
 }
