@@ -20,8 +20,7 @@ var __detonator = preload("res://Equipments/Charge/ChargeDetonator.tscn").instan
 
 func _ready():
 	__detonator.connect("explosion", self, "exploded")
-	__detonator.visible = false
-	$EquipmentControl.start()
+	$EquipmentControl.start() # Сердце заряда, отвечает за него
 
 var __alone_time = 0
 func _physics_process(delta):
@@ -40,11 +39,11 @@ func _physics_process(delta):
 
 func take(player):
 	__player = weakref(player)
-	$EquipmentControl.take(player)
+	$EquipmentControl.take(player) # Говорим заряду, что его подняли
 
 func drop():
 	__player = null
-	$EquipmentControl.drop()
+	$EquipmentControl.drop() # Говорим заряду, что его бросили
 
 var timeSettingDestination = 0.0
 var copy_walls = []
@@ -67,7 +66,6 @@ func _set_done():
 	timeSettingDestination = 0.0
 	$AbortingTimer.stop()
 	__setted = true
-	__detonator.visible = true
 	__player.get_ref().get_node("PlayerControl").call("set_busy", false)  # Игрок точно должен быть
 	get_parent().get_parent().add_child(__detonator)  # It's to World
 	__player.get_ref().call("take_object", __detonator)
@@ -108,5 +106,14 @@ func _nearest_wall(walls):
 			res = wall
 	return res
 
+
+var explosion_instance = load("res://Equipments/Charge/Explosion.tscn").instance()
+
 func exploded():
-	print("boooom")
+	print("boom, ", explosion_instance)
+	add_child(explosion_instance)
+	explosion_instance.connect("explosion_done", self, "delete")
+
+func delete():
+	__detonator.queue_free()
+	queue_free()

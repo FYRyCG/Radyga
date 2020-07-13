@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SmartWall",
 "language": "GDScript",
-"path": "res://Maps/Objects/SmartWall/SmartWall.gd"
+"path": "res://Maps/Objects/SmartWall/Core/SmartWall.gd"
 } ]
 _global_script_class_icons={
 "Charge": "",

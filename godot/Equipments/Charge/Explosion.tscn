@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Equipments/Charge/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Equipments/Charge/Sprites/red.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.6942, 11.1343 )
+
+[node name="Explosion" type="Node2D"]
+position = Vector2( 15, 0 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+scale = Vector2( 2.522, 2.20344 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 10, 10, 10, 10 )

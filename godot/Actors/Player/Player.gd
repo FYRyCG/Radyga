@@ -138,9 +138,9 @@ func set_equipped(type):
 func shoot(delta):
 	var hand = $Equipment.get_hand()
 	if can_shoot and hand:
-		if hand.has_method("shoot"):
-			hand.shoot()
-		elif hand.has_method("setting"):
+		if hand.has_method("shoot"): # Обычная стрельба
+			hand.shoot() 
+		elif hand.has_method("setting"): # Установка заряда
 			demanded_animation = "Shoot"
 			hand.setting(delta)
 
