@@ -22,7 +22,6 @@ func _ready():
 
 func explosion():
 	$Area2D/CollisionShape2D.scale = Vector2(2, 1)
-	$Area2D/Sprite.region_rect = Rect2(0, 0, 20, 10)
 	
 
 func _on_Timer_timeout():

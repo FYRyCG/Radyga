@@ -114,5 +114,5 @@ func exploded():
 	add_child(explosion_instance)
 	__detonator.queue_free() # Если взорвал
 	# Удалять нельзя, так как еще идет сбор информацие о последствиях взрыва
-	visible = false 
+	#visible = false 
 
