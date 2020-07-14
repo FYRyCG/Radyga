@@ -8,7 +8,7 @@ const  max_explosion_damage = 150
 # Урон человекам :)
 const max_damage = 100
 
-const explosion_distance = 100
+const explosion_distance = 40
 
 var damage_step = 8
 var step = Vector2(0.1, 0)
