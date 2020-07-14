@@ -7,6 +7,8 @@ export (Texture) var intact_texture = load("res://Maps/Objects/SmartWall/Tiles/T
 
 const default_size = 8.0
 
+var durability = 100
+
 func _ready():
 	set_size(get_parent().TILE_SIZE)
 	if intact_texture != null:
@@ -24,5 +26,13 @@ func set_size(new_size):
 	$CollisionShape2D.scale = Vector2(sc, sc)
 
 func hit(damage):
+	pass
+
+func explosion(damage):
+	#print("get_damage = ", damage, " ", position)
+	durability -= damage
+	if durability <= 0:
+		destroy()
+
+func destroy():
 	queue_free()
-	

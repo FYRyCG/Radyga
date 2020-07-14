@@ -107,13 +107,13 @@ func _nearest_wall(walls):
 	return res
 
 
-var explosion_instance = load("res://Equipments/Charge/Explosion.tscn").instance()
+var explosion_instance = load("res://Equipments/Charge/Explosion/Explosion.tscn").instance()
 
 func exploded():
 	print("boom, ", explosion_instance)
+	explosion_instance.connect("explosion_done", self, "queue_free")
 	add_child(explosion_instance)
-	explosion_instance.connect("explosion_done", self, "delete")
+	__detonator.queue_free() # Если взорвал
+	# Удалять нельзя, так как еще идет сбор информацие о последствиях взрыва
+	visible = false 
 
-func delete():
-	__detonator.queue_free()
-	queue_free()

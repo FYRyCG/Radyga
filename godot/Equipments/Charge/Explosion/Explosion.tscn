@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Equipments/Charge/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Equipments/Charge/Explosion/Explosion.gd" type="Script" id=1]
 [ext_resource path="res://Equipments/Charge/Sprites/red.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -20,3 +20,8 @@ scale = Vector2( 2.522, 2.20344 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 10, 10, 10, 10 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
