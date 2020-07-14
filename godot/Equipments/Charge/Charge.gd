@@ -110,7 +110,6 @@ func _nearest_wall(walls):
 var explosion_instance = load("res://Equipments/Charge/Explosion/Explosion.tscn").instance()
 
 func exploded():
-	print("boom, ", explosion_instance)
 	explosion_instance.connect("explosion_done", self, "queue_free")
 	add_child(explosion_instance)
 	__detonator.queue_free() # Если взорвал

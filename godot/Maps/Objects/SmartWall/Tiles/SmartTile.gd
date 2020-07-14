@@ -29,10 +29,10 @@ func hit(damage):
 	pass
 
 func explosion(damage):
-	#print("get_damage = ", damage, " ", position)
 	durability -= damage
 	if durability <= 0:
 		destroy()
 
+# Смена целых спрайтов на сломанные и удаление колизии
 func destroy():
 	queue_free()

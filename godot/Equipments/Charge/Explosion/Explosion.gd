@@ -32,6 +32,5 @@ func _on_Timer_timeout():
 func _on_Area2D_body_entered(body):
 	var dist = global_position.distance_to(body.global_position)
 	var body_damage = max_explosion_damage * (1 - min(dist / 100, 1))
-	print("dist = ", dist, "dam = ", body_damage)
 	if body.has_method("explosion"):
 		body.explosion(body_damage)
