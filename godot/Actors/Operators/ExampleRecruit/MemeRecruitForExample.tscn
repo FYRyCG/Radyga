@@ -3434,7 +3434,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=43]
 states/Death_0/node = SubResource( 16 )
-states/Death_0/position = Vector2( 908, -71 )
+states/Death_0/position = Vector2( 754, -18 )
 states/Idle/node = SubResource( 20 )
 states/Idle/position = Vector2( 315, 106 )
 states/Idle_shooting/node = SubResource( 24 )
@@ -3505,7 +3505,7 @@ frame = 7
 
 [node name="Backpack" type="Sprite" parent="Sprite"]
 use_parent_material = true
-position = Vector2( -5.50771, 0.582993 )
+position = Vector2( -7.76706, 0.131127 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 4

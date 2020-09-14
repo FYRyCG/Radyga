@@ -5,8 +5,7 @@ func get_class(): return "Player"
 
 var _pause = false
 
-
-
+var _is_dead = false
 export var equipments = {
 	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
 	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
@@ -159,6 +158,7 @@ func change_hp(cur_hp):
 	$PlayerElements/HUDLayer/HUD.change_hp_bar_value(cur_hp)
 
 func death():
+	_is_dead = true
 	demanded_animation = "Death"
 
 # Проверка, какой предмет находится в зоне досягаемости до player

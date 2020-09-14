@@ -27,6 +27,8 @@ func load_selected_map():
 	load_map(maps[map_name])
 
 func load_map(map):
+	print("!!!")
+	print(map)
 	if current_map.get_ref():
 		current_map.get_ref().queue_free()
 		
@@ -77,3 +79,12 @@ func spawn_player(p_id, operative_scene):
 
 func current_map():
 	return current_map.get_ref()
+	
+func build_path(point_a, point_b) -> Line2D:
+	var navigation = current_map.get_ref().get_navigation()
+	var line_2d = Line2D.new()
+	line_2d.points = navigation.get_simple_path(point_a, point_b)
+	return line_2d
+	
+func get_patrol_point(current_index):
+	return current_map.get_ref().get_patrol_point(current_index)
