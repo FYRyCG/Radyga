@@ -76,14 +76,14 @@ flat = true
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 372.0
-margin_right = 510.0
+margin_right = 1406.0
 margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LobbyBar" type="HBoxContainer" parent="Panel/UpBar"]
-margin_left = 514.0
-margin_right = 974.0
+margin_left = 1410.0
+margin_right = 1870.0
 margin_bottom = 66.0
 custom_constants/separation = 13
 

@@ -9,7 +9,8 @@ var pawn = null
 var pawn_speed = walk_speed
 var velocity = Vector2()
 var path
-var patrol_point = Vector2(-5000,-5000) # -5000 ; -5000 значит, что персонаж может выбрать любой путь для патруля
+var patrol_point = Vector2(-5000,-5000) # -5000 ; -5000 значит, что персонаж
+# может выбрать любой путь для патруля
 
 func _ready():
 	pawn = weakref(get_parent())  # if it nullptr then you loh
@@ -20,10 +21,14 @@ func start():
 	pass
 
 func _physics_process(delta):
-	var distance = pawn_speed * delta
-	velocity.x = path.size()
+	if(!pawn.get_ref()._is_dead):
+		var distance = pawn_speed * delta
+		velocity.x = path.size()
+		move_along_path(distance)
+	else:
+		#TODO remove AI node
+		pass
 	pawn.get_ref().start_animation(velocity)
-	move_along_path(distance)
 
 func build_path(point_a : Vector2, point_b : Vector2):
 	return MapManager.build_path(point_a, point_b).points
