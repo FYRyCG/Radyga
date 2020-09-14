@@ -16,6 +16,9 @@ func _on_CheckButton_toggled(button_pressed, map_name):
 
 func _on_Play_pressed():
 	randomize()
+	if (picked_maps.size() == 0):
+		#!TODO monitor.say("YOU NEED TO CHOOSE AT LEAST ONE MAP")
+		return
 	curent_map = picked_maps[randi()%picked_maps.size()]
 	#emit_signal("start")
 	MapManager.set_map(curent_map)

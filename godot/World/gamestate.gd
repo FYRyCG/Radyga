@@ -79,7 +79,7 @@ remote func pre_start_game(spawn_points, map):
 	for p_id in spawn_points:
 		var operative = null
 		if operatives_selected.has(p_id):
-			operative = OperativeManager.get_operative_by_name(operatives_selected[p_id])
+			operative = OperativesManager.get_operative_by_name(operatives_selected[p_id])
 		else:
 			operative = "res://Actors/Operators/Hermes/Hermes.tscn"
 			

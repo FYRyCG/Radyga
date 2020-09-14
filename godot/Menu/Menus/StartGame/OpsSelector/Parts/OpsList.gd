@@ -4,7 +4,7 @@ signal operative_selected(image, info)
 
 func _ready():
 
-	var ops_list = OperativeManager.get_operatives()
+	var ops_list = OperativesManager.get_operatives()
 	
 	for i in ops_list:
 		var ops = ops_list[i]
