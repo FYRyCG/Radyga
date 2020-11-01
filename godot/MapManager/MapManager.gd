@@ -1,18 +1,15 @@
 extends Node
 
 var maps = {
-	"Simple" : "res://Maps/Maps/SimpleMap.tscn",
-	"Build" : "res://Maps/Maps/Admin_building/Admin_building.tscn",
-	"Skyscraper" : "res://Maps/Maps/Skyscraper/Skyscraper.tscn",
-	
-	"3D_test" : "res://3D_test/3D_test_map.tscn"
+
+	"MapLobby" : "res://MapManager/Maps/Lobby/MapLobby.tscn"
 }
 
 var map_name = ""
 
 #var current_map = preload("res://Maps/Maps/SimpleMap.tscn").instance()
 var current_map = weakref(\
-	preload("res://3D_test/3D_test_map.tscn").instance())  #Мапа Санька
+	preload("res://MapManager/Maps/Lobby/MapLobby.tscn").instance())  #Мапа Санька
 	
 var spawn_positions = []
 var next_spawn_position = 0
