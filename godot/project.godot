@@ -162,11 +162,18 @@ game_esc={
 [layer_names]
 
 2d_physics/layer_1="BigObject"
+3d_render/layer_1="Always visible meshes"
+3d_physics/layer_1="Main collision (walls and floor)"
 2d_physics/layer_2="Player"
+3d_render/layer_2="Floor_1"
+3d_physics/layer_2="Additional collision"
 2d_physics/layer_3="Weapon"
+3d_render/layer_3="Floor_2"
 2d_physics/layer_4="Bullet"
 2d_physics/layer_5="SmallObject"
 2d_physics/layer_6="Interactive"
+3d_render/layer_6="Minimap_objects"
+3d_physics/layer_6="Interactive zone"
 
 [physics]
 
