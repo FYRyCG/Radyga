@@ -12,7 +12,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1024.0
+margin_right = 1920.0
 margin_bottom = 64.0
 
 [node name="Rectuit" type="Button" parent="HBoxContainer"]
@@ -23,7 +23,7 @@ text = "Recruit"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_top = 82.0
-margin_right = 1024.0
+margin_right = 1920.0
 margin_bottom = 82.0
 custom_constants/vseparation = 18
 custom_constants/hseparation = 18

@@ -1,7 +1,6 @@
 extends Node
 
 var maps = {
-
 	"MapLobby" : "res://MapManager/Maps/Lobby/MapLobby.tscn"
 }
 
@@ -24,9 +23,9 @@ func get_map_name():
 	return map_name
 
 func load_selected_map():
-	load_map(maps[map_name])
+	__load_map(maps[map_name])
 
-func load_map(map):
+func __load_map(map):
 	print("!!!")
 	print(map)
 	if current_map.get_ref():
