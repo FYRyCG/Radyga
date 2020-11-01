@@ -2,9 +2,5 @@
 
 [ext_resource path="res://Actors/Player/Camera/Camera.gd" type="Script" id=1]
 
-[node name="Camera" type="Camera2D"]
-position = Vector2( 0, 2.93634 )
-limit_smoothed = true
-smoothing_enabled = true
-smoothing_speed = 0.1
+[node name="Camera" type="Camera"]
 script = ExtResource( 1 )

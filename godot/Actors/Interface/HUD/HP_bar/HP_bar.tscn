@@ -38,8 +38,8 @@ __meta__ = {
 }
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
-margin_right = 80.0
-margin_bottom = 80.0
+margin_right = 960.0
+margin_bottom = 544.0
 value = 50.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
@@ -47,14 +47,14 @@ fill_mode = 3
 
 [node name="Glow" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 80.0
-margin_bottom = 80.0
+margin_right = 960.0
+margin_bottom = 544.0
 texture = ExtResource( 5 )
 
 [node name="value" type="Label" parent="."]
-margin_top = 25.0
-margin_right = 80.0
-margin_bottom = 55.0
+margin_top = 257.0
+margin_right = 960.0
+margin_bottom = 287.0
 custom_fonts/font = SubResource( 1 )
 text = "100"
 align = 1

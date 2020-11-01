@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Menu/Menus/StartGame/OpsSelector/Parts/OpsList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Menu/Menus/StartGame/OpsSelector/Selector.gd" type="Script" id=2]
+[ext_resource path="res://Menu/Fonts/Menu_theme.tres" type="Theme" id=3]
 
 [node name="Selector" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -2.37842
+margin_bottom = -2.37842
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,77 +26,86 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+margin_right = -8.0
+margin_bottom = -6.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MissionInfoLable" type="Label" parent="Panel/VBox"]
-margin_right = 984.0
-margin_bottom = 31.0
+margin_right = 1892.0
+margin_bottom = 85.0
+theme = ExtResource( 3 )
 text = "Mission Information
 "
 
 [node name="HBox" type="HBoxContainer" parent="Panel/VBox"]
-margin_top = 35.0
-margin_right = 984.0
-margin_bottom = 536.0
+margin_top = 89.0
+margin_right = 1892.0
+margin_bottom = 1005.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="List" type="MarginContainer" parent="Panel/VBox/HBox"]
-margin_right = 653.0
-margin_bottom = 501.0
+margin_right = 1258.0
+margin_bottom = 916.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="OpsList" parent="Panel/VBox/HBox/List" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 653.0
-margin_bottom = 501.0
+margin_right = 1258.0
+margin_bottom = 916.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
 
 [node name="Info" type="VBoxContainer" parent="Panel/VBox/HBox"]
-margin_left = 657.0
-margin_right = 984.0
-margin_bottom = 501.0
+margin_left = 1262.0
+margin_right = 1892.0
+margin_bottom = 916.0
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Image" type="TextureRect" parent="Panel/VBox/HBox/Info"]
-margin_right = 327.0
-margin_bottom = 331.0
+margin_right = 630.0
+margin_bottom = 608.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="Description" type="Label" parent="Panel/VBox/HBox/Info"]
-margin_top = 411.0
-margin_right = 327.0
-margin_bottom = 425.0
+margin_top = 757.0
+margin_right = 630.0
+margin_bottom = 771.0
 size_flags_vertical = 6
 
 [node name="HBox2" type="HBoxContainer" parent="Panel/VBox"]
-margin_top = 540.0
-margin_right = 984.0
-margin_bottom = 560.0
+margin_top = 1009.0
+margin_right = 1892.0
+margin_bottom = 1054.0
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Panel/VBox/HBox2"]
-margin_top = 3.0
+margin_top = 15.0
 margin_right = 174.0
-margin_bottom = 17.0
+margin_bottom = 29.0
 text = "Eto tipa vibor operativnikov"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/VBox/HBox2"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 178.0
-margin_right = 938.0
-margin_bottom = 20.0
+margin_right = 1033.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 
 [node name="OK" type="Button" parent="Panel/VBox/HBox2"]
-margin_left = 942.0
-margin_right = 984.0
-margin_bottom = 20.0
+margin_left = 1037.0
+margin_right = 1892.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
 text = "Next"
 [connection signal="operative_selected" from="Panel/VBox/HBox/List/OpsList" to="." method="_on_OpsList_operative_selected"]
 [connection signal="pressed" from="Panel/VBox/HBox2/OK" to="." method="_on_OK_pressed"]

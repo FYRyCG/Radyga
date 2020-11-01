@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Operators/ExampleRecruit/Sprites/accessory.png" type="Texture" id=2]
-[ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/PlayerElements2D.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2

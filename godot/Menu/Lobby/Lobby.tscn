@@ -24,14 +24,14 @@ __meta__ = {
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1920.0
-margin_bottom = 472.0
+margin_bottom = 232.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 476.0
+margin_top = 236.0
 margin_right = 1920.0
-margin_bottom = 604.0
+margin_bottom = 364.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,7 +54,7 @@ stretch_mode = 6
 
 [node name="Friend1" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 320.0
-margin_right = 636.0
+margin_right = 637.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -62,8 +62,8 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="Friend2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 640.0
-margin_right = 956.0
+margin_left = 641.0
+margin_right = 957.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -71,8 +71,8 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="Friend3" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 960.0
-margin_right = 1276.0
+margin_left = 961.0
+margin_right = 1278.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -80,14 +80,14 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 1280.0
-margin_right = 1596.0
+margin_left = 1282.0
+margin_right = 1599.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 0, 128 )
 size_flags_horizontal = 3
 
 [node name="Me" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 1600.0
+margin_left = 1603.0
 margin_right = 1920.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
@@ -106,9 +106,9 @@ __meta__ = {
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 608.0
+margin_top = 368.0
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="pressed" from="VBoxContainer/MarginContainer/LobbyMenuBtn" to="." method="_on_LobbyMenuBtn_pressed"]

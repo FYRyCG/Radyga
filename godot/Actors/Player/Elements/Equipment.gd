@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 export var equipments = {}
 
@@ -112,7 +112,7 @@ func reload():
 			ammunitions[hands.get_ref().Cartridge] > 0 and \
 			hands.get_ref().get_ammo() < hands.get_ref().Capacity:
 					
-			get_parent().reload()
+			#get_parent().reload()
 			var weapon_ammo_rest = hands.get_ref().get_ammo()
 			var player_ammo_rest = ammunitions[hands.get_ref().Cartridge]
 			var magazine_capacity = hands.get_ref().Capacity

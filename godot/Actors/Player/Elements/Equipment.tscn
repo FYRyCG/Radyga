@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Actors/Player/Elements/Equipment.gd" type="Script" id=1]
 
-[node name="Equipment" type="Node2D"]
+[node name="Equipment" type="Node"]
 script = ExtResource( 1 )

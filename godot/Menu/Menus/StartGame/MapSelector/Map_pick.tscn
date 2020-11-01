@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Maps/Maps/noise.png" type="Texture" id=1]
-[ext_resource path="res://Maps/Maps/Admin_building/Simple_map_screen.PNG" type="Texture" id=2]
-[ext_resource path="res://Maps/Maps/Admin_building/Admin_build_screen.PNG" type="Texture" id=3]
+[ext_resource path="res://MapManager/Maps/noise.png" type="Texture" id=1]
+[ext_resource path="res://MapManager/Maps/Admin_building/Simple_map_screen.PNG" type="Texture" id=2]
+[ext_resource path="res://MapManager/Maps/Admin_building/Admin_build_screen.PNG" type="Texture" id=3]
 [ext_resource path="res://Menu/Menus/StartGame/MapSelector/Map_pick.gd" type="Script" id=4]
+[ext_resource path="res://Menu/Fonts/Menu_theme.tres" type="Theme" id=5]
+
+
+
 
 [node name="Map_pick" type="Control"]
 anchor_right = 1.0
@@ -24,120 +28,161 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lines" type="VBoxContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Lines" type="VSplitContainer" parent="Panel"]
+margin_right = 1900.0
+margin_bottom = 905.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line1" type="HBoxContainer" parent="Panel/Lines"]
-margin_right = 1004.0
-margin_bottom = 234.0
+margin_right = 1900.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="Map1" type="VBoxContainer" parent="Panel/Lines/Line1"]
-margin_right = 324.0
-margin_bottom = 234.0
+margin_right = 626.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line1/Map1"]
-margin_right = 324.0
-margin_bottom = 190.0
+margin_right = 626.0
+margin_bottom = 397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 2 )
-stretch_mode = 3
+stretch_mode = 1
 
 [node name="CheckButton" type="CheckButton" parent="Panel/Lines/Line1/Map1"]
-margin_top = 194.0
-margin_right = 324.0
-margin_bottom = 234.0
+margin_top = 401.0
+margin_right = 626.0
+margin_bottom = 446.0
+theme = ExtResource( 5 )
 text = "01 - Simple map"
 
 [node name="Map2" type="VBoxContainer" parent="Panel/Lines/Line1"]
-margin_left = 334.0
-margin_right = 656.0
-margin_bottom = 234.0
+margin_left = 636.0
+margin_right = 1263.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line1/Map2"]
-margin_right = 322.0
-margin_bottom = 190.0
+margin_right = 627.0
+margin_bottom = 397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
+stretch_mode = 1
 
 [node name="CheckButton2" type="CheckButton" parent="Panel/Lines/Line1/Map2"]
-margin_top = 194.0
-margin_right = 322.0
-margin_bottom = 234.0
+margin_top = 401.0
+margin_right = 627.0
+margin_bottom = 446.0
+theme = ExtResource( 5 )
 text = "02 - Admin Building"
 
 [node name="Map3" type="VBoxContainer" parent="Panel/Lines/Line1"]
-margin_left = 666.0
-margin_right = 994.0
-margin_bottom = 234.0
+margin_left = 1273.0
+margin_right = 1900.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line1/Map3"]
-margin_right = 328.0
-margin_bottom = 190.0
+margin_right = 627.0
+margin_bottom = 397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
+stretch_mode = 1
 
 [node name="CheckButton3" type="CheckButton" parent="Panel/Lines/Line1/Map3"]
-margin_top = 194.0
-margin_right = 328.0
-margin_bottom = 234.0
+margin_top = 401.0
+margin_right = 627.0
+margin_bottom = 446.0
+theme = ExtResource( 5 )
 text = "03 - Not available"
 
-[node name="Line2" type="HBoxContainer" parent="Panel"]
-margin_top = 238.0
-margin_right = 1004.0
-margin_bottom = 472.0
+[node name="Line2" type="HBoxContainer" parent="Panel/Lines"]
+margin_top = 458.0
+margin_right = 1900.0
+margin_bottom = 905.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Map4" type="VBoxContainer" parent="Panel/Line2"]
-margin_right = 328.0
-margin_bottom = 234.0
+[node name="Map4" type="VBoxContainer" parent="Panel/Lines/Line2"]
+margin_right = 626.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Line2/Map4"]
-margin_right = 328.0
-margin_bottom = 190.0
+[node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line2/Map4"]
+margin_right = 626.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
+stretch_mode = 1
 
-[node name="CheckButton" type="CheckButton" parent="Panel/Line2/Map4"]
-margin_top = 194.0
-margin_right = 328.0
-margin_bottom = 234.0
+[node name="CheckButton" type="CheckButton" parent="Panel/Lines/Line2/Map4"]
+margin_top = 402.0
+margin_right = 626.0
+margin_bottom = 447.0
+theme = ExtResource( 5 )
 text = "Not available"
 
-[node name="Map5" type="VBoxContainer" parent="Panel/Line2"]
-margin_left = 338.0
-margin_right = 666.0
-margin_bottom = 234.0
+[node name="Map5" type="VBoxContainer" parent="Panel/Lines/Line2"]
+margin_left = 636.0
+margin_right = 1263.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Line2/Map5"]
-margin_right = 328.0
-margin_bottom = 190.0
+[node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line2/Map5"]
+margin_right = 627.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
+stretch_mode = 1
 
-[node name="CheckButton" type="CheckButton" parent="Panel/Line2/Map5"]
-margin_top = 194.0
-margin_right = 328.0
-margin_bottom = 234.0
+[node name="CheckButton" type="CheckButton" parent="Panel/Lines/Line2/Map5"]
+margin_top = 402.0
+margin_right = 627.0
+margin_bottom = 447.0
+theme = ExtResource( 5 )
 text = "Not available"
 
-[node name="Map6" type="VBoxContainer" parent="Panel/Line2"]
-margin_left = 676.0
-margin_right = 1004.0
-margin_bottom = 234.0
+[node name="Map6" type="VBoxContainer" parent="Panel/Lines/Line2"]
+margin_left = 1273.0
+margin_right = 1900.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Line2/Map6"]
-margin_right = 328.0
-margin_bottom = 190.0
+[node name="TextureRect" type="TextureRect" parent="Panel/Lines/Line2/Map6"]
+margin_right = 627.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
+stretch_mode = 1
 
-[node name="CheckButton" type="CheckButton" parent="Panel/Line2/Map6"]
-margin_top = 194.0
-margin_right = 328.0
-margin_bottom = 234.0
+[node name="CheckButton" type="CheckButton" parent="Panel/Lines/Line2/Map6"]
+margin_top = 402.0
+margin_right = 627.0
+margin_bottom = 447.0
+theme = ExtResource( 5 )
 text = "Not available"
 
 [node name="Play" type="Button" parent="Panel"]
@@ -145,13 +190,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -125.0
-margin_top = -58.0
+margin_left = -401.0
+margin_top = -156.0
+theme = ExtResource( 5 )
 text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="toggled" from="Panel/Lines/Line1/Map1/CheckButton" to="." method="_on_CheckButton_toggled" binds= [ "Simple" ]]
 [connection signal="toggled" from="Panel/Lines/Line1/Map2/CheckButton2" to="." method="_on_CheckButton_toggled" binds= [ "Build" ]]
-[connection signal="toggled" from="Panel/Lines/Line1/Map3/CheckButton3" to="." method="_on_CheckButton_toggled" binds= [ "" ]]
+[connection signal="toggled" from="Panel/Lines/Line1/Map3/CheckButton3" to="." method="_on_CheckButton_toggled" binds= [ "Skyscraper" ]]
+[connection signal="toggled" from="Panel/Lines/Line2/Map4/CheckButton" to="." method="_on_CheckButton_toggled" binds= [ "3D_test" ]]
 [connection signal="pressed" from="Panel/Play" to="." method="_on_Play_pressed"]

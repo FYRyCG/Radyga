@@ -5,17 +5,18 @@
 [ext_resource path="res://Weapons/WeaponControl.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/Interface/HUD/Weapons_UI/M4.png" type="Texture" id=4]
 
-[node name="WeaponElements" type="Node2D"]
+[node name="WeaponElements" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Muzzle" type="Node2D" parent="."]
+[node name="Muzzle" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644087, 0 )
 
 [node name="ShootDelay" type="Timer" parent="."]
 one_shot = true
 
-[node name="ShootSprite" type="Sprite" parent="."]
+[node name="ShootSprite" type="Sprite3D" parent="."]
+transform = Transform( -0.29, 9.4494e-08, 0, 1.5395e-14, 4.7247e-08, -0.29, -9.4494e-08, -0.29, -4.7247e-08, -3.82382, 0.932584, 0 )
 visible = false
-scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 2 )
 
 [node name="Lifetime" type="Timer" parent="ShootSprite"]

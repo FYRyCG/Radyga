@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 func _on_VisionArea_body_entered(body):
 	if body.has_method("vision_entered"):

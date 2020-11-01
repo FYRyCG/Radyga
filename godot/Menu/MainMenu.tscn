@@ -9,6 +9,7 @@
 [ext_resource path="res://Menu/Menus/Operators/Operators.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menu/Dialogs/ConnectDialog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Resources/Fonts/ofont.ru_Comfortaa.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Menu/Fonts/Menu_theme.tres" type="Theme" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -16,10 +17,6 @@ font_data = ExtResource( 9 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 42
-font_data = ExtResource( 9 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -90,7 +87,7 @@ custom_constants/separation = 8
 margin_right = 256.0
 margin_bottom = 132.0
 rect_min_size = Vector2( 256, 132 )
-custom_fonts/font = SubResource( 3 )
+theme = ExtResource( 10 )
 text = "MAIN"
 flat = true
 
@@ -99,24 +96,24 @@ margin_left = 264.0
 margin_right = 520.0
 margin_bottom = 132.0
 rect_min_size = Vector2( 256, 132 )
-custom_fonts/font = SubResource( 3 )
+theme = ExtResource( 10 )
 text = "PLAY"
 flat = true
 
 [node name="OperatorsBtn" type="Button" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
 margin_left = 528.0
-margin_right = 793.0
+margin_right = 784.0
 margin_bottom = 132.0
 rect_min_size = Vector2( 256, 0 )
-custom_fonts/font = SubResource( 3 )
+theme = ExtResource( 10 )
 text = "OPERATORS"
 flat = true
 
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/Split/UpBar/MenuBar"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 801.0
-margin_right = 1308.0
+margin_left = 792.0
+margin_right = 1303.0
 margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -124,7 +121,7 @@ size_flags_vertical = 3
 [node name="Lobby" parent="Panel/VBoxContainer/Split/UpBar/MenuBar" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1316.0
+margin_left = 1311.0
 margin_right = 1823.0
 margin_bottom = 132.0
 rect_min_size = Vector2( 0, 0 )
@@ -187,8 +184,8 @@ visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1311.0
-margin_right = 1827.0
-margin_bottom = 160.0
+margin_right = 1828.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -196,9 +193,9 @@ size_flags_vertical = 3
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1452.0
-margin_right = 1848.0
-margin_bottom = 160.0
+margin_left = 1311.0
+margin_right = 1828.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -227,6 +224,7 @@ size_flags_vertical = 3
 [node name="Main" type="Button" parent="Panel/VBoxContainer/Parts/Stages"]
 margin_right = 958.0
 margin_bottom = 733.0
+theme = ExtResource( 10 )
 text = "MAIN"
 __meta__ = {
 "_edit_use_anchors_": false

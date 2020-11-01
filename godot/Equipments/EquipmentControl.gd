@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var __player
 var __equipment
@@ -15,10 +15,11 @@ func take(player):
 func _process(delta):
 	if __player.get_ref():
 		var eq_pos = __player.get_ref().get_equipment_position()
-		var pos = eq_pos.call("get_global_position")
-		var dir = eq_pos.call("get_global_rotation")
-		__equipment.get_ref().set_global_position(pos)
-		__equipment.get_ref().set_global_rotation(dir)
+		var pos = eq_pos.call("get_transform")
+		#var dir = eq_pos.call("get_global_rotation")
+		__equipment.get_ref().set_transform(pos)
+		#__equipment.get_ref().set_global_rotation(dir)
+	
 
 func drop():
 	__player = null

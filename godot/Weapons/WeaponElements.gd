@@ -1,7 +1,7 @@
-extends Node2D
+extends Node
 
 func _ready():
-	$ShootSprite.global_position = $Muzzle.global_position
+	$ShootSprite.transform = $Muzzle.transform
 
 func shoot():
 	$ShootSprite.show()
@@ -9,5 +9,3 @@ func shoot():
 
 func _on_Lifetime_timeout():
 	$ShootSprite.hide()
-	if(get_parent().has_node("AnimationPlayer")):
-		get_parent().get_node("AnimationPlayer").play("Idle")

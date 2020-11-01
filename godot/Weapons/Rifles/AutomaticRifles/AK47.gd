@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends StaticBody
 
 const MS = 1000.0
 
@@ -24,7 +24,6 @@ func get_ammo():
 	return $WeaponElements/WeaponControl.get_ammo()
 
 func shoot():
-
 	if(get_ammo() > 0):
 		$WeaponElements/WeaponControl.shoot()
 		start_animation("Shoot")
@@ -46,7 +45,7 @@ func drop():
 	$WeaponElements/WeaponControl.drop()
 
 func get_collision():
-	return $CollisionShape2D
+	return $CollisionShape
 
 func get_type():
 	return Type
@@ -55,4 +54,4 @@ func get_object_type():
 	return Object_type
 
 func start_animation(animation):
-	get_node("AnimationPlayer").play(animation)
+	pass

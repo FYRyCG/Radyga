@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Equipments/Charge/Charge.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Actors/Player/Player.gd"
@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "StaticBody2D",
 "class": "SmartTile",
 "language": "GDScript",
-"path": "res://Maps/Objects/SmartWall/Tiles/SmartTile.gd"
+"path": "res://MapManager/Objects/SmartWall/Tiles/SmartTile.gd"
 }, {
 "base": "Node2D",
 "class": "SmartWall",
 "language": "GDScript",
-"path": "res://Maps/Objects/SmartWall/Core/SmartWall.gd"
+"path": "res://MapManager/Objects/SmartWall/Core/SmartWall.gd"
 } ]
 _global_script_class_icons={
 "Charge": "",
@@ -45,7 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 gamestate="*res://World/gamestate.gd"
-MapManager="*res://Maps/MapManager.tscn"
+MapManager="*res://MapManager/MapManager.tscn"
 OperativesManager="*res://Actors/Operators/OperativesManager.gd"
 
 [display]

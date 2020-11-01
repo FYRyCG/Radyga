@@ -1,15 +1,25 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Actors/Interface/HUD/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Actors/Interface/Font/18076.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Actors/Interface/HUD/FPS.gd" type="Script" id=2]
 [ext_resource path="res://Actors/Interface/HUD/Weapons_UI/Weapons.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Actors/Interface/HUD/MiniCam.gd" type="Script" id=6]
+[ext_resource path="res://Menu/Fonts/20005.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Actors/Interface/Minimap/Back.png" type="Texture" id=7]
 [ext_resource path="res://Actors/Interface/HUD/HP_bar/HP_bar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -19,66 +29,67 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Task_list" type="VBoxContainer" parent="."]
+[node name="FPS" type="VBoxContainer" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -42.0
 margin_right = 92.0
 margin_bottom = 42.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="Task_list"]
+[node name="Label1" type="Label" parent="FPS"]
 margin_right = 92.0
-margin_bottom = 14.0
+margin_bottom = 33.0
+theme = SubResource( 2 )
 
-[node name="Tasks" type="Label" parent="Task_list"]
-margin_top = 18.0
+[node name="Label3" type="Label" parent="FPS"]
+margin_top = 37.0
 margin_right = 92.0
-margin_bottom = 48.0
-custom_fonts/font = SubResource( 1 )
-text = "Tasks: "
-
-[node name="Label2" type="Label" parent="Task_list"]
-margin_top = 52.0
-margin_right = 92.0
-margin_bottom = 66.0
-
-[node name="Label3" type="Label" parent="Task_list"]
-margin_top = 70.0
-margin_right = 92.0
-margin_bottom = 84.0
+margin_bottom = 70.0
+theme = SubResource( 4 )
 
 [node name="Minimap" type="MarginContainer" parent="."]
-margin_left = 22.0
-margin_top = 15.0
-margin_right = 150.0
-margin_bottom = 143.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 254.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer" type="MarginContainer" parent="Minimap"]
-margin_right = 128.0
-margin_bottom = 128.0
+[node name="ViewportContainer" type="ViewportContainer" parent="Minimap"]
+margin_right = 251.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ViewportContainer" type="ViewportContainer" parent="Minimap/MarginContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
-
-[node name="Viewport" type="Viewport" parent="Minimap/MarginContainer/ViewportContainer"]
-size = Vector2( 128, 128 )
+[node name="Viewport" type="Viewport" parent="Minimap/ViewportContainer"]
+size = Vector2( 250, 250 )
 handle_input_locally = false
+hdr = false
+usage = 3
+debug_draw = 1
 render_target_update_mode = 3
 
-[node name="MiniCam" type="Camera2D" parent="Minimap/MarginContainer/ViewportContainer/Viewport"]
-current = true
-zoom = Vector2( 5, 5 )
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-script = ExtResource( 6 )
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Minimap"]
-margin_right = 128.0
-margin_bottom = 128.0
+[node name="NinePatchRect" type="NinePatchRect" parent="Minimap/ViewportContainer/Viewport"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 251.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 7 )
+
+[node name="MiniCam" type="Camera" parent="Minimap/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 14.7845, 0 )
+cull_mask = 1
+projection = 1
+size = 40.0
 
 [node name="HP_bar" parent="." instance=ExtResource( 8 )]
 anchor_top = 1.0

@@ -9,15 +9,15 @@ signal set_loadout(primary, secondary)
 
 
 var player = null
-
+var cam = null
 
 func _ready():
-	viewport.add_child(MapManager.get_wall_map().duplicate())
+	cam = get_node("Minimap/ViewportContainer/Viewport/MiniCam")
 
 
 func start(player_, max_health):
 	player = weakref(player_)
-	$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
+	#$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 	$HP_bar.initilized(max_health)
 
 
@@ -34,4 +34,10 @@ func show_weapon(weapon, extra_ammo):
 
 func update_ammo(weapon, extra_ammo):
 	$Weapons.update_ammo(weapon, extra_ammo)
+	
+func _process(delta):
+	var man = get_player()
+	var pos = man.get_translation()
+	var new_pos = Vector3(pos[0], cam.get_translation()[1], pos[2])
+	cam.set_translation(new_pos)
 

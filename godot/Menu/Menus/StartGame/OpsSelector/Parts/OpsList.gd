@@ -23,6 +23,8 @@ func _ready():
 		btn.connect("pressed", self, "selected", [null, info])
 		$GridContainer.add_child(btn)
 		
+		btn.theme = get_node("res://Menu/Fonts/Menu_theme.tres")
+		
 
 func selected(image, info):
 	emit_signal("operative_selected", image, info)

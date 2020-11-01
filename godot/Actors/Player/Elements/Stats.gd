@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var _max_health
 var _max_stamina

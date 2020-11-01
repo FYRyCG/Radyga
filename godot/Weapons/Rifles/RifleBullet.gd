@@ -1,12 +1,11 @@
-extends KinematicBody2D
+extends KinematicBody
 
-var speed = 2100
-var velocity = Vector2()
+var speed = 210
+var velocity = Vector3()
 
-func start(position_, rotation_):
-	rotation = rotation_
-	position = position_
-	velocity = Vector2(speed, 0).rotated(rotation)
+func start(_global_transform):
+	global_transform = _global_transform
+	velocity = Vector3(speed, 0, 0)
 	
 func _process(delta):
 	var collision = move_and_collide(velocity * delta)
