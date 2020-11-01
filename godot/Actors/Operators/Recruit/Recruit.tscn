@@ -56,18 +56,6 @@ shape = SubResource( 1 )
 [node name="PlayerElements" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 
-[node name="InteractiveZone" parent="PlayerElements" index="2"]
-transform = Transform( 1.71524, 0, 0, 0, 1, 0, 0, 0, 2.92614, -0.950166, 0.14828, -0.199355 )
-
-[node name="Light" parent="PlayerElements" index="5"]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 1.014, -0.088 )
-
-[node name="Camera" parent="PlayerElements" index="6"]
-transform = Transform( -1, -3.25841e-07, -5.30863e-14, 0, -1.62921e-07, 1, -3.25841e-07, 1, 1.62921e-07, 0, 13.925, 0.461 )
-
-[node name="Pin" parent="PlayerElements" index="8"]
-transform = Transform( 0.728637, 0, 0, 0, -1.1871e-07, -0.728637, 0, 0.728637, -1.1871e-07, 0, 5.66996, 0 )
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 7 )
 anim_player = NodePath("../Model/BoyModel/AnimationPlayer")
@@ -80,11 +68,5 @@ parameters/OneShot/active = false
 [node name="BoyModel" parent="Model" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58794e-09, 0, 0 )
 script = ExtResource( 5 )
-[connection signal="area_entered" from="PlayerElements/InteractiveZone" to="." method="_on_InteractiveZone_area_entered"]
-[connection signal="area_exited" from="PlayerElements/InteractiveZone" to="." method="_on_InteractiveZone_area_exited"]
-[connection signal="body_entered" from="PlayerElements/InteractiveZone" to="." method="_on_Interactive_body_entered"]
-[connection signal="body_exited" from="PlayerElements/InteractiveZone" to="." method="_on_Interactive_body_exited"]
-
-[editable path="PlayerElements"]
 
 [editable path="Model/BoyModel"]
