@@ -9,7 +9,7 @@ var new_equipped = equipment.RIFLE
 var _is_dead = false
 
 var rayOrigin = Vector3()
-var rayEnd = Vector3()
+var rayTarget = Vector3()
 
 onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") *\
 						ProjectSettings.get_setting("physics/3d/default_gravity_vector")
@@ -90,6 +90,8 @@ func _ready():
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
+	$PlayerElements/InteractiveZone.connect("area_entered", self, "_on_InteractiveZone_area_entered")
+	$PlayerElements/InteractiveZone.connect("area_exited", self, "_on_InteractiveZone_area_exited")
 	
 	
 # Берет объект в инвентарь
@@ -112,20 +114,8 @@ func set_object_shape(obj):
 
 var grenade
 func _physics_process(delta):
-	# get current physics space
-	var spaceState = get_world().direct_space_state
-	# get curr pos
-	var mousePosition = get_viewport().get_mouse_position()
+	__look_at()
 	
-	rayOrigin = $PlayerElements/Camera.project_ray_origin(mousePosition)
-	rayEnd = rayOrigin + $PlayerElements/Camera.project_ray_normal(mousePosition) * 5000
-	
-	var intersection = spaceState.intersect_ray(rayOrigin, rayEnd)
-	
-	if(not intersection.empty()):
-		var pos = intersection.position
-		$Model.look_at(Vector3(pos.x, translation.y, pos.z), Vector3(0, 1, 0))
-		
 	if playable and is_network_master() and not $PlayerControl.is_busy():
 		if Input.is_action_just_pressed("game_esc"):
 			_pause = not _pause
@@ -138,13 +128,12 @@ func _physics_process(delta):
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
-	
+				
 func jump():
 	pass
 
 # Вызывается, когда игрок нажимет "pl_shoot"
 func shoot(delta):
-	
 	var hand = $Equipment.get_hand()
 	if can_shoot and hand:
 		if hand.has_method("shoot"): # Обычная стрельба
@@ -244,6 +233,18 @@ func get_control():
 func get_Camera():
 	return $PlayerElements/Camera
 
+func __look_at():
+	var camera = $PlayerElements/Camera
+	
+	var space_state = get_world().direct_space_state
+	rayOrigin = camera.project_ray_origin(get_viewport().get_mouse_position())
+	rayTarget = camera.project_ray_normal(get_viewport().get_mouse_position()) * 2000
+	
+	var intersection = space_state.intersect_ray(rayOrigin, rayTarget)
+	
+	if not intersection.empty():
+		var pos = intersection.position
+		$Model.look_at(Vector3(pos.x, translation.y, pos.z), Vector3(0, 1, 0))
 
 
 
