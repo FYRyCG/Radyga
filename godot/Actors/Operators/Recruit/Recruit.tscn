@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Actors/Models/BoyModel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Player/PlayerElements.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/Operators/Recruit/Info/RecruitInfo.gd" type="Script" id=4]
+[ext_resource path="res://Actors/Models/PlayerModelSetup.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 margin = 0.001
@@ -30,6 +31,7 @@ filters = [ "Armature/Skeleton:chest", "Armature/Skeleton:hand_l", "Armature/Ske
 animation = "ShootAction"
 
 [sub_resource type="AnimationNodeBlendTree" id=7]
+graph_offset = Vector2( 0, -12.5 )
 nodes/BlendSp/node = SubResource( 4 )
 nodes/BlendSp/position = Vector2( 80, 40 )
 nodes/OneShot/node = SubResource( 5 )
@@ -77,6 +79,7 @@ parameters/OneShot/active = false
 
 [node name="BoyModel" parent="Model" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58794e-09, 0, 0 )
+script = ExtResource( 5 )
 [connection signal="area_entered" from="PlayerElements/InteractiveZone" to="." method="_on_InteractiveZone_area_entered"]
 [connection signal="area_exited" from="PlayerElements/InteractiveZone" to="." method="_on_InteractiveZone_area_exited"]
 [connection signal="body_entered" from="PlayerElements/InteractiveZone" to="." method="_on_Interactive_body_entered"]

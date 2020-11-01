@@ -15,7 +15,7 @@ onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") 
 						ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 
 export var innerDependencies = {
-	"weaponPos" : "VisualObject/Armature/Skeleton/WeaponAttachment/WeaponPosition"
+	"weaponPos" : "Model/BoyModel/Armature/Skeleton/WeaponAttachment/WeaponPosition"
 }
 
 export var equipments = {
