@@ -11,13 +11,13 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 397.0
+margin_right = 1920.0
+margin_bottom = 717.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="Label" type="Label" parent="."]
-margin_top = 401.0
-margin_right = 1024.0
-margin_bottom = 415.0
+margin_top = 721.0
+margin_right = 1920.0
+margin_bottom = 735.0
 size_flags_vertical = 2
