@@ -1,6 +1,2 @@
 # Radyga
-It's our first radyga Game
-
-Идея: Разделить сценарий на несколько частей,
-по достижению контр. пункта игроков переносит в
-другой участок карты, за другую группу.
+Resources: https://cloud.mail.ru/public/4aFu/3HJWC6UEY
