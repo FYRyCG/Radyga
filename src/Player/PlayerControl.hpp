@@ -2,8 +2,8 @@
 #define PLAYERCONTROL_HPP
 
 #include <Godot.hpp>
-#include <Node2D.hpp>
-#include <KinematicBody2D.hpp>
+#include <Spatial.hpp>
+#include <KinematicBody.hpp>
 #include <WeakRef.hpp>
 #include <Input.hpp>
 
@@ -11,23 +11,23 @@
 
 namespace godot {
 
-	class PlayerControl : public Node2D {
-		GODOT_CLASS(PlayerControl, Node2D)
+	class PlayerControl : public Spatial {
+		GODOT_CLASS(PlayerControl, Spatial)
 
 	private:
-		std::shared_ptr<KinematicBody2D> player;
+		std::shared_ptr<KinematicBody> player;
 		//WeakRef player;
 		bool busy = false;
 		bool pause_ = false;
+        Vector3 gravity = Vector3(0, -9.8, 0);
+		int walk_speed = 20;
+		int run_speed = 40;
 
-		int walk_speed = 200;
-		int run_speed = 300;
+		int player_speed = 40;
+		Vector3 motion;
 
-		int player_speed = 200;
-		Vector2 motion;
-
-		Vector2 puppet_position;
-		Vector2 puppet_motion;
+		Vector3 puppet_position;
+		Vector3 puppet_motion;
 		float puppet_rotation;
 
 		enum equipment {FREE, SHOTGUN, PISTOL, RIFLE};
@@ -42,7 +42,7 @@ namespace godot {
 		void _physics_process(float delta);
 
 		void set_busy(bool flag);
-
+        
 		bool is_busy();
 
 		void pause(bool enable);

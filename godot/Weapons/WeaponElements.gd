@@ -9,3 +9,6 @@ func shoot():
 
 func _on_Lifetime_timeout():
 	$ShootSprite.hide()
+	
+func get_shoot_transform():
+	return $Muzzle.transform

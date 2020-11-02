@@ -21,6 +21,12 @@ transform = Transform( -0.5, 0, -1.94707e-07, 0, 0.5, 0, 1.94707e-07, 0, -0.5, -
 
 [node name="WeaponElements" parent="." instance=ExtResource( 3 )]
 
+[node name="Muzzle" parent="WeaponElements" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33876, 0, 0 )
+
+[node name="WeaponControl" parent="WeaponElements" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00102639, 0.00232178, -0.00232196 )
+
 [node name="HUDSprite" parent="WeaponElements" index="4"]
 visible = true
 texture = ExtResource( 4 )
