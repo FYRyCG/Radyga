@@ -12,3 +12,6 @@ func _ready():
 	Attachment.add_child(SpatialNode)
 	Attachment.bone_name = boneName
 	Skeleton.add_child(Attachment)
+
+	# Поворот персонажа навстречу курсору
+	get_node("Armature").global_transform.rotated(Vector3(0,1,0), 180)
