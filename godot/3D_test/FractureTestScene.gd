@@ -13,10 +13,13 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("Boom"):
+		var box = preload("res://3D_test/Models/Box_to_destroy_fract.tscn").instance()
+		add_child(box, true)
+		$Box_to_destroy_fract.show()
 		print("Boom")
 		for cell in cells:
 			cell.mode = 0
-	$Box_to_destroy.hide()
+		$Box_to_destroy.free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

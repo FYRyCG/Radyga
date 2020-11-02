@@ -124,8 +124,11 @@ func join_game(ip, new_player_name, icon):
 	player_name = new_player_name
 	player_icon = icon
 	var host = NetworkedMultiplayerENet.new()
+	print("Host: ", host)
 	host.create_client(ip, DEFAULT_PORT)
+	print("check")
 	get_tree().set_network_peer(host)
+	print("check2")
 
 func disconnect_game():
 	players.clear()
