@@ -20,6 +20,7 @@ func start(player_, max_health):
 	player = weakref(player_)
 	#$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 	$HP_bar.initilized(max_health)
+	
 	set_process(true)
 
 
