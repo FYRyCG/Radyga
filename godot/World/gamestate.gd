@@ -72,7 +72,8 @@ remote func pre_start_game(spawn_points, map):
 	get_tree().get_root().add_child(world)
 
 	get_tree().get_root().get_node("MainMenu").hide()
-
+	
+	MapManager.set_map(map)
 	MapManager.load_selected_map()
 	#get_tree().get_root().get_node("lobby").hide()
 	
