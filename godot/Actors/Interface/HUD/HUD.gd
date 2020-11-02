@@ -12,6 +12,7 @@ var player = null
 var cam = null
 
 func _ready():
+	set_process(false)
 	cam = get_node("Minimap/ViewportContainer/Viewport/MiniCam")
 
 
@@ -19,6 +20,8 @@ func start(player_, max_health):
 	player = weakref(player_)
 	#$Minimap/MarginContainer/ViewportContainer/Viewport/MiniCam.start()
 	$HP_bar.initilized(max_health)
+	
+	set_process(true)
 
 
 func get_player():
