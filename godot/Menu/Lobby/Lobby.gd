@@ -34,5 +34,5 @@ func refresh(list):
 		#print(kekw)
 		#print(kekw.get_data().get_string_from_ascii ( ))
 		#var icon = load("res://Resources/Icons/icon" + str(p.icon) + ".png")
-		get_node("Panel/HBoxContainer/Friend" + str(indx)) \
+		get_node("VBoxContainer/MarginContainer/HBoxContainer/Friend" + str(indx)) \
 			.texture = load(p.icon)
