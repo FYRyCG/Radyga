@@ -50,7 +50,8 @@ func _server_disconnected():
 # Callback from SceneTree, only for clients (not server)
 func _connected_fail():
 	get_tree().set_network_peer(null) # Remove peer
-	emit_signal("connection_failed")
+	end_game()
+	#emit_signal("connection_failed")
 
 # Lobby management functions
 remote func register_player(new_player_name, player_icon):
