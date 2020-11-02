@@ -11,9 +11,8 @@ extents = Vector3( 37.6789, 5.29161, 26.0401 )
 [node name="MapLobby" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.0238118, 0.575073, -0.817756, 0.00414768, 0.817924, 0.575312, 0.999708, -0.017091, 0.017091, -22.6638, 19.6502, -4.18409 )
+transform = Transform( -0.0118425, 0.575317, -0.817845, 0.00414768, 0.817924, 0.575312, 0.999921, 0.00342094, -0.0120724, -5.7309, 19.0016, 0.18226 )
 environment = ExtResource( 1 )
-fov = 90.0
 
 [node name="SpawnPositions" type="Node" parent="."]
 
