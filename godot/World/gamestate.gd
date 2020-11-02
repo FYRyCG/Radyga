@@ -72,7 +72,8 @@ remote func pre_start_game(spawn_points, map):
 	get_tree().get_root().add_child(world)
 
 	get_tree().get_root().get_node("MainMenu").hide()
-
+	
+	MapManager.set_map(map)
 	MapManager.load_selected_map()
 	#get_tree().get_root().get_node("lobby").hide()
 	
@@ -81,7 +82,7 @@ remote func pre_start_game(spawn_points, map):
 		if operatives_selected.has(p_id):
 			operative = OperativesManager.get_operative_by_name(operatives_selected[p_id])
 		else:
-			operative = "res://Actors/Operators/Hermes/Hermes.tscn"
+			operative = "res://Actors/Operators/Recruit/Recruit.tscn"
 			
 		MapManager.spawn_player(p_id, operative)
 
