@@ -19,9 +19,11 @@ environment = ExtResource( 1 )
 [node name="Spawn0" type="Position3D" parent="SpawnPositions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0946646, 10.5346, -4.99046 )
 
-[node name="Spawn1" type="Spatial" parent="SpawnPositions"]
+[node name="Spawn1" type="Position3D" parent="SpawnPositions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0946646, 10.5346, -4.99046 )
 
-[node name="Spawn2" type="Spatial" parent="SpawnPositions"]
+[node name="Spawn2" type="Position3D" parent="SpawnPositions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0946646, 10.5346, -4.99046 )
 
 [node name="Floor_levels" type="Node" parent="."]
 script = ExtResource( 4 )
