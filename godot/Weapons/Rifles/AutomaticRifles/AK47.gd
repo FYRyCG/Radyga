@@ -16,6 +16,10 @@ signal shoot(ammo)
 func _ready():
 	$WeaponElements/WeaponControl.start(damage, ammo, "res://Weapons/Rifles/RifleBullet.tscn")
 	$WeaponElements/ShootDelay.wait_time = MS / rate_of_fire
+	
+	#set muzzle
+	var shoot_position = $AK12.get_shoot_transform()
+	$AK12/Main_gun_part/Muzle.global_transform = shoot_position
 
 func wc_call(method):
 	return $WeaponElements/WeaponControl.call(method)

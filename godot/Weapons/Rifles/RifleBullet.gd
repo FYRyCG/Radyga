@@ -3,9 +3,10 @@ extends KinematicBody
 var speed = 210
 var velocity = Vector3()
 
-func start(_global_transform):
-	global_transform = _global_transform
-	velocity = Vector3(speed, 0, 0)
+func start(start_global_transform):
+	global_transform = start_global_transform
+	print("rotation = ", rotation)
+	velocity = Vector3(speed, 0, 0).rotated(Vector3(0, 1, 0), rotation.y)
 	
 func _process(delta):
 	var collision = move_and_collide(velocity * delta)

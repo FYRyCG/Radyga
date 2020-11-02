@@ -4,16 +4,16 @@
 #include "ShootControl.hpp"
 
 #include <Godot.hpp>
-#include <Node2D.hpp>
+#include <Spatial.hpp>
 #include <Object.hpp>
 #include <Input.hpp>
 #include <Timer.hpp>
-#include <KinematicBody2D.hpp>
-#include <CollisionShape2D.hpp>
+#include <KinematicBody.hpp>
+#include <CollisionShape.hpp>
 #include <ResourceLoader.hpp>
-#include <StaticBody2D.hpp>
+#include <StaticBody.hpp>
 #include <PackedScene.hpp>
-#include <Position2D.hpp>
+#include <Position3D.hpp>
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
 #include <NodePath.hpp>
@@ -24,13 +24,13 @@
 
 namespace godot {
 
-	class WeaponControl : public Node2D {
-		GODOT_CLASS(WeaponControl, Node2D)
+	class WeaponControl : public Spatial {
+		GODOT_CLASS(WeaponControl, Spatial)
 
 	private:
 		Ref<PackedScene> RifleBullet;// = ResourceLoader::get_singleton()->load("res://Weapons/Rifles/RifleBullet.tscn");
-		std::shared_ptr<KinematicBody2D> player;
-		std::shared_ptr<StaticBody2D> weapon;
+		std::shared_ptr<KinematicBody> player;
+		std::shared_ptr<StaticBody> weapon;
 
 		ShootControl* shoot_control;
 
@@ -41,7 +41,7 @@ namespace godot {
 
 		void start(int damage, int start_ammo, String bullet_path);
 
-		void take(KinematicBody2D* player_);
+		void take(KinematicBody* player_);
 
 		void drop();
 
@@ -49,18 +49,18 @@ namespace godot {
 
 		void reload(int add_ammo);
 
-		void use(KinematicBody2D* player_);
+		void use(KinematicBody* player_);
 
 		void _process(float delta);
 
-		CollisionShape2D* get_collision();
+		CollisionShape* get_collision();
 
 		String get_object_type();
 
 		int get_ammo();
 
 	private:
-		void _sync_shoot(Vector2 shoot_position, float shoot_rotation);
+		void _sync_shoot(Transform global_transform);
 
 		void _sync_use(NodePath player_path);
 

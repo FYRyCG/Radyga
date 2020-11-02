@@ -5,7 +5,7 @@
 [ext_resource path="res://Resources/Characters/Cloth2.material" type="Material" id=3]
 [ext_resource path="res://Resources/Characters/Material_001.material" type="Material" id=4]
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -1.81357, -0.00481409, -0.362852, 3.62713, 4.82978, 0.711104 ),
@@ -56,7 +56,7 @@ surfaces/3 = {
 "vertex_count": 88
 }
 
-[sub_resource type="Skin" id=9]
+[sub_resource type="Skin" id=2]
 resource_name = "Skin"
 bind_count = 53
 bind/0/name = "wiest"
@@ -219,7 +219,7 @@ bind/52/name = "hellikk_r"
 bind/52/bone = -1
 bind/52/pose = Transform( 1, 0, 0, 0, -0.0529562, -0.998597, 0, 0.998597, -0.0529562, 0.357787, -0.106505, -0.227338 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleAction"
 length = 2.04167
 loop = true
@@ -595,7 +595,7 @@ tracks/52/imported = true
 tracks/52/enabled = true
 tracks/52/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2.04167, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 resource_name = "RunAction"
 length = 0.916667
 loop = true
@@ -971,7 +971,7 @@ tracks/52/imported = true
 tracks/52/enabled = true
 tracks/52/keys = PoolRealArray( 0, 1, 0.0579995, 0.282613, 0.318318, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.0666667, 1, 0.0869617, 0.274572, 0.300787, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.133333, 1, 0.205569, 0.162119, 0.228996, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.2, 1, 0.226653, -0.216271, 0.279082, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.266667, 1, 0.172803, -0.620464, 0.50471, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.333333, 1, 0.16846, -0.683209, 0.38316, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1, 0.4, 1, 0.162442, -0.579855, 0.205573, 0.202677, -0.033938, -0.0245494, 0.978349, 1, 1, 1, 0.466667, 1, 0.0795743, -0.418406, 0.205112, 0.244128, -0.150806, -0.145166, 0.946882, 1, 1, 1, 0.533333, 1, -0.0238208, -0.262306, 0.204955, 0.285507, -0.291114, -0.290435, 0.865671, 1, 1, 1, 0.6, 1, -0.0387892, -0.188544, 0.179917, 0.296525, -0.336151, -0.337188, 0.827877, 1, 1, 1, 0.666667, 1, 0.0473062, -0.168944, 0.083199, 0.296525, -0.336151, -0.337188, 0.827877, 1, 1, 1, 0.733333, 1, -0.0425254, 0.0274162, 0.111641, 0.296525, -0.336151, -0.337188, 0.827877, 1, 1, 1, 0.8, 1, -0.142185, 0.422568, 0.238446, 0.296525, -0.336151, -0.337188, 0.827877, 1, 1, 1, 0.866667, 1, -0.0734547, 0.441779, 0.312833, 0.263651, -0.212889, -0.209378, 0.917239, 1, 1, 1, 0.916667, 1, 0.0579995, 0.282613, 0.318318, 0.194811, -0.0134588, -0.00344641, 0.980742, 1, 1, 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=5]
 resource_name = "ShootAction"
 length = 1.04167
 tracks/0/type = "transform"
@@ -1619,14 +1619,14 @@ bones/52/enabled = true
 bones/52/bound_children = [  ]
 
 [node name="Cube" type="MeshInstance" parent="Armature/Skeleton"]
-mesh = SubResource( 8 )
-skin = SubResource( 9 )
+mesh = SubResource( 1 )
+skin = SubResource( 2 )
 material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/IdleAction = SubResource( 10 )
-anims/RunAction = SubResource( 11 )
-anims/ShootAction = SubResource( 12 )
+anims/IdleAction = SubResource( 3 )
+anims/RunAction = SubResource( 4 )
+anims/ShootAction = SubResource( 5 )

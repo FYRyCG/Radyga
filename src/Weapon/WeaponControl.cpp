@@ -43,14 +43,14 @@ namespace godot {
 	{
 		set_physics_process(false);
 		set_process(false);
-		weapon = std::make_shared<StaticBody2D>(*static_cast<StaticBody2D*>(get_parent()->get_parent()));
+		weapon = std::make_shared<StaticBody>(*static_cast<StaticBody*>(get_parent()->get_parent()));
 		RifleBullet = ResourceLoader::get_singleton()->load(bullet_path);
 		shoot_control = new ShootControl(start_ammo);
 	}
 
-	void godot::WeaponControl::take(KinematicBody2D* player_)
+	void godot::WeaponControl::take(KinematicBody* player_)
 	{
-		player = std::make_shared<KinematicBody2D>(*static_cast<KinematicBody2D*>(player_));
+		player = std::make_shared<KinematicBody>(*static_cast<KinematicBody*>(player_));
 		set_process(true);
 	}
 
@@ -67,8 +67,8 @@ namespace godot {
 		if (static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->is_stopped()
 			&& shoot_control->can_shoot()) {
 			auto muzzle = weapon->get_node("WeaponElements/Muzzle");
-			rpc("_sync_shoot", muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
-			_sync_shoot(muzzle->call("get_global_position"), muzzle->call("get_global_rotation"));
+			rpc("_sync_shoot", muzzle->call("get_global_transform"));
+			_sync_shoot(muzzle->call("get_global_transform"));
 			static_cast<Timer*>(weapon->get_node("WeaponElements/ShootDelay"))->start();
 		}
 	}
@@ -79,7 +79,7 @@ namespace godot {
 		_sync_reload(add_ammo);
 	}
 
-	void godot::WeaponControl::use(KinematicBody2D* player_)
+	void godot::WeaponControl::use(KinematicBody* player_)
 	{
 		rpc("_sync_use", player_->get_path());
 		_sync_use(player_->get_path());
@@ -90,16 +90,14 @@ namespace godot {
 		auto weapon_position = player->call("get_weapon_position");
 		if (player.get() != nullptr //&&
 			/*weapon_position.has_method("get_global_position")*/) {  // don't work in debug mode
-			auto pos = (Vector2)weapon_position.call("get_global_position", nullptr, 0);
-			auto dir = (float)weapon_position.call("get_global_rotation", nullptr, 0);
-			weapon->set_global_position(pos);
-			weapon->set_global_rotation(dir);
+			Transform pos = (Transform)(weapon_position.call("get_global_transform", nullptr, 0));
+			weapon->set_global_transform(pos);
 		}
 	}
 
-	CollisionShape2D* godot::WeaponControl::get_collision()
+	CollisionShape* godot::WeaponControl::get_collision()
 	{
-		return static_cast<CollisionShape2D*>(get_parent()->get_node("CollisionShape2D"));
+		return static_cast<CollisionShape*>(get_parent()->get_node("CollisionShape"));
 	}
 
 	String WeaponControl::get_object_type()
@@ -112,12 +110,12 @@ namespace godot {
 		return shoot_control->get_ammo();
 	}
 
-	void godot::WeaponControl::_sync_shoot(Vector2 shoot_position, float shoot_rotation)
+	void godot::WeaponControl::_sync_shoot(Transform global_transform)
 	{
 		auto bullet = RifleBullet->instance();
-		bullet->call("start", shoot_position, shoot_rotation);
+		bullet->call("start", global_transform);
 		weapon->get_node("WeaponElements")->call("shoot"); // draw Sprite
-		weapon->get_parent()->get_parent()->get_parent()->add_child(bullet);
+		weapon->get_parent()->add_child(bullet);
 		player->call("recoil");
 		shoot_control->shoot();
 	}
