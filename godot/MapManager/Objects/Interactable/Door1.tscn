@@ -58,13 +58,13 @@ tracks/0/keys = {
 extents = Vector3( 1.54874, 1.77275, 1.41873 )
 
 [node name="Doorway" type="MeshInstance"]
-transform = Transform( -0.866496, 0, -1.50996e-07, 0, 1.06761, 0, 1.30837e-07, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="DoorObject" type="StaticBody" parent="."]
-transform = Transform( -0.539197, 0, -0.84218, 0, 1, 0, 0.84218, 0, -0.539197, -0.935295, 0.00547695, 0.09452 )
-script = ExtResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935295, 0.00547695, 0.09452 )
 
 [node name="InteractiveOpen" type="CollisionShape" parent="DoorObject"]
 transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, 3.55271e-14, 0, 1, 0.0573331, 1.01638, 0.0999861 )

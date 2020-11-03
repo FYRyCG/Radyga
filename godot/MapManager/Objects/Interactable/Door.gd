@@ -7,7 +7,7 @@ export var destroyed = false
 export var busy = false
 
 func _ready():
-	anim = get_parent().get_node("AnimationPlayerDoor")
+	anim = get_node("AnimationPlayerDoor")
 	if(opened):
 		open_door()
 	elif(destroyed):

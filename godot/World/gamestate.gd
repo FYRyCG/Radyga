@@ -51,6 +51,7 @@ func _server_disconnected():
 func _connected_fail():
 	get_tree().set_network_peer(null) # Remove peer
 	end_game()
+	print("Game ended!")
 	#emit_signal("connection_failed")
 
 # Lobby management functions
