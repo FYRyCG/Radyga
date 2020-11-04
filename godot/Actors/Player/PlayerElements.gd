@@ -12,5 +12,6 @@ func _on_Vision_body_entered(body):
 
 func _on_Vision_body_exited(body):
 	print(body, "Exited")
+	body.get_node("MeshInstance").set_layer_mask_bit(1, false)
 	visibleBody.erase(body)
 
