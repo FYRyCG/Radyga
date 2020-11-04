@@ -115,7 +115,8 @@ func set_object_shape(obj):
 var grenade
 func _physics_process(delta):
 	if playable and is_network_master() and not $PlayerControl.is_busy():
-		__look_at()	
+		__look_at()
+		scan_for_objects()
 		if Input.is_action_just_pressed("game_esc"):
 			_pause = not _pause
 			$PlayerControl.pause(_pause)
@@ -246,6 +247,19 @@ func __look_at():
 		$Model.look_at(Vector3(pos.x, translation.y, pos.z), Vector3(0, 1, 0))
 
 
+var hit_pos
+var obj_name
+func scan_for_objects():
+	var targets = $PlayerElements.visibleBody
+	var space_state = get_world().direct_space_state
+	if targets.size() == 0:
+		return
+	
+	var result = space_state.intersect_ray(global_transform.origin, 
+		targets[0].global_transform.origin, [self], collision_mask)
+	if result:
+		obj_name = result.collider.name
+	print(obj_name)
 
 
 

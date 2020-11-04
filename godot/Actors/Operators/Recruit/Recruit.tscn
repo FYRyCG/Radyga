@@ -42,8 +42,7 @@ nodes/output/position = Vector2( 1000, 140 )
 node_connections = [ "output", 0, "OneShot", "OneShot", 0, "BlendSp", "OneShot", 1, "Shoot" ]
 
 [node name="Recruit" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0285595, 0.853376, 0.147641 )
-collision_layer = 3
+collision_layer = 2147483651
 collision_mask = 11
 script = ExtResource( 1 )
 playable = true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/empty_warehouse_01_1k.hdr-ded8092fb0eece211966f91da107c04a.stex"
+path="res://.import/empty_warehouse_01_1k.hdr-667e8506eafdc57b3b8bd58621d538d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3D_test/HDR_and_Light/empty_warehouse_01_1k.hdr"
-dest_files=[ "res://.import/empty_warehouse_01_1k.hdr-ded8092fb0eece211966f91da107c04a.stex" ]
+source_file="res://MapManager/Maps/Lobby/HdrEnvironment/empty_warehouse_01_1k.hdr"
+dest_files=[ "res://.import/empty_warehouse_01_1k.hdr-667e8506eafdc57b3b8bd58621d538d3.stex" ]
 
 [params]
 
