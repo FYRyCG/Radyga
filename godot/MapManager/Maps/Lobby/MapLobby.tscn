@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MapManager/Maps/Lobby/HdrEnvironment/LobbyEenvironment.tres" type="Environment" id=1]
 [ext_resource path="res://MapManager/Maps/Lobby/MapElements/Floor_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MapManager/Maps/Lobby/MapElements/Floor_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Cameras/Floor_levels_Detection.gd" type="Script" id=4]
+[ext_resource path="res://MapManager/Objects/Interactable/Terminal.tscn" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 37.6789, 5.29161, 26.0401 )
@@ -39,5 +40,13 @@ shape = SubResource( 1 )
 [node name="Floor_0" parent="." instance=ExtResource( 3 )]
 
 [node name="Floor_1" parent="." instance=ExtResource( 2 )]
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Terminal" parent="Players" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.210719, 0, 0, 0, 1, 0.579596, 3.00306, -3.94591 )
+
+[node name="Terminal2" parent="Players" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.210719, 0, 0, 0, 1, -12.4598, 2.7822, -2.91935 )
 [connection signal="area_entered" from="Floor_levels/Floor_1" to="Floor_levels" method="_on_Floor_area_entered" binds= [ 1 ]]
 [connection signal="area_exited" from="Floor_levels/Floor_1" to="Floor_levels" method="_on_Floor_area_exited" binds= [ 1 ]]

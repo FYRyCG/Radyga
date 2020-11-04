@@ -12,7 +12,5 @@ func _on_Vision_body_entered(body):
 
 func _on_Vision_body_exited(body):
 	print(body, "Exited")
-	for i in range(visibleBody.size()):
-		if visibleBody[i] == body:
-			visibleBody.remove(i)
+	visibleBody.erase(body)
 

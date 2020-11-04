@@ -248,18 +248,41 @@ func __look_at():
 
 
 var hit_pos
-var obj_name
 func scan_for_objects():
+	var objectsNames = []
+	var targetsNames = []
+	var targetsObjectsNames = []
 	var targets = $PlayerElements.visibleBody
-	var space_state = get_world().direct_space_state
 	if targets.size() == 0:
 		return
+		
+	#Собираем названия целей
+	for target in targets:
+		targetsNames.append(target.name)
 	
-	var result = space_state.intersect_ray(global_transform.origin, 
-		targets[0].global_transform.origin, [self], collision_mask)
-	if result:
-		obj_name = result.collider.name
-	print(obj_name)
-
-
+	var space_state = get_world().direct_space_state
+	
+	#Собираем названия объектов до которых достает рейкаст при попытке достать до target
+	for target in targets: 
+		var result = space_state.intersect_ray(global_transform.origin, 
+			target.global_transform.origin, [self], collision_mask)
+		if result:
+			objectsNames.append(result.collider.name)
+		var temp = [target.name, result.collider.name]
+		targetsObjectsNames.append(temp)
+		
+	#print("ObjectsList: ", objectsNames)
+	#print("TargetObjectsList: ", targetsObjectsNames)
+	for pair in targetsObjectsNames:
+		if pair[0] == pair[1]:
+			var curent = get_parent().get_node("Players/"+ pair[0])
+			if curent == null:
+				break
+			curent.get_node("MeshInstance").set_layer_mask_bit(1, true)
+		else:
+			var curent = get_parent().get_node("Players/"+ pair[0])
+			if curent == null:
+				break
+			curent.get_node("MeshInstance").set_layer_mask_bit(1, false)
+	
 

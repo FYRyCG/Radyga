@@ -9,7 +9,7 @@
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 3.75067, 1, 3.4728 )
+extents = Vector3( 3.75067, 5.03276, 3.4728 )
 
 [node name="Terminal" type="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 0.210719, 0, 0, 0, 1, 0, 0, 0 )
@@ -19,7 +19,7 @@ script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 3.07429, 0, 0, 0, 5.87115, 0, 0, 0, 2.60998, 0, -5.3837, 0 )
-layers = 2
+layers = 0
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -34,5 +34,5 @@ collision_mask = 32
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.93892, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.249606, 0 )
 shape = SubResource( 3 )
