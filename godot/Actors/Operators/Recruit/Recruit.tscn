@@ -49,7 +49,7 @@ playable = true
 operative_information = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1.63332, 0, 0, 0, 5.163, 0, 0, 0, 2.2799, 0, -0.250939, 0 )
+transform = Transform( 1.63332, 0, 0, 0, 5.163, 0, 0, 0, 2.2799, 0, -0.587836, 0 )
 shape = SubResource( 1 )
 
 [node name="PlayerElements" parent="." instance=ExtResource( 3 )]
