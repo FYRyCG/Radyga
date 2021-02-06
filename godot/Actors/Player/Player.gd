@@ -19,10 +19,10 @@ export var innerDependencies = {
 }
 
 export var equipments = {
-	"primary" : preload("res://Weapons/Rifles/AutomaticRifles/AK47.tscn"),
-	"secondary" : preload("res://Weapons/Rifles/AutomaticRifles/M4.tscn"),
+	"primary" : preload("res://Actors/Equipments/Weapons/Rifles/AutomaticRifles/AK47.tscn"),
+	"secondary" : preload("res://Actors/Equipments/Weapons/Rifles/AutomaticRifles/M4.tscn"),
 	"melee" : null,
-	"gadget" : preload("res://Equipments/Charge/Charge.tscn")
+	"gadget" : preload("res://Actors/Equipments/Charge/Charge.tscn")
 }
 
 export var ammunitions = {
@@ -120,11 +120,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("game_esc"):
 			_pause = not _pause
 			$PlayerControl.pause(_pause)
-		if Input.is_action_just_pressed("pl_throw_grenade"):
-			#grenade = weakref(preload("res://Equipments/Grenades/FragGrenade/FragGrenade.tscn").instance())
-			grenade = weakref(preload("res://Equipments/Grenades/SmokeGrenade/SmokeGrenade.tscn").instance())
-			add_child(grenade.get_ref())
-			grenade.get_ref().start()
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()

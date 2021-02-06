@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actors/Equipments/Weapons/Rifles/AutomaticRifles/Models/AK12.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Equipments/Weapons/WeaponElements.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Equipments/Weapons/Rifles/AutomaticRifles/AK47.gd" type="Script" id=3]
+[ext_resource path="res://Actors/Interface/HUD/Weapons_UI/AK.png" type="Texture" id=4]
+
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="AK47" type="StaticBody"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.10274, 0, 0, 0, 0.201362, 0, 0, 0, 0.477908, -1.2226, 0.666428, 0.0226299 )
+shape = SubResource( 1 )
+
+[node name="AK12" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.5, 0, -1.94707e-07, 0, 0.5, 0, 1.94707e-07, 0, -0.5, -0.711817, 0.0675449, 0 )
+
+[node name="WeaponElements" parent="." instance=ExtResource( 2 )]
+
+[node name="Muzzle" parent="WeaponElements" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33876, 0, 0 )
+
+[node name="WeaponControl" parent="WeaponElements" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00102639, 0.00232178, -0.00232196 )
+
+[node name="HUDSprite" parent="WeaponElements" index="4"]
+visible = true
+texture = ExtResource( 4 )
+
+[editable path="WeaponElements"]

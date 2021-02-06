@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Actors/Equipments/EquipmentControl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Equipments/Charge/ChargeDetonator.gd" type="Script" id=2]
+[ext_resource path="res://Actors/Equipments/Charge/Sprites/detonator.png" type="Texture" id=3]
+
+[node name="ChargeDetonator" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="EquipmentControl" parent="." instance=ExtResource( 1 )]

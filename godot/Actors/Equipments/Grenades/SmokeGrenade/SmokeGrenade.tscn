@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Actors/Equipments/Grenades/SmokeGrenade/SmokePhysics/Smoke.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Equipments/Grenades/GrenadeBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Equipments/Grenades/SmokeGrenade/SmokeGrenade.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2.93217, 3.07039 )
+
+[node name="SmokeGrenade" type="KinematicBody2D"]
+material = SubResource( 1 )
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+use_parent_material = true
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+use_parent_material = true
+shape = SubResource( 2 )
+
+[node name="GrenadeBase" parent="." instance=ExtResource( 2 )]
+use_parent_material = true
+
+[node name="Smoke" parent="." instance=ExtResource( 1 )]
+visible = false

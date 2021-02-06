@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Actors/Equipments/Grenades/FragGrenade/FragGrenade.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Equipments/Grenades/FragGrenade/Sprites/frag_grenade.png" type="Texture" id=2]
+[ext_resource path="res://Actors/Equipments/Grenades/FragGrenade/Sprites/explosion_1.png" type="Texture" id=3]
+[ext_resource path="res://Actors/Equipments/Grenades/FragGrenade/Sprites/explosion_2.png" type="Texture" id=4]
+[ext_resource path="res://Actors/Equipments/Grenades/GrenadeBase.tscn" type="PackedScene" id=5]
+
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.22426
+height = 1.59258
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 20.5643
+
+[node name="FragGrenade" type="KinematicBody2D"]
+material = SubResource( 1 )
+collision_layer = 0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+use_parent_material = true
+scale = Vector2( 0.005, 0.005 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.170022, -0.0811958 )
+shape = SubResource( 2 )
+
+[node name="ExplosionSprites" type="AnimatedSprite" parent="."]
+visible = false
+use_parent_material = true
+scale = Vector2( 0.015, 0.015 )
+frames = SubResource( 3 )
+animation = "explosion"
+frame = 1
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
+shape = SubResource( 4 )
+
+[node name="GrenadeBase" parent="." instance=ExtResource( 5 )]
+use_parent_material = true
+[connection signal="body_entered" from="ExplosionArea" to="." method="_on_ExplosionArea_body_entered"]
