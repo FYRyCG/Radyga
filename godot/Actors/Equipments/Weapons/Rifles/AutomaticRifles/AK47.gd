@@ -14,7 +14,11 @@ const Capacity = 30
 signal shoot(ammo)
 
 func _ready():
-	$WeaponElements/WeaponControl.start(damage, ammo, "res://Weapons/Rifles/RifleBullet.tscn")
+	$WeaponElements/WeaponControl.start(
+		damage,
+		 ammo,
+		 "res://Actors/Equipments/Weapons/Rifles/RifleBullet.tscn"
+	)
 	$WeaponElements/ShootDelay.wait_time = MS / rate_of_fire
 	
 	#set muzzle
