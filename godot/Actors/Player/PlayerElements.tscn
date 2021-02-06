@@ -50,7 +50,6 @@ light_energy = 0.05
 directional_shadow_mode = 0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 keep_aspect = 0
 cull_mask = 1017825
 environment = ExtResource( 6 )

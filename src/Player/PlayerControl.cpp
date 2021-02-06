@@ -12,6 +12,11 @@ namespace godot {
 			return str.utf8().get_data();
 		}
 
+		double deg2rad(double degree) {
+			double pi = 3.14159265359;
+			return (degree * (pi / 180));
+		}
+
 	}
 
 	void PlayerControl::_register_methods() {
@@ -50,25 +55,26 @@ namespace godot {
 
 			Input* input = Input::get_singleton();
 			motion = Vector3();
-            
+
 			if (!busy) {
 				//player->look_at(get_global_mouse_position());
 			}
 			
 			if (input->is_action_pressed("ui_left") && !busy) {
-				motion.x -= 1;
-			}
-			if (input->is_action_pressed("ui_right") && !busy) {
 				motion.x += 1;
 			}
+			if (input->is_action_pressed("ui_right") && !busy) {
+				motion.x -= 1;
+			}
 			if (input->is_action_pressed("ui_up") && !busy) {
-				motion.z -= 1;
+				motion.z += 1;
 			}
 			if (input->is_action_pressed("ui_down") && !busy) {
-				motion.z += 1;
+				motion.z -= 1;
 			}
             
             motion.y += gravity.y*delta;
+
 			if (input->is_action_pressed("pl_run") && !busy) {
 				player_speed = run_speed;
 			} else {
@@ -127,6 +133,7 @@ namespace godot {
 		}
 
 		Vector3 normal_motion = motion.normalized();
+		normal_motion = normal_motion.rotated(Vector3(0, 1, 0), deg2rad(-45));
 		if (normal_motion != motion) {
 			normal_motion *= 1.2;
 		}
