@@ -3,15 +3,18 @@ extends Camera
 export (int) var slide_speed = 50
 export (int) var distance_slide = 100
 var player = null
+
+
 func _ready():
 	set_physics_process(false)
 	set_process(false)
+	
+	translation = Properties.get("player.camera.translation")
+	rotation_degrees = Properties.get("player.camera.rotation")
+	
 	if is_network_master():
 		make_current()
 	
-	
-
-
 func set_player(player_):
 	player = weakref(player_)
 	#zoom = Vector3(0.5, 0.5, 0.5)

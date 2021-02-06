@@ -47,6 +47,7 @@ config/icon="res://icon.png"
 MapManager="*res://Maps/MapManager.tscn"
 OperativesManager="*res://Actors/Operators/OperativesManager.gd"
 gamestate="*res://World/gamestate.gd"
+Properties="*res://properties/Properties.gd"
 
 [display]
 
