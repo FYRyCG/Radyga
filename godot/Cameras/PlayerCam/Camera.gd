@@ -6,7 +6,7 @@ func _ready():
 	set_physics_process(false)
 	set_process(false)
 	
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	translation = Properties.get("player.camera.translation")
 	rotation_degrees = Properties.get("player.camera.rotation")
@@ -20,6 +20,9 @@ func set_player(player_):
 	make_current()
 	
 	set_physics_process(true)
+
+func get_rotation() -> Vector3:
+	return rotation_degrees
 
 func set_cull_mask(floor_id):
 	var mask_status = get_cull_mask_bit(floor_id)

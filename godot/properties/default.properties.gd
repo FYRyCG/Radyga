@@ -4,8 +4,8 @@ func get(propertyName : String):
 	return properties[propertyName]
 
 var properties = {
-	"player.camera.translation" : Vector3(-12, 25, 10),
-	"player.camera.rotation"    : Vector3(-55, -45, 0),
+	"player.camera.translation" : Vector3(0, 25, 15),
+	"player.camera.rotation"    : Vector3(-55, 0, 0),
 	
-	"camera.sensetivity" 		: 0.005,
+	"camera.sensetivity" 		: 0.002,
 }

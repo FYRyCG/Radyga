@@ -128,12 +128,15 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		move_camera(event.relative.x)
+		move_camera(-event.relative.x)
 
-func move_camera(dist: float):
+func move_camera(dist: float) -> void:
 	var camera_anchor = $PlayerElements/CameraAnchor
 	var sensetivity =  Properties.get("camera.sensetivity")
 	camera_anchor.global_rotate(Vector3(0, 1, 0), dist * sensetivity)
+
+func get_camera_rotation() -> Vector3:
+	return $PlayerElements/CameraAnchor.rotation_degrees
 
 func jump():
 	pass

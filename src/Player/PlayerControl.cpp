@@ -133,7 +133,9 @@ namespace godot {
 		}
 
 		Vector3 normal_motion = motion.normalized();
-		normal_motion = normal_motion.rotated(Vector3(0, 1, 0), deg2rad(-45));
+		Vector3 camera_rotation = player->call("get_camera_rotation");
+		std::cout << "camera ro\nt x" << camera_rotation.x << " \ny " << camera_rotation.y << " \nz " << camera_rotation.z << std::endl;
+		normal_motion = normal_motion.rotated(Vector3(0, 1, 0), deg2rad(camera_rotation.y));
 		if (normal_motion != motion) {
 			normal_motion *= 1.2;
 		}

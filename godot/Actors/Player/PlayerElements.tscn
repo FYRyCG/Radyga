@@ -72,6 +72,7 @@ shape = SubResource( 2 )
 [node name="CameraAnchor" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="CameraAnchor"]
+transform = Transform( 1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 15, 10 )
 keep_aspect = 0
 cull_mask = 1017825
 environment = ExtResource( 6 )

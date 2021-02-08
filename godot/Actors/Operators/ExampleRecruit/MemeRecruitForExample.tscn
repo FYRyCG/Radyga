@@ -4,7 +4,6 @@
 [ext_resource path="res://Actors/Operators/ExampleRecruit/Sprites/accessory.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Player/PlayerElements2D.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
