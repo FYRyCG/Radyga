@@ -11,6 +11,8 @@ var _is_dead = false
 var rayOrigin = Vector3()
 var rayTarget = Vector3()
 
+onready var camera = $PlayerElements/CameraAnchor/Camera
+
 onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") *\
 						ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 
@@ -80,13 +82,13 @@ func _ready():
 		$PlayerElements/HUDLayer/HUD.start(self, MAX_HP)
 		
 		#Настраиваем камеру
-		$PlayerElements/Camera.set_player(self)
+		camera.set_player(self)
 		
 		
 	# удалить все ноды, которые не нужны для NPC
 	if not playable or not is_network_master():
 		$PlayerElements/HUDLayer.queue_free()
-		$PlayerElements/Camera.queue_free()
+		camera.queue_free()
 	
 	$PlayerElements/InteractiveZone.connect("body_entered", self, "_on_Interactive_body_entered")
 	$PlayerElements/InteractiveZone.connect("body_exited", self, "_on_Interactive_body_exited")
@@ -123,7 +125,16 @@ func _physics_process(delta):
 		if Input.is_action_just_released("pl_throw_grenade") and not $PlayerControl.is_busy():
 			if grenade and grenade.get_ref():
 				grenade.get_ref().throw()
-				
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		move_camera(event.relative.x)
+
+func move_camera(dist: float):
+	var camera_anchor = $PlayerElements/CameraAnchor
+	var sensetivity =  Properties.get("camera.sensetivity")
+	camera_anchor.global_rotate(Vector3(0, 1, 0), dist * sensetivity)
+
 func jump():
 	pass
 
@@ -161,14 +172,6 @@ func change_hp(cur_hp):
 
 func death():
 	_is_dead = true
-
-# Проверка, какой предмет находится в зоне досягаемости до player
-#func _on_Interactive_body_entered(body):
-	#current_interactive_body = weakref(body)
-
-#func _on_Interactive_body_exited(body):
-	#if current_interactive_body and body == current_interactive_body.get_ref():
-		#current_interactive_body = null
 
 func _on_InteractiveZone_area_entered(area):
 	current_interactive_body = weakref(area)
@@ -226,11 +229,9 @@ func get_control():
 	return $PlayerControl
 
 func get_Camera():
-	return $PlayerElements/Camera
+	return camera
 
 func __look_at():
-	var camera = $PlayerElements/Camera
-	
 	var space_state = get_world().direct_space_state
 	rayOrigin = camera.project_ray_origin(get_viewport().get_mouse_position())
 	rayTarget = camera.project_ray_normal(get_viewport().get_mouse_position()) * 2000

@@ -49,14 +49,6 @@ visible = false
 light_energy = 0.05
 directional_shadow_mode = 0
 
-[node name="Camera" type="Camera" parent="."]
-keep_aspect = 0
-cull_mask = 1017825
-environment = ExtResource( 6 )
-fov = 80.0
-size = 25.0
-script = ExtResource( 2 )
-
 [node name="HUDLayer" type="Node" parent="."]
 
 [node name="HUD" parent="HUDLayer" instance=ExtResource( 3 )]
@@ -76,5 +68,15 @@ collision_mask = 1024
 [node name="CollisionShape" type="CollisionShape" parent="Vision"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55682, 0 )
 shape = SubResource( 2 )
+
+[node name="CameraAnchor" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="CameraAnchor"]
+keep_aspect = 0
+cull_mask = 1017825
+environment = ExtResource( 6 )
+fov = 80.0
+size = 25.0
+script = ExtResource( 2 )
 [connection signal="body_entered" from="Vision" to="." method="_on_Vision_body_entered"]
 [connection signal="body_exited" from="Vision" to="." method="_on_Vision_body_exited"]
